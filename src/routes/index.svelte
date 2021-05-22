@@ -5,7 +5,7 @@
 	export async function load() {	
 		const api = new GhostContentAPI({
 			url: 'https://blog.weblime.com',
-			key: 'a6b86e49cef0a71dd160bbb4d4',
+			key: '',
 			version: 'v3'
 		})
 		
