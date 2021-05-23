@@ -1,31 +1,33 @@
 <script context="module">
-	export const prerender = true;
-	import GhostContentAPI from '@tryghost/content-api'
+  export const prerender = true;
 
-	export async function load() {	
-		const api = new GhostContentAPI({
-			url: 'https://blog.weblime.com',
-			key: '',
-			version: 'v3'
-		})
-		
-		try {
-			const jsonPosts = await api.posts.browse({limit: 5})
-			return {props: {"stories": jsonPosts}}
-		} catch(err) {
-			console.log(err)
-		}
-	}
+  export async function load({ fetch }) {
+      const response = await fetch('/stories/ghost_stories');
+
+      const { stories } = await response.json();
+
+      return {
+          props: {
+              stories,
+          }
+      }
+  }
 </script>
 
 <script>
-	export let stories
+  export let stories;
 </script>
+
+<ul>
+  {#each stories as story}
+  <li><a href="/stories/{story.slug}">{story.title}</a></li>
+  {/each}
+</ul>
+
 
 <svelte:head>
 	<title>Edan Ben-Atar</title>
 </svelte:head>
-
 <div class="sm:pt-16 lg:pt-8 lg:pb-14">
     <div class="text-center">
       <h1
@@ -60,9 +62,3 @@
       </div>
     </div>
   </div>
-
-  <ul>
-	{#each stories as story}
-	<li><a href="/stories/{story.slug}">{story.title}</a></li>
-	{/each}
-	</ul>
