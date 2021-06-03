@@ -20,5 +20,4 @@ export async function load(ctx) {
     } catch(err) {
         console.log(err)
     }
-
 }
