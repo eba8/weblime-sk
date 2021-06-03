@@ -4,21 +4,21 @@ import dotenv from 'dotenv';
 dotenv.config();
 const {GHOST_KEY} = process.env
 
-export async function get() {    
+export const prerender = true;
+
+export async function load(ctx) {	
     const api = new GhostContentAPI({
         url: 'https://blog.weblime.com',
         key: GHOST_KEY,
         version: 'v3'
     })
+    let slug = ctx.page.params.slug
     try {
-        const jsonPosts = await api.posts.browse({limit: 4})
-        return { 
-            status: 200,
-            body:{
-                stories: jsonPosts
-            }
-        }
+        const post = await api.posts.read({slug}, {formats: ['json']})
+        console.log(post)
+        return {props: {"post": post}}
     } catch(err) {
         console.log(err)
     }
+
 }
