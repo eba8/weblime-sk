@@ -301,7 +301,7 @@
               <div class="mt-2">
                 <a
                   href="/stories/{story.slug}"
-                  class="text-base font-semibold text-lime-500 hover:text-lime-600"
+                  class="text-base font-semibold text-primary-500 hover:text-lime-600"
                 >
                   Read full story
                 </a>
