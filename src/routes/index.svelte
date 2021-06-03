@@ -263,10 +263,10 @@
     <div class="px-6 mt-40 mb-20 bg-white">
       <div class="overflow-hidden rounded-lg shadow-xl bg-primary-500">
         <div class="max-w-2xl px-6 py-16 mx-auto text-center sm:py-20">
-          <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+          <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             <span class="block">Boost your organization.</span>
           </h2>
-          <p class="mt-4 text-lg leading-6 text-gray-50">
+          <p class="mt-4 text-lg leading-6 text-gray-900">
             We deliver solutions that drive your business forward.
           </p>
           <a
