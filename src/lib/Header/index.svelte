@@ -5,13 +5,12 @@
 </script>
 
 <header>
-        <div class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-white">
+        <div class:theme-inner-pages={$page.path === '/solutions'} class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero">
 			<nav class="relative flex items-center justify-between px-4 mx-auto max-w-7xl sm:px-6" aria-label="Global">
 				<div class="flex items-center flex-1">
-					<div class="flex items-center justify-between w-full md:w-auto">
-						<!-- <a href="/"><img src={logo} alt="WebLimeLogo" /></a> -->
-						<a href="/">
-						<svg class="h-9 w-9 fill-current text-primary-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"
+					<div class="flex items-center text-skin-base justify-between w-full md:w-auto">
+						<a sveltekit:prefetch href="/" class:active={$page.path === '/'}>
+						<svg class="h-9 w-9 fill-current text-skin-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"
                         stroke="currentColor" aria-hidden="true">
 						<path
                     stroke-linecap="round"
@@ -31,7 +30,7 @@
 						</div>
 					</div>
 			<div class="hidden md:block md:ml-10 md:space-x-10">
-				<a href="/" class="font-medium text-gray-600 hover:text-gray-800">Solutions</a>
+				<a sveltekit:prefetch href="/solutions" class="font-medium text-gray-600 hover:text-gray-800" class:active={$page.path === '/solutions'}>Solutions</a>
 				<a href="/" class="font-medium text-gray-600 hover:text-gray-800">Portfolio</a>
 			</div>
 		</div>

@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root{
+    --color-text-base: #8b0000;
+    --color-text-muted: #c7c7c7;
+    --color-text-inverted: #4f46e5;
+    --color-hero-fill: theme('colors.white');
+    --color-button-accent: #ffffff;
+    --color-button-accent-hover: #eef2ff;
+    --color-button-muted: #6366f1;
+    --color-logo-fill: theme('colors.primary.500');
+    }
+    .theme-inner-pages {
+    --color-text-base: theme('colors.red.700');
+    --color-text-muted: #4f46e5;
+    --color-text-inverted: #4f46e5;
+    --color-hero-fill: theme('colors.primary.500');
+    --color-button-accent: #ffffff;
+    --color-button-accent-hover: #eef2ff;
+    --color-button-muted: #6366f1;
+    --color-logo-fill: theme('colors.white');
+    }
+}

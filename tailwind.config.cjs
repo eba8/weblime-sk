@@ -15,7 +15,23 @@ module.exports = {
 			white: colors.white,
 		},
 		extend: {
-		}
+			textColor: {
+				skin: {
+					base: 'var(--color-text-base)',
+					muted: 'var(--color-text-muted)',
+					inverted: 'var(--color-text-inverted)',
+					logo: 'var(--color-logo-fill)',
+				}
+			},
+			backgroundColor: {
+				skin: {
+					fill: 'var(--color-button-fill)',
+					hover: 'var(--color-button-hover)',
+					hero: 'var(--color-hero-fill)',
+				}
+			}
+		},
+		
 	},
 	plugins: [],
 };
