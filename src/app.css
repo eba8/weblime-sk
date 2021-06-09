@@ -36,4 +36,15 @@
         --color-button-muted: #6366f1;
         --color-logo-fill: theme('colors.primary.500');
         }
+    .theme-soft {
+        --color-text-base: theme('colors.gray.200');
+        --color-text-base-hover: theme('colors.white');
+        --color-text-muted: #4f46e5;
+        --color-text-inverted: #4f46e5;
+        --color-hero-fill: theme('colors.gray.50');
+        --color-button-accent: #ffffff;
+        --color-button-accent-hover: #eef2ff;
+        --color-button-muted: #6366f1;
+        --color-logo-fill: theme('colors.primary.500');
+        }
 }

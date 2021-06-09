@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	// import logo from './svelte-logo.svg';
 	let mobile_menu = false;
 </script>
 
@@ -44,9 +43,9 @@
 		</div>
 	</nav>
 	</div>
-	<!-- {#if mobile_menu }
+	{#if mobile_menu }
 	<div class="pt-2 pb-3 space-y-1">
 	  <li class="bg-gray-50 border-gray-500 text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium" class:active={$page.path === '/'}><a on:click = {()=>{mobile_menu = !mobile_menu}} sveltekit:prefetch href="/">Home</a></li>
 	</div>
-  {/if} -->
+  {/if}
 </header>
