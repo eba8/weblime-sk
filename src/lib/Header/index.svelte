@@ -5,7 +5,7 @@
 </script>
 
 <header>
-        <div class:theme-lime={$page.path === '/solutions'} class:theme-black={$page.path === '/portfolio'} class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero">
+        <div class:theme-lime={$page.path === '/solutions' } class:theme-black={$page.path === '/portfolio'} class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero">
 			<nav class="relative flex items-center justify-between px-4 mx-auto max-w-7xl sm:px-6" aria-label="Global">
 				<div class="flex items-center flex-1">
 					<div class="flex items-center text-skin-base justify-between w-full md:w-auto">
@@ -30,8 +30,8 @@
 						</div>
 					</div>
 			<div class="hidden md:block md:ml-10 md:space-x-10">
-				<a sveltekit:prefetch href="/solutions" class="font-medium text-gray-600 hover:text-gray-800" class:active={$page.path === '/solutions'}>Solutions</a>
-				<a sveltekit:prefetch href="/portfolio" class="font-medium text-gray-600 hover:text-gray-800" class:active={$page.path === '/portfolio'}>Portfolio</a>
+				<a sveltekit:prefetch href="/solutions" class="font-medium text-skin-base hover:text-skin-text-base-hover" class:active={$page.path === '/solutions'}>Solutions</a>
+				<a sveltekit:prefetch href="/portfolio" class="font-medium text-skin-base hover:text-skin-text-base-hover" class:active={$page.path === '/portfolio'}>Portfolio</a>
 			</div>
 		</div>
 		<div class="hidden text-right md:block">

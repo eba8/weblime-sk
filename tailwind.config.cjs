@@ -18,6 +18,7 @@ module.exports = {
 			textColor: {
 				skin: {
 					base: 'var(--color-text-base)',
+					'text-base-hover': 'var(--color-text-base-hover)',
 					muted: 'var(--color-text-muted)',
 					inverted: 'var(--color-text-inverted)',
 					logo: 'var(--color-logo-fill)',
