@@ -1,3 +1,8 @@
+
+<svelte:head>
+	<title>WebLime - Portfolio</title>
+</svelte:head>
+
 <main class="mx-auto">
     <!-- Hero section -->
     <div class="bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14">

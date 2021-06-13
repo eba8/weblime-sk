@@ -13,6 +13,11 @@
     }
 </script>
 
+<svelte:head>
+	<title>WebLime - Get In Touch</title>
+  <meta name="description" content="This is meta for get in touch" />
+</svelte:head>
+
 <main class="mx-auto">
     <!-- Hero section -->
     <div class="sm:pt-16 lg:pt-8 lg:pb-14">

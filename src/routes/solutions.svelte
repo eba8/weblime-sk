@@ -1,3 +1,10 @@
+
+<svelte:head>
+	<title>WebLime - Solutions</title>
+  <meta name="description" content="This is meta for solutions" />
+</svelte:head>
+
+
 <main class="mx-auto">
     <!-- Hero section -->
     <div class="bg-primary-500 sm:pt-16 lg:pt-8 lg:pb-14">

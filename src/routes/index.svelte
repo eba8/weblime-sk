@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>Edan Ben-Atar</title>
+	<title>WebLime - Web Development & Marketing</title>
 </svelte:head>
 
 <div class="sm:pt-16 lg:pt-8 lg:pb-14">
