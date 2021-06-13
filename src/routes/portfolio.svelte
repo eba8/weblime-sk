@@ -36,7 +36,7 @@
             </div>
             <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
               <div class="flex-1">
-                <a href="#" class="block mt-2">
+                <a href="/" class="block mt-2">
                   <p class="text-xl font-semibold text-gray-900">
                     Brock Insurance
                   </p>
@@ -96,7 +96,7 @@
             <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
               <div class="flex-1">
              
-                <a href="#" class="block mt-2">
+                <a href="/" class="block mt-2">
                   <p class="text-xl font-semibold text-gray-900">
                     Paws Between Homes
                   </p>
@@ -156,7 +156,7 @@
           <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
             <div class="flex-1">
            
-              <a href="#" class="block mt-2">
+              <a href="/" class="block mt-2">
                 <p class="text-xl font-semibold text-gray-900">
                   Inspired Accounting
                 </p>
