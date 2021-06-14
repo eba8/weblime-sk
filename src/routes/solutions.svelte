@@ -1,7 +1,7 @@
 
 <svelte:head>
 	<title>WebLime - Solutions</title>
-  <meta name="description" content="This is meta for solutions" />
+  <meta name="description" content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions." />
 </svelte:head>
 
 

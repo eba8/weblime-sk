@@ -15,7 +15,7 @@
 
 <svelte:head>
 	<title>WebLime - Get In Touch</title>
-  <meta name="description" content="This is meta for get in touch" />
+  <meta name="description" content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions.">
 </svelte:head>
 
 <main class="mx-auto">
