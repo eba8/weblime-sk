@@ -17,6 +17,12 @@
 	export let post;
   </script>
 
+<svelte:head>
+  <title>WebLime - {post.title}</title>
+  <meta property="og:description" content="{post.meta_description}">
+</svelte:head>
+
+
 <main class="mx-auto">
   <!-- Hero section -->
     <div class="sm:pt-16 lg:pt-8 lg:pb-14">

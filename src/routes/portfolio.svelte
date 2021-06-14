@@ -1,7 +1,7 @@
 
 <svelte:head>
 	<title>WebLime - Portfolio</title>
-  <meta name="description" content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions.">
+  <meta property="og:description" content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions.">
 </svelte:head>
 
 <main class="mx-auto">

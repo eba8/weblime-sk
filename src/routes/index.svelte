@@ -20,7 +20,8 @@
 
 <svelte:head>
 	<title>WebLime - Web Development & Marketing</title>
-  <meta name="description" content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions.">
+  <meta property="og:description" content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions.">
+  
 </svelte:head>
 
 <div class="sm:pt-16 lg:pt-8 lg:pb-14">

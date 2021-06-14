@@ -14,7 +14,7 @@ export async function get(request) {
     const api = new GhostContentAPI({ url: 'https://blog.weblime.com', key: GHOST_KEY, version: 'v3' })
 
     try {
-        const post = await api.posts.read({ slug }, { fields: ['title', 'html'] })
+        const post = await api.posts.read({ slug })
         return { body: { post: post } }
     } catch(err) {
         console.log(err)
