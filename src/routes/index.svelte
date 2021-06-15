@@ -49,7 +49,7 @@
         </div>
         <div class="mt-3 rounded-md sm:mt-0 sm:ml-3">
           <a
-            href="/"
+            href="/get-in-touch"
             class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-gray-800 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200 md:py-4 md:text-lg md:px-10"
           >
             Get In Touch
@@ -272,7 +272,7 @@
             We deliver solutions that drive your business forward.
           </p>
           <a
-            href="/"
+            href="/get-in-touch"
             class="inline-flex items-center justify-center w-full px-5 py-3 mt-8 text-base font-medium text-gray-700 bg-white border border-transparent rounded-md hover:bg-gray-100 sm:w-auto"
           >
             Let's work together!
