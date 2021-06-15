@@ -375,16 +375,16 @@
             <div class="mt-8 sm:flex">
               <div class="rounded-md">
                 <a
-                  href="/"
-                  class="flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-lime-500 hover:bg-lime-600"
+                  href="/portfolio"
+                  class="flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-primary-500 hover:bg-primary-600"
                 >
                   Portfolio
                 </a>
               </div>
               <div class="mt-3 sm:mt-0 sm:ml-3">
                 <a
-                  href="/"
-                  class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-lime-100 text-lime-600 bg-lime-100 hover:bg-lime-200"
+                  href="/get-in-touch"
+                  class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-primary-100 text-primary-600 bg-primary-100 hover:bg-primary-200"
                 >
                   Get In Touch
                 </a>
