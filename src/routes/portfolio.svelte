@@ -379,7 +379,7 @@
               <div class="mt-4 text-lg text-gray-600">Unleash your potential. We deliver solutions that drive your business forward. Embark on a digital transformation today.</div>
             </div>
             <div class="mt-6 rounded-md lg:mt-0 lg:ml-10 lg:flex-shrink-0">
-              <a href="/" class="flex items-center justify-center px-5 py-3 text-base font-medium text-white rounded-md bg-primary-500 hover:bg-primary-600">
+              <a href="/get-in-touch" class="flex items-center justify-center px-5 py-3 text-base font-medium text-white rounded-md bg-primary-500 hover:bg-primary-600">
                 Get Started
               </a>
             </div>
