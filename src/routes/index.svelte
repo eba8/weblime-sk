@@ -41,7 +41,7 @@
       <div class="max-w-md mx-auto mt-5 sm:flex sm:justify-center md:mt-8">
         <div class="rounded-md">
           <a
-            href="/"
+            href="/solutions"
             class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-gray-800 border border-transparent rounded-md bg-primary-500 hover:bg-primary-400 md:py-4 md:text-lg md:px-10"
           >
             Solutions
