@@ -36,7 +36,7 @@
 		<div class="hidden text-right md:block">
 			<span class="inline-flex rounded-md">
 				<a sveltekit:prefetch href="/get-in-touch"
-					class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-gray-800 bg-primary-500" class:active={$page.path ==='/get-in-touch'}>
+					class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-gray-900 bg-primary-500" class:active={$page.path ==='/get-in-touch'}>
 					Get In Touch
 				</a>
 			</span>
