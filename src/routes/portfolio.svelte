@@ -27,7 +27,7 @@
           WordPress
         </h2>
         <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-500 sm:mt-4">
-          40% of the web uses WordPress, form hobby blogs to the biggest news sites online.
+          41% of the web uses WordPress, form hobby blogs to the biggest news sites online.
         </p>
       </div>
       <div class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none">
