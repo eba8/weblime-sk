@@ -6,10 +6,9 @@ const {GHOST_KEY} = process.env
 
 export const prerender = true;
 
-export async function get(request) {
-  const query = request.query
-  if (query.has('slug')) {
-    const slug = query.get('slug')
+export async function get({ params }) {
+  
+    const { slug } = params
 
     const api = new GhostContentAPI({ url: 'https://blog.weblime.com', key: GHOST_KEY, version: 'v3' })
 
@@ -19,7 +18,4 @@ export async function get(request) {
     } catch(err) {
         console.log(err)
     }
-
-  } else { return { body: "Must specify a ?slug=" } }
-
 }

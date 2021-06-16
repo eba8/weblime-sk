@@ -2,7 +2,7 @@
 	export const prerender = true;
   
 	export async function load({ page, fetch }) {
-      const response = await fetch(`/stories/ghost_story?slug=${page.params.slug}`);
+      const response = await fetch(`/stories/${page.params.slug}.json`);
       const { post } = await response.json();
 		
       return {
