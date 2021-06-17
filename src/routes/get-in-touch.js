@@ -12,8 +12,6 @@ export async function post(request) {
     // const body = JSON.parse(request.body)
     const { first_name, last_name } = request.body;
 
-    // //console.log(body)
-
     const data = {
     from: 'Excited User <me@samples.mailgun.org>',
     to: 'bigeba8@gmail.com, bar@example.com',

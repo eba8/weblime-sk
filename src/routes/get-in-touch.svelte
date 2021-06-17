@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
     let first_name;
     let last_name;
 
@@ -11,7 +11,8 @@
             body: JSON.stringify({ first_name, last_name }) // body data type must match "Content-Type" header
         })
     }
-</script>
+    on:submit|preventDefault={handleSubmit}
+</script> -->
 
 <svelte:head>
 	<title>WebLime - Get In Touch</title>
@@ -39,20 +40,20 @@
     If there's something we can help you with, just let us know. We'll be more
     than happy to offer you our help.
   </p>
-  <form on:submit|preventDefault={handleSubmit} class="space-y-3" method="POST" action="" id="form-contact">
+  <form class="space-y-3" method="POST" action="https://formspree.io/f/mdoyzwpa" id="form-contact">
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="text"
       name="first_name"
       placeholder="First Name"
-      bind:value={first_name}
+   
     />
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="text"
       name="last_name"
       placeholder="Last Name"
-      bind:value={last_name}
+   
     />
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
