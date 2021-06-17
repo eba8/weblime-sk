@@ -80,10 +80,10 @@
 			</div>
 		  </div>
 		  <div class="px-2 pt-2 pb-3 space-y-1">
-			<a href="/solutions" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">Solutions</a>
-			<a href="/portfolio" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">Portfolio</a>
+			<a on:click = {()=>{mobile_menu = !mobile_menu}} href="/solutions" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">Solutions</a>
+			<a on:click = {()=>{mobile_menu = !mobile_menu}} href="/portfolio" class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50">Portfolio</a>
 		  </div>
-		  <a href="/get-in-touch" class="block w-full px-5 py-3 rounded-b-md font-medium text-center text-primary-600 bg-gray-100 hover:bg-gray-100">
+		  <a on:click = {()=>{mobile_menu = !mobile_menu}} href="/get-in-touch" class="block w-full px-5 py-3 rounded-b-md font-medium text-center text-primary-600 bg-gray-100 hover:bg-gray-100">
 			Get In Touch
 		  </a>
 		</div>
