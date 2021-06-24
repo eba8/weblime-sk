@@ -301,11 +301,10 @@
               <p class="mt-2 text-base text-gray-500">{ story.excerpt }</p>
 
               <div class="mt-2">
-                <a
-                  href="/stories/{story.slug}"
-                  class="text-base font-semibold text-primary-600 hover:text-lime-600"
-                >
-                  Read full story
+                <a href="/stories/{story.slug}" class="inline-block">
+                  <span class="inline-flex items-center px-3 py-0.5 rounded-md text-sm font-medium bg-primary-500 text-gray-900">
+                    Read full story
+                  </span>
                 </a>
               </div>
             </div>
