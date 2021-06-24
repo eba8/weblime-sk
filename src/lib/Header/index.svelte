@@ -10,7 +10,7 @@
 					<div class="flex items-center text-skin-base justify-between w-full md:w-auto">
 						<a sveltekit:prefetch href="/" class:active={$page.path === '/'}>
 						<svg class="h-9 w-9 fill-current text-skin-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250"
-                        stroke="currentColor" aria-hidden="true">
+                        stroke="currentColor">
 						<path
                     stroke-linecap="round"
                     stroke-linejoin="round"
