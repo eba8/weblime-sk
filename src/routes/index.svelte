@@ -77,7 +77,7 @@
                     />
                   </div>
                   <h2
-                    class="mt-8 font-medium tracking-tight text-gray-900"
+                    class="mt-8 font-medium text-xl tracking-tight text-gray-900"
                   >
                     Unleash your creativity
                   </h2>
@@ -101,7 +101,7 @@
                     />
                   </div>
                   <h2
-                    class="mt-8 font-medium tracking-tight text-gray-900"
+                    class="mt-8 font-medium text-xl tracking-tight text-gray-900"
                   >
                     Get more results
                   </h2>
@@ -125,7 +125,7 @@
                     />
                   </div>
                   <h2
-                    class="mt-8 font-medium tracking-tight text-gray-900"
+                    class="mt-8 font-medium text-xl tracking-tight text-gray-900"
                   >
                     Grow your audience
                   </h2>
@@ -151,6 +151,7 @@
         >
           Driven By Creativity And Passion
         </h3>
+        
         <p class="mt-3 text-lg text-gray-500">
           We are passionate about technology and focus on integrating the latest
           advancements into your business to propel substantial growth.
@@ -251,7 +252,6 @@
           </div>
         </dl>
       </div>
-
       <div class="relative mt-10 lg:mt-0" aria-hidden="true">
         <img
           class="relative mx-auto"
@@ -313,9 +313,3 @@
       </div>
     </div>
   </div>
-<!--   
-  <ul>
-  {#each stories as story}
-  <li><a href="/stories/{story.slug}">{story.title}</a></li>
-  {/each}
-</ul> -->
