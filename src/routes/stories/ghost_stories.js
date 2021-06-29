@@ -6,9 +6,9 @@ const {GHOST_KEY} = process.env
 
 export async function get() {    
     const api = new GhostContentAPI({
-        url: 'https://blog.weblime.com',
+        url: 'https://weblime-blog.herokuapp.com',
         key: GHOST_KEY,
-        version: 'v3'
+        version: 'v4'
     })
     try {
         const jsonPosts = await api.posts.browse({limit: 4})

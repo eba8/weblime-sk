@@ -10,7 +10,7 @@ export async function get({ params }) {
   
     const { slug } = params
 
-    const api = new GhostContentAPI({ url: 'https://blog.weblime.com', key: GHOST_KEY, version: 'v3' })
+    const api = new GhostContentAPI({ url: 'https://weblime-blog.herokuapp.com', key: GHOST_KEY, version: 'v4' })
 
     try {
         const post = await api.posts.read({ slug })
