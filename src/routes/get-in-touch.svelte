@@ -46,20 +46,21 @@
       type="text"
       name="first_name"
       placeholder="First Name"
-   
+      required
     />
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="text"
       name="last_name"
       placeholder="Last Name"
-   
+      required
     />
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="email"
       name="email"
       placeholder="Email"
+      required
     />
     
     
@@ -68,6 +69,7 @@
       type="tel"
       name="phone"
       placeholder="Phone number"
+      required
     />
     <textarea
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
@@ -76,6 +78,7 @@
       cols="30"
       rows="5"
       placeholder="Tell us what we can help you with!"
+      required
     ></textarea>
     <button
       class="w-full px-6 py-3 mt-6 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
