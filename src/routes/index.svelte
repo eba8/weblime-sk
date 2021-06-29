@@ -211,7 +211,7 @@
                 </svg>
               </div>
               <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-                Ecommerce
+                E-commerce
               </p>
             </dt>
             <dd class="mt-2 ml-16 text-base text-gray-500">
