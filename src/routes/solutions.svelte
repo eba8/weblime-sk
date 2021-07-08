@@ -157,7 +157,7 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-lime-500"
+                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
                   >
                     <!-- Heroicon name: outline/globe-alt -->
                     <svg
@@ -189,7 +189,7 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-lime-500"
+                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
                   >
                     <!-- Heroicon name: outline/lightning-bolt -->
                     <svg
@@ -221,7 +221,7 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-lime-500"
+                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
                   >
                     <!-- Heroicon name: lock-closed -->
                     <svg
@@ -280,7 +280,7 @@
                 <div class="relative">
                   <dt>
                     <div
-                      class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-lime-500"
+                      class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
                     >
                       <!-- Heroicon name: outline/annotation -->
                       <svg
@@ -313,7 +313,7 @@
                 <div class="relative">
                   <dt>
                     <div
-                      class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-lime-500"
+                      class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
                     >
                       <!-- Heroicon name: outline/mail -->
                       <svg
@@ -376,7 +376,7 @@
               <div class="rounded-md">
                 <a
                   href="/portfolio"
-                  class="flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-primary-500 hover:bg-primary-600"
+                  class="flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-transparent rounded-md bg-primary-500 hover:bg-primary-600"
                 >
                   Portfolio
                 </a>
@@ -384,7 +384,7 @@
               <div class="mt-3 sm:mt-0 sm:ml-3">
                 <a
                   href="/get-in-touch"
-                  class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-primary-100 text-primary-600 bg-primary-100 hover:bg-primary-200"
+                  class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-primary-100 text-white bg-gray-900 hover:bg-primary-200"
                 >
                   Get In Touch
                 </a>
