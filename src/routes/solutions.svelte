@@ -12,7 +12,7 @@
         <h1
           class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
         >
-          <span class="block xl:inline">EVerything you need in </span>
+          <span class="block xl:inline">Everything you need in </span>
           <span class="block text-white xl:inline">one place.</span>
         </h1>
       </div>
