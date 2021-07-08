@@ -41,7 +41,7 @@
               >
                 <img
                   class="w-24 h-24"
-                  src="svg/Tea-01.svg"
+                  src="/svg/Tea-01.svg"
                   alt=""
                 />
               </span>
@@ -63,7 +63,7 @@
               >
                 <img
                   class="w-24 h-24"
-                  src="svg/Cog_Wheels-01.svg"
+                  src="/svg/Cog_Wheels-01.svg"
                   alt=""
                 />
               </span>
@@ -106,7 +106,7 @@
               >
                 <img
                   class="w-24 h-24"
-                  src="svg/Ballance-01.svg"
+                  src="/svg/Ballance-01.svg"
                   alt=""
                 />
               </span>
