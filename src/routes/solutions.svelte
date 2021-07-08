@@ -357,7 +357,10 @@
         </div>
       </div>
     </div>
+
+    <script data-widget-id="b766b6532d39255f50074860000e1f2df242bd99" src="https://www.local-marketing-reports.com/m/assets-v2/lead-gen/js/external/widget-builder.js"></script>
   
+    
     <!-- Emerging Techonlogies section -->
     <div class="bg-white">
       <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
@@ -384,7 +387,7 @@
               <div class="mt-3 sm:mt-0 sm:ml-3">
                 <a
                   href="/get-in-touch"
-                  class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-primary-100 text-white bg-gray-900 hover:bg-primary-200"
+                  class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-gray-900 text-white bg-gray-900 hover:bg-gray-800"
                 >
                   Get In Touch
                 </a>
