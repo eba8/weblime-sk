@@ -6,7 +6,7 @@
       const { post } = await response.json();
       return {
           props: {
-              post: post.posts[0],
+              post,
           }
       }
   }
