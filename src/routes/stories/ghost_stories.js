@@ -11,7 +11,7 @@ export async function get() {
         version: 'v4'
     })
     try {
-        const jsonPosts = await api.posts.browse()
+        const jsonPosts = await api.posts.browse({limit: 'all'})
         return { 
             status: 200,
             body:{
