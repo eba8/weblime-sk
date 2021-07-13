@@ -309,6 +309,20 @@
               </div>
             </div>
           {/each}
+          {#each stories.slice(4) as story}
+          <div class="hidden">
+            <p class="text-xl font-semibold text-gray-900">{ story.title }</p>
+            <p class="mt-2 text-base text-gray-500">{ story.excerpt }</p>
+
+            <div class="mt-2">
+              <a href="/stories/{story.slug}" class="inline-block">
+                <span class="inline-flex items-center px-3 py-0.5 rounded-md text-sm font-medium bg-primary-500 text-gray-900">
+                  Read full story
+                </span>
+              </a>
+            </div>
+          </div>
+        {/each}
         </div>
       </div>
     </div>
