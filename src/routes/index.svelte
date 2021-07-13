@@ -295,7 +295,7 @@
         <div
           class="grid grid-rows-4 gap-5 pt-10 mt-6 lg:grid-rows-2 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
         >
-          {#each stories as story}
+          {#each stories.slice(0,4) as story}
             <div>
               <p class="text-xl font-semibold text-gray-900">{ story.title }</p>
               <p class="mt-2 text-base text-gray-500">{ story.excerpt }</p>
