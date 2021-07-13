@@ -4,10 +4,9 @@
 	export async function load({ page, fetch }) {
       const response = await fetch(`/stories/${page.params.slug}.json`);
       const { post } = await response.json();
-		
       return {
           props: {
-              post,
+              post: post.posts[0],
           }
       }
   }
