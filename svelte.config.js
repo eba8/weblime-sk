@@ -1,6 +1,8 @@
 import adapterStatic from '@sveltejs/adapter-static'
 import preprocess from "svelte-preprocess";
+import pages from './src/utils/routelist.js'
 /** @type {import('@sveltejs/kit').Config} */
+
 const config = {
 	preprocess: [
 		preprocess({
@@ -11,6 +13,12 @@ const config = {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
 		adapter: adapterStatic(),
+		prerender: {
+			crawl: true,
+          	enabled: true,
+            force: true,
+            pages: [...pages]
+		}
 	}
 };
 
