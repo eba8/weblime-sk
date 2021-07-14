@@ -2,14 +2,11 @@
     let name;
     let email;
     let message;
+    let display_message=false;
 
     async function handleSubmit() {
-      console.log('you in!')
         const res = await fetch("https://weblime-email.edan.workers.dev",  {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            // headers: {
-            // 'Content-Type': 'application/json'
-            // },
             body: JSON.stringify({
               "name": name,
               "eml": email,
@@ -17,6 +14,7 @@
               "eml2": ""
               }) // body data type must match "Content-Type" header
         })
+        display_message = (res.status == 200) ? true : false ;
     }
 </script>
 
@@ -84,6 +82,9 @@
     >
       Send your message
     </button>
+    {#if display_message === true}
+      <p>Your message has been sent!</p>
+    {/if}
   </form>
 </div>
 
