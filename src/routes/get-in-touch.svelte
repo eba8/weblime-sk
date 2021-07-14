@@ -1,18 +1,23 @@
-<!-- <script>
+<script>
     let first_name;
     let last_name;
 
     async function handleSubmit() {
-        const res = await fetch("/get-in-touch",  {
+      console.log('you in!')
+        const res = await fetch("https://weblime-email.edan.workers.dev",  {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ first_name, last_name }) // body data type must match "Content-Type" header
+            // headers: {
+            // 'Content-Type': 'application/json'
+            // },
+            body: JSON.stringify({
+              "name": "edan",
+              "eml": "bigeba8@gmail.com",
+              "message": "message",
+              "eml2": ""
+              }) // body data type must match "Content-Type" header
         })
     }
-    on:submit|preventDefault={handleSubmit}
-</script> -->
+</script>
 
 <svelte:head>
 	<title>WebLime - Get In Touch</title>
@@ -40,48 +45,38 @@
     If there's something we can help you with, just let us know. We'll be more
     than happy to offer you our help.
   </p>
-  <form class="space-y-3" method="POST" action="https://formspree.io/f/mdoyzwpa" id="form-contact">
+  <form on:submit|preventDefault={handleSubmit} class="space-y-3" method="POST" id="form-contact">
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="text"
-      name="first_name"
-      placeholder="First Name"
-      required
-    />
-    <input
-      class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
-      type="text"
-      name="last_name"
-      placeholder="Last Name"
+      name="name"
+      placeholder="Name"
       required
     />
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="email"
-      name="email"
+      name="eml"
       placeholder="Email"
-      required
-    />
-    
-    
-    <input
-      class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
-      type="tel"
-      name="phone"
-      placeholder="Phone number"
       required
     />
     <textarea
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       name="message"
-      id=""
       cols="30"
       rows="5"
       placeholder="Tell us what we can help you with!"
       required
     ></textarea>
-    <button
-      class="w-full px-6 py-3 mt-6 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
+
+    <input
+      class="hidden w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+      type="tel"
+      name="eml2"
+      placeholder=""
+      value=""
+    />
+    <button class="w-full px-6 py-3 mt-6 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
     >
       Send your message
     </button>
