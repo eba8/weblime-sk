@@ -1,6 +1,7 @@
 <script>
-    let first_name;
-    let last_name;
+    let name;
+    let email;
+    let message;
 
     async function handleSubmit() {
       console.log('you in!')
@@ -10,9 +11,9 @@
             // 'Content-Type': 'application/json'
             // },
             body: JSON.stringify({
-              "name": "edan",
-              "eml": "bigeba8@gmail.com",
-              "message": "message",
+              "name": name,
+              "eml": email,
+              "message": message,
               "eml2": ""
               }) // body data type must match "Content-Type" header
         })
@@ -52,6 +53,7 @@
       name="name"
       placeholder="Name"
       required
+      bind:value={name}
     />
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
@@ -59,6 +61,7 @@
       name="eml"
       placeholder="Email"
       required
+      bind:value={email}
     />
     <textarea
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
@@ -67,6 +70,7 @@
       rows="5"
       placeholder="Tell us what we can help you with!"
       required
+      bind:value={message}
     ></textarea>
 
     <input
