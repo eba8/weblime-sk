@@ -1,7 +1,9 @@
 <script>
+  
     let name;
     let email;
     let message;
+    let honeypot = "";
     let display_message=false;
 
     async function handleSubmit() {
@@ -11,7 +13,7 @@
               "name": name,
               "eml": email,
               "message": message,
-              "eml2": ""
+              "eml2": honeypot
               }) // body data type must match "Content-Type" header
         })
         display_message = (res.status == 200) ? true : false ;
@@ -76,7 +78,7 @@
       type="tel"
       name="eml2"
       placeholder=""
-      value=""
+      bind:value={honeypot}
     />
     <button class="w-full px-6 py-3 mt-6 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
     >
