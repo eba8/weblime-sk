@@ -1,5 +1,6 @@
 <script>
-  
+    import { fade } from 'svelte/transition';
+
     let name;
     let email;
     let message;
@@ -103,7 +104,10 @@
       Send your message
     </button>
     {#if display_message === true}
-      <p class="sm:col-span-6 px-6 py-3 bg-primary-500 text-gray-800 text-center rounded-md">Your message has been sent!</p>
+      <div transition:fade class="sm:col-span-6 px-6 py-3 bg-primary-500 text-gray-800 text-center rounded-md
+      ">    
+        <p>Your message has been sent!</p>
+      </div>
     {/if}
   </div>
   </form>
