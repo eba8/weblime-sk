@@ -4,6 +4,7 @@
     let email;
     let message;
     let honeypot = "";
+    let phone;
     let display_message=false;
 
     async function handleSubmit() {
@@ -13,7 +14,8 @@
               "name": name,
               "eml": email,
               "message": message,
-              "eml2": honeypot
+              "eml2": honeypot,
+              "phone": phone
               }) // body data type must match "Content-Type" header
         })
         display_message = (res.status == 200) ? true : false ;
@@ -46,8 +48,10 @@
     If there's something we can help you with, just let us know. We'll be more
     than happy to offer you our help.
   </p>
-  <form on:submit|preventDefault={handleSubmit} class="space-y-3" method="POST" id="form-contact">
-    <input
+  <form on:submit|once|preventDefault={handleSubmit} class="space-y-3" method="POST" id="form-contact">
+    <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+      <div class="sm:col-span-6">
+      <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="text"
       name="name"
@@ -55,6 +59,8 @@
       required
       bind:value={name}
     />
+  </div>
+  <div class="sm:col-span-3">
     <input
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="email"
@@ -63,6 +69,18 @@
       required
       bind:value={email}
     />
+  </div>
+  <div class="sm:col-span-3">
+    <input
+    class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+    type="tel"
+    name="phone"
+    placeholder="Phone"
+    required
+    bind:value={phone}
+  />
+</div>
+<div class="sm:col-span-6">
     <textarea
       class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       name="message"
@@ -72,7 +90,7 @@
       required
       bind:value={message}
     ></textarea>
-
+  </div>
     <input
       class="hidden w-full px-4 py-2 border border-gray-200 rounded-md border-1"
       type="tel"
@@ -80,14 +98,16 @@
       placeholder=""
       bind:value={honeypot}
     />
-    <button class="w-full px-6 py-3 mt-6 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
+    <button class="sm:col-span-6 px-6 py-3 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
     >
       Send your message
     </button>
     {#if display_message === true}
-      <p>Your message has been sent!</p>
+      <p class="sm:col-span-6 px-6 py-3 bg-primary-500 text-gray-800 text-center rounded-md">Your message has been sent!</p>
     {/if}
+  </div>
   </form>
+
 </div>
 
 
