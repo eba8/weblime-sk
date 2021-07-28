@@ -4,12 +4,18 @@
     local: '499',
     seo: '999',
     growth: '1,999',
+    local_link: 'https://buy.stripe.com/3cs7ufdUPf2yefmcMM',
+    seo_link: 'https://buy.stripe.com/aEUaGr5oj3jQc7e9AD',
+    growth_link: 'https://buy.stripe.com/28oeWH2c79Ie4EMeUY',
   };
 
   let yearly_packages = {
     local: '5,499',
     seo: '10,999',
     growth: '21,999',
+    local_link: 'https://buy.stripe.com/aEUcOzeYT1bI2wEbIJ',
+    seo_link: 'https://buy.stripe.com/dR6bKvg2X07Egnu4gi',
+    growth_link: 'https://buy.stripe.com/bIY3dZ4kf5rY2wEeUZ',
   };
 </script>
 
@@ -84,7 +90,9 @@
               >
             </p>
             <a
-              href="/"
+              href={plan === 'monthly'
+                ? monthly_packages.local_link
+                : yearly_packages.local_link}
               class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >Subscribe to Local</a
             >
@@ -174,7 +182,9 @@
               >
             </p>
             <a
-              href="/"
+              href={plan === 'monthly'
+                ? monthly_packages.seo_link
+                : yearly_packages.seo_link}
               class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >Subscribe to SEO</a
             >
@@ -294,9 +304,11 @@
               >
             </p>
             <a
-              href="/"
+              href={plan === 'monthly'
+                ? monthly_packages.growth_link
+                : yearly_packages.growth_link}
               class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-              >Subscribe to SEO+</a
+              >Subscribe to Growth</a
             >
           </div>
           <div class="pt-6 pb-8 px-6">
