@@ -1,15 +1,15 @@
 <script>
   let plan = 'monthly';
   let monthly_packages = {
-    local: 499,
-    seo: 999,
-    growth: 1999,
+    local: '499',
+    seo: '999',
+    growth: '1,999',
   };
 
   let yearly_packages = {
-    local: 555,
-    seo: 888,
-    growth: 2222,
+    local: '5,499',
+    seo: '10,999',
+    growth: '21,999',
   };
 </script>
 
@@ -35,6 +35,13 @@
   <div class="bg-gradient-to-b from-white to-gray-50 pb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="sm:flex sm:flex-col sm:align-center">
+        <div class="relative mt-6 self-center">
+          <span
+            class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-primary-200 text-gray-900"
+          >
+            Save 8% on yearly plans
+          </span>
+        </div>
         <div
           class="relative mt-6 bg-gray-100 rounded-lg p-0.5 flex self-center sm:mt-8"
         >
@@ -157,7 +164,11 @@
             </h2>
 
             <p class="mt-8 text-center">
-              <span class="text-4xl font-extrabold text-gray-900">$999</span>
+              <span class="text-4xl font-extrabold text-gray-900"
+                >${plan === 'monthly'
+                  ? monthly_packages.seo
+                  : yearly_packages.seo}</span
+              >
               <span class="text-base font-medium text-gray-500"
                 >{plan === 'monthly' ? 'a month.' : 'a year.'}</span
               >
@@ -273,7 +284,11 @@
               Growth
             </h2>
             <p class="mt-8 text-center">
-              <span class="text-4xl font-extrabold text-gray-900">$1999</span>
+              <span class="text-4xl font-extrabold text-gray-900"
+                >${plan === 'monthly'
+                  ? monthly_packages.growth
+                  : yearly_packages.growth}</span
+              >
               <span class="text-base font-medium text-gray-500"
                 >{plan === 'monthly' ? 'a month.' : 'a year.'}</span
               >
