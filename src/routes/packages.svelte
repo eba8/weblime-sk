@@ -37,7 +37,7 @@
       <div class="sm:flex sm:flex-col sm:align-center">
         <div class="relative mt-6 self-center">
           <span
-            class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-primary-200 text-gray-900"
+            class="inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-primary-200 text-gray-900 uppercase"
           >
             Save 8% on yearly plans
           </span>
