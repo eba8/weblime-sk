@@ -1,19 +1,18 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ]
-  }
-  ```
--->
+<script>
+  let plan = 'monthly';
+  let monthly_packages = {
+    local: 499,
+    seo: 999,
+    growth: 1999,
+  };
+
+  let yearly_packages = {
+    local: 555,
+    seo: 888,
+    growth: 2222,
+  };
+</script>
+
 <div class="bg-white">
   <!-- Hero -->
   <div class=" sm:pt-16 lg:pt-8 lg:pb-14">
@@ -40,13 +39,19 @@
           class="relative mt-6 bg-gray-100 rounded-lg p-0.5 flex self-center sm:mt-8"
         >
           <button
+            on:click={() => (plan = 'monthly')}
             type="button"
-            class="relative bg-white border-gray-200 rounded-md shadow-sm py-2 w-1/2 text-sm font-medium text-gray-900 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary-500 focus:z-10 sm:w-auto sm:px-8"
+            class="{plan === 'monthly'
+              ? 'bg-white border-gray-200 rounded-md shadow-sm text-gray-900'
+              : 'text-gray-700'} relative py-2 w-1/2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8"
             >Monthly billing</button
           >
           <button
+            on:click={() => (plan = 'yearly')}
             type="button"
-            class="ml-0.5 relative border border-transparent rounded-md py-2 w-1/2 text-sm font-medium text-gray-700 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary-500 focus:z-10 sm:w-auto sm:px-8"
+            class="{plan === 'yearly'
+              ? 'bg-white border-gray-200 rounded-md shadow-sm text-gray-900'
+              : 'text-gray-700'} ml-0.5 relative rounded-md py-2 w-1/2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8"
             >Yearly billing</button
           >
         </div>
@@ -62,8 +67,14 @@
               Local
             </h2>
             <p class="mt-8 text-center">
-              <span class="text-4xl font-extrabold text-gray-900">$499</span>
-              <span class="text-base font-medium text-gray-500">/mo</span>
+              <span class="text-4xl font-extrabold text-gray-900"
+                >${plan === 'monthly'
+                  ? monthly_packages.local
+                  : yearly_packages.local}</span
+              >
+              <span class="text-base font-medium text-gray-500"
+                >/{plan === 'monthly' ? 'mo' : 'annual'}</span
+              >
             </p>
             <a
               href="/"
