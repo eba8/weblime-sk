@@ -73,12 +73,12 @@
                   : yearly_packages.local}</span
               >
               <span class="text-base font-medium text-gray-500"
-                >/{plan === 'monthly' ? 'mo' : 'annual'}</span
+                >{plan === 'monthly' ? 'a month.' : 'a year.'}</span
               >
             </p>
             <a
               href="/"
-              class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
+              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
               >Subscribe to Local</a
             >
           </div>
@@ -92,7 +92,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -111,7 +111,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -130,7 +130,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -155,13 +155,16 @@
             <h2 class="text-lg leading-6 font-medium text-center text-gray-900">
               SEO
             </h2>
+
             <p class="mt-8 text-center">
               <span class="text-4xl font-extrabold text-gray-900">$999</span>
-              <span class="text-base font-medium text-gray-500">/mo</span>
+              <span class="text-base font-medium text-gray-500"
+                >{plan === 'monthly' ? 'a month.' : 'a year.'}</span
+              >
             </p>
             <a
               href="/"
-              class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
+              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
               >Subscribe to SEO</a
             >
           </div>
@@ -175,7 +178,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -195,7 +198,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -215,7 +218,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -232,7 +235,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -253,19 +256,31 @@
         </div>
 
         <div
-          class="border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"
+          class="border border-primary-500 rounded-lg shadow-sm divide-y divide-gray-200"
         >
+          <div class="absolute inset-x-0">
+            <div class="flex justify-center transform -translate-y-1/2">
+              <span
+                class="inline-flex rounded-full bg-primary-500 px-4 py-1 text-sm font-semibold tracking-wider uppercase text-gray-900"
+              >
+                Most popular
+              </span>
+            </div>
+          </div>
+
           <div class="p-6">
             <h2 class="text-lg leading-6 font-medium text-center text-gray-900">
               Growth
             </h2>
             <p class="mt-8 text-center">
               <span class="text-4xl font-extrabold text-gray-900">$1999</span>
-              <span class="text-base font-medium text-gray-500">/mo</span>
+              <span class="text-base font-medium text-gray-500"
+                >{plan === 'monthly' ? 'a month.' : 'a year.'}</span
+              >
             </p>
             <a
               href="/"
-              class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
+              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
               >Subscribe to SEO+</a
             >
           </div>
@@ -279,7 +294,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -299,7 +314,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -319,7 +334,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -337,7 +352,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -356,7 +371,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -384,12 +399,12 @@
               Enterprise
             </h2>
             <p class="mt-8 text-center">
-              <span class="text-4xl font-extrabold text-gray-900">Custom</span>
+              <span class="text-4xl font-extrabold text-gray-900">Quote</span>
             </p>
             <a
               sveltekit:prefetch
               href="/get-in-touch"
-              class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
+              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
               >Request Quote</a
             >
           </div>
@@ -403,7 +418,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -423,7 +438,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -443,7 +458,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -461,7 +476,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -478,7 +493,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -497,7 +512,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -514,7 +529,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
@@ -531,7 +546,7 @@
               <li class="flex space-x-3">
                 <!-- Heroicon name: solid/check -->
                 <svg
-                  class="flex-shrink-0 h-5 w-5 text-secondary-500"
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
