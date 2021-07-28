@@ -66,7 +66,7 @@
               <span class="text-base font-medium text-gray-500">/mo</span>
             </p>
             <a
-              href="#"
+              href="/"
               class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
               >Subscribe to Local</a
             >
@@ -149,7 +149,7 @@
               <span class="text-base font-medium text-gray-500">/mo</span>
             </p>
             <a
-              href="#"
+              href="/"
               class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
               >Subscribe to SEO</a
             >
@@ -246,14 +246,14 @@
         >
           <div class="p-6">
             <h2 class="text-lg leading-6 font-medium text-center text-gray-900">
-              SEO+
+              Growth
             </h2>
             <p class="mt-8 text-center">
               <span class="text-4xl font-extrabold text-gray-900">$1999</span>
               <span class="text-base font-medium text-gray-500">/mo</span>
             </p>
             <a
-              href="#"
+              href="/"
               class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
               >Subscribe to SEO+</a
             >
@@ -376,7 +376,8 @@
               <span class="text-4xl font-extrabold text-gray-900">Custom</span>
             </p>
             <a
-              href="#"
+              sveltekit:prefetch
+              href="/get-in-touch"
               class="mt-8 block w-full bg-primary-600 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-primary-700"
               >Request Quote</a
             >
@@ -551,7 +552,7 @@
         </h2>
         <p class="text-lg text-gray-500">
           Can’t find the answer you’re looking for? Reach out to our <a
-            href="#"
+            href="/"
             class="font-medium text-primary-600 hover:text-primary-500"
             >customer support</a
           > team.
