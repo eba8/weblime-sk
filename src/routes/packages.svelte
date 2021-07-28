@@ -641,9 +641,10 @@
         </h2>
         <p class="text-lg text-gray-500">
           Can’t find the answer you’re looking for? Reach out to our <a
-            href="/"
+            sveltekit:prefetch
+            href="/get-in-touch"
             class="font-medium text-primary-600 hover:text-primary-500"
-            >customer support</a
+            class:active={$page.path === '/get-in-touch'}>customer support</a
           > team.
         </p>
       </div>
