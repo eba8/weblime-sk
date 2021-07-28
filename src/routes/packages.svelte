@@ -5,19 +5,19 @@
   let monthly_packages = {
     local: '499',
     seo: '999',
-    growth: '1,999',
+    growth: '2,999',
     local_link: 'https://buy.stripe.com/3cs7ufdUPf2yefmcMM',
     seo_link: 'https://buy.stripe.com/aEUaGr5oj3jQc7e9AD',
-    growth_link: 'https://buy.stripe.com/28oeWH2c79Ie4EMeUY',
+    growth_link: 'https://buy.stripe.com/00g8yj183f2y0ow6ou',
   };
 
   let yearly_packages = {
     local: '5,499',
     seo: '10,999',
-    growth: '21,999',
+    growth: '33,099',
     local_link: 'https://buy.stripe.com/aEUcOzeYT1bI2wEbIJ',
     seo_link: 'https://buy.stripe.com/dR6bKvg2X07Egnu4gi',
-    growth_link: 'https://buy.stripe.com/bIY3dZ4kf5rY2wEeUZ',
+    growth_link: 'https://buy.stripe.com/4gw4i33gbf2y8V2dQX',
   };
 </script>
 
@@ -415,6 +415,23 @@
                 <span class="text-sm text-gray-500"
                   >2 Custom Social Posts Per Week (3 Channels)</span
                 >
+              </li>
+              <li class="flex space-x-3">
+                <!-- Heroicon name: solid/check -->
+                <svg
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm text-gray-500">Quarterly Blog Post</span>
               </li>
             </ul>
           </div>
