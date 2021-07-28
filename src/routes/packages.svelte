@@ -78,7 +78,7 @@
             </p>
             <a
               href="/"
-              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
+              class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >Subscribe to Local</a
             >
           </div>
@@ -164,7 +164,7 @@
             </p>
             <a
               href="/"
-              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
+              class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >Subscribe to SEO</a
             >
           </div>
@@ -256,7 +256,7 @@
         </div>
 
         <div
-          class="border border-primary-500 rounded-lg shadow-sm divide-y divide-gray-200"
+          class="relative border border-primary-500 rounded-lg shadow-sm divide-y divide-gray-200"
         >
           <div class="absolute inset-x-0">
             <div class="flex justify-center transform -translate-y-1/2">
@@ -280,7 +280,7 @@
             </p>
             <a
               href="/"
-              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
+              class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >Subscribe to SEO+</a
             >
           </div>
@@ -404,7 +404,7 @@
             <a
               sveltekit:prefetch
               href="/get-in-touch"
-              class="mt-8 block w-full bg-gray-900 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-800"
+              class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
               >Request Quote</a
             >
           </div>
