@@ -1,4 +1,6 @@
 <script>
+  import { page } from '$app/stores';
+
   let plan = 'monthly';
   let monthly_packages = {
     local: '499',
@@ -432,7 +434,7 @@
               sveltekit:prefetch
               href="/get-in-touch"
               class="mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"
-              >Request Quote</a
+              class:active={$page.path === '/get-in-touch'}>Request Quote</a
             >
           </div>
           <div class="pt-6 pb-8 px-6">
