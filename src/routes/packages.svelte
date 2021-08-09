@@ -644,7 +644,7 @@
             sveltekit:prefetch
             href="/get-in-touch"
             class="font-medium text-primary-600 hover:text-primary-500"
-            class:active={$page.path === '/get-in-touch'}>customer support</a
+            >customer support</a
           > team.
         </p>
       </div>
