@@ -2,7 +2,7 @@ export async function get() {
   // On the fly
   // const data = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/v1/posts?published=t');
   // const posts = await data.json();
-  const body = render();
+  const body = await render();
 
   // // Pre-created
   // const data = await fetch(import.meta.env.VITE_SITEMAP_URL);
