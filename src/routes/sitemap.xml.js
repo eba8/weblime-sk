@@ -10,7 +10,7 @@ export async function get() {
 
   const headers = {
     'Cache-Control': `max-age=0, s-max-age=${600}`,
-    'Content-Type': 'application/xml',
+    'Content-Type': 'text/xml',
   };
   return {
     body,
