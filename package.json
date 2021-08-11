@@ -19,6 +19,7 @@
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.34.0",
     "svelte-preprocess": "^4.7.1",
+    "svelte-sitemap": "^1.4.0",
     "tailwindcss": "^2.1.1",
     "vite": "^2.1.0"
   },
@@ -29,7 +30,6 @@
     "@tailwindcss/typography": "^0.4.1",
     "@tryghost/content-api": "^1.5.6",
     "cookie": "^0.4.1",
-    "dotenv": "^10.0.0",
-    "mailgun-js": "^0.22.0"
+    "dotenv": "^10.0.0"
   }
 }
