@@ -16,7 +16,7 @@ const config = {
     prerender: {
       crawl: true,
       enabled: true,
-      pages: [...pages],
+      pages: ['*', '/sitemap.xml'],
     },
   },
 };
