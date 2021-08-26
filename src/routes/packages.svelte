@@ -394,7 +394,7 @@
                   />
                 </svg>
                 <span class="text-sm text-gray-500"
-                  >Monthly Link-Building (2 Topics)</span
+                  >Monthly Link-Building (1 Topic)</span
                 >
               </li>
               <li class="flex space-x-3">
@@ -413,7 +413,26 @@
                   />
                 </svg>
                 <span class="text-sm text-gray-500"
-                  >2 Custom Social Posts Per Week (3 Channels)</span
+                  >1 Social Post Per Week (3 Channels)</span
+                >
+              </li>
+              <li class="flex space-x-3">
+                <!-- Heroicon name: solid/check -->
+                <svg
+                  class="flex-shrink-0 h-5 w-5 text-primary-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <span class="text-sm text-gray-500"
+                  >Keyword Research & Competitive Analysis</span
                 >
               </li>
               <li class="flex space-x-3">
