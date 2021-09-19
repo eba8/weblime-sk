@@ -16,6 +16,7 @@
 
 <script>
   export let stories;
+  import { testimonials } from '$lib/Data/testimonials.json';
 </script>
 
 <svelte:head>
@@ -314,6 +315,96 @@
           </div>
         {/each}
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="py-6 overflow-hidden bg-white md:py-8 lg:py-12">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl">
+      People 💚 WebLime
+    </h2>
+    <p class="max-w-3xl mx-auto mt-3 text-xl text-center text-gray-500 sm:mt-4">
+      WebLime was built to be a one-stop solution for your business. We'll focus
+      on your online presence while you hone in on your products and services.
+    </p>
+
+    <div class="pb-12 mt-10 bg-white sm:pb-16">
+      <!-- <div class="relative w-full">
+        <div class="mx-auto">
+          <dl class="bg-white rounded-lg sm:grid sm:grid-cols-3">
+            <div
+              class="flex flex-col p-6 text-center border-b border-gray-100 sm:border-0 sm:border-r"
+            >
+              <dt
+                class="order-2 mt-2 text-lg font-medium text-gray-500 leading-6"
+              >
+                Tracked pageviews
+              </dt>
+              <dd class="order-1 text-5xl font-extrabold text-indigo-600">
+                4.3B
+              </dd>
+            </div>
+            <div
+              class="flex flex-col p-6 text-center border-t border-b border-gray-100 sm:border-0 sm:border-l sm:border-r"
+            >
+              <dt
+                class="order-2 mt-2 text-lg font-medium text-gray-500 leading-6"
+              >
+                Installed websites
+              </dt>
+              <dd class="order-1 text-5xl font-extrabold text-indigo-600">
+                24,490
+              </dd>
+            </div>
+            <div
+              class="flex flex-col p-6 text-center border-t border-gray-100 sm:border-0 sm:border-l"
+            >
+              <dt
+                class="order-2 mt-2 text-lg font-medium text-gray-500 leading-6"
+              >
+                Uptime (Last 90 days)
+              </dt>
+              <dd class="order-1 text-5xl font-extrabold text-indigo-600">
+                99.99%
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div> -->
+    </div>
+    <div class="md:grid gap-4 grid-cols-3">
+      {#each testimonials as testimonial}
+        <div class="my-4 md:m-0">
+          <div class="p-4 border border-gray-100 rounded-lg">
+            <div class="flex items-center">
+              <a
+                class="flex items-center group"
+                href={testimonial.link}
+                target="_blank"
+              >
+                <img class="w-10 rounded-full" src={testimonial.author_image} />
+                <div class="ml-2 leading-tight">
+                  <div class="font-bold group-hover:text-primary-500">
+                    {testimonial.author_name}
+                  </div>
+                  <!-- <div class="text-xs text-gray-500">
+                    @{testimonial.author_handle}
+                  </div> -->
+                </div>
+              </a>
+              <a class="ml-auto" href="/" target="_blank"
+                ><img class="w-10" src={testimonial.logo} alt="" /></a
+              >
+            </div>
+            <div
+              class="mt-2 text-sm whitespace-pre-wrap cursor-text tweet-text"
+            >
+              {testimonial.text}
+            </div>
+          </div>
+        </div>
+      {/each}
     </div>
   </div>
 </div>
