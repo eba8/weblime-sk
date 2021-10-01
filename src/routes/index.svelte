@@ -354,14 +354,12 @@
                   <img
                     class="w-10 rounded-full"
                     src={testimonial.author_image}
+                    alt=""
                   />
                   <div class="ml-2 leading-tight">
                     <div class="font-bold group-hover:text-primary-500">
                       {testimonial.author_name}
                     </div>
-                    <!-- <div class="text-xs text-gray-500">
-                      @{testimonial.author_handle}
-                    </div> -->
                   </div>
                 </a>
                 <a class="ml-auto" href="/" target="_blank"
