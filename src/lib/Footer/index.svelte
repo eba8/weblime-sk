@@ -45,7 +45,7 @@
         </svg>
       </a>
       <a
-        href="https://twitter.com/WebLime8?s=20"
+        href="https://twitter.com/weblime_agency"
         class="text-gray-600 hover:text-gray-800"
       >
         <span class="sr-only">Twitter</span>
