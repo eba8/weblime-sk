@@ -81,5 +81,8 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/the-ultimate-wordpress-guide/</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/10-ways-to-get-more-home-improvement-customers</loc>
+</url>
 </urlset>
 `;
