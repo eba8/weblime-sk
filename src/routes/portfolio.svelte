@@ -2,7 +2,7 @@
   <title>WebLime - Portfolio</title>
   <meta
     property="og:description"
-    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+    content="Check out our portfolio of results-driven custom web-based solutions. We offer web development and digital marketing to clients all over the world."
   />
 </svelte:head>
 

@@ -21,6 +21,14 @@
   };
 </script>
 
+<svelte:head>
+  <title>WebLime - Packages</title>
+  <meta
+    property="og:description"
+    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+  />
+</svelte:head>
+
 <div class="bg-white">
   <!-- Hero -->
   <div class=" sm:pt-16 lg:pt-8 lg:pb-14">
