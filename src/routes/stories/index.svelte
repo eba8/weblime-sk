@@ -17,6 +17,14 @@
   export let stories;
 </script>
 
+<svelte:head>
+  <title>WebLime - Stories</title>
+  <meta
+    property="og:description"
+    content="Read some of WebLime's latest stories. All about web development and digital marketing."
+  />
+</svelte:head>
+
 <div class="relative pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
   <!-- Hero -->
   <div class=" sm:pt-16 lg:pt-8 lg:pb-14">
