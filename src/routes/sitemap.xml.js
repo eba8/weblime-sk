@@ -70,7 +70,7 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <loc>https://www.weblime.com/stories/local-seo-must-haves-for-any-website/</loc>
 </url>
 <url>
-<loc>https://www.weblime.com/stories/secuirty-privacy-cookie-notice/</loc>
+<loc>https://www.weblime.com/stories/the-truth-behind-cookies-pixels-and-privacy-policies</loc>
 </url>
 <url>
 <loc>https://www.weblime.com/stories/seo-101-the-core-components-you-should-know/</loc>
