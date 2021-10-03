@@ -260,7 +260,7 @@
         class="relative mx-auto"
         width="490"
         src="svg/weblime-laying-down-illustration.svg"
-        alt=""
+        alt="woman laying down working"
       />
     </div>
   </div>
@@ -354,7 +354,7 @@
                   <img
                     class="w-10 rounded-full"
                     src={testimonial.author_image}
-                    alt=""
+                    alt={testimonial.author_name + ' profile image'}
                   />
                   <div class="ml-2 leading-tight">
                     <div class="font-bold group-hover:text-primary-500">
@@ -363,7 +363,11 @@
                   </div>
                 </a>
                 <a class="ml-auto" href="/" target="_blank"
-                  ><img class="w-10" src={testimonial.logo} alt="" /></a
+                  ><img
+                    class="w-10"
+                    src={testimonial.logo}
+                    alt="testimonial source logo"
+                  /></a
                 >
               </div>
               <div
