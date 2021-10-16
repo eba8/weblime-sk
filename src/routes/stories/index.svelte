@@ -21,11 +21,11 @@
   <title>WebLime - Stories</title>
   <meta
     property="og:description"
-    content="Read some of WebLime's latest stories. All about web development and digital marketing."
+    content="Read WebLime's latest stories. All about web development and digital marketing."
   />
   <meta
     name="description"
-    content="Read some of WebLime's latest stories. All about web development and digital marketing."
+    content="Read WebLime's latest stories. All about web development and digital marketing."
   />
 </svelte:head>
 
