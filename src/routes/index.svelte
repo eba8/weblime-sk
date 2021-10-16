@@ -20,8 +20,17 @@
 </script>
 
 <svelte:head>
-  <title>WebLime - Web Development & Marketing</title>
-  <meta property="og:url" content="https://www.weblime.com" />
+  <!-- Primary Meta Tags -->
+  <title>WebLime | Helping businesses thrive online.</title>
+  <meta name="title" content="WebLime | Helping businesses thrive online." />
+  <meta
+    name="description"
+    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+  />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.weblime.com/" />
   <meta
     property="og:title"
     content="WebLime | Helping businesses thrive online."
@@ -31,11 +40,23 @@
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
   />
   <meta
-    name="description"
+    property="og:image"
+    content="https://www.weblime.com/images/seo/webLime-agency.jpg"
+  />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.weblime.com/" />
+  <meta
+    property="twitter:title"
+    content="WebLime | Helping businesses thrive online."
+  />
+  <meta
+    property="twitter:description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
   />
   <meta
-    property="og:image"
+    property="twitter:image"
     content="https://www.weblime.com/images/seo/webLime-agency.jpg"
   />
 </svelte:head>
