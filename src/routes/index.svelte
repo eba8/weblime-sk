@@ -36,7 +36,7 @@
   />
   <meta
     property="og:image"
-    content="https://www.weblime.com/static/images/seo/WebLime-agency.jpg"
+    content="https://www.weblime.com/images/seo/WebLime-agency.jpg"
   />
 </svelte:head>
 
