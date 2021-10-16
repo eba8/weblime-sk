@@ -23,6 +23,10 @@
     property="og:description"
     content="Read some of WebLime's latest stories. All about web development and digital marketing."
   />
+  <meta
+    name="description"
+    content="Read some of WebLime's latest stories. All about web development and digital marketing."
+  />
 </svelte:head>
 
 <div class="relative pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
