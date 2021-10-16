@@ -21,6 +21,11 @@
 
 <svelte:head>
   <title>WebLime - Web Development & Marketing</title>
+  <meta property="og:url" content="https://www.weblime.com" />
+  <meta
+    property="og:title"
+    content="WebLime | Helping businesses thrive online."
+  />
   <meta
     property="og:description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
@@ -28,6 +33,10 @@
   <meta
     name="description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+  />
+  <meta
+    property="og:image"
+    content="https://www.weblime.com/static/images/seo/WebLime-agency.jpg"
   />
 </svelte:head>
 
@@ -301,50 +310,7 @@
         services.
       </p>
 
-      <div class="pb-12 mt-10 bg-white sm:pb-16">
-        <!-- <div class="relative w-full">
-          <div class="mx-auto">
-            <dl class="bg-white rounded-lg sm:grid sm:grid-cols-3">
-              <div
-                class="flex flex-col p-6 text-center border-b border-gray-100 sm:border-0 sm:border-r"
-              >
-                <dt
-                  class="order-2 mt-2 text-lg font-medium text-gray-500 leading-6"
-                >
-                  Tracked pageviews
-                </dt>
-                <dd class="order-1 text-5xl font-extrabold text-indigo-600">
-                  4.3B
-                </dd>
-              </div>
-              <div
-                class="flex flex-col p-6 text-center border-t border-b border-gray-100 sm:border-0 sm:border-l sm:border-r"
-              >
-                <dt
-                  class="order-2 mt-2 text-lg font-medium text-gray-500 leading-6"
-                >
-                  Installed websites
-                </dt>
-                <dd class="order-1 text-5xl font-extrabold text-indigo-600">
-                  24,490
-                </dd>
-              </div>
-              <div
-                class="flex flex-col p-6 text-center border-t border-gray-100 sm:border-0 sm:border-l"
-              >
-                <dt
-                  class="order-2 mt-2 text-lg font-medium text-gray-500 leading-6"
-                >
-                  Uptime (Last 90 days)
-                </dt>
-                <dd class="order-1 text-5xl font-extrabold text-indigo-600">
-                  99.99%
-                </dd>
-              </div>
-            </dl>
-          </div>
-        </div> -->
-      </div>
+      <div class="pb-12 mt-10 bg-white sm:pb-16" />
       <div class="md:grid gap-4 grid-cols-3">
         {#each testimonials as testimonial}
           <div class="my-4 md:m-0">
