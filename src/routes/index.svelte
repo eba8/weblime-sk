@@ -41,7 +41,7 @@
   />
   <meta
     property="og:image"
-    content="https://www.weblime.com/images/seo/weblime-agency.jpg"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
 
   <!-- Twitter -->
@@ -57,7 +57,7 @@
   />
   <meta
     property="twitter:image"
-    content="https://www.weblime.com/images/seo/weblime-agency.jpg"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
 </svelte:head>
 
