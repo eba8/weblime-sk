@@ -29,7 +29,9 @@
   />
 
   <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WebLime - Digital Agency" />
   <meta property="og:url" content="https://www.weblime.com/" />
   <meta
     property="og:title"
@@ -46,7 +48,11 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://www.weblime.com/" />
+  <meta
+    property="twitter:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+  <meta name="twitter:site" content="@weblime_agency" />
   <meta
     property="twitter:title"
     content="WebLime | Helping businesses thrive online."
@@ -54,10 +60,6 @@
   <meta
     property="twitter:description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
-  />
-  <meta
-    property="twitter:image"
-    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
 </svelte:head>
 
