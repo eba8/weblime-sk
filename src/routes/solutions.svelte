@@ -4,7 +4,7 @@
   <meta name="title" content="WebLime | Solutions" />
   <meta
     name="description"
-    content="WebLime's web development and digigtal marketing solutions."
+    content="Looking for web development and marketing solutions? Get your FREE Proposal today from WebLime."
   />
 
   <!-- Open Graph / Facebook -->
@@ -15,7 +15,7 @@
   <meta property="og:title" content="WebLime | Solutions" />
   <meta
     property="og:description"
-    content="WebLime's web development and digigtal marketing solutions."
+    content="Looking for web development and marketing solutions? Get your FREE Proposal today from WebLime."
   />
   <meta
     property="og:image"
@@ -32,7 +32,7 @@
   <meta property="twitter:title" content="WebLime | Solutions" />
   <meta
     property="twitter:description"
-    content="WebLime's web development and digigtal marketing solutions."
+    content="Looking for web development and marketing solutions? Get your FREE Proposal today from WebLime."
   />
 </svelte:head>
 
