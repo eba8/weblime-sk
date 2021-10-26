@@ -1,8 +1,38 @@
 <svelte:head>
-  <title>WebLime - Portfolio</title>
+  <!-- Primary Meta Tags -->
+  <title>WebLime | Portfolio</title>
+  <meta name="title" content="WebLime | Portfolio" />
+  <meta
+    name="description"
+    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+  />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:url" content="https://www.weblime.com/" />
+  <meta property="og:title" content="WebLime | Portfolio" />
   <meta
     property="og:description"
-    content="Check out our portfolio of results-driven custom web-based solutions. We offer web development and digital marketing to clients all over the world."
+    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+  />
+  <meta
+    property="og:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta
+    property="twitter:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+  <meta name="twitter:site" content="@weblime_agency" />
+  <meta property="twitter:title" content="WebLime | Portfolio" />
+  <meta
+    property="twitter:description"
+    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
   />
 </svelte:head>
 

@@ -1,8 +1,38 @@
 <svelte:head>
-  <title>WebLime - Solutions</title>
+  <!-- Primary Meta Tags -->
+  <title>WebLime | Solutions</title>
+  <meta name="title" content="WebLime | Solutions" />
+  <meta
+    name="description"
+    content="WebLime's web development and digigtal marketing solutions."
+  />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:url" content="https://www.weblime.com/" />
+  <meta property="og:title" content="WebLime | Solutions" />
   <meta
     property="og:description"
-    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+    content="WebLime's web development and digigtal marketing solutions."
+  />
+  <meta
+    property="og:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta
+    property="twitter:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+  <meta name="twitter:site" content="@weblime_agency" />
+  <meta property="twitter:title" content="WebLime | Solutions" />
+  <meta
+    property="twitter:description"
+    content="WebLime's web development and digigtal marketing solutions."
   />
 </svelte:head>
 
