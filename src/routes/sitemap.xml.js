@@ -81,5 +81,11 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/10-ways-to-get-more-home-improvement-customers/</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/how-fast-should-a-website-load</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/the-best-marketing-strategies-for-small-businesses</loc>
+</url>
 </urlset>
 `;

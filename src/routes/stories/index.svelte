@@ -52,21 +52,23 @@
     >
       {#each stories as story}
         <div class="flex flex-col bg-gray-100 rounded-md overflow-hidden">
+          {#if story.feature_image}
+            <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
+              <img src={story.feature_image} alt={story.title} />
+            </a>
+          {/if}
           <div class="flex-1 p-6 flex flex-col justify-between text-center">
             <div class="flex-1">
-              <p
-                class="text-sm font-medium text-primary-600 inline-flex items-center "
-              >
-                {story.reading_time} MIN READ
-              </p>
               <a
                 sveltekit:prefetch
                 href="/stories/{story.slug}"
                 class="block mt-2"
               >
-                <p class="text-xl font-semibold text-gray-900">
-                  {story.title}
-                </p>
+                {#if !story.feature_image}
+                  <p class="text-xl font-semibold text-gray-900">
+                    {story.title}
+                  </p>
+                {/if}
 
                 <p class="mt-3 text-xl text-gray-500">
                   {story.custom_excerpt}

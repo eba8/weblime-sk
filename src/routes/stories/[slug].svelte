@@ -17,9 +17,26 @@
 </script>
 
 <svelte:head>
-  <title>WebLime - {post.title}</title>
-  <meta property="og:description" content={post.meta_description} />
+  <!-- Primary Meta Tags -->
+  <title>WebLime | {post.title}</title>
+  <meta name="title" content="WebLime | {post.title}" />
   <meta name="description" content={post.meta_description} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:url" content="https://www.weblime.com/" />
+  <meta property="og:title" content="WebLime | {post.title}" />
+  <meta property="og:description" content={post.meta_description} />
+  <meta property="og:image" content={post.feature_image} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content={post.feature_image} />
+  <meta name="twitter:site" content="@weblime_agency" />
+  <meta property="twitter:title" content="WebLime | {post.title}" />
+  <meta property="twitter:description" content={post.meta_description} />
 </svelte:head>
 
 <main class="mx-auto">
