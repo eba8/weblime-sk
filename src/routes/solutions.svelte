@@ -389,6 +389,17 @@
     data-widget-id="b766b6532d39255f50074860000e1f2df242bd99"
     src="https://www.local-marketing-reports.com/m/assets-v2/lead-gen/js/external/widget-builder.js"></script>
 
+  <div class="flex flex-col bg-gray-900 items-center pb-6">
+    <a
+      href="https://www.designrush.com/agency/search-engine-optimization/maryland"
+    >
+      <img
+        src="/images/seo/Design-Rush-Accredited-Badge.png"
+        alt="Top Maryland SEO Companies Badge"
+      />
+    </a>
+  </div>
+
   <!-- Emerging Techonlogies section -->
   <div class="bg-white">
     <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
