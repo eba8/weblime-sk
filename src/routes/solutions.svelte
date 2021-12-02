@@ -394,6 +394,7 @@
       href="https://www.designrush.com/agency/search-engine-optimization/maryland"
     >
       <img
+        class="w-56"
         src="/images/seo/Design-Rush-Accredited-Badge.png"
         alt="Top Maryland SEO Companies Badge"
       />
