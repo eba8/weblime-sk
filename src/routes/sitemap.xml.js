@@ -90,5 +90,8 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/top-website-builders</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/10-reasons-to-use-a-content-management-system</loc>
+</url>
 </urlset>
 `;
