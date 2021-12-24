@@ -64,11 +64,9 @@
                 href="/stories/{story.slug}"
                 class="block mt-2"
               >
-                {#if !story.feature_image}
-                  <p class="text-xl font-semibold text-gray-900">
-                    {story.title}
-                  </p>
-                {/if}
+                <p class="text-xl font-semibold text-gray-900">
+                  {story.title}
+                </p>
 
                 <p class="mt-3 text-xl text-gray-500">
                   {story.custom_excerpt}
