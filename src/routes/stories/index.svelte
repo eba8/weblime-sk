@@ -50,7 +50,7 @@
     <div
       class="mt-12 max-w-lg mx-auto grid gap-12 lg:grid-cols-3 lg:max-w-none"
     >
-      {#each stories as story}
+      {#each stories.slice(0, 15) as story}
         <div class="flex flex-col bg-gray-100 rounded-md overflow-hidden">
           {#if story.feature_image}
             <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
