@@ -80,7 +80,7 @@
             <img
               class="object-cover w-full h-48"
               src="/images/portfolio-clients/bi-client.png"
-              alt=""
+              alt="WordPress web development client Brock Insurance"
             />
           </div>
           <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
@@ -181,7 +181,7 @@
             <img
               class="object-cover w-full h-48"
               src="/images/portfolio-clients/pbh-client.png"
-              alt=""
+              alt="WordPress web development client Paws Between Homes"
             />
           </div>
           <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
@@ -286,7 +286,7 @@
             <img
               class="object-cover w-full h-48"
               src="/images/portfolio-clients/ia-client.png"
-              alt=""
+              alt="WordPress web development Inspired Accounting"
             />
           </div>
           <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
