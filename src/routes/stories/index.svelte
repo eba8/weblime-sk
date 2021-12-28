@@ -14,7 +14,26 @@
 </script>
 
 <script>
+  import { loop_guard } from 'svelte/internal';
+
+  let searchTerm = '';
+  let tag = '';
+  let filteredstories = [];
   export let stories;
+
+  $: {
+    if (searchTerm) {
+      filteredstories = stories.filter((story) =>
+        story.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+    } else if (tag != '') {
+      filteredstories = stories.filter((story) =>
+        story.title.toLowerCase().includes(tag),
+      );
+    } else {
+      filteredstories = [...stories];
+    }
+  }
 </script>
 
 <svelte:head>
@@ -47,10 +66,41 @@
     </div>
   </div>
   <div class="relative max-w-7xl mx-auto">
+    <div class="text-center">
+      <button
+        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        on:click={() => ((tag = ''), (searchTerm = ''))}>Most recent</button
+      >
+
+      <button
+        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        on:click={() => ((tag = 'wordpress'), (searchTerm = ''))}
+        >WordPress</button
+      >
+
+      <button
+        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        on:click={() => ((tag = 'marketing'), (searchTerm = ''))}
+        >Marketing</button
+      >
+
+      <button
+        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        on:click={() => ((tag = 'seo'), (searchTerm = ''), (searchTerm = ''))}
+        >SEO</button
+      >
+
+      <input
+        class="px-5 py-3 m-3 rounded-md text-lg p-4 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        bind:value={searchTerm}
+        placeholder="Search stories"
+      />
+    </div>
     <div
       class="mt-12 max-w-lg mx-auto grid gap-12 lg:grid-cols-3 lg:max-w-none"
     >
-      {#each stories.slice(0, 15) as story}
+      <!-- {#each stories.slice(0, 15) as story} -->
+      {#each filteredstories.slice(0, 12) as story}
         <div class="flex flex-col bg-gray-100 rounded-md overflow-hidden">
           {#if story.feature_image}
             <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
