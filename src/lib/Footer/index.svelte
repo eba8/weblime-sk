@@ -1,3 +1,8 @@
+<script>
+  const d = new Date();
+  let year = d.getFullYear();
+</script>
+
 <footer>
   <div class="px-4 py-12 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8">
     <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
@@ -80,7 +85,7 @@
       </a>
     </div>
     <p class="mt-8 text-base text-center text-gray-600">
-      &copy; 2021 WebLime, Inc. All rights reserved.
+      &copy; {year} WebLime, Inc. All rights reserved.
     </p>
   </div>
 </footer>
