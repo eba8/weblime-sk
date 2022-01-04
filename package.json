@@ -22,14 +22,14 @@
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.7.1",
-    "tailwindcss": "next",
+    "tailwindcss": "^3.0",
     "vite": "^2.7.10"
   },
   "type": "module",
   "dependencies": {
     "@fontsource/fira-mono": "^4.2.2",
     "@lukeed/uuid": "^2.0.0",
-    "@tailwindcss/typography": "next",
+    "@tailwindcss/typography": "^0.5.0",
     "@tryghost/content-api": "^1.5.6",
     "cookie": "^0.4.1",
     "dotenv": "^10.0.0",

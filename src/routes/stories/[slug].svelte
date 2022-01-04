@@ -1,8 +1,8 @@
 <script context="module">
   export const prerender = true;
 
-  export async function load({ page, fetch }) {
-    const response = await fetch(`/stories/${page.params.slug}.json`);
+  export async function load({ params, fetch }) {
+    const response = await fetch(`/stories/${params.slug}.json`);
     const { post } = await response.json();
     return {
       props: {
