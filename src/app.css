@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    :root{
+  :root {
     --color-text-base: theme('colors.gray.700');
     --color-text-base-hover: theme('colors.gray.900');
     --color-text-muted: #c7c7c7;
@@ -13,8 +13,8 @@
     --color-button-accent-hover: #eef2ff;
     --color-button-muted: #6366f1;
     --color-logo-fill: theme('colors.primary.500');
-    }
-    .theme-lime {
+  }
+  .theme-lime {
     --color-text-base: theme('colors.gray.800');
     --color-text-base-hover: theme('colors.gray.900');
     --color-text-muted: #4f46e5;
@@ -24,27 +24,27 @@
     --color-button-accent-hover: #eef2ff;
     --color-button-muted: #6366f1;
     --color-logo-fill: theme('colors.white');
-    }
-    .theme-black {
-        --color-text-base: theme('colors.gray.200');
-        --color-text-base-hover: theme('colors.white');
-        --color-text-muted: #4f46e5;
-        --color-text-inverted: #4f46e5;
-        --color-hero-fill: theme('colors.gray.900');
-        --color-button-accent: #ffffff;
-        --color-button-accent-hover: #eef2ff;
-        --color-button-muted: #6366f1;
-        --color-logo-fill: theme('colors.primary.500');
-        }
-    .theme-soft {
-        --color-text-base: theme('colors.gray.200');
-        --color-text-base-hover: theme('colors.white');
-        --color-text-muted: #4f46e5;
-        --color-text-inverted: #4f46e5;
-        --color-hero-fill: theme('colors.gray.50');
-        --color-button-accent: #ffffff;
-        --color-button-accent-hover: #eef2ff;
-        --color-button-muted: #6366f1;
-        --color-logo-fill: theme('colors.primary.500');
-        }
+  }
+  .theme-black {
+    --color-text-base: theme('colors.gray.200');
+    --color-text-base-hover: theme('colors.white');
+    --color-text-muted: #4f46e5;
+    --color-text-inverted: #4f46e5;
+    --color-hero-fill: theme('colors.gray.900');
+    --color-button-accent: #ffffff;
+    --color-button-accent-hover: #eef2ff;
+    --color-button-muted: #6366f1;
+    --color-logo-fill: theme('colors.primary.500');
+  }
+  .theme-soft {
+    --color-text-base: theme('colors.gray.200');
+    --color-text-base-hover: theme('colors.white');
+    --color-text-muted: #4f46e5;
+    --color-text-inverted: #4f46e5;
+    --color-hero-fill: theme('colors.gray.50');
+    --color-button-accent: #ffffff;
+    --color-button-accent-hover: #eef2ff;
+    --color-button-muted: #6366f1;
+    --color-logo-fill: theme('colors.primary.500');
+  }
 }

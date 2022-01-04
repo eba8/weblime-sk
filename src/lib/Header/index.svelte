@@ -5,8 +5,8 @@
 
 <header>
   <div
-    class:theme-lime={$page.url === '/solutions'}
-    class:theme-black={$page.url === '/portfolio'}
+    class:theme-lime={$page.url.pathname === '/solutions'}
+    class:theme-black={$page.url.pathname === '/portfolio'}
     class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero"
   >
     <nav
@@ -17,7 +17,11 @@
         <div
           class="flex items-center text-skin-base justify-between w-full md:w-auto"
         >
-          <a sveltekit:prefetch href="/" class:active={$page.url === '/'}>
+          <a
+            sveltekit:prefetch
+            href="/"
+            class:active={$page.url.pathname === '/'}
+          >
             <svg
               class="h-9 w-9 fill-current text-skin-logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -67,13 +71,13 @@
             sveltekit:prefetch
             href="/solutions"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"
-            class:active={$page.url === '/solutions'}>Solutions</a
+            class:active={$page.url.pathname === '/solutions'}>Solutions</a
           >
           <a
             sveltekit:prefetch
             href="/portfolio"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"
-            class:active={$page.url === '/portfolio'}>Portfolio</a
+            class:active={$page.url.pathname === '/portfolio'}>Portfolio</a
           >
         </div>
       </div>
@@ -83,7 +87,7 @@
             sveltekit:prefetch
             href="/get-in-touch"
             class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-gray-900 bg-primary-500"
-            class:active={$page.url === '/get-in-touch'}
+            class:active={$page.url.pathname === '/get-in-touch'}
           >
             Get In Touch
           </a>
