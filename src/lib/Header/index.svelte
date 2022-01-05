@@ -26,6 +26,7 @@
               class="h-9 w-9 fill-current text-skin-logo"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 250 250"
+              fill="currentColor"
               stroke="currentColor"
               aria-hidden="true"
             >
