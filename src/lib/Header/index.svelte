@@ -86,7 +86,7 @@
           <a
             sveltekit:prefetch
             href="/get-in-touch"
-            class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-gray-900 bg-primary-500"
+            class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-skin-inverted bg-skin-fill"
             class:active={$page.url.pathname === '/get-in-touch'}
           >
             Get In Touch
