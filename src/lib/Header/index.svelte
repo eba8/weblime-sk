@@ -17,11 +17,7 @@
         <div
           class="flex items-center text-skin-base justify-between w-full md:w-auto"
         >
-          <a
-            sveltekit:prefetch
-            href="/"
-            class:active={$page.url.pathname === '/'}
-          >
+          <a sveltekit:prefetch href="/">
             <svg
               class="h-9 w-9 fill-current text-skin-logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -72,13 +68,13 @@
             sveltekit:prefetch
             href="/solutions"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"
-            class:active={$page.url.pathname === '/solutions'}>Solutions</a
+            >Solutions</a
           >
           <a
             sveltekit:prefetch
             href="/portfolio"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"
-            class:active={$page.url.pathname === '/portfolio'}>Portfolio</a
+            >Portfolio</a
           >
         </div>
       </div>
@@ -88,7 +84,6 @@
             sveltekit:prefetch
             href="/get-in-touch"
             class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-skin-inverted bg-skin-fill"
-            class:active={$page.url.pathname === '/get-in-touch'}
           >
             Get In Touch
           </a>
