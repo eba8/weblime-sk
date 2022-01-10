@@ -6,6 +6,14 @@
 
 <Header />
 
+<svelte:head>
+  <script
+    async
+    defer
+    data-domain="weblime.com"
+    src="https://plausible.io/js/plausible.js"></script>
+</svelte:head>
+
 <main>
   <slot />
   <Footer />
