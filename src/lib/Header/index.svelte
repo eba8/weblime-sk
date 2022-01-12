@@ -167,7 +167,7 @@
             on:click={() => {
               mobile_menu = !mobile_menu;
             }}
-            href="/portfolio"
+            href="/portfolio/"
             class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
             >Portfolio</a
           >
