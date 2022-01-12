@@ -14,6 +14,7 @@
 </script>
 
 <script>
+  import { fade } from 'svelte/transition';
   import { loop_guard } from 'svelte/internal';
 
   let searchTerm = '';
@@ -101,7 +102,10 @@
     >
       <!-- {#each stories.slice(0, 15) as story} -->
       {#each filteredstories.slice(0, 12) as story}
-        <div class="flex flex-col bg-gray-100 rounded-md overflow-hidden">
+        <div
+          transition:fade={{ delay: 200, duration: 300 }}
+          class="flex flex-col bg-gray-100 rounded-md overflow-hidden"
+        >
           {#if story.feature_image}
             <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
               <img src={story.feature_image} alt={story.title} />
