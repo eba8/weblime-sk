@@ -440,42 +440,42 @@
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/stripe.svg"
+              src="/svg/tech-stack/stripe.png"
               alt="WebLime solutions stripe logo"
             />
           </div>
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/klaviyo.svg"
+              src="/svg/tech-stack/klaviyo.png"
               alt="WebLime solutions klaviyo logo"
             />
           </div>
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/square.svg"
-              alt="WebLime solutions square logo"
+              src="/svg/tech-stack/recharge.svg"
+              alt="WebLime solutions recharge logo"
             />
           </div>
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/shopify.svg"
+              src="/svg/tech-stack/shopify.jpg"
               alt="WebLime solutions shopify logo"
             />
           </div>
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/slack-gray.svg"
+              src="/svg/tech-stack/slack.png"
               alt="WebLime solutions slack logo"
             />
           </div>
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/wordpress.svg"
+              src="/svg/tech-stack/wordpress.png"
               alt="WebLime solutions wordpress logo"
             />
           </div>
