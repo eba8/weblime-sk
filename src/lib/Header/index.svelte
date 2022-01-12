@@ -5,8 +5,8 @@
 
 <header>
   <div
-    class:theme-lime={$page.url.pathname === '/solutions'}
-    class:theme-black={$page.url.pathname === '/portfolio'}
+    class:theme-lime={$page.url.pathname === '/solutions/'}
+    class:theme-black={$page.url.pathname === '/portfolio/'}
     class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero"
   >
     <nav
@@ -66,13 +66,13 @@
         <div class="hidden md:block md:ml-10 md:space-x-10">
           <a
             sveltekit:prefetch
-            href="/solutions"
+            href="/solutions/"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"
             >Solutions</a
           >
           <a
             sveltekit:prefetch
-            href="/portfolio"
+            href="/portfolio/"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"
             >Portfolio</a
           >
@@ -82,7 +82,7 @@
         <span class="inline-flex rounded-md">
           <a
             sveltekit:prefetch
-            href="/get-in-touch"
+            href="/get-in-touch/"
             class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-skin-inverted bg-skin-fill"
           >
             Get In Touch
@@ -159,7 +159,7 @@
             on:click={() => {
               mobile_menu = !mobile_menu;
             }}
-            href="/solutions"
+            href="/solutions/"
             class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
             >Solutions</a
           >
@@ -176,7 +176,7 @@
           on:click={() => {
             mobile_menu = !mobile_menu;
           }}
-          href="/get-in-touch"
+          href="/get-in-touch/"
           class="block w-full px-5 py-3 rounded-b-md font-medium text-center text-primary-600 bg-gray-100 hover:bg-gray-100"
         >
           Get In Touch
