@@ -475,7 +475,7 @@
           <div class="flex justify-center col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/wordpress.png"
+              src="/svg/tech-stack/wordpress-logo.png"
               alt="WebLime solutions wordpress logo"
             />
           </div>
