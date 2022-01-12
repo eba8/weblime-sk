@@ -15,7 +15,7 @@
       <div class="px-5 py-2">
         <a
           sveltekit:prefetch
-          href="/stories"
+          href="/stories/"
           class="text-base text-gray-500 hover:text-gray-900"
         >
           Stories
@@ -23,7 +23,7 @@
       </div>
       <div class="px-5 py-2">
         <a
-          href="/get-in-touch"
+          href="/get-in-touch/"
           class="text-base text-gray-500 hover:text-gray-900"
         >
           Get In Touch
