@@ -103,7 +103,7 @@
       <!-- {#each stories.slice(0, 15) as story} -->
       {#each filteredstories.slice(0, 12) as story}
         <div
-          in:fade={{ delay: 200, duration: 300 }}
+          transition:fade|local={{ duration: 300 }}
           class="flex flex-col bg-gray-100 rounded-md overflow-hidden"
         >
           {#if story.feature_image}
