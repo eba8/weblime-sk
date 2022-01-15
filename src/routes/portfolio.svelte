@@ -1,3 +1,7 @@
+<script>
+  import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
+</script>
+
 <svelte:head>
   <!-- Primary Meta Tags -->
   <title>WebLime | Portfolio</title>
@@ -770,33 +774,6 @@
       </div>
     </div>
   </div>
-  <div class="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="max-w-md mx-auto lg:max-w-7xl">
-      <div
-        class="px-6 py-8 bg-gray-100 rounded-lg sm:p-10 lg:flex lg:items-center"
-      >
-        <div class="flex-1">
-          <div>
-            <h3
-              class="inline-flex py-1 text-xl font-semibold tracking-wide text-gray-800 uppercase"
-            >
-              got a project in mind?
-            </h3>
-          </div>
-          <div class="mt-4 text-lg text-gray-600">
-            Unleash your potential. We deliver solutions that drive your
-            business forward. Embark on a digital transformation today.
-          </div>
-        </div>
-        <div class="mt-6 rounded-md lg:mt-0 lg:ml-10 lg:flex-shrink-0">
-          <a
-            href="/get-in-touch"
-            class="flex items-center justify-center px-5 py-3 text-base font-medium text-gray-800 rounded-md bg-primary-500 hover:bg-primary-600"
-          >
-            Get Started
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <ProjectInMind />
 </main>

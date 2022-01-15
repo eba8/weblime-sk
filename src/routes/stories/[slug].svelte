@@ -13,6 +13,7 @@
 </script>
 
 <script>
+  import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
   export let post;
 </script>
 
@@ -65,8 +66,10 @@
     </div>
   </div>
   <div
-    class="relative px-5 mx-auto mt-8 prose md:px-0 prose-primary md:prose-lg lg:prose-xl"
+    class="relative px-5 mx-auto mt-8 prose md:px-0 prose-primary md:prose-lg lg:prose-xl pb-10"
   >
     {@html post.html}
   </div>
+
+  <ProjectInMind />
 </main>
