@@ -413,7 +413,7 @@
           </h2>
           <p class="max-w-3xl mt-3 text-lg text-gray-500">
             The possibilities are endless. We'll implement some of the best
-            techonlogical solutions in the game.
+            technological solutions in the game.
           </p>
           <div class="mt-8 sm:flex">
             <div class="rounded-md">
