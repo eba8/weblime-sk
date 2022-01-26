@@ -57,11 +57,11 @@
 <main class="mx-auto">
   <!-- Hero section -->
   <div class="sm:pt-16 lg:pt-8 lg:pb-14">
-    <div class="pb-5 mx-auto text-center max-w-prose">
+    <div class="pb-5 max-w-4xl mx-auto text-center">
       <h1
-        class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
+        class="px-5 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
       >
-        <span class="px-10 xl:inline">{post.title}</span>
+        {post.title}
       </h1>
     </div>
   </div>
