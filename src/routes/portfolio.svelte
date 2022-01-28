@@ -72,319 +72,157 @@
           WordPress
         </h2>
         <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-500 sm:mt-4">
-          41% of the web uses WordPress, from hobby blogs to the biggest news
+          43% of the web uses WordPress, from hobby blogs to the biggest news
           sites online.
         </p>
       </div>
-      <div
-        class="grid max-w-lg gap-5 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none"
-      >
-        <div class="flex flex-col overflow-hidden rounded-lg">
-          <div class="flex-shrink-0">
-            <img
-              class="object-cover w-full h-48"
-              src="/images/portfolio-clients/bi-client.png"
-              alt="WordPress web development client Brock Insurance"
-            />
-          </div>
-          <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
-            <div class="flex-1">
-              <a href="/" class="block mt-2">
-                <p class="text-xl font-semibold text-gray-900">
-                  Brock Insurance
-                </p>
-              </a>
-            </div>
-            <div
-              class="flex flex-col justify-between flex-1 px-6 pt-6 pb-8 space-y-6 bg-gray-50 sm:p-10 sm:pt-6"
+      <div class="bg-white">
+        <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+          <div class="space-y-12">
+            <ul
+              role="list"
+              class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
             >
-              <ul class="space-y-4">
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    Brand guidelines and logo
-                  </p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">E-mail automation</p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">Blog</p>
-                </li>
-              </ul>
-              <div class="rounded-md">
+              <li>
                 <a
-                  href="https://brock4insurance.com"
-                  class="flex items-center justify-center px-5 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-900"
-                  aria-describedby="tier-standard"
+                  href="https://brock4insurance.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Visit Site
+                  <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-2">
+                      <img
+                        class="object-cover shadow-lg rounded-lg"
+                        src="static/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div class="space-y-2">
+                      <div class="text-lg leading-6 font-medium space-y-1">
+                        <h3 class="text-2xl">Brock Insurance</h3>
+                        <p class="text-primary-600 text-sm inline uppercase">
+                          <span>insurance, </span>
+                          <span>E-mail automation, </span>
+                          <span>Blog</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col overflow-hidden rounded-lg">
-          <div class="flex-shrink-0">
-            <img
-              class="object-cover w-full h-48"
-              src="/images/portfolio-clients/pbh-client.png"
-              alt="WordPress web development client Paws Between Homes"
-            />
-          </div>
-          <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
-            <div class="flex-1">
-              <a href="/" class="block mt-2">
-                <p class="text-xl font-semibold text-gray-900">
-                  Paws Between Homes
-                </p>
-              </a>
-            </div>
-            <div
-              class="flex flex-col justify-between flex-1 px-6 pt-6 pb-8 space-y-6 bg-gray-50 sm:p-10 sm:pt-6"
-            >
-              <ul class="space-y-4">
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    MailChimp Integration
-                  </p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    Integrations for donations
-                  </p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    Google Sheets Integrations
-                  </p>
-                </li>
-              </ul>
-              <div class="rounded-md">
+              </li>
+              <li>
                 <a
-                  href="https://pawsbetweenhomes.org"
-                  class="flex items-center justify-center px-5 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-900"
-                  aria-describedby="tier-standard"
+                  href="https://pawsbetweenhomes.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Visit Site
+                  <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-2">
+                      <img
+                        class="object-cover shadow-lg rounded-lg"
+                        src="static/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
+                        alt=""
+                      />
+                    </div>
+
+                    <div class="space-y-2">
+                      <div class="text-lg leading-6 font-medium space-y-1">
+                        <h3 class="text-2xl">Paws Between Homes</h3>
+                        <p class="text-primary-600 text-sm inline uppercase">
+                          <span>nonprofit, </span>
+                          <span>MailChimp Integration, </span>
+                          <span>Google Sheets automations, </span>
+                          <span>Give Lively Donations</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="flex flex-col overflow-hidden rounded-lg">
-          <div class="flex-shrink-0">
-            <img
-              class="object-cover w-full h-48"
-              src="/images/portfolio-clients/ia-client.png"
-              alt="WordPress web development Inspired Accounting"
-            />
-          </div>
-          <div class="flex flex-col justify-between flex-1 p-6 bg-gray-50">
-            <div class="flex-1">
-              <a href="/" class="block mt-2">
-                <p class="text-xl font-semibold text-gray-900">
-                  Inspired Accounting
-                </p>
-              </a>
-            </div>
-            <div
-              class="flex flex-col justify-between flex-1 px-6 pt-6 pb-8 space-y-6 bg-gray-50 sm:p-10 sm:pt-6"
-            >
-              <ul class="space-y-4">
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    Calendly Integration
-                  </p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">Form integrations</p>
-                </li>
-
-                <li class="flex items-start">
-                  <div class="flex-shrink-0">
-                    <!-- Heroicon name: outline/check -->
-                    <svg
-                      class="w-6 h-6 text-primary-500"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p class="ml-3 text-base text-gray-700">
-                    HubSpot Integration
-                  </p>
-                </li>
-              </ul>
-              <div class="rounded-md">
+              </li>
+              <li>
                 <a
-                  href="https://inspired-accounting.com"
-                  class="flex items-center justify-center px-5 py-2 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-900"
-                  aria-describedby="tier-standard"
+                  href="https://brock4insurance.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Visit Site
+                  <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-2">
+                      <img
+                        class="object-cover shadow-lg rounded-lg"
+                        src="static/images/portfolio-clients/inspired-accounting-wordpress.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <div class="text-lg leading-6 font-medium space-y-1">
+                        <h3 class="text-2xl">Inspired Accounting</h3>
+                        <p class="text-primary-600 text-sm inline uppercase">
+                          <span>bookkeeper, </span>
+                          <span>Form integrations, </span>
+                          <span>HubSpot Integration, </span>
+                          <span>Calendly Integration</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </a>
-              </div>
-            </div>
+              </li>
+              <li>
+                <a
+                  href="https://www.resourcewranglers.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-2">
+                      <img
+                        class="object-cover shadow-lg rounded-lg"
+                        src="static/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <div class="text-lg leading-6 font-medium space-y-1">
+                        <h3 class="text-2xl">Resource Wranglers</h3>
+                        <p class="text-primary-600 text-sm inline uppercase">
+                          <span>staffing agency, </span>
+                          <span>blog, </span>
+                          <span>Loxo integration</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.monarchprime.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-2">
+                      <img
+                        class="object-cover shadow-lg rounded-lg"
+                        src="static/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <div class="text-lg leading-6 font-medium space-y-1">
+                        <h3 class="text-2xl">Monarch Prime</h3>
+                        <p class="text-primary-600 text-sm inline uppercase">
+                          <span>construction, </span>
+                          <span>blog</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <!-- More people... -->
+            </ul>
           </div>
         </div>
       </div>
