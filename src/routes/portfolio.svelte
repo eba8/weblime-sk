@@ -23,14 +23,14 @@
   />
   <meta
     property="og:image"
-    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+    content="https://www.weblime.com/https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta
     property="twitter:image"
-    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+    content="https://www.weblime.com/https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
   <meta name="twitter:site" content="@weblime_agency" />
   <meta property="twitter:title" content="WebLime | Portfolio" />
@@ -93,7 +93,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="images/portfolio-clients/brock-insurance-wordpress-site.jpg"
+                        src="https://www.weblime.com/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
                         alt=""
                       />
                     </div>
@@ -121,7 +121,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
+                        src="https://www.weblime.com/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
                         alt=""
                       />
                     </div>
@@ -150,7 +150,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="images/portfolio-clients/inspired-accounting-wordpress.png"
+                        src="https://www.weblime.com/images/portfolio-clients/inspired-accounting-wordpress.png"
                         alt=""
                       />
                     </div>
@@ -178,7 +178,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
+                        src="https://www.weblime.com/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
                         alt=""
                       />
                     </div>
@@ -205,7 +205,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
+                        src="https://www.weblime.com/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
                         alt=""
                       />
                     </div>
