@@ -93,7 +93,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="static/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
+                        src="https://www.weblime.com/static/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
                         alt=""
                       />
                     </div>
@@ -121,7 +121,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="static/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
+                        src="https://www.weblime.com/static/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
                         alt=""
                       />
                     </div>
@@ -150,7 +150,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="static/images/portfolio-clients/inspired-accounting-wordpress.png"
+                        src="https://www.weblime.com/static/images/portfolio-clients/inspired-accounting-wordpress.png"
                         alt=""
                       />
                     </div>
@@ -178,7 +178,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="static/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
+                        src="https://www.weblime.com/static/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
                         alt=""
                       />
                     </div>
@@ -205,7 +205,7 @@
                     <div class="aspect-w-3 aspect-h-2">
                       <img
                         class="object-cover shadow-lg rounded-lg"
-                        src="static/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
+                        src="https://www.weblime.com/static/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
                         alt=""
                       />
                     </div>
