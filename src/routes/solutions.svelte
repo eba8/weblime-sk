@@ -435,44 +435,44 @@
           </div>
         </div>
         <div
-          class="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2"
+          class="mt-8 grid grid-cols-2 bg-gray-200 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2"
         >
-          <div class="flex justify-center col-span-1 px-8 py-8">
+          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
               src="/svg/tech-stack/stripe.png"
               alt="WebLime solutions stripe logo"
             />
           </div>
-          <div class="flex justify-center col-span-1 px-8 py-8">
+          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
               src="/svg/tech-stack/klaviyo.png"
               alt="WebLime solutions klaviyo logo"
             />
           </div>
-          <div class="flex justify-center col-span-1 px-8 py-8">
+          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
               src="/svg/tech-stack/recharge.svg"
               alt="WebLime solutions recharge logo"
             />
           </div>
-          <div class="flex justify-center col-span-1 px-8 py-8">
+          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
               src="/svg/tech-stack/shopify.jpg"
               alt="WebLime solutions shopify logo"
             />
           </div>
-          <div class="flex justify-center col-span-1 px-8 py-8">
+          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
               src="/svg/tech-stack/slack.png"
               alt="WebLime solutions slack logo"
             />
           </div>
-          <div class="flex justify-center col-span-1 px-8 py-8">
+          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
               src="/svg/tech-stack/wordpress-logo.png"
