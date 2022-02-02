@@ -28,14 +28,14 @@
 <main class="mx-auto">
   <!-- Hero section -->
   <div class="bg-gray-800">
-    <div class=" lg:pb-14 max-w-7xl mx-auto">
+    <div class="lg:pb-14 max-w-7xl mx-auto">
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div
           class="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center"
         >
           <div>
             <h1
-              class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:leading-none lg:mt-6 lg:text-5xl xl:text-6xl"
+              class="text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-5xl xl:text-6xl"
             >
               <span class="md:block">Take your business</span>
               <span class="text-primary-400 md:block">to the next level.</span>
@@ -220,7 +220,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-16 sm:mt-24 lg:mt-0 lg:col-span-6">
+        <div class="mt-16 sm:pb-10 sm:mt-24 lg:mt-0 lg:col-span-6">
           <div
             class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden"
           >
