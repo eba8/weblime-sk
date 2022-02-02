@@ -581,7 +581,7 @@
       <img
         class="relative mx-auto"
         width="490"
-        src="svg/weblime-laying-down-illustration.svg"
+        src="/svg/weblime-laying-down-illustration.svg"
         alt="woman laying down working"
       />
     </div>
