@@ -6,42 +6,42 @@
       "text": "I contacted WebLime to run my company’s social media accounts, and it was one of the smartest decisions I’ve made. I had been trying to “do it all myself” and I soon realized I couldn’t even if I did have the time.",
       "link": "https://goo.gl/maps/fswP8hkmkW8g2bk18",
       "logo": "/images/testimonials/google.png",
-      "author_image": "https://lh3.googleusercontent.com/a-/AOh14Gh28nGX78tRqJ7upipXY_EjBDwH8ceXeu06H6XvNA=w120-h120-p-rp-mo-br100"
+      "author_image": "src/lib/components/testimonials/profile-images/barrett-gaines.png"
     },
     {
       "author_name": "Marjorie Kling",
       "text": "Wow! Working with Weblime has been a delight.  We are learning about online marketing (not just hoping for things to happen) and we see active progress being made.  We are delighted with Weblime's responsiveness and understanding of our situation as we shift from face-to-face marketing to online marketing.",
       "link": "https://goo.gl/maps/FQHEDkqfPtnx6opu8",
       "logo": "/images/testimonials/google.png",
-      "author_image": "https://lh3.googleusercontent.com/a-/AOh14GjmgFudHOJ2Y5knhiWKhHhYQ4NQalIOUhb_i511=w120-h120-p-rp-mo-br100"
+      "author_image": "src/lib/components/testimonials/profile-images/marjorie-kling.png"
     },
     {
       "author_name": "Sarah Rosenberg",
       "text": "Our start-up non-profit contacted WebLime in our nascency to help us set up our website. That was 18 months ago. Not only did they create the website we wanted, they gave us something better than we knew to want. And as if that weren't exceptional enough, they have continued to support our interactive needs in other realms to streamline the effectiveness of our internal and external communications as an organization.",
       "link": "https://goo.gl/maps/8rfL6TzPnDrWMu8m6",
       "logo": "/images/testimonials/google.png",
-      "author_image": "https://lh3.googleusercontent.com/a/AATXAJy4q1avse2xcNUKpLPpWuSLXXZJud76eiKtGWD-=w120-h120-p-rp-mo-br100"
+      "author_image": "src/lib/components/testimonials/profile-images/sarah-rosenberg.png"
     },
     {
       "author_name": "Eli Cloud",
       "text": "WebLime is a trusted partner who provides valuable insight and tech expertise. This is a business that truly wants to see clients succeed. And they have the technological expertise to support growth now and into the future.",
       "link": "https://goo.gl/maps/HaFVFbSVkpgvDHyy6",
       "logo": "/images/testimonials/google.png",
-      "author_image": "https://lh3.googleusercontent.com/a-/AOh14Ghm84V1GCAFug0O4mc8rlNWR1wV19Uj2nEEqDDX=w120-h120-p-rp-mo-br100"
+      "author_image": "src/lib/components/testimonials/profile-images/eli-cloud.png"
     },
     {
       "author_name": "Mary Ocnean",
       "text": "We are very pleased with the input, activity, cost effectiveness and cooperation of WebLime as our marketing partner. They have delivered on their promises and been thorough and consistent. We will continue to use and recommend their services. They have been a great addition to our operations.",
       "link": "https://goo.gl/maps/2CMuB9GuYT4UhRXE6",
       "logo": "/images/testimonials/google.png",
-      "author_image": "https://lh3.googleusercontent.com/a/AATXAJyx43yclqmXsR4gODczXwDeEVToWS20qAdGK0uS=w120-h120-p-rp-mo-br100"
+      "author_image": "src/lib/components/testimonials/profile-images/mary-ocnean.png"
     },
     {
       "author_name": "Sam Oknin",
       "text": "I started my real estate business four years ago with absolute no internet presence. Web lime helped me put together a landing page and help me drive quality leads directly to it. Sales have increased and we seem a lot more legitimate. The team at Web Lime could not have been more attentive when i wanted specific things done. We would use them again any day! Thanks again.",
       "link": "https://goo.gl/maps/upBasYPcCCq3NBPg6",
       "logo": "/images/testimonials/google.png",
-      "author_image": "https://lh3.googleusercontent.com/a-/AOh14GiGz0rZJTr54DTTMEnrtrtrIbq5yoyj2QhDAkV6uA=w120-h120-p-rp-mo-br100"
+      "author_image": "src/lib/components/testimonials/profile-images/sam-oknin.png"
     }
   ]
 }

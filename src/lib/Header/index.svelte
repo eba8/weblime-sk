@@ -6,7 +6,8 @@
 <header>
   <div
     class:theme-lime={$page.url.pathname === '/solutions'}
-    class:theme-black={$page.url.pathname === '/portfolio'}
+    class:theme-black={$page.url.pathname === '/portfolio' ||
+      $page.url.pathname === '/top-maryland-web-design-agency'}
     class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero"
   >
     <nav

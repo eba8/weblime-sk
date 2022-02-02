@@ -282,7 +282,7 @@
           <img
             class="relative mx-auto"
             width="490"
-            src="/svg/design-weblime-illustration.svg"
+            src="shopify-partner-gray-logo.png"
             alt="WebLime solutions design illustration"
           />
         </div>
@@ -440,42 +440,42 @@
           <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/stripe.png"
+              src="/images/tech/stripe.png"
               alt="WebLime solutions stripe logo"
             />
           </div>
           <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/klaviyo.png"
+              src="/images/tech/klaviyo.png"
               alt="WebLime solutions klaviyo logo"
             />
           </div>
           <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/recharge.svg"
+              src="/images/tech/recharge.svg"
               alt="WebLime solutions recharge logo"
             />
           </div>
           <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/shopify.jpg"
+              src="/images/tech/shopify.jpg"
               alt="WebLime solutions shopify logo"
             />
           </div>
           <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/slack.png"
+              src="/images/tech/slack.png"
               alt="WebLime solutions slack logo"
             />
           </div>
           <div class="flex justify-center bg-white col-span-1 px-8 py-8">
             <img
               class="max-h-12"
-              src="/svg/tech-stack/wordpress-logo.png"
+              src="/images/tech/wordpress-logo.png"
               alt="WebLime solutions wordpress logo"
             />
           </div>

@@ -42,7 +42,7 @@
 
 <main class="mx-auto">
   <!-- Hero section -->
-  <div class="bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14">
+  <div class="bg-gray-800 sm:pt-16 lg:pt-8 lg:pb-14">
     <div class="px-5 pb-5 text-center lg:px-5">
       <h1
         class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl"
