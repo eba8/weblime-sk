@@ -282,7 +282,7 @@
           <img
             class="relative mx-auto"
             width="490"
-            src="shopify-partner-gray-logo.png"
+            src="/svg/design-weblime-illustration.svg"
             alt="WebLime solutions design illustration"
           />
         </div>
