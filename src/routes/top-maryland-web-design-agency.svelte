@@ -96,7 +96,7 @@
                   >
                     <div class="sm:col-span-6">
                       <input
-                        class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="w-full px-4 py-2 border border-gray-200 rounded-md border-1 focus:border-primary-500 focus:ring-primary-500"
                         type="text"
                         name="name"
                         placeholder="Name"
@@ -106,7 +106,7 @@
                     </div>
                     <div class="sm:col-span-3">
                       <input
-                        class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"
                         type="email"
                         name="eml"
                         placeholder="Email"
@@ -116,7 +116,7 @@
                     </div>
                     <div class="sm:col-span-3">
                       <input
-                        class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"
                         type="tel"
                         name="phone"
                         placeholder="Phone"
@@ -126,11 +126,11 @@
                     </div>
                     <div class="sm:col-span-6">
                       <textarea
-                        class="w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"
                         name="message"
                         cols="30"
                         rows="5"
-                        placeholder="Tell us what we can help you with!"
+                        placeholder="How can we help?"
                         required
                         bind:value={message}
                       />
