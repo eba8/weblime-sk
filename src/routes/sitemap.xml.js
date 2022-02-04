@@ -93,5 +93,14 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/10-reasons-to-use-a-content-management-system/</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/why-shopify-is-the-best-ecommerce-platform/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/contractor-marketing-services/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/2021-year-in-review/</loc>
+</url>
 </urlset>
 `;
