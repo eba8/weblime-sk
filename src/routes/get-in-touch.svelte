@@ -20,6 +20,22 @@
       }), // body data type must match "Content-Type" header
     });
     display_message = res.status == 200 ? true : false;
+    if (display_message == true) {
+      gtag_report_conversion;
+    }
+
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof url != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        send_to: 'AW-663674682/c-1CCND7wZcDELq-u7wC',
+        event_callback: callback,
+      });
+      return false;
+    }
   }
 </script>
 
