@@ -29,6 +29,20 @@
     name="description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
   />
+
+  <!-- Global site tag (gtag.js) - Google Ads: 663674682 -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-663674682"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-663674682');
+  </script>
 </svelte:head>
 
 <main class="mx-auto">
