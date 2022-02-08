@@ -94,7 +94,7 @@
                       <img
                         class="object-cover shadow-lg rounded-lg"
                         src="https://www.weblime.com/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
-                        alt="Brock Insurance - WebLime Client"
+                        alt=""
                       />
                     </div>
 
@@ -122,7 +122,7 @@
                       <img
                         class="object-cover shadow-lg rounded-lg"
                         src="https://www.weblime.com/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
-                        alt="Paws Between Homes - WebLime Client"
+                        alt=""
                       />
                     </div>
 
@@ -151,7 +151,7 @@
                       <img
                         class="object-cover shadow-lg rounded-lg"
                         src="https://www.weblime.com/images/portfolio-clients/inspired-accounting-wordpress.png"
-                        alt="Inspired Accounting - WebLime Client"
+                        alt=""
                       />
                     </div>
                     <div class="space-y-2">
@@ -179,7 +179,7 @@
                       <img
                         class="object-cover shadow-lg rounded-lg"
                         src="https://www.weblime.com/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
-                        alt="Resource Wranglers - WebLime Client"
+                        alt=""
                       />
                     </div>
                     <div class="space-y-2">
@@ -206,7 +206,7 @@
                       <img
                         class="object-cover shadow-lg rounded-lg"
                         src="https://www.weblime.com/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
-                        alt="Monarch Prime - WebLime Client"
+                        alt=""
                       />
                     </div>
                     <div class="space-y-2">
@@ -221,6 +221,7 @@
                   </div>
                 </a>
               </li>
+              <!-- More people... -->
             </ul>
           </div>
         </div>
