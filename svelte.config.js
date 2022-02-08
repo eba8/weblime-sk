@@ -1,5 +1,6 @@
 import adapterStatic from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
+import pages from './src/utils/routelist.js';
 /** @type {import('@sveltejs/kit').Config} */
 
 const config = {
@@ -15,6 +16,7 @@ const config = {
     prerender: {
       crawl: true,
       enabled: true,
+      entries: [...pages, '/sitemap.xml'],
     },
   },
 };
