@@ -10,6 +10,7 @@
     "src/**/*.js",
     "src/**/*.svelte",
     "src/**/*.svg",
-    "src/routes"
+    "src/routes",
+    "tsconfig.json"
   ]
 }
