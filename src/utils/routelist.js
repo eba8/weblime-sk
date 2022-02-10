@@ -2,11 +2,11 @@ import GhostContentAPI from '@tryghost/content-api';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const { GHOST_KEY } = process.env;
+const { GHOST_KEY, API_URL } = process.env;
 
 async function getPosts() {
   const api = new GhostContentAPI({
-    url: 'https://weblime-blog.herokuapp.com',
+    url: API_URL,
     key: GHOST_KEY,
     version: 'v4',
   });
