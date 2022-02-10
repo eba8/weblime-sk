@@ -108,5 +108,8 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/how-to-add-reviews-on-shopify/</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/ultimate-guide-to-digital-marketing/</loc>
+</url>
 </urlset>
 `;

@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   mode: 'jit',
   purge: ['./src/**/*.{html,js,svelte,ts,svg}'],
+  safelist: ['mt-0', 'no-underline', 'ring-white'],
   theme: {
     colors: {
       primary: colors.lime,
