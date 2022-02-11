@@ -79,7 +79,7 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <loc>https://www.weblime.com/stories/the-ultimate-wordpress-guide/</loc>
 </url>
 <url>
-<loc>https://www.weblime.com/stories/10-ways-to-get-more-home-improvement-customers/</loc>
+<loc>https://www.weblime.com/stories/get-more-construction-leads/</loc>
 </url>
 <url>
 <loc>https://www.weblime.com/stories/how-fast-should-a-website-load/</loc>
