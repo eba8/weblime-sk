@@ -27,7 +27,10 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WebLime - Digital Agency" />
-  <meta property="og:url" content="https://www.weblime.com/" />
+  <meta
+    property="og:url"
+    content="https://www.weblime.com/stories/${post.slug}/"
+  />
   <meta property="og:title" content="{post.title} - WebLime" />
   <meta property="og:description" content={post.meta_description} />
 
