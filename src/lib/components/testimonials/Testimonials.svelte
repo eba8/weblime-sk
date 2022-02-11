@@ -20,8 +20,8 @@
       <div class="pb-12 mt-10 bg-white sm:pb-16" />
       <div class="md:grid gap-4 grid-cols-3">
         {#each testimonials as testimonial}
-          <div class="my-4 md:m-0">
-            <div class="p-4 border border-gray-100 rounded-lg">
+          <div class="my-5 md:m-0">
+            <div class="p-4 border-2 border-gray-100 rounded-lg shadow-sm">
               <div class="flex items-center">
                 <a
                   class="flex items-center group"
