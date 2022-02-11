@@ -30,28 +30,26 @@
   <meta property="og:url" content="https://www.weblime.com/" />
   <meta property="og:title" content="{post.title} - WebLime" />
   <meta property="og:description" content={post.meta_description} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@weblime_agency" />
+  <meta property="twitter:title" content="{post.title} - WebLime" />
+  <meta property="twitter:description" content={post.meta_description} />
+
   {#if post.feature_image}
     <meta property="og:image" content={post.feature_image} />
+    <meta property="twitter:image" content={post.feature_image} />
   {:else}
     <meta
       property="og:image"
       content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
     />
-  {/if}
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  {#if post.feature_image}
-    <meta property="twitter:image" content={post.feature_image} />
-  {:else}
     <meta
       property="twitter:image"
       content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
     />
   {/if}
-  <meta name="twitter:site" content="@weblime_agency" />
-  <meta property="twitter:title" content="{post.title} - WebLime" />
-  <meta property="twitter:description" content={post.meta_description} />
 </svelte:head>
 
 <main class="mx-auto">
