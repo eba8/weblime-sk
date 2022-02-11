@@ -336,7 +336,9 @@
         class="grid grid-rows-4 gap-5 pt-10 mt-6 lg:grid-rows-2 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
       >
         {#each stories.slice(0, 4) as story}
-          <div class="bg-gray-100 shadow-sm p-5 rounded-lg">
+          <div
+            class="bg-gray-100 ring-2 ring-gray-900 shadow-sm p-5 rounded-lg"
+          >
             <a href="/stories/{story.slug}">
               <p class="text-xl font-semibold text-gray-900">{story.title}</p>
               <p class="mt-2 text-base text-gray-800">{story.excerpt}</p>
