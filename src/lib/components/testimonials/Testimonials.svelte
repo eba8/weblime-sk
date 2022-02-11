@@ -1,9 +1,8 @@
 <script>
   import { testimonials } from '$lib/components/testimonials/testimonials.json';
-  export let className;
 </script>
 
-<div class={className}>
+<div>
   <div class="py-6 overflow-hidden bg-white md:py-8 lg:py-12">
     <div class="container mx-auto">
       <h2 class="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl">
@@ -21,7 +20,7 @@
       <div class="md:grid gap-4 grid-cols-3">
         {#each testimonials as testimonial}
           <div class="my-5 md:m-0">
-            <div class="p-4 border-2 border-gray-100 rounded-lg shadow-sm">
+            <div class="p-5 bg-gray-100 rounded-lg shadow-md">
               <div class="flex items-center">
                 <a
                   class="flex items-center group"
