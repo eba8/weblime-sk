@@ -136,11 +136,15 @@
       {#each filteredstories.slice(0, 12) as story}
         <div
           transition:fade|local={{ duration: 300 }}
-          class="flex flex-col bg-gray-100 rounded-md overflow-hidden"
+          class="flex flex-col overflow-hidden bg-gray-100 rounded-md shadow-sm"
         >
           {#if story.feature_image}
             <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
-              <img src={story.feature_image} alt={story.title} />
+              <img
+                src={story.feature_image}
+                alt={story.title}
+                class="rounded-md border-2 border-gray-100"
+              />
             </a>
           {/if}
           <div class="flex-1 p-6 flex flex-col justify-between text-center">
@@ -150,11 +154,11 @@
                 href="/stories/{story.slug}/"
                 class="block mt-2"
               >
-                <p class="text-xl font-semibold text-gray-900">
+                <h2 class="text-xl font-semibold text-gray-900">
                   {story.title}
-                </p>
+                </h2>
 
-                <p class="mt-3 text-xl text-gray-500">
+                <p class="mt-3 text-xl text-gray-800">
                   {story.custom_excerpt}
                 </p>
               </a>
