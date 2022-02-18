@@ -21,7 +21,7 @@
     });
     display_message = res.status == 200 ? true : false;
     if (display_message == true) {
-      gtag_report_conversion;
+      gtag_report_conversion();
     }
 
     function gtag_report_conversion(url) {

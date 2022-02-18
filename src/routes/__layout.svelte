@@ -4,8 +4,6 @@
   import '../app.css';
 </script>
 
-<Header />
-
 <svelte:head>
   <script
     async
@@ -27,6 +25,8 @@
     })(window, document, 'clarity', 'script', 'am2azj360o');
   </script>
 </svelte:head>
+
+<Header />
 
 <main>
   <slot />
