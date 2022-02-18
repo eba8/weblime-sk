@@ -22,6 +22,7 @@
     display_message = res.status == 200 ? true : false;
     if (display_message == true) {
       gtag_report_conversion();
+      plausible('Get In Touch');
     }
 
     function gtag_report_conversion(url) {
@@ -139,6 +140,7 @@
           bind:value={honeypot}
         />
         <button
+          type="submit"
           class="sm:col-span-6 px-6 py-3 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
         >
           Send your message

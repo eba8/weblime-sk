@@ -10,6 +10,14 @@
     defer
     data-domain="weblime.com"
     src="https://plausible.io/js/plausible.js"></script>
+  <script>
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  </script>
+
   <script type="text/javascript">
     (function (c, l, a, r, i, t, y) {
       c[a] =
