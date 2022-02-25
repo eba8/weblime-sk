@@ -59,7 +59,7 @@
   <!-- Hero section -->
   <div class="sm:pt-16 lg:pt-8 lg:pb-14">
     <div
-      class="mx-auto flex max-w-5xl flex-col pb-5 text-center lg:flex-row lg:text-left"
+      class="mx-auto flex max-w-5xl flex-col items-center pb-5 text-center lg:flex-row lg:text-left"
     >
       <h1
         class="px-5 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
