@@ -58,16 +58,23 @@
 <main class="mx-auto">
   <!-- Hero section -->
   <div class="sm:pt-16 lg:pt-8 lg:pb-14">
-    <div class="pb-5 max-w-4xl mx-auto text-center">
+    <div
+      class="mx-auto flex max-w-5xl flex-col pb-5 text-center lg:flex-row lg:text-left"
+    >
       <h1
         class="px-5 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
       >
         {post.title}
       </h1>
+      <img
+        class="mx-auto w-3/4 py-5 lg:py-0"
+        src={post.feature_image}
+        alt={post.feature_image_alt}
+      />
     </div>
   </div>
   <div
-    class="relative px-5 mx-auto mt-8 prose md:px-0 prose-primary md:prose-lg lg:prose-xl pb-10"
+    class="prose-primary prose relative mx-auto mt-8 px-5 pb-10 md:prose-lg md:px-0 lg:prose-xl"
   >
     {@html post.html}
   </div>
