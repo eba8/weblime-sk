@@ -58,7 +58,7 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <loc>https://www.weblime.com/stories/generating-leads-for-a-home-improvement-business/</loc>
 </url>
 <url>
-<loc>https://www.weblime.com/stories/marketing-for-construction-companies/</loc>
+<loc>https://www.weblime.com/stories/construction-marketing</loc>
 </url>
 <url>
 <loc>https://www.weblime.com/stories/how-to-promote-your-business-locally/</loc>
