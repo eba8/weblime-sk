@@ -21,8 +21,8 @@
 
 <svelte:head>
   <!-- Primary Meta Tags -->
-  <title>WebLime | Helping businesses thrive online.</title>
-  <meta name="title" content="WebLime | Helping businesses thrive online." />
+  <title>WebLime | Web Design and Development.</title>
+  <meta name="title" content="WebLime | Web Design and Development." />
   <meta
     name="description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
@@ -33,10 +33,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WebLime - Digital Agency" />
   <meta property="og:url" content="https://www.weblime.com/" />
-  <meta
-    property="og:title"
-    content="WebLime | Helping businesses thrive online."
-  />
+  <meta property="og:title" content="WebLime | Web Design and Development." />
   <meta
     property="og:description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
@@ -55,7 +52,7 @@
   <meta name="twitter:site" content="@weblime_agency" />
   <meta
     property="twitter:title"
-    content="WebLime | Helping businesses thrive online."
+    content="WebLime | Web Design and Development."
   />
   <meta
     property="twitter:description"
@@ -69,19 +66,19 @@
       class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
     >
       <span class="block xl:inline">Digital solutions to enhance</span>
-      <span class="px-3 bg-primary-500 xl:inline">your growth.</span>
+      <span class="bg-primary-500 px-3 xl:inline">your growth.</span>
     </h1>
     <p
-      class="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+      class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"
     >
       We connect brands with people in ways that are equally innovative,
       effective, and human.
     </p>
-    <div class="max-w-md mx-auto mt-5 sm:flex sm:justify-center md:mt-8">
+    <div class="mx-auto mt-5 max-w-md sm:flex sm:justify-center md:mt-8">
       <div class="rounded-md">
         <a
           href="/solutions"
-          class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-gray-800 border border-transparent rounded-md bg-primary-500 hover:bg-primary-400 md:py-4 md:text-lg md:px-10"
+          class="border-transparent flex w-full items-center justify-center rounded-md border bg-primary-500 px-8 py-3 text-base font-medium text-gray-800 hover:bg-primary-400 md:py-4 md:px-10 md:text-lg"
         >
           Solutions
         </a>
@@ -89,7 +86,7 @@
       <div class="mt-3 rounded-md sm:mt-0 sm:ml-3">
         <a
           href="/get-in-touch"
-          class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-gray-900 border border-transparent rounded-md hover:bg-gray-800 md:py-4 md:text-lg md:px-10"
+          class="border-transparent flex w-full items-center justify-center rounded-md border bg-gray-900 px-8 py-3 text-base font-medium text-white hover:bg-gray-800 md:py-4 md:px-10 md:text-lg"
         >
           Get In Touch
         </a>
@@ -98,15 +95,15 @@
   </div>
 </div>
 
-<div class="relative h-full mx-auto max-w-7xl">
-  <div class="relative py-16sm:py-24 lg:py-32">
+<div class="relative mx-auto h-full max-w-7xl">
+  <div class="py-16sm:py-24 relative lg:py-32">
     <div
-      class="max-w-md px-4 mx-auto mt-6 text-center sm:max-w-3xl sm:px-6 lg:px-8 lg:max-w-7xl"
+      class="mx-auto mt-6 max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8"
     >
       <div class="mt-12">
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div>
-            <div class="flow-root px-6 pb-8 bg-red-100 rounded-lg">
+            <div class="flow-root rounded-lg bg-red-100 px-6 pb-8">
               <div class="-mt-8">
                 <div>
                   <img
@@ -116,7 +113,7 @@
                   />
                 </div>
                 <h2
-                  class="mt-8 font-medium text-xl tracking-tight text-gray-900"
+                  class="mt-8 text-xl font-medium tracking-tight text-gray-900"
                 >
                   Unleash your creativity
                 </h2>
@@ -130,7 +127,7 @@
           </div>
 
           <div class="mt-6">
-            <div class="flow-root px-6 pb-8 mt-6 rounded-lg bg-primary-100">
+            <div class="mt-6 flow-root rounded-lg bg-primary-100 px-6 pb-8">
               <div class="-mt-8">
                 <div>
                   <img
@@ -140,7 +137,7 @@
                   />
                 </div>
                 <h2
-                  class="mt-8 font-medium text-xl tracking-tight text-gray-900"
+                  class="mt-8 text-xl font-medium tracking-tight text-gray-900"
                 >
                   Get more results
                 </h2>
@@ -154,7 +151,7 @@
           </div>
 
           <div class="mt-12">
-            <div class="flow-root px-6 pb-8 mt-6 bg-yellow-100 rounded-lg">
+            <div class="mt-6 flow-root rounded-lg bg-yellow-100 px-6 pb-8">
               <div class="-mt-8">
                 <div>
                   <img
@@ -164,7 +161,7 @@
                   />
                 </div>
                 <h2
-                  class="mt-8 font-medium text-xl tracking-tight text-gray-900"
+                  class="mt-8 text-xl font-medium tracking-tight text-gray-900"
                 >
                   Grow your audience
                 </h2>
@@ -182,7 +179,7 @@
   </div>
 
   <div
-    class="relative px-6 mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+    class="relative mt-12 px-6 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
   >
     <div class="relative">
       <h3
@@ -200,11 +197,11 @@
         <div class="relative">
           <dt>
             <div
-              class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+              class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
             >
               <!-- Heroicon name: desktop-computer -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -231,11 +228,11 @@
         <div class="relative">
           <dt>
             <div
-              class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+              class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
             >
               <!-- Heroicon name: shopping-bag -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -262,11 +259,11 @@
         <div class="relative">
           <dt>
             <div
-              class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+              class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
             >
               <!-- Heroicon name: outline/lightning-bolt -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -301,9 +298,9 @@
     </div>
   </div>
 
-  <div class="px-6 mt-40 mb-20 bg-white">
-    <div class="overflow-hidden rounded-lg shadow-xl bg-primary-500">
-      <div class="max-w-2xl px-6 py-16 mx-auto text-center sm:py-20">
+  <div class="mt-40 mb-20 bg-white px-6">
+    <div class="overflow-hidden rounded-lg bg-primary-500 shadow-xl">
+      <div class="mx-auto max-w-2xl px-6 py-16 text-center sm:py-20">
         <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
           <span class="block">Boost your organization.</span>
         </h2>
@@ -312,7 +309,7 @@
         </p>
         <a
           href="/get-in-touch"
-          class="inline-flex items-center justify-center w-full px-5 py-3 mt-8 text-base font-medium text-gray-700 bg-white border border-transparent rounded-md hover:bg-gray-100 sm:w-auto"
+          class="border-transparent mt-8 inline-flex w-full items-center justify-center rounded-md border bg-white px-5 py-3 text-base font-medium text-gray-700 hover:bg-gray-100 sm:w-auto"
         >
           Let's work together!
         </a>
@@ -322,9 +319,9 @@
 
   <Testimonials />
 
-  <div class="px-6 pt-16 pb-20 lg:pt-24 lg:pb-28 lg:px-8">
+  <div class="px-6 pt-16 pb-20 lg:px-8 lg:pt-24 lg:pb-28">
     <div
-      class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl"
+      class="relative mx-auto max-w-lg divide-y-2 divide-gray-200 lg:max-w-7xl"
     >
       <div>
         <h2
@@ -334,10 +331,10 @@
         </h2>
       </div>
       <div
-        class="grid grid-rows-4 gap-5 pt-10 mt-6 lg:grid-rows-2 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12"
+        class="mt-6 grid grid-rows-4 gap-5 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-12"
       >
         {#each stories.slice(0, 4) as story}
-          <div class="bg-gray-100 shadow-md p-5 rounded-lg">
+          <div class="rounded-lg bg-gray-100 p-5 shadow-md">
             <a href="/stories/{story.slug}">
               <p class="text-xl font-semibold text-gray-900">{story.title}</p>
               <p class="mt-2 text-base text-gray-800">{story.excerpt}</p>
