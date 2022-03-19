@@ -16,6 +16,7 @@
 
 <script>
   export let stories;
+  import { fade } from 'svelte/transition';
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';
 </script>
 
@@ -334,7 +335,9 @@
         class="mt-6 grid grid-rows-4 gap-5 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-12"
       >
         {#each stories.slice(0, 4) as story}
-          <div class="rounded-lg bg-gray-100 p-5 shadow-md">
+          <div
+            class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 duration-500 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
+          >
             <a href="/stories/{story.slug}">
               <p class="text-xl font-semibold text-gray-900">{story.title}</p>
               <p class="mt-2 text-base text-gray-800">{story.excerpt}</p>
