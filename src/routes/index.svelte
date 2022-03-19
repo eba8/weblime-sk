@@ -16,7 +16,6 @@
 
 <script>
   export let stories;
-  import { fade } from 'svelte/transition';
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';
 </script>
 
