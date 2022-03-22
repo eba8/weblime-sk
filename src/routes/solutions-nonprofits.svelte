@@ -52,7 +52,7 @@
         class="flex flex-col items-center justify-center pt-8 text-center lg:items-start lg:pt-0 lg:pl-16 lg:text-left"
       >
         <h1
-          class="my-6 text-3xl font-semibold leading-tight text-gray-800 sm:text-6xl"
+          class="my-6 text-4xl font-extrabold tracking-tight text-gray-800 sm:text-6xl"
         >
           Get Your NonProfit <span class="text-primary-600">MOVING</span>.
         </h1>
