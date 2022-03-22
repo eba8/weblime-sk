@@ -51,7 +51,7 @@
   <!-- Our Approach Section -->
   <div class="bg-gray-50">
     <div
-      class="max-w-4xl px-4 py-16 mx-auto sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:pt-24 lg:px-8"
+      class="mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24"
     >
       <h2
         class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
@@ -63,14 +63,14 @@
         scale to new heights while maintaing costs.
       </p>
       <div
-        class="grid grid-cols-1 mt-12 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16"
+        class="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16"
       >
         <div>
           <div>
             <span
-              class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
+              class="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"
             >
-              <img class="w-24 h-24" src="/svg/Tea-01.svg" alt="tea mug icon" />
+              <img class="h-24 w-24" src="/svg/Tea-01.svg" alt="tea mug icon" />
             </span>
           </div>
           <div class="mt-6">
@@ -86,10 +86,10 @@
         <div>
           <div>
             <span
-              class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
+              class="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"
             >
               <img
-                class="w-24 h-24"
+                class="h-24 w-24"
                 src="/svg/Cog_Wheels-01.svg"
                 alt="cog wheels icon"
               />
@@ -107,10 +107,10 @@
         <div>
           <div>
             <span
-              class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
+              class="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"
             >
               <img
-                class="w-24 h-24"
+                class="h-24 w-24"
                 src="/svg/growth-chart.svg"
                 alt="growth chart icon"
               />
@@ -129,10 +129,10 @@
         <div>
           <div>
             <span
-              class="flex items-center justify-center w-12 h-12 bg-white rounded-md bg-opacity-10"
+              class="flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"
             >
               <img
-                class="w-24 h-24"
+                class="h-24 w-24"
                 src="/svg/Ballance-01.svg"
                 alt="ballance icon"
               />
@@ -152,22 +152,22 @@
     </div>
   </div>
 
-  <div class="py-16 overflow-hidden bg-gray-50 lg:py-24">
-    <div class="relative max-w-xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-7xl">
+  <div class="overflow-hidden bg-gray-50 py-16 lg:py-24">
+    <div class="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="relative">
         <h2
-          class="text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl"
+          class="text-center text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl"
         >
           We've got your business covered.
         </h2>
-        <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-500">
+        <p class="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-500">
           Whether it’s migrating from another platform or building an entire
           brand, we’ve got you covered.
         </p>
       </div>
 
       <div
-        class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+        class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
       >
         <div class="relative">
           <h3
@@ -184,11 +184,11 @@
             <div class="relative">
               <dt>
                 <div
-                  class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                  class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                 >
                   <!-- Heroicon name: outline/globe-alt -->
                   <svg
-                    class="w-6 h-6"
+                    class="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -216,11 +216,11 @@
             <div class="relative">
               <dt>
                 <div
-                  class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                  class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                 >
                   <!-- Heroicon name: outline/lightning-bolt -->
                   <svg
-                    class="w-6 h-6"
+                    class="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -248,11 +248,11 @@
             <div class="relative">
               <dt>
                 <div
-                  class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                  class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                 >
                   <!-- Heroicon name: lock-closed -->
                   <svg
-                    class="w-6 h-6"
+                    class="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -278,7 +278,7 @@
           </dl>
         </div>
 
-        <div class="relative mt-10 -mx-4 lg:mt-0" aria-hidden="true">
+        <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
           <img
             class="relative mx-auto"
             width="490"
@@ -290,7 +290,7 @@
 
       <div class="relative mt-12 sm:mt-16 lg:mt-24">
         <div
-          class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center"
+          class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8"
         >
           <div class="lg:col-start-2">
             <h3
@@ -307,11 +307,11 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                   >
                     <!-- Heroicon name: outline/annotation -->
                     <svg
-                      class="w-6 h-6"
+                      class="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -340,11 +340,11 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                   >
                     <!-- Heroicon name: outline/mail -->
                     <svg
-                      class="w-6 h-6"
+                      class="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -372,7 +372,7 @@
             </dl>
           </div>
 
-          <div class="relative mt-10 -mx-4 lg:mt-0 lg:col-start-1">
+          <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
             <img
               class="relative mx-auto"
               width="490"
@@ -389,7 +389,7 @@
     data-widget-id="b766b6532d39255f50074860000e1f2df242bd99"
     src="https://www.local-marketing-reports.com/m/assets-v2/lead-gen/js/external/widget-builder.js"></script>
 
-  <div class="flex flex-col bg-gray-900 items-center pb-6">
+  <div class="flex flex-col items-center bg-gray-900 pb-6">
     <a
       href="https://www.designrush.com/agency/search-engine-optimization/maryland"
     >
@@ -403,15 +403,15 @@
 
   <!-- Emerging Techonlogies section -->
   <div class="bg-white">
-    <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
-      <div class="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:items-center lg:gap-8">
         <div>
           <h2
-            class="text-3xl font-extrabold text-gray-900 max-auto sm:text-4xl"
+            class="max-auto text-3xl font-extrabold text-gray-900 sm:text-4xl"
           >
             Emerging technologies
           </h2>
-          <p class="max-w-3xl mt-3 text-lg text-gray-500">
+          <p class="mt-3 max-w-3xl text-lg text-gray-500">
             The possibilities are endless. We'll implement some of the best
             technological solutions in the game.
           </p>
@@ -419,7 +419,7 @@
             <div class="rounded-md">
               <a
                 href="/portfolio"
-                class="flex items-center justify-center px-5 py-3 text-base font-medium text-gray-900 border border-transparent rounded-md bg-primary-500 hover:bg-primary-600"
+                class="border-transparent flex items-center justify-center rounded-md border bg-primary-500 px-5 py-3 text-base font-medium text-gray-900 hover:bg-primary-600"
               >
                 Portfolio
               </a>
@@ -427,7 +427,7 @@
             <div class="mt-3 sm:mt-0 sm:ml-3">
               <a
                 href="/get-in-touch"
-                class="flex items-center justify-center px-5 py-3 text-base font-medium border border-transparent rounded-md border-gray-900 text-white bg-gray-900 hover:bg-gray-800"
+                class="border-transparent flex items-center justify-center rounded-md border border-gray-900 bg-gray-900 px-5 py-3 text-base font-medium text-white hover:bg-gray-800"
               >
                 Get In Touch
               </a>
@@ -435,44 +435,44 @@
           </div>
         </div>
         <div
-          class="mt-8 grid grid-cols-2 bg-gray-200 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2"
+          class="mt-8 grid grid-cols-2 gap-0.5 bg-gray-200 md:grid-cols-3 lg:mt-0 lg:grid-cols-2"
         >
-          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
+          <div class="col-span-1 flex justify-center bg-white px-8 py-8">
             <img
               class="max-h-12"
               src="/images/tech/stripe.png"
               alt="WebLime solutions stripe logo"
             />
           </div>
-          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
+          <div class="col-span-1 flex justify-center bg-white px-8 py-8">
             <img
               class="max-h-12"
               src="/images/tech/klaviyo.png"
               alt="WebLime solutions klaviyo logo"
             />
           </div>
-          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
+          <div class="col-span-1 flex justify-center bg-white px-8 py-8">
             <img
               class="max-h-12"
               src="/images/tech/recharge.svg"
               alt="WebLime solutions recharge logo"
             />
           </div>
-          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
+          <div class="col-span-1 flex justify-center bg-white px-8 py-8">
             <img
               class="max-h-12"
               src="/images/tech/shopify.jpg"
               alt="WebLime solutions shopify logo"
             />
           </div>
-          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
+          <div class="col-span-1 flex justify-center bg-white px-8 py-8">
             <img
               class="max-h-12"
               src="/images/tech/slack.png"
               alt="WebLime solutions slack logo"
             />
           </div>
-          <div class="flex justify-center bg-white col-span-1 px-8 py-8">
+          <div class="col-span-1 flex justify-center bg-white px-8 py-8">
             <img
               class="max-h-12"
               src="/images/tech/wordpress-logo.png"
@@ -483,4 +483,36 @@
       </div>
     </div>
   </div>
+
+  <!-- This example requires Tailwind CSS v2.0+ -->
+  <section class="bg-white">
+    <div
+      class="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:py-16 lg:px-8"
+    >
+      <h2
+        class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"
+      >
+        <span class="block">Running a nonprofit?</span>
+        <span class="block">We can help.</span>
+      </h2>
+      <div class="mt-8 flex justify-center">
+        <div class="inline-flex rounded-md shadow">
+          <a
+            href="/get-in-touch"
+            class="border-transparent inline-flex items-center justify-center rounded-md border bg-primary-600 px-5 py-3 text-base font-medium text-white hover:bg-primary-700"
+          >
+            Get Started
+          </a>
+        </div>
+        <div class="ml-3 inline-flex">
+          <a
+            href="/solutions-nonprofits"
+            class="border-transparent flex items-center justify-center rounded-md border border-gray-900 bg-gray-900 px-5 py-3 text-base font-medium text-white hover:bg-gray-800"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
