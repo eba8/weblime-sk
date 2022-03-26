@@ -34,7 +34,7 @@
     property="twitter:description"
     content="WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."
   />
-  <link rel="stylesheet" href="tailwind.css" />
+  <!-- <link rel="stylesheet" href="tailwind.css" /> -->
   <script defer src="./scripts/navbar.js"></script>
   <script defer src="./scripts/typewriter.js"></script>
   <script defer src="./scripts/carousel.js"></script>
