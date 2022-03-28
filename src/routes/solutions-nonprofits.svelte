@@ -34,10 +34,7 @@
     property="twitter:description"
     content="WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."
   />
-  <!-- <link rel="stylesheet" href="tailwind.css" /> -->
-  <script defer src="./scripts/navbar.js"></script>
-  <script defer src="./scripts/typewriter.js"></script>
-  <script defer src="./scripts/carousel.js"></script>
+  <script defer src="/scripts/carousel.js"></script>
 </svelte:head>
 
 <main class="mx-auto">
@@ -57,8 +54,8 @@
           Get Your NonProfit <span class="text-primary-600">MOVING</span>.
         </h1>
         <p class="w-4/6 text-lg text-gray-600">
-          You're on a mission to make the world a better place. We're here to
-          help you do that.
+          You're on a mission to make the world a better place, and we'd love to
+          help.
         </p>
       </div>
     </div>
@@ -209,10 +206,10 @@
           <img
             alt=""
             src="https://source.unsplash.com/BbSBf5uv50A"
-            class="rellax absolute right-0 -top-24 z-30 h-auto w-[60%] rounded-lg object-cover object-center shadow-md"
+            class="rellax absolute right-0 -top-24 z-30 h-auto rounded-lg object-cover object-center shadow-md"
             data-rellax-speed="-1"
           />
-          <img
+          <!-- <img
             alt=""
             src="https://source.unsplash.com/F3Y8BfZn4jo"
             class="rellax relative left-0 top-24 z-20 h-auto w-1/2 rounded-lg object-cover object-center shadow-md"
@@ -223,10 +220,10 @@
             src="https://source.unsplash.com/mcSDtbWXUZU"
             class="rellax absolute -bottom-16 right-8 z-10 h-auto w-[50%] rounded-lg object-cover object-center shadow-md"
             data-rellax-speed="0"
-          />
+          /> -->
         </div>
       </div>
-      <div class="flex w-full items-center pt-24 sm:w-1/3 sm:pt-0">
+      <div class="flex w-full items-center pt-24 sm:w-2/3 sm:pt-0">
         <div class="mx-auto sm:pr-6">
           <h1 class="text-3xl text-gray-800">
             Got your 501(c)?
