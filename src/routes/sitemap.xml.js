@@ -114,5 +114,14 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/ultimate-guide-to-digital-marketing/</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/shopify-automation/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/ecommerce-dashboard/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/ecommerce-marketing-automation/</loc>
+</url>
 </urlset>
 `;
