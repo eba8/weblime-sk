@@ -50,7 +50,7 @@
         <span class="block xl:inline">Want to see what we're made of?</span>
       </h1>
       <p
-        class="max-w-md mx-auto mt-3 text-base text-gray-50 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+        class="mx-auto mt-3 max-w-md text-base text-gray-50 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"
       >
         These highly-functional websites are made from trusted conversations in
         valued partnerships. It's the only way to get to the heart of a brand.
@@ -59,10 +59,10 @@
   </div>
 
   <div
-    class="relative px-4 pt-16 pb-20 bg-white sm:px-6 lg:pt-24 lg:pb-28 lg:px-8"
+    class="relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
   >
     <div class="absolute inset-0">
-      <div class="bg-white h-1/3 sm:h-2/3" />
+      <div class="h-1/3 bg-white sm:h-2/3" />
     </div>
     <div class="relative mx-auto max-w-7xl">
       <div class="text-center">
@@ -71,16 +71,15 @@
         >
           WordPress
         </h2>
-        <p class="max-w-2xl mx-auto mt-3 text-xl text-gray-500 sm:mt-4">
+        <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
           43% of the web uses WordPress, from hobby blogs to the biggest news
           sites online.
         </p>
       </div>
       <div class="bg-white">
-        <div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+        <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
           <div class="space-y-12">
             <ul
-              role="list"
               class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
             >
               <li>
@@ -92,16 +91,16 @@
                   <div class="space-y-4">
                     <div class="aspect-w-3 aspect-h-2">
                       <img
-                        class="object-cover shadow-lg rounded-lg"
+                        class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
                         alt=""
                       />
                     </div>
 
                     <div class="space-y-2">
-                      <div class="text-lg leading-6 font-medium space-y-1">
+                      <div class="space-y-1 text-lg font-medium leading-6">
                         <h3 class="text-2xl">Brock Insurance</h3>
-                        <p class="text-primary-600 text-sm inline uppercase">
+                        <p class="inline text-sm uppercase text-primary-600">
                           <span>insurance, </span>
                           <span>E-mail automation, </span>
                           <span>Blog</span>
@@ -120,16 +119,16 @@
                   <div class="space-y-4">
                     <div class="aspect-w-3 aspect-h-2">
                       <img
-                        class="object-cover shadow-lg rounded-lg"
+                        class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
                         alt=""
                       />
                     </div>
 
                     <div class="space-y-2">
-                      <div class="text-lg leading-6 font-medium space-y-1">
+                      <div class="space-y-1 text-lg font-medium leading-6">
                         <h3 class="text-2xl">Paws Between Homes</h3>
-                        <p class="text-primary-600 text-sm inline uppercase">
+                        <p class="inline text-sm uppercase text-primary-600">
                           <span>nonprofit, </span>
                           <span>MailChimp Integration, </span>
                           <span>Google Sheets automations, </span>
@@ -149,15 +148,15 @@
                   <div class="space-y-4">
                     <div class="aspect-w-3 aspect-h-2">
                       <img
-                        class="object-cover shadow-lg rounded-lg"
+                        class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/inspired-accounting-wordpress.png"
                         alt=""
                       />
                     </div>
                     <div class="space-y-2">
-                      <div class="text-lg leading-6 font-medium space-y-1">
+                      <div class="space-y-1 text-lg font-medium leading-6">
                         <h3 class="text-2xl">Inspired Accounting</h3>
-                        <p class="text-primary-600 text-sm inline uppercase">
+                        <p class="inline text-sm uppercase text-primary-600">
                           <span>bookkeeper, </span>
                           <span>Form integrations, </span>
                           <span>HubSpot Integration, </span>
@@ -177,15 +176,15 @@
                   <div class="space-y-4">
                     <div class="aspect-w-3 aspect-h-2">
                       <img
-                        class="object-cover shadow-lg rounded-lg"
+                        class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
                         alt=""
                       />
                     </div>
                     <div class="space-y-2">
-                      <div class="text-lg leading-6 font-medium space-y-1">
+                      <div class="space-y-1 text-lg font-medium leading-6">
                         <h3 class="text-2xl">Resource Wranglers</h3>
-                        <p class="text-primary-600 text-sm inline uppercase">
+                        <p class="inline text-sm uppercase text-primary-600">
                           <span>staffing agency, </span>
                           <span>blog, </span>
                           <span>Loxo integration</span>
@@ -204,15 +203,15 @@
                   <div class="space-y-4">
                     <div class="aspect-w-3 aspect-h-2">
                       <img
-                        class="object-cover shadow-lg rounded-lg"
+                        class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
                         alt=""
                       />
                     </div>
                     <div class="space-y-2">
-                      <div class="text-lg leading-6 font-medium space-y-1">
+                      <div class="space-y-1 text-lg font-medium leading-6">
                         <h3 class="text-2xl">Monarch Prime</h3>
-                        <p class="text-primary-600 text-sm inline uppercase">
+                        <p class="inline text-sm uppercase text-primary-600">
                           <span>construction, </span>
                           <span>blog</span>
                         </p>
@@ -221,7 +220,32 @@
                   </div>
                 </a>
               </li>
-              <!-- More people... -->
+              <li>
+                <a
+                  href="https://www.lifebellai.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-2">
+                      <img
+                        class="rounded-lg object-cover shadow-lg"
+                        src="https://www.weblime.com/images/portfolio-clients/lifebellai.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <div class="space-y-1 text-lg font-medium leading-6">
+                        <h3 class="text-2xl">LifeBell AI</h3>
+                        <p class="inline text-sm uppercase text-primary-600">
+                          <span>Health, </span>
+                          <span>Marketing</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -231,15 +255,15 @@
 
   <div class="bg-gray-900">
     <div class="pt-12 sm:pt-16 lg:pt-24">
-      <div class="px-4 mx-auto text-center max-w-7xl sm:px-6 lg:px-8">
-        <div class="max-w-3xl mx-auto space-y-2 lg:max-w-none">
+      <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl space-y-2 lg:max-w-none">
           <h2
             class="mb-5 text-3xl font-semibold leading-6 tracking-wider text-primary-500"
           >
             E-Commerce
           </h2>
           <p
-            class="max-w-md mx-auto mt-3 text-base text-white sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+            class="mx-auto mt-3 max-w-md text-base text-white sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"
           >
             One platform with all the ecommerce and point of sale features you
             need to start, run, and grow your business.
@@ -247,30 +271,30 @@
         </div>
       </div>
     </div>
-    <div class="pb-12 mt-8 bg-white sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24">
+    <div class="mt-8 bg-white pb-12 sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24">
       <div class="relative">
-        <div class="absolute inset-0 bg-gray-900 h-3/4" />
-        <div class="relative z-10 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="absolute inset-0 h-3/4 bg-gray-900" />
+        <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div
-            class="max-w-md mx-auto space-y-4 lg:max-w-7xl lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0"
+            class="mx-auto max-w-md space-y-4 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-5 lg:space-y-0"
           >
             <div class="flex flex-col overflow-hidden rounded-lg shadow-md">
-              <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                <div class="flex items-baseline mt-4 text-4xl">Ocnean Pets</div>
+              <div class="bg-white px-6 py-8 sm:p-10 sm:pb-6">
+                <div class="mt-4 flex items-baseline text-4xl">Ocnean Pets</div>
                 <p class="mt-5 text-lg text-gray-500">
                   Ocnean's mission is to source USA made, eco-friendly healthy
                   products that benefit animals.
                 </p>
               </div>
               <div
-                class="flex flex-col justify-between flex-1 px-6 pt-6 pb-8 space-y-6 bg-white sm:p-10 sm:pt-6"
+                class="flex flex-1 flex-col justify-between space-y-6 bg-white px-6 pt-6 pb-8 sm:p-10 sm:pt-6"
               >
                 <ul class="space-y-4">
                   <li class="flex items-start">
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -294,7 +318,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -318,7 +342,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -342,7 +366,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -363,7 +387,7 @@
                 <div class="rounded-md">
                   <a
                     href="https://ocnean.com"
-                    class="flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-900"
+                    class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
                     aria-describedby="tier-standard"
                   >
                     Visit Site
@@ -373,8 +397,8 @@
             </div>
 
             <div class="flex flex-col overflow-hidden rounded-lg shadow-md">
-              <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                <div class="flex items-baseline mt-4 text-4xl">
+              <div class="bg-white px-6 py-8 sm:p-10 sm:pb-6">
+                <div class="mt-4 flex items-baseline text-4xl">
                   Thistle & Bee
                 </div>
                 <p class="mt-5 text-lg text-gray-500">
@@ -383,14 +407,14 @@
                 </p>
               </div>
               <div
-                class="flex flex-col justify-between flex-1 px-6 pt-6 pb-8 space-y-6 bg-white sm:p-10 sm:pt-6"
+                class="flex flex-1 flex-col justify-between space-y-6 bg-white px-6 pt-6 pb-8 sm:p-10 sm:pt-6"
               >
                 <ul class="space-y-4">
                   <li class="flex items-start">
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -414,7 +438,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -438,7 +462,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -460,7 +484,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -483,7 +507,7 @@
                 <div class="rounded-md">
                   <a
                     href="https://thistleandbee.org"
-                    class="flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-900"
+                    class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
                     aria-describedby="tier-standard"
                   >
                     Visit Site
@@ -492,8 +516,8 @@
               </div>
             </div>
             <div class="flex flex-col overflow-hidden rounded-lg shadow-md">
-              <div class="px-6 py-8 bg-white sm:p-10 sm:pb-6">
-                <div class="flex items-baseline mt-4 text-4xl">
+              <div class="bg-white px-6 py-8 sm:p-10 sm:pb-6">
+                <div class="mt-4 flex items-baseline text-4xl">
                   Common Roasters
                 </div>
                 <p class="mt-5 text-lg text-gray-500">
@@ -502,14 +526,14 @@
                 </p>
               </div>
               <div
-                class="flex flex-col justify-between flex-1 px-6 pt-6 pb-8 space-y-6 bg-white sm:p-10 sm:pt-6"
+                class="flex flex-1 flex-col justify-between space-y-6 bg-white px-6 pt-6 pb-8 sm:p-10 sm:pt-6"
               >
                 <ul class="space-y-4">
                   <li class="flex items-start">
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -533,7 +557,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -557,7 +581,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -579,7 +603,7 @@
                     <div class="flex-shrink-0">
                       <!-- Heroicon name: outline/check -->
                       <svg
-                        class="w-6 h-6 text-primary-500"
+                        class="h-6 w-6 text-primary-500"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -600,7 +624,7 @@
                 <div class="rounded-md">
                   <a
                     href="https://www.commonroomroasters.com"
-                    class="flex items-center justify-center px-5 py-3 text-base font-medium text-white bg-gray-800 rounded-md hover:bg-gray-900"
+                    class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
                   >
                     Visit Site
                   </a>
