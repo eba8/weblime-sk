@@ -3,27 +3,29 @@
 </script>
 
 <div>
-  <div class="py-6 overflow-hidden bg-white md:py-8 lg:py-12">
+  <div class="overflow-hidden bg-white py-6 md:py-8 lg:py-12">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-extrabold text-center text-gray-900 sm:text-4xl">
+      <h2 class="text-center text-3xl font-extrabold text-gray-900 sm:text-4xl">
         People 💚 WebLime
       </h2>
       <p
-        class="max-w-3xl mx-auto mt-3 text-xl text-center text-gray-500 sm:mt-4"
+        class="mx-auto mt-3 max-w-3xl text-center text-xl text-gray-500 sm:mt-4"
       >
         WebLime was built to be a one-stop solution for your business. We'll
         focus on your online presence while you hone in on your products and
         services.
       </p>
 
-      <div class="pb-12 mt-10 bg-white sm:pb-16" />
-      <div class="md:grid gap-4 grid-cols-3">
+      <div class="mt-10 bg-white pb-12 sm:pb-16" />
+      <div class="grid-cols-3 gap-4 md:grid">
         {#each testimonials as testimonial}
           <div class="my-5 md:m-0">
-            <div class="p-5 bg-gray-100 rounded-lg shadow-md">
+            <div
+              class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 duration-500 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
+            >
               <div class="flex items-center">
                 <a
-                  class="flex items-center group"
+                  class="group flex items-center"
                   href={testimonial.link}
                   target="_blank"
                 >
@@ -38,16 +40,14 @@
                     </div>
                   </div>
                 </a>
-                <a class="ml-auto" href="/" target="_blank"
-                  ><img
-                    class="w-10"
-                    src={testimonial.logo}
-                    alt="testimonial source logo"
-                  /></a
-                >
+                <img
+                  class="ml-auto w-10"
+                  src={testimonial.logo}
+                  alt="testimonial source logo"
+                />
               </div>
               <div
-                class="mt-2 text-sm whitespace-pre-wrap cursor-text tweet-text"
+                class="tweet-text mt-2 cursor-text whitespace-pre-wrap text-sm"
               >
                 {testimonial.text}
               </div>
