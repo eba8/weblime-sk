@@ -123,5 +123,17 @@ const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
 <url>
 <loc>https://www.weblime.com/stories/ecommerce-marketing-automation/</loc>
 </url>
+<url>
+<loc>https://www.weblime.com/stories/construction-marketing-ideas/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/photography-blog-platforms/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/shopify-vs-amazon/</loc>
+</url>
+<url>
+<loc>https://www.weblime.com/stories/wordpress-marketing-automation/</loc>
+</url>
 </urlset>
 `;
