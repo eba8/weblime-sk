@@ -51,10 +51,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WebLime - Digital Agency" />
   <meta property="og:url" content="https://www.weblime.com/" />
-  <meta
-    property="og:title"
-    content="WebLime | Helping businesses thrive online."
-  />
+  <meta property="og:title" content="WebLime | Web Design and Development." />
   <meta
     property="og:description"
     content="Read WebLime's latest stories. All about web development and digital marketing."
@@ -81,7 +78,7 @@
   />
 </svelte:head>
 
-<div class="relative pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
+<div class="relative px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
   <!-- Hero -->
   <div class=" sm:pt-16 lg:pt-8 lg:pb-14">
     <div class="px-5 text-center lg:px-5">
@@ -91,52 +88,52 @@
         <span class="block xl:inline">Stories</span>
       </h1>
       <p
-        class="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"
+        class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"
       >
         We love developing your online presence and equally love to share what
         we learn along the way.
       </p>
     </div>
   </div>
-  <div class="relative max-w-7xl mx-auto">
+  <div class="relative mx-auto max-w-7xl">
     <div class="text-center">
       <button
-        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        class="m-3 rounded-md border-gray-200 bg-gray-200 px-5 py-3 focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         on:click={() => ((tag = ''), (searchTerm = ''))}>Most recent</button
       >
 
       <button
-        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        class="m-3 rounded-md border-gray-200 bg-gray-200 px-5 py-3 focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         on:click={() => ((tag = 'wordpress'), (searchTerm = ''))}
         >WordPress</button
       >
 
       <button
-        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        class="m-3 rounded-md border-gray-200 bg-gray-200 px-5 py-3 focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         on:click={() => ((tag = 'marketing'), (searchTerm = ''))}
         >Marketing</button
       >
 
       <button
-        class="px-5 py-3 m-3 bg-gray-200 rounded-md border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        class="m-3 rounded-md border-gray-200 bg-gray-200 px-5 py-3 focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         on:click={() => ((tag = 'seo'), (searchTerm = ''), (searchTerm = ''))}
         >SEO</button
       >
 
       <input
-        class="px-5 py-3 m-3 rounded-md text-lg p-4 border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 focus:border-primary-100"
+        class="m-3 rounded-md border-2 border-gray-200 p-4 px-5 py-3 text-lg focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         bind:value={searchTerm}
         placeholder="Search stories"
       />
     </div>
     <div
-      class="mt-12 max-w-lg mx-auto grid gap-12 lg:grid-cols-3 lg:max-w-none"
+      class="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3"
     >
       <!-- {#each stories.slice(0, 15) as story} -->
       {#each filteredstories.slice(0, 12) as story}
         <div
           transition:fade|local={{ duration: 300 }}
-          class="flex flex-col overflow-hidden bg-gray-100 rounded-md shadow-sm"
+          class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"
         >
           {#if story.feature_image}
             <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
@@ -147,12 +144,12 @@
               />
             </a>
           {/if}
-          <div class="flex-1 p-6 flex flex-col justify-between text-center">
+          <div class="flex flex-1 flex-col justify-between p-6 text-center">
             <div class="flex-1">
               <a
                 sveltekit:prefetch
                 href="/stories/{story.slug}/"
-                class="block mt-2"
+                class="mt-2 block"
               >
                 <h2 class="text-xl font-semibold text-gray-900">
                   {story.title}

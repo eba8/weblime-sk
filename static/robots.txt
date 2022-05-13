@@ -1,3 +1,6 @@
 Sitemap: https://weblime.com/sitemap.xml
 User-agent: *
-Disallow:
+Disallow: /
+
+User-agent: Twitterbot
+Allow: /
