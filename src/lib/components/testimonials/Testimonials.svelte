@@ -41,7 +41,7 @@
                   </div>
                 </a>
                 <img
-                  class="ml-auto w-10"
+                  class="ml-auto h-full w-10"
                   src={testimonial.logo}
                   alt="testimonial source logo"
                 />
