@@ -156,7 +156,7 @@
                 <div>
                   <img
                     src="svg/illustration-7.svg"
-                    class="mx-auto h-44"
+                    class="mx-auto h-44 w-full"
                     alt="woman flying on rocketship"
                   />
                 </div>
