@@ -132,7 +132,7 @@
                 <div>
                   <img
                     src="svg/illustration-weblime-results.svg"
-                    class="mx-auto h-44"
+                    class="mx-auto h-44 w-full"
                     alt="Woman jumping next to mobile phone"
                   />
                 </div>
@@ -292,6 +292,7 @@
       <img
         class="relative mx-auto"
         width="490"
+        height="100%"
         src="svg/weblime-laying-down-illustration.svg"
         alt="woman laying down working"
       />
