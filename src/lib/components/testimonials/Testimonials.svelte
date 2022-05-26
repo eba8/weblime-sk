@@ -30,7 +30,7 @@
                   target="_blank"
                 >
                   <img
-                    class="w-10 rounded-full"
+                    class="h-full w-10 rounded-full"
                     src={testimonial.author_image}
                     alt={testimonial.author_name + ' profile image'}
                   />
