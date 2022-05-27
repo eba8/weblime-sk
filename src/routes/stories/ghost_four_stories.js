@@ -11,7 +11,11 @@ export async function get() {
     version: 'v4.0',
   });
   try {
-    const jsonPosts = await api.posts.browse({ limit: '4' });
+    const jsonPosts = await api.posts.browse({
+      limit: '4',
+      fields: 'id,title,excerpt,custom_excerpt',
+      formats: `plaintext`,
+    });
     return {
       status: 200,
       body: {
