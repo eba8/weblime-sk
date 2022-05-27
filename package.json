@@ -12,8 +12,8 @@
     "postbuild": "npm run cp:404 && npm run rm:404"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "1.0.0-next.24",
-    "@sveltejs/kit": "1.0.0-next.231",
+    "@sveltejs/adapter-static": "next",
+    "@sveltejs/kit": "next",
     "autoprefixer": "10.4.5",
     "cssnano": "^5.0.1",
     "postcss": "^8.2.10",
@@ -22,7 +22,7 @@
     "prettier-plugin-svelte": "^2.2.0",
     "svelte": "^3.44.0",
     "svelte-preprocess": "^4.7.1",
-    "tailwindcss": "^3.0",
+    "tailwindcss": "next",
     "vite": "^2.7.10"
   },
   "type": "module",

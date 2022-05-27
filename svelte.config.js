@@ -11,9 +11,9 @@ const config = {
   ],
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html
-    target: '#svelte',
     adapter: adapterStatic(),
     prerender: {
+      default: true,
       crawl: true,
       enabled: true,
       entries: [...pages, '/sitemap.xml'],
