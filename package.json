@@ -17,7 +17,7 @@
     "postcss-load-config": "^3.0.1",
     "prettier": "~2.2.1",
     "prettier-plugin-svelte": "^2.2.0",
-    "svelte": "^3.44.0",
+    "svelte": "next",
     "svelte-preprocess": "^4.7.1",
     "tailwindcss": "next",
     "vite": "^2.7.10"
@@ -26,6 +26,7 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.2.2",
     "@lukeed/uuid": "^2.0.0",
+    "@mapbox/node-pre-gyp": "^1.0.9",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
