@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <!-- <script
+  <script
     async
     defer
     data-domain="weblime.com"
@@ -16,7 +16,7 @@
       function () {
         (window.plausible.q = window.plausible.q || []).push(arguments);
       };
-  </script> -->
+  </script>
 </svelte:head>
 
 <Header />
