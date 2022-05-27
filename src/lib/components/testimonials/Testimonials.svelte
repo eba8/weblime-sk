@@ -33,6 +33,7 @@
                     class="h-full w-10 rounded-full"
                     src={testimonial.author_image}
                     alt={testimonial.author_name + ' profile image'}
+                    loading="lazy"
                   />
                   <div class="ml-2 leading-tight">
                     <div class="font-bold group-hover:text-primary-500">
@@ -44,6 +45,7 @@
                   class="ml-auto h-full w-10"
                   src={testimonial.logo}
                   alt="testimonial source logo"
+                  loading="lazy"
                 />
               </div>
               <div
