@@ -185,7 +185,7 @@ var init_multipart_parser = __esm({
         let i2 = 0;
         const length_ = data.length;
         let previousIndex = this.index;
-        let { lookbehind, boundary, boundaryChars, index: index11, state, flags } = this;
+        let { lookbehind, boundary, boundaryChars, index: index4, state, flags } = this;
         const boundaryLength = this.boundary.length;
         const boundaryEnd = boundaryLength - 1;
         const bufferLength = data.length;
@@ -219,20 +219,20 @@ var init_multipart_parser = __esm({
           c = data[i2];
           switch (state) {
             case S.START_BOUNDARY:
-              if (index11 === boundary.length - 2) {
+              if (index4 === boundary.length - 2) {
                 if (c === HYPHEN) {
                   flags |= F.LAST_BOUNDARY;
                 } else if (c !== CR) {
                   return;
                 }
-                index11++;
+                index4++;
                 break;
-              } else if (index11 - 1 === boundary.length - 2) {
+              } else if (index4 - 1 === boundary.length - 2) {
                 if (flags & F.LAST_BOUNDARY && c === HYPHEN) {
                   state = S.END;
                   flags = 0;
                 } else if (!(flags & F.LAST_BOUNDARY) && c === LF) {
-                  index11 = 0;
+                  index4 = 0;
                   callback("onPartBegin");
                   state = S.HEADER_FIELD_START;
                 } else {
@@ -240,29 +240,29 @@ var init_multipart_parser = __esm({
                 }
                 break;
               }
-              if (c !== boundary[index11 + 2]) {
-                index11 = -2;
+              if (c !== boundary[index4 + 2]) {
+                index4 = -2;
               }
-              if (c === boundary[index11 + 2]) {
-                index11++;
+              if (c === boundary[index4 + 2]) {
+                index4++;
               }
               break;
             case S.HEADER_FIELD_START:
               state = S.HEADER_FIELD;
               mark("onHeaderField");
-              index11 = 0;
+              index4 = 0;
             case S.HEADER_FIELD:
               if (c === CR) {
                 clear("onHeaderField");
                 state = S.HEADERS_ALMOST_DONE;
                 break;
               }
-              index11++;
+              index4++;
               if (c === HYPHEN) {
                 break;
               }
               if (c === COLON) {
-                if (index11 === 1) {
+                if (index4 === 1) {
                   return;
                 }
                 dataCallback("onHeaderField", true);
@@ -304,8 +304,8 @@ var init_multipart_parser = __esm({
               state = S.PART_DATA;
               mark("onPartData");
             case S.PART_DATA:
-              previousIndex = index11;
-              if (index11 === 0) {
+              previousIndex = index4;
+              if (index4 === 0) {
                 i2 += boundaryEnd;
                 while (i2 < bufferLength && !(data[i2] in boundaryChars)) {
                   i2 += boundaryLength;
@@ -313,27 +313,27 @@ var init_multipart_parser = __esm({
                 i2 -= boundaryEnd;
                 c = data[i2];
               }
-              if (index11 < boundary.length) {
-                if (boundary[index11] === c) {
-                  if (index11 === 0) {
+              if (index4 < boundary.length) {
+                if (boundary[index4] === c) {
+                  if (index4 === 0) {
                     dataCallback("onPartData", true);
                   }
-                  index11++;
+                  index4++;
                 } else {
-                  index11 = 0;
+                  index4 = 0;
                 }
-              } else if (index11 === boundary.length) {
-                index11++;
+              } else if (index4 === boundary.length) {
+                index4++;
                 if (c === CR) {
                   flags |= F.PART_BOUNDARY;
                 } else if (c === HYPHEN) {
                   flags |= F.LAST_BOUNDARY;
                 } else {
-                  index11 = 0;
+                  index4 = 0;
                 }
-              } else if (index11 - 1 === boundary.length) {
+              } else if (index4 - 1 === boundary.length) {
                 if (flags & F.PART_BOUNDARY) {
-                  index11 = 0;
+                  index4 = 0;
                   if (c === LF) {
                     flags &= ~F.PART_BOUNDARY;
                     callback("onPartEnd");
@@ -347,14 +347,14 @@ var init_multipart_parser = __esm({
                     state = S.END;
                     flags = 0;
                   } else {
-                    index11 = 0;
+                    index4 = 0;
                   }
                 } else {
-                  index11 = 0;
+                  index4 = 0;
                 }
               }
-              if (index11 > 0) {
-                lookbehind[index11 - 1] = c;
+              if (index4 > 0) {
+                lookbehind[index4 - 1] = c;
               } else if (previousIndex > 0) {
                 const _lookbehind = new Uint8Array(lookbehind.buffer, lookbehind.byteOffset, lookbehind.byteLength);
                 callback("onPartData", 0, previousIndex, _lookbehind);
@@ -372,7 +372,7 @@ var init_multipart_parser = __esm({
         dataCallback("onHeaderField");
         dataCallback("onHeaderValue");
         dataCallback("onPartData");
-        this.index = index11;
+        this.index = index4;
         this.state = state;
         this.flags = flags;
       }
@@ -510,9 +510,9 @@ async function consumeBody(data) {
   }
 }
 function fromRawHeaders(headers = []) {
-  return new Headers2(headers.reduce((result, value, index11, array2) => {
-    if (index11 % 2 === 0) {
-      result.push(array2.slice(index11, index11 + 2));
+  return new Headers2(headers.reduce((result, value, index4, array2) => {
+    if (index4 % 2 === 0) {
+      result.push(array2.slice(index4, index4 + 2));
     }
     return result;
   }, []).filter(([name, value]) => {
@@ -1580,10 +1580,10 @@ var init_polyfills = __esm({
           [PullSteps](readRequest) {
             const stream = this._controlledReadableByteStream;
             if (this._queueTotalSize > 0) {
-              const entry11 = this._queue.shift();
-              this._queueTotalSize -= entry11.byteLength;
+              const entry4 = this._queue.shift();
+              this._queueTotalSize -= entry4.byteLength;
               ReadableByteStreamControllerHandleQueueDrain(this);
-              const view = new Uint8Array(entry11.buffer, entry11.byteOffset, entry11.byteLength);
+              const view = new Uint8Array(entry4.buffer, entry4.byteOffset, entry4.byteLength);
               readRequest._chunkSteps(view);
               return;
             }
@@ -5408,13 +5408,6 @@ function escape(html) {
 function escape_attribute_value(value) {
   return typeof value === "string" ? escape(value) : value;
 }
-function each(items, fn) {
-  let str = "";
-  for (let i2 = 0; i2 < items.length; i2 += 1) {
-    str += fn(items[i2], i2);
-  }
-  return str;
-}
 function validate_component(component, name) {
   if (!component || !component.$$render) {
     if (name === "svelte:component")
@@ -5448,7 +5441,7 @@ function create_ssr_component(fn) {
       return {
         html,
         css: {
-          code: Array.from(result.css).map((css11) => css11.code).join("\n"),
+          code: Array.from(result.css).map((css4) => css4.code).join("\n"),
           map: null
         },
         head: result.title + result.head
@@ -5499,13 +5492,13 @@ var require_cookie = __commonJS({
       var dec = opt.decode || decode2;
       for (var i2 = 0; i2 < pairs.length; i2++) {
         var pair = pairs[i2];
-        var index11 = pair.indexOf("=");
-        if (index11 < 0) {
+        var index4 = pair.indexOf("=");
+        if (index4 < 0) {
           continue;
         }
-        var key2 = pair.substring(0, index11).trim();
+        var key2 = pair.substring(0, index4).trim();
         if (obj[key2] == void 0) {
-          var val = pair.substring(index11 + 1, pair.length).trim();
+          var val = pair.substring(index4 + 1, pair.length).trim();
           if (val[0] === '"') {
             val = val.slice(1, -1);
           }
@@ -5623,14 +5616,14 @@ var init_dist = __esm({
   }
 });
 
-// .svelte-kit/output/server/chunks/hooks-62fbdd94.js
-var hooks_62fbdd94_exports = {};
-__export(hooks_62fbdd94_exports, {
+// .svelte-kit/output/server/chunks/hooks-99d7d531.js
+var hooks_99d7d531_exports = {};
+__export(hooks_99d7d531_exports, {
   handle: () => handle
 });
 var import_cookie, urlDictionary, handle;
-var init_hooks_62fbdd94 = __esm({
-  ".svelte-kit/output/server/chunks/hooks-62fbdd94.js"() {
+var init_hooks_99d7d531 = __esm({
+  ".svelte-kit/output/server/chunks/hooks-99d7d531.js"() {
     import_cookie = __toESM(require_cookie(), 1);
     init_dist();
     urlDictionary = {
@@ -5814,323 +5807,6 @@ var init__2 = __esm({
   }
 });
 
-// .svelte-kit/output/server/entries/pages/404.svelte.js
-var svelte_exports = {};
-__export(svelte_exports, {
-  default: () => _404
-});
-var _404;
-var init_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/404.svelte.js"() {
-    init_index_38cedc01();
-    _404 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<main class="${"flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8"}"><div class="${"flex-shrink-0 flex justify-center"}"><a href="${"/"}" class="${"inline-flex"}"><span class="${"sr-only"}">Workflow</span>
-      <img class="${"h-12 w-auto"}" src="${"https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"}" alt="${""}"></a></div>
-  <div class="${"py-16"}"><div class="${"text-center"}"><p class="${"text-sm font-semibold text-primary-600 uppercase tracking-wide"}">404 error
-      </p>
-      <h1 class="${"mt-2 text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl"}">Page not found.
-      </h1>
-      <p class="${"mt-2 text-base text-gray-500"}">Sorry, we couldn\u2019t find the page you\u2019re looking for.
-      </p>
-      <div class="${"mt-6"}"><a href="${"/"}" class="${"text-base font-medium text-primary-600 hover:text-primary-500"}">Go back home<span aria-hidden="${"true"}">\u2192</span></a></div></div></div></main>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/2.js
-var __exports3 = {};
-__export(__exports3, {
-  css: () => css3,
-  entry: () => entry3,
-  index: () => index3,
-  js: () => js3,
-  module: () => svelte_exports
-});
-var index3, entry3, js3, css3;
-var init__3 = __esm({
-  ".svelte-kit/output/server/nodes/2.js"() {
-    init_svelte();
-    index3 = 2;
-    entry3 = "pages/404.svelte-faabb568.js";
-    js3 = ["pages/404.svelte-faabb568.js", "chunks/index-457e8868.js"];
-    css3 = [];
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/get-in-touch.svelte.js
-var get_in_touch_svelte_exports = {};
-__export(get_in_touch_svelte_exports, {
-  default: () => Get_in_touch
-});
-var Get_in_touch;
-var init_get_in_touch_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/get-in-touch.svelte.js"() {
-    init_index_38cedc01();
-    Get_in_touch = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let name;
-      let email;
-      let honeypot = "";
-      let phone;
-      return `${$$result.head += `${$$result.title = `<title>WebLime - Get In Touch</title>`, ""}<meta name="${"description"}" content="${"A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."}" data-svelte="svelte-9isvm9"><script async src="${"https://www.googletagmanager.com/gtag/js?id=AW-663674682"}" data-svelte="svelte-9isvm9"><\/script><script data-svelte="svelte-9isvm9">window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'AW-663674682');
-  <\/script>`, ""}
-
-<main class="${"mx-auto"}">
-  <div class="${"sm:pt-16 lg:pt-8 lg:pb-14"}"><div class="${"pb-5 text-center"}"><h1 class="${"text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"}"><span class="${"xl:inline"}">Got a project </span>
-        <span class="${"px-3 text-primary-500 bg-gray-900 xl:inline"}">in mind?</span></h1></div></div>
-
-  <div class="${"max-w-2xl px-4 pb-20 mx-auto mt-10 transform sm:px-6 lg:px-8"}"><h2 class="${"mb-2"}">Let&#39;s talk!</h2>
-    <p class="${"mx-auto mb-4 text-gray-600 sm:text-lg md:mt-5 md:text-base md:max-w-3xl"}">If there&#39;s something we can help you with, just let us know. We&#39;ll be more
-      than happy to offer you our help.
-    </p>
-    <form class="${"space-y-3"}" method="${"POST"}" id="${"form-contact"}"><div class="${"mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6"}"><div class="${"sm:col-span-6"}"><input class="${"w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"text"}" name="${"name"}" placeholder="${"Name"}" required${add_attribute("value", name, 0)}></div>
-        <div class="${"sm:col-span-3"}"><input class="${"w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"email"}" name="${"eml"}" placeholder="${"Email"}" required${add_attribute("value", email, 0)}></div>
-        <div class="${"sm:col-span-3"}"><input class="${"w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"tel"}" name="${"phone"}" placeholder="${"Phone"}" required${add_attribute("value", phone, 0)}></div>
-        <div class="${"sm:col-span-6"}"><textarea class="${"w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" name="${"message"}" cols="${"30"}" rows="${"5"}" placeholder="${"Tell us what we can help you with!"}" required>${""}</textarea></div>
-        <input class="${"hidden w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"tel"}" name="${"eml2"}" placeholder="${""}"${add_attribute("value", honeypot, 0)}>
-        <button type="${"submit"}" class="${"sm:col-span-6 px-6 py-3 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"}">Send your message
-        </button>
-        ${``}</div></form></div></main>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/3.js
-var __exports4 = {};
-__export(__exports4, {
-  css: () => css4,
-  entry: () => entry4,
-  index: () => index4,
-  js: () => js4,
-  module: () => get_in_touch_svelte_exports
-});
-var index4, entry4, js4, css4;
-var init__4 = __esm({
-  ".svelte-kit/output/server/nodes/3.js"() {
-    init_get_in_touch_svelte();
-    index4 = 3;
-    entry4 = "pages/get-in-touch.svelte-ccd782ca.js";
-    js4 = ["pages/get-in-touch.svelte-ccd782ca.js", "chunks/index-457e8868.js", "chunks/index-e95dc991.js"];
-    css4 = [];
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/packages.svelte.js
-var packages_svelte_exports = {};
-__export(packages_svelte_exports, {
-  default: () => Packages
-});
-var Packages;
-var init_packages_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/packages.svelte.js"() {
-    init_index_38cedc01();
-    init_stores_f780dc53();
-    Packages = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let $page, $$unsubscribe_page;
-      $$unsubscribe_page = subscribe(page, (value) => $page = value);
-      let monthly_packages = {
-        local: "499",
-        seo: "999",
-        growth: "2,999",
-        local_link: "https://buy.stripe.com/3cs7ufdUPf2yefmcMM",
-        seo_link: "https://buy.stripe.com/aEUaGr5oj3jQc7e9AD",
-        growth_link: "https://buy.stripe.com/00g8yj183f2y0ow6ou"
-      };
-      $$unsubscribe_page();
-      return `${$$result.head += `${$$result.title = `<title>WebLime - Packages</title>`, ""}<meta property="${"og:description"}" content="${"A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."}" data-svelte="svelte-1hi1l9g">`, ""}
-
-<div class="${"bg-white"}">
-  <div class="${"sm:pt-16 lg:pt-8 lg:pb-14"}"><div class="${"px-5 text-center lg:px-5"}"><h1 class="${"text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"}"><span class="${"block xl:inline"}">Marketing</span></h1>
-      <p class="${"max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl"}">Our packages include everything you need so that you can focus on your
-        business.
-      </p></div></div>
-
-  
-  <div class="${"bg-gradient-to-b from-white to-gray-50 pb-16"}"><div class="${"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"}"><div class="${"sm:flex sm:flex-col sm:align-center"}"><div class="${"relative mt-6 self-center"}"><span class="${"inline-flex items-center px-4 py-1 rounded-full text-sm font-medium bg-primary-200 text-gray-900 uppercase"}">Save 8% on yearly plans
-          </span></div>
-        <div class="${"relative mt-6 bg-gray-100 rounded-lg p-0.5 flex self-center sm:mt-8"}"><button type="${"button"}" class="${escape("bg-white border-gray-200 rounded-md shadow-sm text-gray-900") + " relative py-2 w-1/2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8"}">Monthly billing</button>
-          <button type="${"button"}" class="${escape("text-gray-700") + " ml-0.5 relative rounded-md py-2 w-1/2 text-sm font-medium whitespace-nowrap focus:outline-none sm:w-auto sm:px-8"}">Yearly billing</button></div></div>
-      <div class="${"mt-12 space-y-4 sm:mt-16 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0 xl:grid-cols-4"}"><div class="${"border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"}"><div class="${"p-6"}"><h2 class="${"text-lg leading-6 text-center font-medium text-gray-900"}">Local
-            </h2>
-            <p class="${"mt-8 text-center"}"><span class="${"text-4xl font-extrabold text-gray-900"}">$${escape(monthly_packages.local)}</span>
-              <span class="${"text-base font-medium text-gray-500"}">${escape("a month.")}</span></p>
-            <a${add_attribute("href", monthly_packages.local_link, 0)} class="${"mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"}">Subscribe to Local</a></div>
-          <div class="${"pt-6 pb-8 px-6"}"><h3 class="${"text-xs font-medium text-gray-900 tracking-wide uppercase"}">What&#39;s included
-            </h3>
-            <ul class="${"mt-6 space-y-4"}"><li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monitoring &amp; Reporting</span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Google Business Setup/Enhance</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Citation Building</span></li></ul></div></div>
-
-        <div class="${"border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"}"><div class="${"p-6"}"><h2 class="${"text-lg leading-6 font-medium text-center text-gray-900"}">SEO
-            </h2>
-
-            <p class="${"mt-8 text-center"}"><span class="${"text-4xl font-extrabold text-gray-900"}">$${escape(monthly_packages.seo)}</span>
-              <span class="${"text-base font-medium text-gray-500"}">${escape("a month.")}</span></p>
-            <a${add_attribute("href", monthly_packages.seo_link, 0)} class="${"mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"}">Subscribe to SEO</a></div>
-          <div class="${"pt-6 pb-8 px-6"}"><h3 class="${"text-xs font-medium text-gray-900 tracking-wide uppercase"}">What&#39;s included
-            </h3>
-            <ul class="${"mt-6 space-y-4"}"><li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monitoring &amp; Reporting
-                </span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Google Business Setup/Enhance</span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Citation Building</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monthly Link-Building (1 Topic)</span></li></ul></div></div>
-
-        <div class="${"relative border border-primary-500 rounded-lg shadow-sm divide-y divide-gray-200"}"><div class="${"absolute inset-x-0"}"><div class="${"flex justify-center transform -translate-y-1/2"}"><span class="${"inline-flex rounded-full bg-primary-500 px-4 py-1 text-sm font-semibold tracking-wider uppercase text-gray-900"}">Most popular
-              </span></div></div>
-
-          <div class="${"p-6"}"><h2 class="${"text-lg leading-6 font-medium text-center text-gray-900"}">Growth
-            </h2>
-            <p class="${"mt-8 text-center"}"><span class="${"text-4xl font-extrabold text-gray-900"}">$${escape(monthly_packages.growth)}</span>
-              <span class="${"text-base font-medium text-gray-500"}">${escape("a month.")}</span></p>
-            <a${add_attribute("href", monthly_packages.growth_link, 0)} class="${"mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900"}">Subscribe to Growth</a></div>
-          <div class="${"pt-6 pb-8 px-6"}"><h3 class="${"text-xs font-medium text-gray-900 tracking-wide uppercase"}">What&#39;s included
-            </h3>
-            <ul class="${"mt-6 space-y-4"}"><li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monitoring &amp; Reporting
-                </span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Google Business Setup/Enhance</span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Citation Building</span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monthly Link-Building (1 Topic)</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">1 Social Post Per Week (3 Channels)</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Keyword Research &amp; Competitive Analysis</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Quarterly Blog Post</span></li></ul></div></div>
-
-        <div class="${"border border-gray-200 rounded-lg shadow-sm divide-y divide-gray-200"}"><div class="${"p-6"}"><h2 class="${"text-lg leading-6 text-center font-medium text-gray-900"}">Enterprise
-            </h2>
-            <p class="${"mt-8 text-center"}"><span class="${"text-4xl font-extrabold text-gray-900"}">Quote</span></p>
-            <a sveltekit:prefetch href="${"/get-in-touch"}" class="${[
-        "mt-8 block w-full bg-gray-800 border border-transparent rounded-md py-2 text-sm font-semibold text-white text-center hover:bg-gray-900",
-        $page.url === "/get-in-touch" ? "active" : ""
-      ].join(" ").trim()}">Request Quote</a></div>
-          <div class="${"pt-6 pb-8 px-6"}"><h3 class="${"text-xs font-medium text-gray-900 tracking-wide uppercase"}">What&#39;s included
-            </h3>
-            <ul class="${"mt-6 space-y-4"}"><li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monitoring &amp; Reporting
-                </span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Google Business Setup/Enhance</span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Citation Building</span></li>
-
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Monthly Link-Building</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">3 Custom Social Posts Per Week</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Media Buying</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">PPC Ads</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">Social Media Ads</span></li>
-              <li class="${"flex space-x-3"}">
-                <svg class="${"flex-shrink-0 h-5 w-5 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 20 20"}" fill="${"currentColor"}" aria-hidden="${"true"}"><path fill-rule="${"evenodd"}" d="${"M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"}" clip-rule="${"evenodd"}"></path></svg>
-                <span class="${"text-sm text-gray-500"}">In-app chat, email, Slack + phone</span></li></ul></div></div></div></div></div>
-
-  
-  <div class="${"max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8"}"><div class="${"lg:grid lg:grid-cols-3 lg:gap-8"}"><div class="${"space-y-4"}"><h2 class="${"text-3xl font-extrabold text-gray-900"}">Frequently asked questions
-        </h2>
-        <p class="${"text-lg text-gray-500"}">Can\u2019t find the answer you\u2019re looking for? Reach out to our <a sveltekit:prefetch href="${"/get-in-touch"}" class="${"font-medium text-primary-600 hover:text-primary-500"}">customer support</a> team.
-        </p></div>
-      <div class="${"mt-12 lg:mt-0 lg:col-span-2"}"><dl class="${"space-y-12"}"><div><dt class="${"text-lg leading-6 font-medium text-gray-900"}">How involved do I have to be in the process?
-            </dt>
-            <dd class="${"mt-2 text-base text-gray-500"}">As much as you want to be. We have some clients who are very
-              involved but most let our team take the ball and run with it.
-            </dd>
-          </div><div><dt class="${"text-lg leading-6 font-medium text-gray-900"}">Am I under any contract?
-            </dt>
-            <dd class="${"mt-2 text-base text-gray-500"}">Our monthly plans are flexible and do not include a contract. Our
-              annual plans can save you money but are non-refundable.
-            </dd>
-          </div><div><dt class="${"text-lg leading-6 font-medium text-gray-900"}">How do I know you\u2019ll do a good job for me?
-            </dt>
-            <dd class="${"mt-2 text-base text-gray-500"}">Check out our reviews - we go above and beyond for our clients,
-              and our reviews reflect this.
-            </dd>
-          </div><div><dt class="${"text-lg leading-6 font-medium text-gray-900"}">What if I already have a website or domain through another
-              provider?
-            </dt>
-            <dd class="${"mt-2 text-base text-gray-500"}">It\u2019s a common misconception that if you already have a domain or a
-              website you are stuck with your current provider.
-              <br><br>
-              This couldn\u2019t be further from the truth. If you have an existing website
-              through another provider, you will keep the same website address.
-              <br><br>
-              When it comes time to set your site live, our technical team will handle
-              everything - you may need to approve your current provider to grant
-              us access.
-            </dd></div></dl></div></div></div></div>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/5.js
-var __exports5 = {};
-__export(__exports5, {
-  css: () => css5,
-  entry: () => entry5,
-  index: () => index5,
-  js: () => js5,
-  module: () => packages_svelte_exports
-});
-var index5, entry5, js5, css5;
-var init__5 = __esm({
-  ".svelte-kit/output/server/nodes/5.js"() {
-    init_packages_svelte();
-    index5 = 5;
-    entry5 = "pages/packages.svelte-d06e334e.js";
-    js5 = ["pages/packages.svelte-d06e334e.js", "chunks/index-457e8868.js", "chunks/stores-106c960d.js"];
-    css5 = [];
-  }
-});
-
 // .svelte-kit/output/server/chunks/project-In-mind-cc64b809.js
 var Project_In_mind;
 var init_project_In_mind_cc64b809 = __esm({
@@ -6142,677 +5818,6 @@ var init_project_In_mind_cc64b809 = __esm({
       <div class="${"mt-6 rounded-md lg:mt-0 lg:ml-10 lg:flex-shrink-0"}"><a href="${"/get-in-touch"}" class="${"flex items-center justify-center rounded-md bg-primary-500 px-5 py-3 text-base font-medium text-gray-900 hover:bg-primary-600"}">Get Started
         </a></div></div></div></div>`;
     });
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/portfolio.svelte.js
-var portfolio_svelte_exports = {};
-__export(portfolio_svelte_exports, {
-  default: () => Portfolio
-});
-var Portfolio;
-var init_portfolio_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/portfolio.svelte.js"() {
-    init_index_38cedc01();
-    init_project_In_mind_cc64b809();
-    Portfolio = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${$$result.head += `${$$result.title = `<title>WebLime | Portfolio</title>`, ""}<meta name="${"title"}" content="${"WebLime | Portfolio"}" data-svelte="svelte-18qfx54"><meta name="${"description"}" content="${"A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."}" data-svelte="svelte-18qfx54"><meta property="${"og:locale"}" content="${"en_US"}" data-svelte="svelte-18qfx54"><meta property="${"og:type"}" content="${"website"}" data-svelte="svelte-18qfx54"><meta property="${"og:site_name"}" content="${"WebLime - Digital Agency"}" data-svelte="svelte-18qfx54"><meta property="${"og:url"}" content="${"https://www.weblime.com/"}" data-svelte="svelte-18qfx54"><meta property="${"og:title"}" content="${"WebLime | Portfolio"}" data-svelte="svelte-18qfx54"><meta property="${"og:description"}" content="${"A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."}" data-svelte="svelte-18qfx54"><meta property="${"og:image"}" content="${"https://www.weblime.com/https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-18qfx54"><meta property="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-18qfx54"><meta property="${"twitter:image"}" content="${"https://www.weblime.com/https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-18qfx54"><meta name="${"twitter:site"}" content="${"@weblime_agency"}" data-svelte="svelte-18qfx54"><meta property="${"twitter:title"}" content="${"WebLime | Portfolio"}" data-svelte="svelte-18qfx54"><meta property="${"twitter:description"}" content="${"A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."}" data-svelte="svelte-18qfx54">`, ""}
-
-<main class="${"mx-auto"}">
-  <div class="${"bg-gray-800 sm:pt-16 lg:pt-8 lg:pb-14"}"><div class="${"px-5 pb-5 text-center lg:px-5"}"><h1 class="${"text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl"}"><span class="${"block xl:inline"}">Want to see what we&#39;re made of?</span></h1>
-      <p class="${"mx-auto mt-3 max-w-md text-base text-gray-50 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"}">These highly-functional websites are made from trusted conversations in
-        valued partnerships. It&#39;s the only way to get to the heart of a brand.
-      </p></div></div>
-
-  <div class="${"relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"}"><div class="${"absolute inset-0"}"><div class="${"h-1/3 bg-white sm:h-2/3"}"></div></div>
-    <div class="${"relative mx-auto max-w-7xl"}"><div class="${"text-center"}"><h2 class="${"text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl"}">WordPress
-        </h2>
-        <p class="${"mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4"}">43% of the web uses WordPress, from hobby blogs to the biggest news
-          sites online.
-        </p></div>
-      <div class="${"bg-white"}"><div class="${"mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24"}"><div class="${"space-y-12"}"><ul class="${"space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"}"><li><a href="${"https://brock4insurance.com/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><div class="${"space-y-4"}"><div class="${"aspect-w-3 aspect-h-2"}"><img class="${"rounded-lg object-cover shadow-lg"}" src="${"https://www.weblime.com/images/portfolio-clients/brock-insurance-wordpress-site.jpg"}" alt="${""}"></div>
-
-                    <div class="${"space-y-2"}"><div class="${"space-y-1 text-lg font-medium leading-6"}"><h3 class="${"text-2xl"}">Brock Insurance</h3>
-                        <p class="${"inline text-sm uppercase text-primary-600"}"><span>insurance, </span>
-                          <span>E-mail automation, </span>
-                          <span>Blog</span></p></div></div></div></a></li>
-              <li><a href="${"https://pawsbetweenhomes.org/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><div class="${"space-y-4"}"><div class="${"aspect-w-3 aspect-h-2"}"><img class="${"rounded-lg object-cover shadow-lg"}" src="${"https://www.weblime.com/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"}" alt="${""}"></div>
-
-                    <div class="${"space-y-2"}"><div class="${"space-y-1 text-lg font-medium leading-6"}"><h3 class="${"text-2xl"}">Paws Between Homes</h3>
-                        <p class="${"inline text-sm uppercase text-primary-600"}"><span>nonprofit, </span>
-                          <span>MailChimp Integration, </span>
-                          <span>Google Sheets automations, </span>
-                          <span>Give Lively Donations</span></p></div></div></div></a></li>
-              <li><a href="${"https://brock4insurance.com/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><div class="${"space-y-4"}"><div class="${"aspect-w-3 aspect-h-2"}"><img class="${"rounded-lg object-cover shadow-lg"}" src="${"https://www.weblime.com/images/portfolio-clients/inspired-accounting-wordpress.png"}" alt="${""}"></div>
-                    <div class="${"space-y-2"}"><div class="${"space-y-1 text-lg font-medium leading-6"}"><h3 class="${"text-2xl"}">Inspired Accounting</h3>
-                        <p class="${"inline text-sm uppercase text-primary-600"}"><span>bookkeeper, </span>
-                          <span>Form integrations, </span>
-                          <span>HubSpot Integration, </span>
-                          <span>Calendly Integration</span></p></div></div></div></a></li>
-              <li><a href="${"https://www.resourcewranglers.com/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><div class="${"space-y-4"}"><div class="${"aspect-w-3 aspect-h-2"}"><img class="${"rounded-lg object-cover shadow-lg"}" src="${"https://www.weblime.com/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"}" alt="${""}"></div>
-                    <div class="${"space-y-2"}"><div class="${"space-y-1 text-lg font-medium leading-6"}"><h3 class="${"text-2xl"}">Resource Wranglers</h3>
-                        <p class="${"inline text-sm uppercase text-primary-600"}"><span>staffing agency, </span>
-                          <span>blog, </span>
-                          <span>Loxo integration</span></p></div></div></div></a></li>
-              <li><a href="${"https://www.monarchprime.com/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><div class="${"space-y-4"}"><div class="${"aspect-w-3 aspect-h-2"}"><img class="${"rounded-lg object-cover shadow-lg"}" src="${"https://www.weblime.com/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"}" alt="${""}"></div>
-                    <div class="${"space-y-2"}"><div class="${"space-y-1 text-lg font-medium leading-6"}"><h3 class="${"text-2xl"}">Monarch Prime</h3>
-                        <p class="${"inline text-sm uppercase text-primary-600"}"><span>construction, </span>
-                          <span>blog</span></p></div></div></div></a></li>
-              <li><a href="${"https://www.lifebellai.com/"}" target="${"_blank"}" rel="${"noopener noreferrer"}"><div class="${"space-y-4"}"><div class="${"aspect-w-3 aspect-h-2"}"><img class="${"rounded-lg object-cover shadow-lg"}" src="${"https://www.weblime.com/images/portfolio-clients/lifebellai.jpg"}" alt="${""}"></div>
-                    <div class="${"space-y-2"}"><div class="${"space-y-1 text-lg font-medium leading-6"}"><h3 class="${"text-2xl"}">LifeBell AI</h3>
-                        <p class="${"inline text-sm uppercase text-primary-600"}"><span>Health, </span>
-                          <span>Marketing</span></p></div></div></div></a></li></ul></div></div></div></div></div>
-
-  <div class="${"bg-gray-900"}"><div class="${"pt-12 sm:pt-16 lg:pt-24"}"><div class="${"mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8"}"><div class="${"mx-auto max-w-3xl space-y-2 lg:max-w-none"}"><h2 class="${"mb-5 text-3xl font-semibold leading-6 tracking-wider text-primary-500"}">E-Commerce
-          </h2>
-          <p class="${"mx-auto mt-3 max-w-md text-base text-white sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"}">One platform with all the ecommerce and point of sale features you
-            need to start, run, and grow your business.
-          </p></div></div></div>
-    <div class="${"mt-8 bg-white pb-12 sm:mt-12 sm:pb-16 lg:mt-16 lg:pb-24"}"><div class="${"relative"}"><div class="${"absolute inset-0 h-3/4 bg-gray-900"}"></div>
-        <div class="${"relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"}"><div class="${"mx-auto max-w-md space-y-4 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-5 lg:space-y-0"}"><div class="${"flex flex-col overflow-hidden rounded-lg shadow-md"}"><div class="${"bg-white px-6 py-8 sm:p-10 sm:pb-6"}"><div class="${"mt-4 flex items-baseline text-4xl"}">Ocnean Pets</div>
-                <p class="${"mt-5 text-lg text-gray-500"}">Ocnean&#39;s mission is to source USA made, eco-friendly healthy
-                  products that benefit animals.
-                </p></div>
-              <div class="${"flex flex-1 flex-col justify-between space-y-6 bg-white px-6 pt-6 pb-8 sm:p-10 sm:pt-6"}"><ul class="${"space-y-4"}"><li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Custom Shopify design
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Form integrations
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">E-mail automations
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Recurring orders</p></li></ul>
-                <div class="${"rounded-md"}"><a href="${"https://ocnean.com"}" class="${"flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"}" aria-describedby="${"tier-standard"}">Visit Site
-                  </a></div></div></div>
-
-            <div class="${"flex flex-col overflow-hidden rounded-lg shadow-md"}"><div class="${"bg-white px-6 py-8 sm:p-10 sm:pb-6"}"><div class="${"mt-4 flex items-baseline text-4xl"}">Thistle &amp; Bee
-                </div>
-                <p class="${"mt-5 text-lg text-gray-500"}">Thistle &amp; Bee&#39;s mission is to help women who have survived
-                  prostitution and trafficking thrive.
-                </p></div>
-              <div class="${"flex flex-1 flex-col justify-between space-y-6 bg-white px-6 pt-6 pb-8 sm:p-10 sm:pt-6"}"><ul class="${"space-y-4"}"><li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Custom Shopify build
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Stripe integration
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Recurring orders</p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Integrations for donations
-                    </p></li></ul>
-                <div class="${"rounded-md"}"><a href="${"https://thistleandbee.org"}" class="${"flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"}" aria-describedby="${"tier-standard"}">Visit Site
-                  </a></div></div></div>
-            <div class="${"flex flex-col overflow-hidden rounded-lg shadow-md"}"><div class="${"bg-white px-6 py-8 sm:p-10 sm:pb-6"}"><div class="${"mt-4 flex items-baseline text-4xl"}">Common Roasters
-                </div>
-                <p class="${"mt-5 text-lg text-gray-500"}">A Specialty Coffee Roastery, offering both single origin and
-                  blended coffees from all around the world.
-                </p></div>
-              <div class="${"flex flex-1 flex-col justify-between space-y-6 bg-white px-6 pt-6 pb-8 sm:p-10 sm:pt-6"}"><ul class="${"space-y-4"}"><li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Custom Shopify build
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Quickbooks integration
-                    </p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Recurring orders</p></li>
-
-                  <li class="${"flex items-start"}"><div class="${"flex-shrink-0"}">
-                      <svg class="${"h-6 w-6 text-primary-500"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M5 13l4 4L19 7"}"></path></svg></div>
-                    <p class="${"ml-3 text-base text-gray-700"}">Mailchimp</p></li></ul>
-                <div class="${"rounded-md"}"><a href="${"https://www.commonroomroasters.com"}" class="${"flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"}">Visit Site
-                  </a></div></div></div></div></div></div></div></div>
-
-  ${validate_component(Project_In_mind, "ProjectInMind").$$render($$result, {}, {}, {})}</main>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/6.js
-var __exports6 = {};
-__export(__exports6, {
-  css: () => css6,
-  entry: () => entry6,
-  index: () => index6,
-  js: () => js6,
-  module: () => portfolio_svelte_exports
-});
-var index6, entry6, js6, css6;
-var init__6 = __esm({
-  ".svelte-kit/output/server/nodes/6.js"() {
-    init_portfolio_svelte();
-    index6 = 6;
-    entry6 = "pages/portfolio.svelte-dde2b20f.js";
-    js6 = ["pages/portfolio.svelte-dde2b20f.js", "chunks/index-457e8868.js", "chunks/project-In-mind-e3a18454.js"];
-    css6 = [];
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/solutions-nonprofits.svelte.js
-var solutions_nonprofits_svelte_exports = {};
-__export(solutions_nonprofits_svelte_exports, {
-  default: () => Solutions_nonprofits
-});
-var Solutions_nonprofits;
-var init_solutions_nonprofits_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/solutions-nonprofits.svelte.js"() {
-    init_index_38cedc01();
-    Solutions_nonprofits = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${$$result.head += `${$$result.title = `<title>WebLime | Nonprofits</title>`, ""}<meta name="${"title"}" content="${"WebLime | Solutions"}" data-svelte="svelte-u3q91p"><meta name="${"description"}" content="${"WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."}" data-svelte="svelte-u3q91p"><meta property="${"og:locale"}" content="${"en_US"}" data-svelte="svelte-u3q91p"><meta property="${"og:type"}" content="${"website"}" data-svelte="svelte-u3q91p"><meta property="${"og:site_name"}" content="${"WebLime - Digital Agency"}" data-svelte="svelte-u3q91p"><meta property="${"og:url"}" content="${"https://www.weblime.com/"}" data-svelte="svelte-u3q91p"><meta property="${"og:title"}" content="${"WebLime | Solutions"}" data-svelte="svelte-u3q91p"><meta property="${"og:description"}" content="${"WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."}" data-svelte="svelte-u3q91p"><meta property="${"og:image"}" content="${"https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-u3q91p"><meta property="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-u3q91p"><meta property="${"twitter:image"}" content="${"https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-u3q91p"><meta name="${"twitter:site"}" content="${"@weblime_agency"}" data-svelte="svelte-u3q91p"><meta property="${"twitter:title"}" content="${"WebLime | Solutions"}" data-svelte="svelte-u3q91p"><meta property="${"twitter:description"}" content="${"WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."}" data-svelte="svelte-u3q91p"><script defer src="${"/scripts/carousel.js"}" data-svelte="svelte-u3q91p"><\/script>`, ""}
-
-<main class="${"mx-auto"}">
-  <section class="${"bg-white py-16"}"><div class="${"mx-auto flex max-w-6xl flex-col px-4 sm:px-6 lg:flex-row lg:px-8"}"><img class="${"mx-auto"}" width="${"500"}" src="${"/svg/collaborate.svg"}" alt="${""}">
-
-      <div class="${"flex flex-col items-center justify-center pt-8 text-center lg:items-start lg:pt-0 lg:pl-16 lg:text-left"}"><h1 class="${"my-6 text-4xl font-extrabold tracking-tight text-gray-800 sm:text-6xl"}">Get Your NonProfit <span class="${"text-primary-600"}">MOVING</span>.
-        </h1>
-        <p class="${"w-4/6 text-lg text-gray-600"}">You&#39;re on a mission to make the world a better place, and we&#39;d love to
-          help.
-        </p></div></div></section>
-
-  
-  <section class="${"mx-auto flex max-w-6xl flex-col justify-center px-4 pt-20 pb-24 sm:px-6 lg:px-8"}"><div class="${"flex flex-col md:flex-row"}"><div class="${"mx-4 flex flex-col items-center py-8 text-center"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-10 w-10 text-primary-600"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" stroke-width="${"2"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" d="${"M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"}"></path></svg>
-        <h3 class="${"bold my-4"}">Shopify</h3>
-        <p class="${"max-w-sm text-gray-500"}">We&#39;ll create an eCommerce website backed by incredible tools.
-        </p></div>
-      <div class="${"mx-4 flex flex-col items-center py-8 text-center"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-10 w-10 text-primary-600"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" stroke-width="${"2"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" d="${"M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"}"></path></svg>
-        <h3 class="${"bold my-4"}">WordPress</h3>
-        <p class="${"max-w-sm text-gray-500"}">WordPress is a powerful CMS we can use to create a beautiful website.
-        </p></div>
-      <div class="${"mx-4 flex flex-col items-center py-8 text-center"}"><svg xmlns="${"http://www.w3.org/2000/svg"}" class="${"h-10 w-10 text-primary-600"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"}"></path></svg>
-        <h3 class="${"bold my-4"}">Customizable</h3>
-        <p class="${"max-w-sm text-gray-500"}">Build a custom solution from the ground up for your nonprofit.
-        </p></div></div></section>
-
-  
-  <section class="${"w-full bg-gray-100 pt-16 pb-20"}"><div class="${"mx-auto flex max-w-5xl flex-col px-4 sm:px-6 md:px-8"}"><div class="${"mx-auto flex h-full max-w-xl flex-col justify-center pt-6 pb-10 text-center"}"><h2 class="${"text-4xl text-gray-800"}">Built for nonprofits of all kinds.
-        </h2>
-        <p class="${"mt-6 text-lg text-gray-500"}">No matter what your mission is, who you&#39;re with, or how many of you
-          there are, we can help.
-        </p></div>
-      <div><div class="${"grid w-full grid-cols-2 grid-rows-2 gap-4"}"><div class="${"col-span-2 flex rounded-xl bg-white p-6 md:col-span-1"}"><img class="${"mx-auto hidden sm:block"}" width="${"180"}" src="${"/svg/search.svg"}" alt="${""}">
-            <div class="${"my-auto sm:pl-4"}"><h3 class="${"mb-1 font-semibold text-gray-800"}">Guidestar</h3>
-              <p class="${"text-gray-500"}">Guidestar is the destination for nonprofit research and tooling,
-                and are the north star of our recommendations.
-              </p></div></div>
-          <div class="${"col-span-2 flex rounded-xl bg-white p-6 md:col-span-1"}"><img class="${"order-2 mx-auto hidden sm:block"}" width="${"180"}" src="${"/svg/payments.svg"}" alt="${""}">
-            <div class="${"my-auto sm:pr-4"}"><h3 class="${"mb-1 font-semibold text-gray-800"}">Donations</h3>
-              <p class="${"text-gray-500"}">We&#39;ll set you up with a robust solution so that you can accept
-                donations from day one.
-              </p></div></div>
-          <div class="${"col-span-2 flex rounded-xl bg-white p-6"}"><img class="${"mx-auto hidden sm:block"}" width="${"280"}" src="${"/svg/scale.svg"}" alt="${""}">
-            <div class="${"my-auto sm:pl-8"}"><h3 class="${"mb-1 font-semibold text-gray-800"}">Scale</h3>
-              <p class="${"text-gray-500"}">Being able to scale is critical. We&#39;ll help you make the best
-                decisions so that technology is at the forefront of your
-                business.
-              </p></div></div></div></div></div></section>
-
-  
-  <section class="${"w-full bg-gradient-to-b from-gray-100 to-white py-8 sm:py-20"}"><div class="${"mx-auto flex max-w-6xl flex-col px-4 sm:flex-row sm:px-6 md:px-8"}"><div class="${"relative mx-auto flex px-8 sm:order-2 sm:w-2/3"}"><div class="${"relative ml-auto h-full w-full"}"><img alt="${""}" src="${"https://source.unsplash.com/BbSBf5uv50A"}" class="${"rellax absolute right-0 -top-24 z-30 h-auto rounded-lg object-cover object-center shadow-md"}" data-rellax-speed="${"-1"}">
-          </div></div>
-      <div class="${"flex w-full items-center pt-24 sm:w-2/3 sm:pt-0"}"><div class="${"mx-auto sm:pr-6"}"><h1 class="${"text-3xl text-gray-800"}">Got your 501(c)?
-            <br>
-            <span class="${"text-primary-600"}">Start with our Starter Package.</span></h1>
-          <p class="${"mt-6 text-lg text-gray-600"}">Whether your organization is new or needs improvement, our Starter
-            Package will set you up for success within 14 days.
-          </p>
-          <div class="${"mt-8 flex flex-row justify-between gap-2"}"><div><h3 class="${"text-xl text-primary-600"}">5</h3>
-              <p class="${"text-gray-800"}">Pages</p></div>
-            <div><h3 class="${"text-xl text-primary-600"}">$550</h3>
-              <p class="${"text-gray-800"}">Annualy</p></div>
-            <div><h3 class="${"text-xl text-primary-600"}">1 Hour</h3>
-              <p class="${"text-gray-800"}">Monthly Support</p></div></div></div></div></div></section>
-
-  <script src="${"https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"}"><\/script>
-  <script>const rellax = new Rellax('.rellax');
-  <\/script></main>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/7.js
-var __exports7 = {};
-__export(__exports7, {
-  css: () => css7,
-  entry: () => entry7,
-  index: () => index7,
-  js: () => js7,
-  module: () => solutions_nonprofits_svelte_exports
-});
-var index7, entry7, js7, css7;
-var init__7 = __esm({
-  ".svelte-kit/output/server/nodes/7.js"() {
-    init_solutions_nonprofits_svelte();
-    index7 = 7;
-    entry7 = "pages/solutions-nonprofits.svelte-65a3293c.js";
-    js7 = ["pages/solutions-nonprofits.svelte-65a3293c.js", "chunks/index-457e8868.js"];
-    css7 = [];
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/solutions.svelte.js
-var solutions_svelte_exports = {};
-__export(solutions_svelte_exports, {
-  default: () => Solutions
-});
-var Solutions;
-var init_solutions_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/solutions.svelte.js"() {
-    init_index_38cedc01();
-    Solutions = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${$$result.head += `${$$result.title = `<title>WebLime | Solutions</title>`, ""}<meta name="${"title"}" content="${"WebLime | Solutions"}" data-svelte="svelte-1800hbq"><meta name="${"description"}" content="${"WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."}" data-svelte="svelte-1800hbq"><meta property="${"og:locale"}" content="${"en_US"}" data-svelte="svelte-1800hbq"><meta property="${"og:type"}" content="${"website"}" data-svelte="svelte-1800hbq"><meta property="${"og:site_name"}" content="${"WebLime - Digital Agency"}" data-svelte="svelte-1800hbq"><meta property="${"og:url"}" content="${"https://www.weblime.com/"}" data-svelte="svelte-1800hbq"><meta property="${"og:title"}" content="${"WebLime | Solutions"}" data-svelte="svelte-1800hbq"><meta property="${"og:description"}" content="${"WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."}" data-svelte="svelte-1800hbq"><meta property="${"og:image"}" content="${"https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-1800hbq"><meta property="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-1800hbq"><meta property="${"twitter:image"}" content="${"https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-1800hbq"><meta name="${"twitter:site"}" content="${"@weblime_agency"}" data-svelte="svelte-1800hbq"><meta property="${"twitter:title"}" content="${"WebLime | Solutions"}" data-svelte="svelte-1800hbq"><meta property="${"twitter:description"}" content="${"WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."}" data-svelte="svelte-1800hbq">`, ""}
-
-<main class="${"mx-auto"}">
-  <div class="${"bg-primary-500 sm:pt-16 lg:pt-8 lg:pb-14"}"><div class="${"pb-5 text-center"}"><h1 class="${"text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"}"><span class="${"block xl:inline"}">Everything you need in </span>
-        <span class="${"block text-white xl:inline"}">one place.</span></h1></div></div>
-  
-  <div class="${"bg-gray-50"}"><div class="${"mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:pt-20 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pt-24"}"><h2 class="${"text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"}">Our Approach
-      </h2>
-      <p class="${"mt-4 text-lg text-gray-500"}">From quick wins to long term strategies, we&#39;ll work together to help you
-        scale to new heights while maintaing costs.
-      </p>
-      <div class="${"mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-16"}"><div><div><span class="${"flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"}"><img class="${"h-24 w-24"}" src="${"/svg/Tea-01.svg"}" alt="${"tea mug icon"}"></span></div>
-          <div class="${"mt-6"}"><h3 class="${"text-lg font-medium text-gray-800"}">Advise</h3>
-            <p class="${"text-base text-gray-500"}">Tea or coffee, whatever does it for you! Together, we&#39;ll determine
-              the best actionable plan for your business, and monitor the
-              results along the way.
-            </p></div></div>
-
-        <div><div><span class="${"flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"}"><img class="${"h-24 w-24"}" src="${"/svg/Cog_Wheels-01.svg"}" alt="${"cog wheels icon"}"></span></div>
-          <div class="${"mt-6"}"><h3 class="${"text-lg font-medium text-gray-800"}">Build</h3>
-            <p class="${"text-base text-gray-500"}">We\u2019ll build your website from the ground up. Should you change
-              your mind about details down the road, it all belongs to you.
-            </p></div></div>
-
-        <div><div><span class="${"flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"}"><img class="${"h-24 w-24"}" src="${"/svg/growth-chart.svg"}" alt="${"growth chart icon"}"></span></div>
-          <div class="${"mt-6"}"><h3 class="${"text-lg font-medium text-gray-800"}">Scale</h3>
-            <p class="${"text-base text-gray-500"}">Once going live, there&#39;s a need to continue optimizing as traffic
-              flows through your doors. As much as you plan ahead, there are
-              things that can&#39;t be forseen.
-            </p></div></div>
-
-        <div><div><span class="${"flex h-12 w-12 items-center justify-center rounded-md bg-white bg-opacity-10"}"><img class="${"h-24 w-24"}" src="${"/svg/Ballance-01.svg"}" alt="${"ballance icon"}"></span></div>
-          <div class="${"mt-6"}"><h3 class="${"text-lg font-medium text-gray-800"}">Integrate</h3>
-            <p class="${"text-base text-gray-500"}">As your projects matures, so will the ideas for growth.
-              Integrating with third-part systems can provide solutions to scale
-              and automate, so that you can focus on other parts of your
-              business.
-            </p></div></div></div></div></div>
-
-  <div class="${"overflow-hidden bg-gray-50 py-16 lg:py-24"}"><div class="${"relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8"}"><div class="${"relative"}"><h2 class="${"text-center text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl"}">We&#39;ve got your business covered.
-        </h2>
-        <p class="${"mx-auto mt-4 max-w-3xl text-center text-xl text-gray-500"}">Whether it\u2019s migrating from another platform or building an entire
-          brand, we\u2019ve got you covered.
-        </p></div>
-
-      <div class="${"relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"}"><div class="${"relative"}"><h3 class="${"text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"}">A compelling experience
-          </h3>
-          <p class="${"mt-3 text-lg text-gray-500"}">Create a compelling experience online, with mobile and tablet in
-            mind. Websites and custom web applications that scale.
-          </p>
-
-          <dl class="${"mt-10 space-y-10"}"><div class="${"relative"}"><dt><div class="${"absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"}">
-                  <svg class="${"h-6 w-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"}"></path></svg></div>
-                <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Development
-                </p></dt>
-              <dd class="${"mt-2 ml-16 text-base text-gray-500"}">WordPress, Shopify or custom builds. We implement the best
-                practices possible so that your brand reaches both far and wide.
-              </dd>
-            </div><div class="${"relative"}"><dt><div class="${"absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"}">
-                  <svg class="${"h-6 w-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M13 10V3L4 14h7v7l9-11h-7z"}"></path></svg></div>
-                <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Performance
-                </p></dt>
-              <dd class="${"mt-2 ml-16 text-base text-gray-500"}">We will carefully monitor your website\u2019s performance to
-                understand how we can optimize your online presence.
-              </dd>
-            </div><div class="${"relative"}"><dt><div class="${"absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"}">
-                  <svg class="${"h-6 w-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"}"></path></svg></div>
-                <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Complete Ownership
-                </p></dt>
-              <dd class="${"mt-2 ml-16 text-base text-gray-500"}">You keep everything from accounts to creatives. From AdWords to
-                landing pages, they\u2019re always yours.
-              </dd></div></dl></div>
-
-        <div class="${"relative -mx-4 mt-10 lg:mt-0"}" aria-hidden="${"true"}"><img class="${"relative mx-auto"}" width="${"490"}" src="${"/svg/design-weblime-illustration.svg"}" alt="${"WebLime solutions design illustration"}"></div></div>
-
-      <div class="${"relative mt-12 sm:mt-16 lg:mt-24"}"><div class="${"lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8"}"><div class="${"lg:col-start-2"}"><h3 class="${"text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"}">Certified Shopify Partners
-            </h3>
-            <p class="${"mt-3 text-lg text-gray-500"}">Over 1,000,000 businesses in 175 countries around the world have
-              made over $200 billion USD in sales using Shopify.
-            </p>
-
-            <dl class="${"mt-10 space-y-10"}"><div class="${"relative"}"><dt><div class="${"absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"}">
-                    <svg class="${"h-6 w-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"}"></path></svg></div>
-                  <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Shopify Store Development &amp; Maintenance
-                  </p></dt>
-                <dd class="${"mt-2 ml-16 text-base text-gray-500"}">We&#39;ll develop and maintain an ecommerce solutions that&#39;s
-                  backed by powerful tools that help you find customers, drive
-                  sales, and manage your day-to-day.
-                </dd>
-              </div><div class="${"relative"}"><dt><div class="${"absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"}">
-                    <svg class="${"h-6 w-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"}"></path></svg></div>
-                  <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Shopify Marketing Services
-                  </p></dt>
-                <dd class="${"mt-2 ml-16 text-base text-gray-500"}">Building your store is only the first step. Reach your ideal
-                  shopper with content marketing, through SEO, and on social
-                  media.
-                </dd></div></dl></div>
-
-          <div class="${"relative -mx-4 mt-10 lg:col-start-1 lg:mt-0"}"><img class="${"relative mx-auto"}" width="${"490"}" src="${"/svg/weblime-shopify.svg"}" alt="${"WebLime Solutions ecommerce illustration"}"></div></div></div></div></div>
-
-  <script data-widget-id="${"b766b6532d39255f50074860000e1f2df242bd99"}" src="${"https://www.local-marketing-reports.com/m/assets-v2/lead-gen/js/external/widget-builder.js"}"><\/script>
-
-  <div class="${"flex flex-col items-center bg-gray-900 pb-6"}"><a href="${"https://www.designrush.com/agency/search-engine-optimization/maryland"}"><img class="${"w-56"}" src="${"/images/seo/Design-Rush-Accredited-Badge.png"}" alt="${"Top Maryland SEO Companies Badge"}"></a></div>
-
-  
-  <div class="${"bg-white"}"><div class="${"mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16 lg:px-8"}"><div class="${"lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"}"><div><h2 class="${"max-auto text-3xl font-extrabold text-gray-900 sm:text-4xl"}">Emerging technologies
-          </h2>
-          <p class="${"mt-3 max-w-3xl text-lg text-gray-500"}">The possibilities are endless. We&#39;ll implement some of the best
-            technological solutions in the game.
-          </p>
-          <div class="${"mt-8 sm:flex"}"><div class="${"rounded-md"}"><a href="${"/portfolio"}" class="${"border-transparent flex items-center justify-center rounded-md border bg-primary-500 px-5 py-3 text-base font-medium text-gray-900 hover:bg-primary-600"}">Portfolio
-              </a></div>
-            <div class="${"mt-3 sm:mt-0 sm:ml-3"}"><a href="${"/get-in-touch"}" class="${"border-transparent flex items-center justify-center rounded-md border border-gray-900 bg-gray-900 px-5 py-3 text-base font-medium text-white hover:bg-gray-800"}">Get In Touch
-              </a></div></div></div>
-        <div class="${"mt-8 grid grid-cols-2 gap-0.5 bg-gray-200 md:grid-cols-3 lg:mt-0 lg:grid-cols-2"}"><div class="${"col-span-1 flex justify-center bg-white px-8 py-8"}"><img class="${"max-h-12"}" src="${"/images/tech/stripe.png"}" alt="${"WebLime solutions stripe logo"}"></div>
-          <div class="${"col-span-1 flex justify-center bg-white px-8 py-8"}"><img class="${"max-h-12"}" src="${"/images/tech/klaviyo.png"}" alt="${"WebLime solutions klaviyo logo"}"></div>
-          <div class="${"col-span-1 flex justify-center bg-white px-8 py-8"}"><img class="${"max-h-12"}" src="${"/images/tech/recharge.svg"}" alt="${"WebLime solutions recharge logo"}"></div>
-          <div class="${"col-span-1 flex justify-center bg-white px-8 py-8"}"><img class="${"max-h-12"}" src="${"/images/tech/shopify.jpg"}" alt="${"WebLime solutions shopify logo"}"></div>
-          <div class="${"col-span-1 flex justify-center bg-white px-8 py-8"}"><img class="${"max-h-12"}" src="${"/images/tech/slack.png"}" alt="${"WebLime solutions slack logo"}"></div>
-          <div class="${"col-span-1 flex justify-center bg-white px-8 py-8"}"><img class="${"max-h-12"}" src="${"/images/tech/wordpress-logo.png"}" alt="${"WebLime solutions wordpress logo"}"></div></div></div></div></div>
-
-  
-  <section class="${"bg-white"}"><div class="${"mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:py-16 lg:px-8"}"><h2 class="${"text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl"}"><span class="${"block"}">Running a nonprofit?</span>
-        <span class="${"block"}">We can help.</span></h2>
-      <div class="${"mt-8 flex justify-center"}"><div class="${"inline-flex rounded-md shadow"}"><a href="${"/get-in-touch"}" class="${"border-transparent inline-flex items-center justify-center rounded-md border bg-primary-600 px-5 py-3 text-base font-medium text-white hover:bg-primary-700"}">Get Started
-          </a></div>
-        <div class="${"ml-3 inline-flex"}"><a href="${"/solutions-nonprofits"}" class="${"border-transparent flex items-center justify-center rounded-md border border-gray-900 bg-gray-900 px-5 py-3 text-base font-medium text-white hover:bg-gray-800"}">Learn More
-          </a></div></div></div></section></main>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/8.js
-var __exports8 = {};
-__export(__exports8, {
-  css: () => css8,
-  entry: () => entry8,
-  index: () => index8,
-  js: () => js8,
-  module: () => solutions_svelte_exports
-});
-var index8, entry8, js8, css8;
-var init__8 = __esm({
-  ".svelte-kit/output/server/nodes/8.js"() {
-    init_solutions_svelte();
-    index8 = 8;
-    entry8 = "pages/solutions.svelte-9f9f4eb9.js";
-    js8 = ["pages/solutions.svelte-9f9f4eb9.js", "chunks/index-457e8868.js"];
-    css8 = [];
-  }
-});
-
-// .svelte-kit/output/server/chunks/Testimonials-2442964a.js
-var testimonials, Testimonials;
-var init_Testimonials_2442964a = __esm({
-  ".svelte-kit/output/server/chunks/Testimonials-2442964a.js"() {
-    init_index_38cedc01();
-    testimonials = [
-      {
-        author_name: "Barrett Gaines",
-        text: "I contacted WebLime to run my company\u2019s social media accounts, and it was one of the smartest decisions I\u2019ve made. I had been trying to \u201Cdo it all myself\u201D and I soon realized I couldn\u2019t even if I did have the time.",
-        link: "https://goo.gl/maps/fswP8hkmkW8g2bk18",
-        logo: "/images/testimonials/google.png",
-        author_image: "/images/testimonial-profiles/barrett-gaines.png"
-      },
-      {
-        author_name: "Wayne Dudley",
-        text: "I was very thankful to have weblime create our website. I knew nothing about the process and and they made sure everything came out perfect. Thanks again for the amazing website Edan.",
-        link: "https://goo.gl/maps/ZEeJfF4dpCf75UDy5",
-        logo: "/images/testimonials/google.png",
-        author_image: "/images/testimonial-profiles/wayne-dudley.png"
-      },
-      {
-        author_name: "Sarah Rosenberg",
-        text: "Our start-up non-profit contacted WebLime in our nascency to help us set up our website. That was 18 months ago. Not only did they create the website we wanted, they gave us something better than we knew to want. And as if that weren't exceptional enough, they have continued to support our interactive needs in other realms to streamline the effectiveness of our internal and external communications as an organization.",
-        link: "https://goo.gl/maps/8rfL6TzPnDrWMu8m6",
-        logo: "/images/testimonials/google.png",
-        author_image: "/images/testimonial-profiles/sarah-rosenberg.png"
-      },
-      {
-        author_name: "Eli Cloud",
-        text: "WebLime is a trusted partner who provides valuable insight and tech expertise. This is a business that truly wants to see clients succeed. And they have the technological expertise to support growth now and into the future.",
-        link: "https://goo.gl/maps/HaFVFbSVkpgvDHyy6",
-        logo: "/images/testimonials/google.png",
-        author_image: "/images/testimonial-profiles/eli-cloud.png"
-      },
-      {
-        author_name: "Mary Ocnean",
-        text: "We are very pleased with the input, activity, cost effectiveness and cooperation of WebLime as our marketing partner. They have delivered on their promises and been thorough and consistent. We will continue to use and recommend their services. They have been a great addition to our operations.",
-        link: "https://goo.gl/maps/2CMuB9GuYT4UhRXE6",
-        logo: "/images/testimonials/google.png",
-        author_image: "/images/testimonial-profiles/mary-ocnean.png"
-      },
-      {
-        author_name: "Sam Oknin",
-        text: "I started my real estate business four years ago with absolute no internet presence. Web lime helped me put together a landing page and help me drive quality leads directly to it. Sales have increased and we seem a lot more legitimate. The team at Web Lime could not have been more attentive when i wanted specific things done. We would use them again any day! Thanks again.",
-        link: "https://goo.gl/maps/upBasYPcCCq3NBPg6",
-        logo: "/images/testimonials/google.png",
-        author_image: "/images/testimonial-profiles/sam-oknin.png"
-      }
-    ];
-    Testimonials = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `<div><div class="${"overflow-hidden bg-white py-6 md:py-8 lg:py-12"}"><div class="${"container mx-auto"}"><h2 class="${"text-center text-3xl font-extrabold text-gray-900 sm:text-4xl"}">People \u{1F49A} WebLime
-      </h2>
-      <p class="${"mx-auto mt-3 max-w-3xl text-center text-xl text-gray-500 sm:mt-4"}">WebLime was built to be a one-stop solution for your business. We&#39;ll
-        focus on your online presence while you hone in on your products and
-        services.
-      </p>
-
-      <div class="${"mt-10 bg-white pb-12 sm:pb-16"}"></div>
-      <div class="${"grid-cols-3 gap-4 md:grid"}">${each(testimonials, (testimonial) => {
-        return `<div class="${"my-5 md:m-0"}"><div class="${"rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 duration-500 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"}"><div class="${"flex items-center"}"><a class="${"group flex items-center"}"${add_attribute("href", testimonial.link, 0)} target="${"_blank"}"><img class="${"h-full w-10 rounded-full"}"${add_attribute("src", testimonial.author_image, 0)}${add_attribute("alt", testimonial.author_name + " profile image", 0)} loading="${"lazy"}">
-                  <div class="${"ml-2 leading-tight"}"><div class="${"font-bold group-hover:text-primary-500"}">${escape(testimonial.author_name)}</div>
-                  </div></a>
-                <img class="${"ml-auto h-full w-10"}"${add_attribute("src", testimonial.logo, 0)} alt="${"testimonial source logo"}" loading="${"lazy"}"></div>
-              <div class="${"tweet-text mt-2 cursor-text whitespace-pre-wrap text-sm"}">${escape(testimonial.text)}
-              </div></div>
-          </div>`;
-      })}</div></div></div></div>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/entries/pages/top-maryland-web-design-agency.svelte.js
-var top_maryland_web_design_agency_svelte_exports = {};
-__export(top_maryland_web_design_agency_svelte_exports, {
-  default: () => Top_maryland_web_design_agency
-});
-var Top_maryland_web_design_agency;
-var init_top_maryland_web_design_agency_svelte = __esm({
-  ".svelte-kit/output/server/entries/pages/top-maryland-web-design-agency.svelte.js"() {
-    init_index_38cedc01();
-    init_Testimonials_2442964a();
-    init_project_In_mind_cc64b809();
-    Top_maryland_web_design_agency = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      let name;
-      let email;
-      let honeypot = "";
-      let phone;
-      return `<main class="${"mx-auto"}">
-  <div class="${"bg-gray-800"}"><div class="${"lg:pb-14 max-w-7xl mx-auto"}"><div class="${"lg:grid lg:grid-cols-12 lg:gap-8"}"><div class="${"px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center"}"><div><h1 class="${"text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-5xl xl:text-6xl"}"><span class="${"md:block"}">Take your business</span>
-              <span class="${"text-primary-400 md:block"}">to the next level.</span></h1>
-            <p class="${"mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"}">Stand out from the competition with an online presence that gets
-              you noticed. We build custom websites that are intuitive to
-              maintain and easy to expand and grow.
-            </p>
-            <p class="${"mt-8 text-sm text-white uppercase tracking-wide font-semibold sm:mt-10"}">The best solutions in the game
-            </p>
-            <div class="${"mt-5 w-full sm:mx-auto sm:max-w-lg lg:ml-0"}"><div class="${"flex flex-wrap items-start justify-between"}"><div class="${"flex justify-center px-1"}">
-                  <svg id="${"Layer_1"}" data-name="${"Layer 1"}" class="${"h-9 sm:h-10"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 200.4 66.5"}"><defs><style>.cls-1,
-                        .cls-2 {
-                          fill: #1f2937;
-                        }
-                        .cls-1 {
-                          fill-rule: evenodd;
-                        }
-                      </style></defs><title>stripe</title><g id="${"layer1"}"><g id="${"Stripe"}"><path id="${"path5516"}" class="${"cls-1"}" d="${"M175.32,34.29c0-10.68-5.17-19.11-15.06-19.11s-15.95,8.43-15.95,19c0,12.56,7.1,18.91,17.28,18.91a23.22,23.22,0,0,0,11.56-2.72V42.06a22.27,22.27,0,0,1-10.22,2.29c-4.05,0-7.64-1.42-8.1-6.34h20.41C175.24,37.47,175.32,35.29,175.32,34.29Zm-20.62-4c0-4.72,2.88-6.68,5.51-6.68s5.26,2,5.26,6.68Z"}"></path><path id="${"path5518"}" class="${"cls-1"}" d="${"M128.2,15.18A11.81,11.81,0,0,0,120,18.43l-.54-2.58H110.3V64.51l10.43-2.21,0-11.81a11.82,11.82,0,0,0,7.39,2.63c7.47,0,14.27-6,14.27-19.24,0-12.11-6.92-18.7-14.23-18.7Zm-2.5,28.75a6.25,6.25,0,0,1-4.93-2l0-15.48a6.23,6.23,0,0,1,5-2c3.8,0,6.43,4.26,6.43,9.73S129.54,43.93,125.7,43.93Z"}"></path><polygon id="${"polygon5520"}" class="${"cls-1"}" points="${"106.42 10.46 106.42 1.99 95.94 4.2 95.94 12.72 106.42 10.46"}"></polygon><rect id="${"rect5522"}" class="${"cls-1"}" x="${"95.94"}" y="${"15.89"}" width="${"10.48"}" height="${"36.52"}"></rect><path id="${"path5524"}" class="${"cls-1"}" d="${"M84.72,19l-.67-3.09H75V52.41H85.47V27.66c2.46-3.22,6.63-2.63,7.93-2.17v-9.6c-1.34-.5-6.22-1.42-8.68,3.09Z"}"></path><path id="${"path5526"}" class="${"cls-1"}" d="${"M63.85,6.83,53.67,9l-.05,33.43A10.49,10.49,0,0,0,64.43,53.16a16.15,16.15,0,0,0,7.31-1.38V43.31c-1.34.54-7.93,2.46-7.93-3.72V24.78h7.93V15.89H63.81Z"}"></path><path id="${"path5528"}" class="${"cls-1"}" d="${"M35.64,26.49c0-1.63,1.33-2.25,3.54-2.25a23.26,23.26,0,0,1,10.35,2.67V17.1a27.43,27.43,0,0,0-10.35-1.92c-8.47,0-14.1,4.42-14.1,11.81,0,11.52,15.86,9.68,15.86,14.65,0,1.92-1.67,2.54-4,2.54a25.94,25.94,0,0,1-11.39-3.33v9.93a28.9,28.9,0,0,0,11.39,2.38c8.68,0,14.65-4.3,14.65-11.77,0-12.44-15.94-10.23-15.94-14.9Z"}"></path></g></g></svg></div>
-                <div class="${"flex justify-center px-1"}">
-                  <svg id="${"Layer_1"}" class="${"h-9 sm:h-10"}" data-name="${"Layer 1"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 200.4 66.5"}"><defs><style>.cls-1 {
-                          fill: #d3dce6;
-                        }
-                        .cls-2 {
-                          fill: #1f2937;
-                        }
-                      </style></defs><title>shopify</title><path class="${"cls-1"}" d="${"M44.23,14.92a.54.54,0,0,0-.48-.45c-.21,0-4.14-.08-4.14-.08L36,10.87a1.32,1.32,0,0,0-1.21-.15l-1.66.51a11.91,11.91,0,0,0-.79-2c-1.17-2.24-2.89-3.42-5-3.42h0l-.43,0-.19-.21a4.36,4.36,0,0,0-3.45-1.4c-2.68.08-5.35,2-7.52,5.45a21.68,21.68,0,0,0-3,7.81L7.48,19.17c-1.55.49-1.6.53-1.8,2-.15,1.11-4.22,32.54-4.22,32.54L35.53,59.6l14.76-3.67ZM31.42,11.76l-2.65.81A14.67,14.67,0,0,0,28,7.7C30,8.08,31,10.38,31.42,11.76ZM27,13.13,21.3,14.89a13.53,13.53,0,0,1,2.88-5.58,5.6,5.6,0,0,1,1.93-1.4A12.79,12.79,0,0,1,27,13.13ZM23.34,6.05A2.74,2.74,0,0,1,25,6.48,7.64,7.64,0,0,0,22.87,8.1a15.61,15.61,0,0,0-3.53,7.39l-4.67,1.45C15.59,12.63,19.2,6.17,23.34,6.05Z"}"></path><path class="${"cls-1"}" d="${"M43.75,14.47l-4.14-.07s-3.3-3.2-3.62-3.53a.85.85,0,0,0-.46-.21V59.6l14.76-3.67-6.06-41A.54.54,0,0,0,43.75,14.47Z"}"></path><path class="${"cls-2"}" d="${"M27.35,22.06l-1.72,6.42a9.76,9.76,0,0,0-4.18-.73c-3.32.21-3.36,2.31-3.33,2.84.19,2.86,7.73,3.49,8.16,10.21.33,5.29-2.81,8.9-7.33,9.19a11,11,0,0,1-8.41-2.86l1.15-4.89s3,2.27,5.41,2.12a2.13,2.13,0,0,0,2.08-2.28c-.24-3.75-6.38-3.53-6.77-9.68C12.08,27.23,15.48,22,23,21.51A9.34,9.34,0,0,1,27.35,22.06Z"}"></path><path class="${"cls-1"}" d="${"M69.74,35.5c-1.7-.92-2.57-1.7-2.57-2.77,0-1.36,1.21-2.23,3.1-2.23a11.12,11.12,0,0,1,4.17.92L76,26.67s-1.42-1.12-5.62-1.12c-5.85,0-9.9,3.35-9.9,8.05,0,2.67,1.89,4.71,4.42,6.16,2,1.17,2.76,2,2.76,3.2s-1,2.28-2.91,2.28a13.09,13.09,0,0,1-5.48-1.45l-1.65,4.75a12.63,12.63,0,0,0,6.6,1.65c6,0,10.33-3,10.33-8.29C74.54,39,72.36,37,69.74,35.5Z"}"></path><path class="${"cls-1"}" d="${"M93.7,25.51a9,9,0,0,0-7.08,3.54l-.1-.05,2.57-13.44h-6.7L75.9,49.75h6.69l2.23-11.68c.87-4.42,3.15-7.13,5.29-7.13,1.5,0,2.08,1,2.08,2.47a14.85,14.85,0,0,1-.29,3L89.38,49.76h6.69l2.62-13.83a25.06,25.06,0,0,0,.49-4.36C99.18,27.78,97.19,25.51,93.7,25.51Z"}"></path><path class="${"cls-1"}" d="${"M114.31,25.51c-8,0-13.39,7.27-13.39,15.37,0,5.19,3.2,9.36,9.22,9.36,7.9,0,13.24-7.08,13.24-15.37C123.38,30.06,120.56,25.51,114.31,25.51ZM111,45.1c-2.28,0-3.25-1.94-3.25-4.37,0-3.83,2-10.08,5.63-10.08,2.37,0,3.15,2,3.15,4C116.54,38.79,114.55,45.1,111,45.1Z"}"></path><path class="${"cls-1"}" d="${"M140.5,25.51c-4.52,0-7.08,4-7.08,4h-.1l.39-3.59h-5.92c-.29,2.43-.82,6.11-1.36,8.88l-4.65,24.49h6.69l1.84-9.89h.15a7.8,7.8,0,0,0,3.93.87c7.85,0,13-8.05,13-16.2C147.38,29.53,145.39,25.51,140.5,25.51ZM134.1,45.2a4.27,4.27,0,0,1-2.77-1L132.45,38c.77-4.17,3-6.94,5.28-6.94,2,0,2.67,1.9,2.67,3.69C140.4,39,137.83,45.2,134.1,45.2Z"}"></path><path class="${"cls-1"}" d="${"M156.94,15.9a3.82,3.82,0,0,0-3.83,3.88,3.08,3.08,0,0,0,3.15,3.35h.1a3.79,3.79,0,0,0,3.93-3.88A3.19,3.19,0,0,0,156.94,15.9Z"}"></path><path class="${"cls-1"}" d="${"M147.58,49.75h6.69L158.83,26h-6.74Z"}"></path><path class="${"cls-1"}" d="${"M175.85,26H171.2l.24-1.11c.39-2.28,1.75-4.32,4-4.32a6.94,6.94,0,0,1,2.13.34l1.31-5.24a8.84,8.84,0,0,0-3.64-.58,10,10,0,0,0-6.55,2.23,12.74,12.74,0,0,0-3.88,7.57L164.6,26h-3.1l-1,5.05h3.1l-3.54,18.72h6.69L170.33,31h4.6Z"}"></path><path class="${"cls-1"}" d="${"M192,26s-4.18,10.54-6.06,16.3h-.1c-.12-1.86-1.64-16.3-1.64-16.3h-7l4,21.77a1.39,1.39,0,0,1-.15,1.12,11.46,11.46,0,0,1-3.63,4,14.54,14.54,0,0,1-3.79,1.89l1.85,5.67A15.19,15.19,0,0,0,182,56.89c3.06-2.87,5.87-7.28,8.78-13.29L198.94,26Z"}"></path></svg></div>
-                <div class="${"flex justify-center px-1"}">
-                  <svg id="${"Layer_1"}" class="${"h-9 sm:h-10"}" data-name="${"Layer 1"}" xmlns="${"http://www.w3.org/2000/svg"}" viewBox="${"0 0 200.4 66.5"}"><defs><style>.cls-1 {
-                          fill: #d3dce6;
-                        }
-                      </style></defs><title>wordpress</title><path class="${"cls-1"}" d="${"M116.06,27h-7.79v.82c2.43,0,2.83.53,2.83,3.62v5.57c0,3.09-.4,3.66-2.83,3.66-1.88-.26-3.14-1.26-4.88-3.18l-2-2.18c2.7-.47,4.13-2.17,4.13-4.09,0-2.39-2-4.22-5.88-4.22H92v.82c2.44,0,2.83.53,2.83,3.62v5.57c0,3.09-.39,3.66-2.83,3.66v.83h8.67v-.83c-2.44,0-2.83-.57-2.83-3.66V35.49h.74l4.83,6h12.67c6.23,0,8.93-3.31,8.93-7.27S122.29,27,116.06,27ZM97.82,34.13V28.34H99.6a2.67,2.67,0,0,1,2.83,2.92,2.66,2.66,0,0,1-2.83,2.88H97.82Zm18.37,6.06h-.3c-1.57,0-1.79-.39-1.79-2.4V28.34h2.09c4.53,0,5.36,3.31,5.36,5.88S120.72,40.19,116.19,40.19Z"}"></path><path class="${"cls-1"}" d="${"M67.73,35.75l3-8.89c.87-2.57.48-3.31-2.31-3.31v-.87h8.19v.87c-2.74,0-3.4.66-4.49,3.84l-5,14.89h-.57L62.15,28.65,57.62,42.28h-.56L52.22,27.39c-1-3.18-1.74-3.84-4.26-3.84v-.87h9.66v.87c-2.57,0-3.26.61-2.35,3.31l2.92,8.89,4.4-13.07h.83Z"}"></path><path class="${"cls-1"}" d="${"M82.53,42.1c-4.79,0-8.71-3.52-8.71-7.83s3.92-7.8,8.71-7.8,8.71,3.53,8.71,7.8S87.32,42.1,82.53,42.1Zm0-14.28c-4,0-5.4,3.62-5.4,6.45s1.4,6.44,5.4,6.44S88,37.14,88,34.27,86.58,27.82,82.53,27.82Z"}"></path><path class="${"cls-1"}" d="${"M135.74,40.67v.87h-10v-.87c2.92,0,3.44-.74,3.44-5.1v-7c0-4.35-.52-5.05-3.44-5.05v-.87h9c4.48,0,7,2.31,7,5.4s-2.48,5.36-7,5.36H132.3v2.13C132.3,39.93,132.83,40.67,135.74,40.67Zm-1-16.42H132.3v7.58h2.49c2.43,0,3.57-1.7,3.57-3.75S137.22,24.25,134.79,24.25Z"}"></path><path class="${"cls-1"}" d="${"M171.67,37.45l-.22.78c-.39,1.44-.87,2-4,2h-.61c-2.27,0-2.66-.52-2.66-3.62v-2c3.4,0,3.66.31,3.66,2.57h.83V30.65h-.83c0,2.27-.26,2.57-3.66,2.57V28.34h2.4c3.09,0,3.57.53,4,2l.22.83h.69l-.3-4.09h-12.8v.82c2.44,0,2.83.53,2.83,3.62v5.57c0,2.83-.34,3.54-2.26,3.65-1.83-.28-3.08-1.28-4.8-3.17l-2-2.18c2.7-.47,4.14-2.17,4.14-4.09,0-2.39-2.05-4.22-5.88-4.22h-7.67v.82c2.44,0,2.84.53,2.84,3.62v5.57c0,3.09-.4,3.66-2.84,3.66v.83h8.67v-.83c-2.44,0-2.83-.57-2.83-3.66V35.49h.74l4.83,6h17.9l.26-4.09Zm-23.08-3.32V28.34h1.78a2.68,2.68,0,0,1,2.84,2.92,2.67,2.67,0,0,1-2.84,2.88h-1.78Z"}"></path><path class="${"cls-1"}" d="${"M180.51,42.1a6.42,6.42,0,0,1-3.92-1.48,3.14,3.14,0,0,0-.7,1.48h-.82v-6h.87a4.83,4.83,0,0,0,4.92,4.57,2.24,2.24,0,0,0,2.52-2.09c0-1.13-1-2-2.78-2.83l-2.49-1.18a4.73,4.73,0,0,1-3-4.18c0-2.09,2-3.87,4.65-3.87a5.45,5.45,0,0,1,3.4,1.13,2.49,2.49,0,0,0,.57-1.18h.82v5.14h-.91c-.3-2.05-1.44-3.75-3.74-3.75-1.22,0-2.36.7-2.36,1.79s.92,1.74,3,2.7l2.39,1.18a4.54,4.54,0,0,1,2.92,3.92C185.82,40.19,183.43,42.1,180.51,42.1Z"}"></path><path class="${"cls-1"}" d="${"M193.92,42.1A6.42,6.42,0,0,1,190,40.62a3.14,3.14,0,0,0-.7,1.48h-.82v-6h.87a4.83,4.83,0,0,0,4.92,4.57,2.24,2.24,0,0,0,2.52-2.09c0-1.13-1-2-2.78-2.83l-2.48-1.18a4.72,4.72,0,0,1-3.05-4.18c0-2.09,2-3.87,4.66-3.87a5.44,5.44,0,0,1,3.39,1.13,2.49,2.49,0,0,0,.57-1.18h.83v5.14H197c-.3-2.05-1.44-3.75-3.74-3.75-1.22,0-2.35.7-2.35,1.79s.91,1.74,3,2.7l2.39,1.18a4.53,4.53,0,0,1,2.92,3.92C199.23,40.19,196.84,42.1,193.92,42.1Z"}"></path><path class="${"cls-1"}" d="${"M4.41,31.82A19.27,19.27,0,0,0,15.27,49.16L6.08,24A19.21,19.21,0,0,0,4.41,31.82Z"}"></path><path class="${"cls-1"}" d="${"M36.69,30.84a10.15,10.15,0,0,0-1.59-5.31c-1-1.59-1.89-2.93-1.89-4.52a3.33,3.33,0,0,1,3.23-3.42h.25A19.28,19.28,0,0,0,7.58,21.23l1.24,0c2,0,5.13-.25,5.13-.25a.8.8,0,0,1,.13,1.59s-1.05.12-2.21.18l7,20.88L23.11,31l-3-8.23c-1-.06-2-.18-2-.18A.8.8,0,0,1,18.21,21s3.18.24,5.07.24S28.42,21,28.42,21a.8.8,0,0,1,.12,1.59s-1,.12-2.2.18l7,20.72,1.92-6.43C36.06,34.41,36.69,32.49,36.69,30.84Z"}"></path><path class="${"cls-1"}" d="${"M24,33.5,18.24,50.3a19.13,19.13,0,0,0,5.44.79A19.37,19.37,0,0,0,30.08,50a2.29,2.29,0,0,1-.14-.27Z"}"></path><path class="${"cls-1"}" d="${"M40.59,22.57a15.19,15.19,0,0,1,.13,2,18.14,18.14,0,0,1-1.47,6.9l-5.88,17a19.27,19.27,0,0,0,7.22-25.9Z"}"></path><path class="${"cls-1"}" d="${"M23.68,9.35A22.47,22.47,0,1,0,46.15,31.82,22.5,22.5,0,0,0,23.68,9.35Zm0,43.9A21.44,21.44,0,1,1,45.11,31.82,21.46,21.46,0,0,1,23.68,53.25Z"}"></path></svg></div></div></div></div></div>
-        <div class="${"mt-16 sm:pb-10 sm:mt-24 lg:mt-0 lg:col-span-6"}"><div class="${"bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden"}"><div class="${"px-4 py-8 sm:px-10"}"><div class="${"mt-6"}"><form class="${"space-y-6"}" method="${"POST"}" id="${"form-contact"}"><div class="${"mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6"}"><div class="${"sm:col-span-6"}"><input class="${"w-full px-4 py-2 border border-gray-200 rounded-md border-1 focus:border-primary-500 focus:ring-primary-500"}" type="${"text"}" name="${"name"}" placeholder="${"Name"}" required${add_attribute("value", name, 0)}></div>
-                    <div class="${"sm:col-span-3"}"><input class="${"focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"email"}" name="${"eml"}" placeholder="${"Email"}" required${add_attribute("value", email, 0)}></div>
-                    <div class="${"sm:col-span-3"}"><input class="${"focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"tel"}" name="${"phone"}" placeholder="${"Phone"}" required${add_attribute("value", phone, 0)}></div>
-                    <div class="${"sm:col-span-6"}"><textarea class="${"focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" name="${"message"}" cols="${"30"}" rows="${"5"}" placeholder="${"How can we help?"}" required>${""}</textarea></div>
-                    <input class="${"hidden w-full px-4 py-2 border border-gray-200 rounded-md border-1"}" type="${"tel"}" name="${"eml2"}" placeholder="${""}"${add_attribute("value", honeypot, 0)}>
-                    <button class="${"sm:col-span-6 px-6 py-3 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"}">Get a Quote
-                    </button>
-                    ${``}</div></form>
-                </div></div>
-            </div></div></div></div></div>
-  
-  <div class="${"py-16 overflow-hidden bg-gray-50 lg:py-24"}"><div class="${"relative max-w-xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-7xl"}"><div class="${"relative"}"><h2 class="${"text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl"}">We&#39;ve got your business covered.
-        </h2>
-        <p class="${"max-w-3xl mx-auto mt-4 text-xl text-center text-gray-500"}">Whether it\u2019s migrating from another platform or building an entire
-          brand, we\u2019ve got you covered.
-        </p></div>
-
-      <div class="${"relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"}"><div class="${"relative"}"><h3 class="${"text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"}">A compelling experience
-          </h3>
-          <p class="${"mt-3 text-lg text-gray-500"}">Create a compelling experience online, with mobile and tablet in
-            mind. Websites and custom web applications that scale.
-          </p>
-
-          <dl class="${"mt-10 space-y-10"}"><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-                  <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"}"></path></svg></div>
-                <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Development
-                </p></dt>
-              <dd class="${"mt-2 ml-16 text-base text-gray-500"}">WordPress, Shopify or custom builds. We implement the best
-                practices possible so that your brand reaches both far and wide.
-              </dd>
-            </div><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-                  <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M13 10V3L4 14h7v7l9-11h-7z"}"></path></svg></div>
-                <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Performance
-                </p></dt>
-              <dd class="${"mt-2 ml-16 text-base text-gray-500"}">We will carefully monitor your website\u2019s performance to
-                understand how we can optimize your online presence.
-              </dd>
-            </div><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-                  <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"}"></path></svg></div>
-                <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Complete Ownership
-                </p></dt>
-              <dd class="${"mt-2 ml-16 text-base text-gray-500"}">You keep everything from accounts to creatives. From AdWords to
-                landing pages, they\u2019re always yours.
-              </dd></div></dl></div>
-
-        <div class="${"relative mt-10 -mx-4 lg:mt-0"}" aria-hidden="${"true"}"><img class="${"relative mx-auto"}" width="${"490"}" src="${"/svg/design-weblime-illustration.svg"}" alt="${"WebLime solutions design illustration"}"></div></div>
-
-      <div class="${"relative mt-12 sm:mt-16 lg:mt-24"}"><div class="${"lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center"}"><div class="${"lg:col-start-2"}"><h3 class="${"text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"}">Certified Shopify Partners
-            </h3>
-            <p class="${"mt-3 text-lg text-gray-500"}">Over 1,000,000 businesses in 175 countries around the world have
-              made over $200 billion USD in sales using Shopify.
-            </p>
-
-            <dl class="${"mt-10 space-y-10"}"><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-                    <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"}"></path></svg></div>
-                  <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Shopify Store Development &amp; Maintenance
-                  </p></dt>
-                <dd class="${"mt-2 ml-16 text-base text-gray-500"}">We&#39;ll develop and maintain an ecommerce solutions that&#39;s
-                  backed by powerful tools that help you find customers, drive
-                  sales, and manage your day-to-day.
-                </dd>
-              </div><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-                    <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}" aria-hidden="${"true"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"}"></path></svg></div>
-                  <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Shopify Marketing Services
-                  </p></dt>
-                <dd class="${"mt-2 ml-16 text-base text-gray-500"}">Building your store is only the first step. Reach your ideal
-                  shopper with content marketing, through SEO, and on social
-                  media.
-                </dd></div></dl></div>
-
-          <div class="${"relative mt-10 -mx-4 lg:mt-0 lg:col-start-1"}"><img class="${"relative mx-auto"}" width="${"490"}" src="${"/svg/weblime-shopify.svg"}" alt="${"WebLime Solutions ecommerce illustration"}"></div></div></div></div></div>
-  ${validate_component(Testimonials, "Testimonials").$$render($$result, {}, {}, {})}
-  <div class="${"relative px-6 mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center max-w-7xl mx-auto pb-20"}"><div class="${"relative"}"><h3 class="${"text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"}">Driven By Creativity And Passion
-      </h3>
-
-      <p class="${"mt-3 text-lg text-gray-500"}">We are passionate about technology and focus on integrating the latest
-        advancements into your business to propel substantial growth.
-      </p>
-
-      <dl class="${"mt-10 space-y-10"}"><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-              <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"}"></path></svg></div>
-            <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Web Development
-            </p></dt>
-          <dd class="${"mt-2 ml-16 text-base text-gray-500"}">WordPress, Shopify or custom builds. We implement the best practices
-            possible so that your brand reaches both far and wide.
-          </dd>
-        </div><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-              <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"}"></path></svg></div>
-            <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">E-commerce
-            </p></dt>
-          <dd class="${"mt-2 ml-16 text-base text-gray-500"}">We will carefully monitor your website\u2019s performance to understand
-            how we can optimize your online presence.
-          </dd>
-        </div><div class="${"relative"}"><dt><div class="${"absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"}">
-              <svg class="${"w-6 h-6"}" xmlns="${"http://www.w3.org/2000/svg"}" fill="${"none"}" viewBox="${"0 0 24 24"}" stroke="${"currentColor"}"><path stroke-linecap="${"round"}" stroke-linejoin="${"round"}" stroke-width="${"2"}" d="${"M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"}"></path></svg></div>
-            <p class="${"ml-16 text-lg font-medium leading-6 text-gray-900"}">Marketing
-            </p></dt>
-          <dd class="${"mt-2 ml-16 text-base text-gray-500"}">You keep everything from accounts to creatives. From AdWords to
-            landing pages, they\u2019re always yours.
-          </dd></div></dl></div>
-    <div class="${"relative mt-10 lg:mt-0"}" aria-hidden="${"true"}"><img class="${"relative mx-auto"}" width="${"490"}" src="${"/svg/weblime-laying-down-illustration.svg"}" alt="${"woman laying down working"}"></div></div>
-  ${validate_component(Project_In_mind, "ProjectInMind").$$render($$result, {}, {}, {})}</main>`;
-    });
-  }
-});
-
-// .svelte-kit/output/server/nodes/11.js
-var __exports9 = {};
-__export(__exports9, {
-  css: () => css9,
-  entry: () => entry9,
-  index: () => index9,
-  js: () => js9,
-  module: () => top_maryland_web_design_agency_svelte_exports
-});
-var index9, entry9, js9, css9;
-var init__9 = __esm({
-  ".svelte-kit/output/server/nodes/11.js"() {
-    init_top_maryland_web_design_agency_svelte();
-    index9 = 11;
-    entry9 = "pages/top-maryland-web-design-agency.svelte-7167ab50.js";
-    js9 = ["pages/top-maryland-web-design-agency.svelte-7167ab50.js", "chunks/index-457e8868.js", "chunks/Testimonials-66feeaa9.js", "chunks/project-In-mind-e3a18454.js", "chunks/index-e95dc991.js"];
-    css9 = [];
   }
 });
 
@@ -6853,22 +5858,22 @@ var init_slug_svelte = __esm({
 });
 
 // .svelte-kit/output/server/nodes/9.js
-var __exports10 = {};
-__export(__exports10, {
-  css: () => css10,
-  entry: () => entry10,
-  index: () => index10,
-  js: () => js10,
+var __exports3 = {};
+__export(__exports3, {
+  css: () => css3,
+  entry: () => entry3,
+  index: () => index3,
+  js: () => js3,
   module: () => slug_svelte_exports
 });
-var index10, entry10, js10, css10;
-var init__10 = __esm({
+var index3, entry3, js3, css3;
+var init__3 = __esm({
   ".svelte-kit/output/server/nodes/9.js"() {
     init_slug_svelte();
-    index10 = 9;
-    entry10 = "pages/stories/_slug_.svelte-528ef8cf.js";
-    js10 = ["pages/stories/_slug_.svelte-528ef8cf.js", "chunks/index-457e8868.js", "chunks/project-In-mind-e3a18454.js"];
-    css10 = [];
+    index3 = 9;
+    entry3 = "pages/stories/_slug_.svelte-528ef8cf.js";
+    js3 = ["pages/stories/_slug_.svelte-528ef8cf.js", "chunks/index-457e8868.js", "chunks/project-In-mind-e3a18454.js"];
+    css3 = [];
   }
 });
 
@@ -7452,7 +6457,7 @@ var require_toFormData = __commonJS({
             throw Error("Circular reference detected in " + parentKey);
           }
           stack.push(data);
-          utils.forEach(data, function each2(value, key2) {
+          utils.forEach(data, function each(value, key2) {
             if (utils.isUndefined(value))
               return;
             var fullKey = parentKey ? parentKey + "." + key2 : key2;
@@ -8009,18 +7014,18 @@ var require_common = __commonJS({
           if (typeof args[0] !== "string") {
             args.unshift("%O");
           }
-          let index11 = 0;
+          let index4 = 0;
           args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format2) => {
             if (match === "%%") {
               return "%";
             }
-            index11++;
+            index4++;
             const formatter = createDebug.formatters[format2];
             if (typeof formatter === "function") {
-              const val = args[index11];
+              const val = args[index4];
               match = formatter.call(self2, val);
-              args.splice(index11, 1);
-              index11--;
+              args.splice(index4, 1);
+              index4--;
             }
             return match;
           });
@@ -8236,15 +7241,15 @@ var require_browser = __commonJS({
       }
       const c = "color: " + this.color;
       args.splice(1, 0, c, "color: inherit");
-      let index11 = 0;
+      let index4 = 0;
       let lastC = 0;
       args[0].replace(/%[a-zA-Z%]/g, (match) => {
         if (match === "%%") {
           return;
         }
-        index11++;
+        index4++;
         if (match === "%c") {
-          lastC = index11;
+          lastC = index4;
         }
       });
       args.splice(lastC, 0, c);
@@ -19255,9 +18260,9 @@ var require_CancelToken = __commonJS({
       if (!this._listeners) {
         return;
       }
-      var index11 = this._listeners.indexOf(listener);
-      if (index11 !== -1) {
-        this._listeners.splice(index11, 1);
+      var index4 = this._listeners.indexOf(listener);
+      if (index4 !== -1) {
+        this._listeners.splice(index4, 1);
       }
     };
     CancelToken.source = function source() {
@@ -19348,7 +18353,7 @@ var require_content_api = __commonJS({
     "use strict";
     var axios = require_axios2();
     var name$1 = "@tryghost/content-api";
-    var version = "1.9.8";
+    var version = "1.10.0";
     var repository = "https://github.com/TryGhost/SDK/tree/master/packages/content-api";
     var author = "Ghost Foundation";
     var license = "MIT";
@@ -19377,18 +18382,19 @@ var require_content_api = __commonJS({
       access: "public"
     };
     var devDependencies = {
-      "@babel/core": "7.17.10",
+      "@babel/core": "7.18.2",
       "@babel/polyfill": "7.12.1",
-      "@babel/preset-env": "7.17.10",
+      "@babel/preset-env": "7.18.2",
       "@rollup/plugin-json": "4.1.0",
       c8: "7.11.3",
-      "core-js": "3.22.5",
+      "core-js": "3.22.7",
       "eslint-plugin-ghost": "2.14.0",
       mocha: "10.0.0",
-      rollup: "2.73.0",
+      rollup: "2.74.1",
       "rollup-plugin-babel": "4.4.0",
       "rollup-plugin-commonjs": "10.1.0",
       "rollup-plugin-node-resolve": "5.2.0",
+      "rollup-plugin-polyfill-node": "^0.9.0",
       "rollup-plugin-replace": "2.2.0",
       "rollup-plugin-terser": "7.0.2",
       should: "13.2.3",
@@ -19397,7 +18403,7 @@ var require_content_api = __commonJS({
     var dependencies = {
       axios: "^0.27.0"
     };
-    var gitHead = "31e2a37039377b1c785be278a78085cbf0a494f1";
+    var gitHead = "f5a8a2c81a4afc3640f922ef221ea1b6ddfa216a";
     var packageInfo = {
       name: name$1,
       version,
@@ -19491,7 +18497,7 @@ var require_content_api = __commonJS({
       if (key2 && !/[0-9a-f]{26}/.test(key2)) {
         throw new Error(`${name} Config Invalid: 'key' ${key2} must have 26 hex characters`);
       }
-      const api = ["posts", "authors", "tags", "pages", "settings"].reduce((apiObject, resourceType) => {
+      const api = ["posts", "authors", "tags", "pages", "settings", "tiers", "newsletters", "offers"].reduce((apiObject, resourceType) => {
         function browse(options = {}, memberToken) {
           return makeApiRequest(resourceType, options, null, memberToken);
         }
@@ -19510,6 +18516,9 @@ var require_content_api = __commonJS({
         });
       }, {});
       delete api.settings.read;
+      delete api.tiers.read;
+      delete api.newsletters.read;
+      delete api.offers.browse;
       return api;
       function makeApiRequest(resourceType, params, id, membersToken = null) {
         if (!membersToken && !key2) {
@@ -20194,12 +19203,12 @@ function devalue(value) {
   }
   walk(value);
   var names = /* @__PURE__ */ new Map();
-  Array.from(counts).filter(function(entry11) {
-    return entry11[1] > 1;
+  Array.from(counts).filter(function(entry4) {
+    return entry4[1] > 1;
   }).sort(function(a, b) {
     return b[1] - a[1];
-  }).forEach(function(entry11, i2) {
-    names.set(entry11[0], getName(i2));
+  }).forEach(function(entry4, i2) {
+    names.set(entry4[0], getName(i2));
   });
   function stringify(thing) {
     if (names.has(thing)) {
@@ -20922,20 +19931,20 @@ function parse$1(str, options) {
   var obj = {};
   var opt = options || {};
   var dec = opt.decode || decode;
-  var index11 = 0;
-  while (index11 < str.length) {
-    var eqIdx = str.indexOf("=", index11);
+  var index4 = 0;
+  while (index4 < str.length) {
+    var eqIdx = str.indexOf("=", index4);
     if (eqIdx === -1) {
       break;
     }
-    var endIdx = str.indexOf(";", index11);
+    var endIdx = str.indexOf(";", index4);
     if (endIdx === -1) {
       endIdx = str.length;
     } else if (endIdx < eqIdx) {
-      index11 = str.lastIndexOf(";", eqIdx - 1) + 1;
+      index4 = str.lastIndexOf(";", eqIdx - 1) + 1;
       continue;
     }
-    var key2 = str.slice(index11, eqIdx).trim();
+    var key2 = str.slice(index4, eqIdx).trim();
     if (obj[key2] === void 0) {
       var val = str.slice(eqIdx + 1, endIdx).trim();
       if (val.charCodeAt(0) === 34) {
@@ -20943,7 +19952,7 @@ function parse$1(str, options) {
       }
       obj[key2] = tryDecode(val, dec);
     }
-    index11 = endIdx + 1;
+    index4 = endIdx + 1;
   }
   return obj;
 }
@@ -21755,8 +20764,8 @@ async function respond$1(opts) {
         if (error2) {
           while (i2--) {
             if (route.b[i2]) {
-              const index11 = route.b[i2];
-              const error_node = await options.manifest._.nodes[index11]();
+              const index4 = route.b[i2];
+              const error_node = await options.manifest._.nodes[index4]();
               let node_loaded;
               let j = i2;
               while (!(node_loaded = branch[j])) {
@@ -22175,7 +21184,7 @@ var Server = class {
       paths: { base, assets },
       prefix: assets + "/_app/immutable/",
       prerender: {
-        default: false,
+        default: true,
         enabled: true
       },
       read,
@@ -22192,7 +21201,7 @@ var Server = class {
       throw new Error("The first argument to server.respond must be a Request object. See https://github.com/sveltejs/kit/pull/3384 for details");
     }
     if (!this.options.hooks) {
-      const module2 = await Promise.resolve().then(() => (init_hooks_62fbdd94(), hooks_62fbdd94_exports));
+      const module2 = await Promise.resolve().then(() => (init_hooks_99d7d531(), hooks_99d7d531_exports));
       this.options.hooks = {
         getSession: module2.getSession || (() => ({})),
         handle: module2.handle || (({ event, resolve: resolve2 }) => resolve2(event)),
@@ -22210,18 +21219,11 @@ var manifest = {
   assets: /* @__PURE__ */ new Set([".DS_Store", "_redirects", "favicon.ico", "images/.DS_Store", "images/portfolio-clients/bi-client.png", "images/portfolio-clients/brock-insurance-wordpress-site.jpg", "images/portfolio-clients/ia-client.png", "images/portfolio-clients/inspired-accounting-wordpress.png", "images/portfolio-clients/lifebellai.jpg", "images/portfolio-clients/monarch-prime-wordpress-website.jpeg", "images/portfolio-clients/paws-between-homes-wordpress-site.jpg", "images/portfolio-clients/pbh-client.png", "images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png", "images/seo/.DS_Store", "images/seo/Design-Rush-Accredited-Badge.png", "images/seo/WebLime-agency.jpg", "images/seo/weblime-agency.jpg 08-51-47-509.jpg", "images/seo/weblime-cover-meta.png", "images/seo/weblime-digital-agency.jpg", "images/tech/klaviyo.png", "images/tech/klaviyo.svg", "images/tech/recharge.svg", "images/tech/shopify-partner-gray-logo.png", "images/tech/shopify.jpg", "images/tech/shopify.svg", "images/tech/slack-gray.svg", "images/tech/slack.png", "images/tech/square.svg", "images/tech/stripe.png", "images/tech/stripe.svg", "images/tech/wordpress-logo.png", "images/tech/wordpress.svg", "images/testimonial-profiles/barrett-gaines.png", "images/testimonial-profiles/eli-cloud.png", "images/testimonial-profiles/marjorie-kling.png", "images/testimonial-profiles/mary-ocnean.png", "images/testimonial-profiles/sam-oknin.png", "images/testimonial-profiles/sarah-rosenberg.png", "images/testimonial-profiles/wayne-dudley.png", "images/testimonials/google.png", "robots.txt", "svg/Ballance-01.svg", "svg/Charts_2-01.svg", "svg/Cog_Wheels-01.svg", "svg/Earth-01 copy.svg", "svg/Earth-01.svg", "svg/Lock-01.svg", "svg/Tea-01.svg", "svg/collaborate.svg", "svg/design-weblime-illustration.svg", "svg/growth-chart.svg", "svg/illustration-5.svg", "svg/illustration-7.svg", "svg/illustration-weblime-results.svg", "svg/payments.svg", "svg/scale.svg", "svg/search.svg", "svg/weblime-icon-logo.svg", "svg/weblime-laying-down-illustration.svg", "svg/weblime-shopify.svg"]),
   mimeTypes: { ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-f1c1513a.js", "js": ["start-f1c1513a.js", "chunks/index-457e8868.js"], "css": [] },
+    entry: { "file": "start-c3322744.js", "js": ["start-c3322744.js", "chunks/index-457e8868.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
-      () => Promise.resolve().then(() => (init__3(), __exports3)),
-      () => Promise.resolve().then(() => (init__4(), __exports4)),
-      () => Promise.resolve().then(() => (init__5(), __exports5)),
-      () => Promise.resolve().then(() => (init__6(), __exports6)),
-      () => Promise.resolve().then(() => (init__7(), __exports7)),
-      () => Promise.resolve().then(() => (init__8(), __exports8)),
-      () => Promise.resolve().then(() => (init__9(), __exports9)),
-      () => Promise.resolve().then(() => (init__10(), __exports10))
+      () => Promise.resolve().then(() => (init__3(), __exports3))
     ],
     routes: [
       {
@@ -22239,83 +21241,6 @@ var manifest = {
         names: [],
         types: [],
         load: () => Promise.resolve().then(() => (init_get_in_touchh(), get_in_touchh_exports))
-      },
-      {
-        type: "page",
-        id: "404",
-        pattern: /^\/404\/?$/,
-        names: [],
-        types: [],
-        path: "/404",
-        shadow: null,
-        a: [0, 2],
-        b: [1]
-      },
-      {
-        type: "page",
-        id: "get-in-touch",
-        pattern: /^\/get-in-touch\/?$/,
-        names: [],
-        types: [],
-        path: "/get-in-touch",
-        shadow: null,
-        a: [0, 3],
-        b: [1]
-      },
-      {
-        type: "page",
-        id: "packages",
-        pattern: /^\/packages\/?$/,
-        names: [],
-        types: [],
-        path: "/packages",
-        shadow: null,
-        a: [0, 4],
-        b: [1]
-      },
-      {
-        type: "page",
-        id: "portfolio",
-        pattern: /^\/portfolio\/?$/,
-        names: [],
-        types: [],
-        path: "/portfolio",
-        shadow: null,
-        a: [0, 5],
-        b: [1]
-      },
-      {
-        type: "page",
-        id: "solutions-nonprofits",
-        pattern: /^\/solutions-nonprofits\/?$/,
-        names: [],
-        types: [],
-        path: "/solutions-nonprofits",
-        shadow: null,
-        a: [0, 6],
-        b: [1]
-      },
-      {
-        type: "page",
-        id: "solutions",
-        pattern: /^\/solutions\/?$/,
-        names: [],
-        types: [],
-        path: "/solutions",
-        shadow: null,
-        a: [0, 7],
-        b: [1]
-      },
-      {
-        type: "page",
-        id: "top-maryland-web-design-agency",
-        pattern: /^\/top-maryland-web-design-agency\/?$/,
-        names: [],
-        types: [],
-        path: "/top-maryland-web-design-agency",
-        shadow: null,
-        a: [0, 8],
-        b: [1]
       },
       {
         type: "endpoint",
@@ -22341,7 +21266,7 @@ var manifest = {
         types: [null],
         path: null,
         shadow: null,
-        a: [0, 9],
+        a: [0, 2],
         b: [1]
       }
     ],
