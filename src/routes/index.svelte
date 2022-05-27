@@ -110,7 +110,6 @@
                     src="svg/illustration-5.svg"
                     class="mx-auto h-44 w-full"
                     alt="skateboarder doing ollie"
-                    rel="prefetch"
                   />
                 </div>
                 <h2

@@ -21,7 +21,7 @@
         {#each testimonials as testimonial}
           <div class="my-5 md:m-0">
             <div
-              class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 duration-500 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
+              class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
             >
               <div class="flex items-center">
                 <a
