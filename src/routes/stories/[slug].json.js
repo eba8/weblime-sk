@@ -12,7 +12,7 @@ export async function get({ params }) {
   const api = new GhostContentAPI({
     url: API_URL,
     key: GHOST_KEY,
-    version: 'v4',
+    version: 'v4.0',
   });
 
   try {

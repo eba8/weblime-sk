@@ -8,7 +8,7 @@ export async function get() {
   const api = new GhostContentAPI({
     url: API_URL,
     key: GHOST_KEY,
-    version: 'v4',
+    version: 'v4.0',
   });
   try {
     const jsonPosts = await api.posts.browse({ limit: 'all' });
