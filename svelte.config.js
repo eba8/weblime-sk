@@ -29,6 +29,7 @@ const config = {
       split: false,
     }),
     prerender: {
+      default: true,
       crawl: true,
       enabled: true,
       entries: [...pages, '/sitemap.xml'],

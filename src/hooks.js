@@ -8,7 +8,7 @@ export const handle = async ({ event, resolve }) => {
 
   // TODO https://github.com/sveltejs/kit/issues/1046
   if (event.request.method) {
-    // request.method = request.query.get('_method').toUpperCase();
+    // event.method = event.query.get('_method').toUpperCase();
     const method = event.request.method.toUpperCase();
   }
 
