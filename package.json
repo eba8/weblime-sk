@@ -7,9 +7,6 @@
     "preview": "svelte-kit preview",
     "lint": "prettier --check --plugin-search-dir=. .",
     "format": "prettier --write --plugin-search-dir=. .",
-    "cp:404": "ncp build/404/index.html build/404.html",
-    "rm:404": "rimraf - build/404",
-    "postbuild": "npm run cp:404 && npm run rm:404"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
