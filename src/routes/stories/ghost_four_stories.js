@@ -13,7 +13,7 @@ export async function get() {
   try {
     const jsonPosts = await api.posts.browse({
       limit: '4',
-      fields: 'id,title,excerpt,custom_excerpt',
+      fields: 'id,title,excerpt,custom_excerpt,slug',
       formats: `plaintext`,
     });
     return {
