@@ -110,7 +110,6 @@
                     src="svg/illustration-5.svg"
                     class="mx-auto h-44 w-full"
                     alt="skateboarder doing ollie"
-                    loading="lazy"
                   />
                 </div>
                 <h2
@@ -135,7 +134,6 @@
                     src="svg/illustration-weblime-results.svg"
                     class="mx-auto h-44 w-full"
                     alt="Woman jumping next to mobile phone"
-                    loading="lazy"
                   />
                 </div>
                 <h2
@@ -160,7 +158,6 @@
                     src="svg/illustration-7.svg"
                     class="mx-auto h-44 w-full"
                     alt="woman flying on rocketship"
-                    loading="lazy"
                   />
                 </div>
                 <h2
