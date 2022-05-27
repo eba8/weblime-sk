@@ -1,5 +1,6 @@
 import preprocess from 'svelte-preprocess';
 import vercel from '@sveltejs/adapter-vercel';
+import pages from './src/utils/routelist.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -27,6 +28,11 @@ const config = {
       // instead of creating a single one for the entire app
       split: false,
     }),
+    prerender: {
+      crawl: true,
+      enabled: true,
+      entries: [...pages, '/sitemap.xml'],
+    },
   },
 };
 
