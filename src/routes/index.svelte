@@ -337,7 +337,7 @@
       >
         {#each stories as story}
           <div
-            class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 duration-500 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
+            class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
           >
             <a href="/stories/{story.slug}">
               <p class="text-xl font-semibold text-gray-900">{story.title}</p>
