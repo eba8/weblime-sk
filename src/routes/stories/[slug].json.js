@@ -1,6 +1,5 @@
 import GhostContentAPI from '@tryghost/content-api';
 import dotenv from 'dotenv';
-// import { tags } from '@tryghost/helpers';
 
 dotenv.config();
 const { GHOST_KEY, API_URL } = process.env;

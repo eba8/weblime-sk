@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-7205d079.js",
+    "file": "start-559591f9.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -22,7 +22,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-09abb92d.js",
+    "file": "pages/__layout.svelte-3e4c466b.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -31,7 +31,7 @@
       "_stores-106c960d.js"
     ],
     "css": [
-      "assets/pages/__layout.svelte-bf2f89c9.css"
+      "assets/pages/__layout.svelte-2c4a6e77.css"
     ]
   },
   "src/routes/__error.svelte": {
@@ -53,7 +53,7 @@
     ]
   },
   "src/routes/get-in-touch.svelte": {
-    "file": "pages/get-in-touch.svelte-ccd782ca.js",
+    "file": "pages/get-in-touch.svelte-970562d3.js",
     "src": "src/routes/get-in-touch.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -63,13 +63,13 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-a4297437.js",
+    "file": "pages/index.svelte-487d28dc.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-457e8868.js",
-      "_Testimonials-66feeaa9.js"
+      "_Testimonials-a802ce58.js"
     ]
   },
   "src/routes/packages.svelte": {
@@ -111,12 +111,13 @@
     ]
   },
   "src/routes/stories/[slug].svelte": {
-    "file": "pages/stories/_slug_.svelte-528ef8cf.js",
+    "file": "pages/stories/_slug_.svelte-17bc6b3b.js",
     "src": "src/routes/stories/[slug].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-457e8868.js",
+      "_index-e95dc991.js",
       "_project-In-mind-e3a18454.js"
     ]
   },
@@ -131,13 +132,13 @@
     ]
   },
   "src/routes/top-maryland-web-design-agency.svelte": {
-    "file": "pages/top-maryland-web-design-agency.svelte-7167ab50.js",
+    "file": "pages/top-maryland-web-design-agency.svelte-a515654b.js",
     "src": "src/routes/top-maryland-web-design-agency.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-457e8868.js",
-      "_Testimonials-66feeaa9.js",
+      "_Testimonials-a802ce58.js",
       "_project-In-mind-e3a18454.js",
       "_index-e95dc991.js"
     ]
@@ -157,8 +158,8 @@
       "_index-457e8868.js"
     ]
   },
-  "_Testimonials-66feeaa9.js": {
-    "file": "chunks/Testimonials-66feeaa9.js",
+  "_Testimonials-a802ce58.js": {
+    "file": "chunks/Testimonials-a802ce58.js",
     "imports": [
       "_index-457e8868.js"
     ]

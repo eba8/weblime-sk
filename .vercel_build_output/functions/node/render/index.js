@@ -5408,6 +5408,13 @@ function escape(html) {
 function escape_attribute_value(value) {
   return typeof value === "string" ? escape(value) : value;
 }
+function each(items, fn) {
+  let str = "";
+  for (let i2 = 0; i2 < items.length; i2 += 1) {
+    str += fn(items[i2], i2);
+  }
+  return str;
+}
 function validate_component(component, name) {
   if (!component || !component.$$render) {
     if (name === "svelte:component")
@@ -5728,12 +5735,7 @@ var init_layout_svelte = __esm({
     </p></div></footer>`;
     });
     _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-      return `${$$result.head += `<script async defer data-domain="${"weblime.com"}" src="${"https://plausible.io/js/plausible.js"}" data-svelte="svelte-146xjpr"><\/script><script data-svelte="svelte-146xjpr">window.plausible =
-      window.plausible ||
-      function () {
-        (window.plausible.q = window.plausible.q || []).push(arguments);
-      };
-  <\/script>`, ""}
+      return `${$$result.head += `<script async defer data-domain="${"weblime.com"}" src="${"https://plausible.io/js/plausible.js"}" data-svelte="svelte-zmhicp"><\/script>`, ""}
 
 ${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
 
@@ -5757,9 +5759,9 @@ var init__ = __esm({
   ".svelte-kit/output/server/nodes/0.js"() {
     init_layout_svelte();
     index = 0;
-    entry = "pages/__layout.svelte-09abb92d.js";
-    js = ["pages/__layout.svelte-09abb92d.js", "chunks/index-457e8868.js", "chunks/stores-106c960d.js"];
-    css = ["assets/pages/__layout.svelte-bf2f89c9.css"];
+    entry = "pages/__layout.svelte-3e4c466b.js";
+    js = ["pages/__layout.svelte-3e4c466b.js", "chunks/index-457e8868.js", "chunks/stores-106c960d.js"];
+    css = ["assets/pages/__layout.svelte-2c4a6e77.css"];
   }
 });
 
@@ -5830,8 +5832,8 @@ __export(slug_svelte_exports, {
 });
 async function load2({ params, fetch: fetch3 }) {
   const response = await fetch3(`/stories/${params.slug}.json`);
-  const { post } = await response.json();
-  return { props: { post } };
+  const { post, suggested_stories } = await response.json();
+  return { props: { post, suggested_stories } };
 }
 var prerender, U5Bslugu5D;
 var init_slug_svelte = __esm({
@@ -5841,8 +5843,11 @@ var init_slug_svelte = __esm({
     prerender = true;
     U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       let { post } = $$props;
+      let { suggested_stories } = $$props;
       if ($$props.post === void 0 && $$bindings.post && post !== void 0)
         $$bindings.post(post);
+      if ($$props.suggested_stories === void 0 && $$bindings.suggested_stories && suggested_stories !== void 0)
+        $$bindings.suggested_stories(suggested_stories);
       return `${$$result.head += `${$$result.title = `<title>${escape(post.title)} - WebLime</title>`, ""}<meta name="${"title"}" content="${escape(post.title) + " - WebLime"}" data-svelte="svelte-5oue9c"><meta name="${"description"}"${add_attribute("content", post.meta_description, 0)} data-svelte="svelte-5oue9c"><meta property="${"og:locale"}" content="${"en_US"}" data-svelte="svelte-5oue9c"><meta property="${"og:type"}" content="${"website"}" data-svelte="svelte-5oue9c"><meta property="${"og:site_name"}" content="${"WebLime - Digital Agency"}" data-svelte="svelte-5oue9c"><meta property="${"og:url"}" content="${"https://www.weblime.com/stories/" + escape(post.slug) + "/"}" data-svelte="svelte-5oue9c"><meta property="${"og:title"}" content="${escape(post.title) + " - WebLime"}" data-svelte="svelte-5oue9c"><meta property="${"og:description"}"${add_attribute("content", post.meta_description, 0)} data-svelte="svelte-5oue9c"><meta property="${"twitter:card"}" content="${"summary_large_image"}" data-svelte="svelte-5oue9c"><meta name="${"twitter:site"}" content="${"@weblime_agency"}" data-svelte="svelte-5oue9c"><meta property="${"twitter:title"}" content="${escape(post.title) + " - WebLime"}" data-svelte="svelte-5oue9c"><meta property="${"twitter:description"}"${add_attribute("content", post.meta_description, 0)} data-svelte="svelte-5oue9c">${post.feature_image ? `<meta property="${"og:image"}"${add_attribute("content", post.feature_image, 0)} data-svelte="svelte-5oue9c">
     <meta property="${"twitter:image"}"${add_attribute("content", post.feature_image, 0)} data-svelte="svelte-5oue9c">` : `<meta property="${"og:image"}" content="${"https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-5oue9c">
     <meta property="${"twitter:image"}" content="${"https://www.weblime.com/images/seo/weblime-digital-agency.jpg"}" data-svelte="svelte-5oue9c">`}`, ""}
@@ -5852,7 +5857,18 @@ var init_slug_svelte = __esm({
       <img class="${"mx-auto w-3/4 py-5 lg:py-0"}"${add_attribute("src", post.feature_image, 0)}${add_attribute("alt", post.feature_image_alt, 0)}></div></div>
   <div class="${"prose-primary prose relative mx-auto mt-8 px-5 pb-10 md:prose-lg md:px-0 lg:prose-xl"}"><!-- HTML_TAG_START -->${post.html}<!-- HTML_TAG_END --></div>
 
-  ${validate_component(Project_In_mind, "ProjectInMind").$$render($$result, {}, {}, {})}</main>`;
+  ${validate_component(Project_In_mind, "ProjectInMind").$$render($$result, {}, {}, {})}
+
+  ${suggested_stories ? `<section class="${"mx-auto max-w-7xl"}"><div class="${"mt-12 grid gap-12 lg:grid-cols-3"}">${each(suggested_stories, (story) => {
+        return `<div class="${"flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"}">${story.feature_image ? `<a sveltekit:prefetch href="${"/stories/" + escape(story.slug)}" class="${"block"}"><img${add_attribute("src", story.feature_image, 0)}${add_attribute("alt", story.title, 0)} class="${"rounded-md border-2 border-gray-100"}">
+              </a>` : ``}
+            <div class="${"flex flex-1 flex-col justify-between p-6 text-center"}"><div class="${"flex-1"}"><a sveltekit:prefetch href="${"/stories/" + escape(story.slug) + "/"}" class="${"mt-2 block"}"><h2 class="${"text-xl font-semibold text-gray-900"}">${escape(story.title)}</h2>
+
+                  <p class="${"mt-3 text-xl text-gray-800"}">${escape(story.custom_excerpt)}
+                  </p></a>
+              </div></div>
+          </div>`;
+      })}</div></section>` : ``}</main>`;
     });
   }
 });
@@ -5871,8 +5887,8 @@ var init__3 = __esm({
   ".svelte-kit/output/server/nodes/9.js"() {
     init_slug_svelte();
     index3 = 9;
-    entry3 = "pages/stories/_slug_.svelte-528ef8cf.js";
-    js3 = ["pages/stories/_slug_.svelte-528ef8cf.js", "chunks/index-457e8868.js", "chunks/project-In-mind-e3a18454.js"];
+    entry3 = "pages/stories/_slug_.svelte-17bc6b3b.js";
+    js3 = ["pages/stories/_slug_.svelte-17bc6b3b.js", "chunks/index-457e8868.js", "chunks/index-e95dc991.js", "chunks/project-In-mind-e3a18454.js"];
     css3 = [];
   }
 });
@@ -6457,7 +6473,7 @@ var require_toFormData = __commonJS({
             throw Error("Circular reference detected in " + parentKey);
           }
           stack.push(data);
-          utils.forEach(data, function each(value, key2) {
+          utils.forEach(data, function each2(value, key2) {
             if (utils.isUndefined(value))
               return;
             var fullKey = parentKey ? parentKey + "." + key2 : key2;
@@ -7942,14 +7958,14 @@ var require_follow_redirects = __commonJS({
           debug("options", options);
           return new RedirectableRequest(options, callback);
         }
-        function get4(input, options, callback) {
+        function get5(input, options, callback) {
           var wrappedRequest = wrappedProtocol.request(input, options, callback);
           wrappedRequest.end();
           return wrappedRequest;
         }
         Object.defineProperties(wrappedProtocol, {
           request: { value: request, configurable: true, enumerable: true, writable: true },
-          get: { value: get4, configurable: true, enumerable: true, writable: true }
+          get: { value: get5, configurable: true, enumerable: true, writable: true }
         });
       });
       return exports2;
@@ -18450,15 +18466,15 @@ var require_content_api = __commonJS({
         headers
       });
     };
-    function GhostContentAPI3({ url, key: key2, host, version: version2, ghostPath = "ghost", makeRequest = defaultMakeRequest }) {
+    function GhostContentAPI4({ url, key: key2, host, version: version2, ghostPath = "ghost", makeRequest = defaultMakeRequest }) {
       if (host) {
         console.warn(`${name}: The 'host' parameter is deprecated, please use 'url' instead`);
         if (!url) {
           url = host;
         }
       }
-      if (this instanceof GhostContentAPI3) {
-        return GhostContentAPI3({ url, key: key2, version: version2, ghostPath, makeRequest });
+      if (this instanceof GhostContentAPI4) {
+        return GhostContentAPI4({ url, key: key2, version: version2, ghostPath, makeRequest });
       }
       if (version2 === void 0) {
         throw new Error(`${name} Config Missing: 'version' is required. E.g. ${supportedVersions.join(",")}`);
@@ -18566,7 +18582,7 @@ var require_content_api = __commonJS({
         });
       }
     }
-    module2.exports = GhostContentAPI3;
+    module2.exports = GhostContentAPI4;
   }
 });
 
@@ -18679,33 +18695,80 @@ var init_ghost_stories = __esm({
   }
 });
 
-// .svelte-kit/output/server/entries/endpoints/stories/_slug_.json.js
-var slug_json_exports = {};
-__export(slug_json_exports, {
-  get: () => get3,
-  prerender: () => prerender2
+// .svelte-kit/output/server/entries/endpoints/stories/ghost_four_stories.js
+var ghost_four_stories_exports = {};
+__export(ghost_four_stories_exports, {
+  get: () => get3
 });
-async function get3({ params }) {
-  const { slug } = params;
+async function get3() {
   const api = new import_content_api2.default({
     url: API_URL2,
     key: GHOST_KEY2,
     version: "v4.0"
   });
   try {
-    const post = await api.posts.read({ slug });
-    return { body: { post } };
+    const jsonPosts = await api.posts.browse({
+      limit: "4",
+      fields: "id,title,excerpt,custom_excerpt,slug",
+      formats: `plaintext`
+    });
+    return {
+      status: 200,
+      body: {
+        stories: jsonPosts
+      }
+    };
   } catch (err) {
     console.log(err);
   }
 }
-var import_content_api2, import_dotenv2, GHOST_KEY2, API_URL2, prerender2;
-var init_slug_json = __esm({
-  ".svelte-kit/output/server/entries/endpoints/stories/_slug_.json.js"() {
+var import_content_api2, import_dotenv2, GHOST_KEY2, API_URL2;
+var init_ghost_four_stories = __esm({
+  ".svelte-kit/output/server/entries/endpoints/stories/ghost_four_stories.js"() {
     import_content_api2 = __toESM(require_content_api(), 1);
     import_dotenv2 = __toESM(require_main(), 1);
     import_dotenv2.default.config();
     ({ GHOST_KEY: GHOST_KEY2, API_URL: API_URL2 } = process.env);
+  }
+});
+
+// .svelte-kit/output/server/entries/endpoints/stories/_slug_.json.js
+var slug_json_exports = {};
+__export(slug_json_exports, {
+  get: () => get4,
+  prerender: () => prerender2
+});
+async function get4({ params }) {
+  const { slug } = params;
+  const api = new import_content_api3.default({
+    url: API_URL3,
+    key: GHOST_KEY3,
+    version: "v4.0"
+  });
+  try {
+    const post = await api.posts.read({ slug, include: "tags" });
+    if (post.tags.length != 0) {
+      const jsonPosts = await api.posts.browse({
+        limit: "3",
+        fields: "id,title,excerpt,custom_excerpt,slug,feature_image",
+        formats: `plaintext`,
+        filter: `tags:[${post.tags.map((tag) => tag.name).join(",")}]`
+      });
+      return { body: { post, suggested_stories: jsonPosts } };
+    } else {
+      return { body: { post } };
+    }
+  } catch (err) {
+    console.log(err);
+  }
+}
+var import_content_api3, import_dotenv3, GHOST_KEY3, API_URL3, prerender2;
+var init_slug_json = __esm({
+  ".svelte-kit/output/server/entries/endpoints/stories/_slug_.json.js"() {
+    import_content_api3 = __toESM(require_content_api(), 1);
+    import_dotenv3 = __toESM(require_main(), 1);
+    import_dotenv3.default.config();
+    ({ GHOST_KEY: GHOST_KEY3, API_URL: API_URL3 } = process.env);
     prerender2 = true;
   }
 });
@@ -20563,9 +20626,9 @@ async function load_shadow_data(route, event, options, prerender3) {
       }
       data.body = body;
     }
-    const get4 = method === "head" && mod.head || mod.get;
-    if (get4) {
-      const result = await get4(event);
+    const get5 = method === "head" && mod.head || mod.get;
+    if (get5) {
+      const result = await get5(event);
       if (result.fallthrough) {
         throw new Error("fallthrough is no longer supported. Use matchers instead: https://kit.svelte.dev/docs/routing#advanced-routing-matching");
       }
@@ -21216,10 +21279,10 @@ var Server = class {
 // .svelte-kit/vercel-tmp/manifest.js
 var manifest = {
   appDir: "_app",
-  assets: /* @__PURE__ */ new Set([".DS_Store", "_redirects", "favicon.ico", "images/.DS_Store", "images/portfolio-clients/bi-client.png", "images/portfolio-clients/brock-insurance-wordpress-site.jpg", "images/portfolio-clients/ia-client.png", "images/portfolio-clients/inspired-accounting-wordpress.png", "images/portfolio-clients/lifebellai.jpg", "images/portfolio-clients/monarch-prime-wordpress-website.jpeg", "images/portfolio-clients/paws-between-homes-wordpress-site.jpg", "images/portfolio-clients/pbh-client.png", "images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png", "images/seo/.DS_Store", "images/seo/Design-Rush-Accredited-Badge.png", "images/seo/WebLime-agency.jpg", "images/seo/weblime-agency.jpg 08-51-47-509.jpg", "images/seo/weblime-cover-meta.png", "images/seo/weblime-digital-agency.jpg", "images/tech/klaviyo.png", "images/tech/klaviyo.svg", "images/tech/recharge.svg", "images/tech/shopify-partner-gray-logo.png", "images/tech/shopify.jpg", "images/tech/shopify.svg", "images/tech/slack-gray.svg", "images/tech/slack.png", "images/tech/square.svg", "images/tech/stripe.png", "images/tech/stripe.svg", "images/tech/wordpress-logo.png", "images/tech/wordpress.svg", "images/testimonial-profiles/barrett-gaines.png", "images/testimonial-profiles/eli-cloud.png", "images/testimonial-profiles/marjorie-kling.png", "images/testimonial-profiles/mary-ocnean.png", "images/testimonial-profiles/sam-oknin.png", "images/testimonial-profiles/sarah-rosenberg.png", "images/testimonial-profiles/wayne-dudley.png", "images/testimonials/google.png", "robots.txt", "svg/Ballance-01.svg", "svg/Charts_2-01.svg", "svg/Cog_Wheels-01.svg", "svg/Earth-01 copy.svg", "svg/Earth-01.svg", "svg/Lock-01.svg", "svg/Tea-01.svg", "svg/collaborate.svg", "svg/design-weblime-illustration.svg", "svg/growth-chart.svg", "svg/illustration-5.svg", "svg/illustration-7.svg", "svg/illustration-weblime-results.svg", "svg/payments.svg", "svg/scale.svg", "svg/search.svg", "svg/weblime-icon-logo.svg", "svg/weblime-laying-down-illustration.svg", "svg/weblime-shopify.svg"]),
-  mimeTypes: { ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml", ".txt": "text/plain" },
+  assets: /* @__PURE__ */ new Set([".DS_Store", "_redirects", "favicon.ico", "images/.DS_Store", "images/portfolio-clients/bi-client.png", "images/portfolio-clients/brock-insurance-wordpress-site.jpg", "images/portfolio-clients/ia-client.png", "images/portfolio-clients/inspired-accounting-wordpress.png", "images/portfolio-clients/lifebellai.jpg", "images/portfolio-clients/monarch-prime-wordpress-website.jpeg", "images/portfolio-clients/paws-between-homes-wordpress-site.jpg", "images/portfolio-clients/pbh-client.png", "images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png", "images/seo/.DS_Store", "images/seo/Design-Rush-Accredited-Badge.png", "images/seo/WebLime-agency.jpg", "images/seo/weblime-agency.jpg 08-51-47-509.jpg", "images/seo/weblime-cover-meta.png", "images/seo/weblime-digital-agency.jpg", "images/tech/klaviyo.png", "images/tech/klaviyo.svg", "images/tech/recharge.svg", "images/tech/shopify-partner-gray-logo.png", "images/tech/shopify.jpg", "images/tech/shopify.svg", "images/tech/slack-gray.svg", "images/tech/slack.png", "images/tech/square.svg", "images/tech/stripe.png", "images/tech/stripe.svg", "images/tech/wordpress-logo.png", "images/tech/wordpress.svg", "images/testimonial-profiles/.DS_Store", "images/testimonial-profiles/barrett-gaines.webp", "images/testimonial-profiles/eli-cloud.webp", "images/testimonial-profiles/mary-ocnean.webp", "images/testimonial-profiles/sam-oknin.webp", "images/testimonial-profiles/sarah-rosenberg.webp", "images/testimonial-profiles/wayne-dudley.webp", "images/testimonials/.DS_Store", "images/testimonials/google.webp", "robots.txt", "svg/Ballance-01.svg", "svg/Charts_2-01.svg", "svg/Cog_Wheels-01.svg", "svg/Earth-01 copy.svg", "svg/Earth-01.svg", "svg/Lock-01.svg", "svg/Tea-01.svg", "svg/collaborate.svg", "svg/design-weblime-illustration.svg", "svg/growth-chart.svg", "svg/illustration-5.svg", "svg/illustration-7.svg", "svg/illustration-weblime-results.svg", "svg/payments.svg", "svg/scale.svg", "svg/search.svg", "svg/weblime-icon-logo.svg", "svg/weblime-laying-down-illustration.svg", "svg/weblime-shopify.svg"]),
+  mimeTypes: { ".ico": "image/vnd.microsoft.icon", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml", ".webp": "image/webp", ".txt": "text/plain" },
   _: {
-    entry: { "file": "start-7205d079.js", "js": ["start-7205d079.js", "chunks/index-457e8868.js"], "css": [] },
+    entry: { "file": "start-559591f9.js", "js": ["start-559591f9.js", "chunks/index-457e8868.js"], "css": [] },
     nodes: [
       () => Promise.resolve().then(() => (init__(), __exports)),
       () => Promise.resolve().then(() => (init__2(), __exports2)),
@@ -21249,6 +21312,14 @@ var manifest = {
         names: [],
         types: [],
         load: () => Promise.resolve().then(() => (init_ghost_stories(), ghost_stories_exports))
+      },
+      {
+        type: "endpoint",
+        id: "stories/ghost_four_stories",
+        pattern: /^\/stories\/ghost_four_stories\/?$/,
+        names: [],
+        types: [],
+        load: () => Promise.resolve().then(() => (init_ghost_four_stories(), ghost_four_stories_exports))
       },
       {
         type: "endpoint",
