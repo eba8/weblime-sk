@@ -2,19 +2,28 @@
   export const prerender = true;
 
   export async function load({ params, fetch }) {
+    //get post according to the slug
     const response = await fetch(`/stories/${params.slug}.json`);
-    const { post } = await response.json();
+    const { post, suggested_stories } = await response.json();
+
+    //get 3 posts according to the tag from fetched post above
+    // const tagged_response = await fetch('/stories/ghost_tagged_stories');
+    // const { suggested_stories } = await tagged_response.json();
+
     return {
       props: {
         post,
+        suggested_stories,
       },
     };
   }
 </script>
 
 <script>
+  import { fade } from 'svelte/transition';
   import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
   export let post;
+  export let suggested_stories;
 </script>
 
 <svelte:head>
@@ -80,4 +89,44 @@
   </div>
 
   <ProjectInMind />
+
+  {#if suggested_stories}
+    <section class="mx-auto max-w-7xl">
+      <div class=" mt-12 grid gap-12 lg:grid-cols-3">
+        {#each suggested_stories as story}
+          <div
+            transition:fade|local={{ duration: 300 }}
+            class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"
+          >
+            {#if story.feature_image}
+              <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
+                <img
+                  src={story.feature_image}
+                  alt={story.title}
+                  class="rounded-md border-2 border-gray-100"
+                />
+              </a>
+            {/if}
+            <div class="flex flex-1 flex-col justify-between p-6 text-center">
+              <div class="flex-1">
+                <a
+                  sveltekit:prefetch
+                  href="/stories/{story.slug}/"
+                  class="mt-2 block"
+                >
+                  <h2 class="text-xl font-semibold text-gray-900">
+                    {story.title}
+                  </h2>
+
+                  <p class="mt-3 text-xl text-gray-800">
+                    {story.custom_excerpt}
+                  </p>
+                </a>
+              </div>
+            </div>
+          </div>
+        {/each}
+      </div>
+    </section>
+  {/if}
 </main>
