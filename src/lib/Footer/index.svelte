@@ -4,7 +4,7 @@
 </script>
 
 <footer>
-  <div class="px-4 py-12 mx-auto overflow-hidden max-w-7xl sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl overflow-hidden px-4 py-12 sm:px-6 lg:px-8">
     <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
       <div class="px-5 py-2">
         <a href="/" class="text-base text-gray-500 hover:text-gray-900">
@@ -15,7 +15,7 @@
       <div class="px-5 py-2">
         <a
           sveltekit:prefetch
-          href="/stories/"
+          href="/stories"
           class="text-base text-gray-500 hover:text-gray-900"
         >
           Stories
@@ -23,21 +23,21 @@
       </div>
       <div class="px-5 py-2">
         <a
-          href="/get-in-touch/"
+          href="/get-in-touch"
           class="text-base text-gray-500 hover:text-gray-900"
         >
           Get In Touch
         </a>
       </div>
     </nav>
-    <div class="flex justify-center mt-8 space-x-6">
+    <div class="mt-8 flex justify-center space-x-6">
       <a
         href="https://www.facebook.com/weblimeworld"
         class="text-gray-600 hover:text-gray-800"
       >
         <span class="sr-only">Facebook</span>
         <svg
-          class="w-6 h-6"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -55,7 +55,7 @@
       >
         <span class="sr-only">Twitter</span>
         <svg
-          class="w-6 h-6"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -71,7 +71,7 @@
       >
         <span class="sr-only">Instagram</span>
         <svg
-          class="w-6 h-6"
+          class="h-6 w-6"
           fill="currentColor"
           viewBox="0 0 24 24"
           aria-hidden="true"
@@ -84,7 +84,7 @@
         </svg>
       </a>
     </div>
-    <p class="mt-8 text-base text-center text-gray-600">
+    <p class="mt-8 text-center text-base text-gray-600">
       &copy; {year} WebLime, Inc. All rights reserved.
     </p>
   </div>
