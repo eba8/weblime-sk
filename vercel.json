@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/stories/ecommerce-marketing-automation",
-      "destination": "https://weblime.com/",
+      "source": "/stories/top-5-website-builders",
+      "destination": "/stories/top-website-builders",
       "permanent": true
     }
   ]
