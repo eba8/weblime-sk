@@ -47,6 +47,21 @@
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
   />
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:url" content="https://www.weblime.com/get-in-touch" />
+  <meta property="og:title" content="WebLime | Get In Touch" />
+  <meta
+    property="og:description"
+    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+  />
+  <meta
+    property="og:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+
   <!-- Global site tag (gtag.js) - Google Ads: 663674682 -->
   <script
     async

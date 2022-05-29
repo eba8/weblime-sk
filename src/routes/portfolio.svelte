@@ -15,7 +15,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WebLime - Digital Agency" />
-  <meta property="og:url" content="https://www.weblime.com/" />
+  <meta property="og:url" content="https://www.weblime.com/portfolio" />
   <meta property="og:title" content="WebLime | Portfolio" />
   <meta
     property="og:description"
