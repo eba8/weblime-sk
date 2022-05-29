@@ -111,7 +111,7 @@
               <div class="flex-1">
                 <a
                   sveltekit:prefetch
-                  href="/stories/{story.slug}/"
+                  href="/stories/{story.slug}"
                   class="mt-2 block"
                 >
                   <h2 class="text-xl font-semibold text-gray-900">
