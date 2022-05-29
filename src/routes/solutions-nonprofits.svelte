@@ -34,7 +34,6 @@
     property="twitter:description"
     content="WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."
   />
-  <script defer src="/scripts/carousel.js"></script>
 </svelte:head>
 
 <main class="mx-auto">
@@ -206,21 +205,8 @@
           <img
             alt=""
             src="https://source.unsplash.com/BbSBf5uv50A"
-            class="rellax absolute right-0 -top-24 z-30 h-auto rounded-lg object-cover object-center shadow-md"
-            data-rellax-speed="-1"
+            class="h-auto rounded-lg object-cover object-center shadow-md"
           />
-          <!-- <img
-            alt=""
-            src="https://source.unsplash.com/F3Y8BfZn4jo"
-            class="rellax relative left-0 top-24 z-20 h-auto w-1/2 rounded-lg object-cover object-center shadow-md"
-            data-rellax-speed="1"
-          />
-          <img
-            alt=""
-            src="https://source.unsplash.com/mcSDtbWXUZU"
-            class="rellax absolute -bottom-16 right-8 z-10 h-auto w-[50%] rounded-lg object-cover object-center shadow-md"
-            data-rellax-speed="0"
-          /> -->
         </div>
       </div>
       <div class="flex w-full items-center pt-24 sm:w-2/3 sm:pt-0">
