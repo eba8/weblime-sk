@@ -9,6 +9,16 @@
       "source": "/stories/generating-leads-for-your-growing-home-improvement-business",
       "destination": "/stories/generating-leads-for-a-home-improvement-business",
       "permanent": true
+    },
+    {
+      "source": "/stories/10-ways-to-get-more-home-improvement-customers",
+      "destination": "/stories/get-more-construction-leads/",
+      "permanent": true
+    },
+    {
+      "source": "/stories/marketing-for-construction-companies",
+      "destination": "/stories/construction-marketing",
+      "permanent": true
     }
   ]
 }
