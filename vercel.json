@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/stories/ecommerce-marketing-automation",
+      "destination": "https://weblime.com/",
+      "permanent": true
+    }
+  ]
+}
