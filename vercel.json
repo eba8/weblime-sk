@@ -4,6 +4,11 @@
       "source": "/stories/top-5-website-builders",
       "destination": "/stories/top-website-builders",
       "permanent": true
+    },
+    {
+      "source": "/stories/generating-leads-for-your-growing-home-improvement-business",
+      "destination": "/stories/generating-leads-for-a-home-improvement-business",
+      "permanent": true
     }
   ]
 }
