@@ -8,19 +8,19 @@
     class:theme-lime={$page.url.pathname === '/solutions'}
     class:theme-black={$page.url.pathname === '/portfolio' ||
       $page.url.pathname === '/top-maryland-web-design-agency'}
-    class="relative pt-6 pb-16 sm:pb-24 lg:pb-32 bg-skin-hero"
+    class="relative bg-skin-hero pt-6 pb-16 sm:pb-24 lg:pb-32"
   >
     <nav
-      class="relative flex items-center justify-between px-4 mx-auto max-w-7xl sm:px-6"
+      class="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6"
       aria-label="Global"
     >
-      <div class="flex items-center flex-1">
+      <div class="flex flex-1 items-center">
         <div
-          class="flex items-center text-skin-base justify-between w-full md:w-auto"
+          class="flex w-full items-center justify-between text-skin-base md:w-auto"
         >
           <a sveltekit:prefetch href="/">
             <svg
-              class="h-9 w-9 fill-current text-skin-logo"
+              class="fill-current h-9 w-9 text-skin-logo"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 250 250"
               fill="currentColor"
@@ -35,19 +35,19 @@
               />
             </svg><span class="sr-only">Weblime</span></a
           >
-          <div class="flex items-center -mr-2 md:hidden">
+          <div class="-mr-2 flex items-center md:hidden">
             <button
               on:click={() => {
                 mobile_menu = !mobile_menu;
               }}
               type="button"
-              class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md bg-gray-50 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 mobile-menu-open"
+              class="mobile-menu-open inline-flex items-center justify-center rounded-md bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
               aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
               <!-- Heroicon name: outline/menu -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -64,7 +64,7 @@
             </button>
           </div>
         </div>
-        <div class="hidden md:block md:ml-10 md:space-x-10">
+        <div class="hidden md:ml-10 md:block md:space-x-10">
           <a
             sveltekit:prefetch
             href="/solutions"
@@ -83,8 +83,8 @@
         <span class="inline-flex rounded-md">
           <a
             sveltekit:prefetch
-            href="/get-in-touch/"
-            class="inline-flex items-center px-5 py-2 text-base font-medium rounded-md text-skin-inverted bg-skin-fill"
+            href="/get-in-touch"
+            class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
           >
             Get In Touch
           </a>
@@ -96,10 +96,10 @@
   {#if mobile_menu}
     <!-- MOBILE MENU -->
     <div
-      class="absolute inset-x-0 top-0 p-2 overflow-visible transition origin-top-right transform"
+      class="absolute inset-x-0 top-0 origin-top-right transform overflow-visible p-2 transition"
     >
       <div
-        class="bg-white rounded-lg shadow-md ring-1 ring-black ring-opacity-5"
+        class="ring-black rounded-lg bg-white shadow-md ring-1 ring-opacity-5"
       >
         <div class="flex items-center justify-between px-5 pt-4">
           <div>
@@ -123,7 +123,7 @@
           <div class="-mr-2">
             <button
               type="button"
-              class="inline-flex items-center justify-center p-2 text-gray-400 bg-white rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
             >
               <span class="sr-only">Close main menu</span>
               <!-- Heroicon name: outline/x -->
@@ -131,7 +131,7 @@
                 on:click={() => {
                   mobile_menu = !mobile_menu;
                 }}
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -148,13 +148,13 @@
             </button>
           </div>
         </div>
-        <div class="px-2 pt-2 pb-3 space-y-1">
+        <div class="space-y-1 px-2 pt-2 pb-3">
           <a
             on:click={() => {
               mobile_menu = !mobile_menu;
             }}
             href="/solutions"
-            class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
             >Solutions</a
           >
           <a
@@ -162,7 +162,7 @@
               mobile_menu = !mobile_menu;
             }}
             href="/portfolio"
-            class="block px-3 py-2 text-base font-medium text-gray-700 rounded-md hover:text-gray-900 hover:bg-gray-50"
+            class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
             >Portfolio</a
           >
         </div>
@@ -170,8 +170,8 @@
           on:click={() => {
             mobile_menu = !mobile_menu;
           }}
-          href="/get-in-touch/"
-          class="block w-full px-5 py-3 rounded-b-md font-medium text-center text-primary-600 bg-gray-100 hover:bg-gray-100"
+          href="/get-in-touch"
+          class="block w-full rounded-b-md bg-gray-100 px-5 py-3 text-center font-medium text-primary-600 hover:bg-gray-100"
         >
           Get In Touch
         </a>

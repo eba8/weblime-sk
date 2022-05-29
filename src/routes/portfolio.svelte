@@ -93,7 +93,7 @@
                       <img
                         class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/brock-insurance-wordpress-site.jpg"
-                        alt=""
+                        alt="woman holding child by the beach"
                       />
                     </div>
 
@@ -121,7 +121,7 @@
                       <img
                         class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/paws-between-homes-wordpress-site.jpg"
-                        alt=""
+                        alt="couple with child and dog walking in the park"
                       />
                     </div>
 
@@ -150,7 +150,7 @@
                       <img
                         class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/inspired-accounting-wordpress.png"
-                        alt=""
+                        alt="illustration of calculator and finance paper"
                       />
                     </div>
                     <div class="space-y-2">
@@ -178,7 +178,7 @@
                       <img
                         class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/resource-wranglers-staffing-wordpress-site.png"
-                        alt=""
+                        alt="illustration of resumes"
                       />
                     </div>
                     <div class="space-y-2">
@@ -205,7 +205,7 @@
                       <img
                         class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/monarch-prime-wordpress-website.jpeg"
-                        alt=""
+                        alt="finished construction project showing a kitchen island with wooden flooers"
                       />
                     </div>
                     <div class="space-y-2">
@@ -231,7 +231,7 @@
                       <img
                         class="rounded-lg object-cover shadow-lg"
                         src="https://www.weblime.com/images/portfolio-clients/lifebellai.jpg"
-                        alt=""
+                        alt="medical personnel"
                       />
                     </div>
                     <div class="space-y-2">
