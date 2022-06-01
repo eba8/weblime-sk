@@ -1,4 +1,8 @@
-<script context="module">
+<script>
+  import { fade } from 'svelte/transition';
+  import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
+  export let post;
+  export let suggested_stories;
   export const prerender = true;
 
   export async function load({ params, fetch }) {
@@ -13,13 +17,6 @@
       },
     };
   }
-</script>
-
-<script>
-  import { fade } from 'svelte/transition';
-  import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
-  export let post;
-  export let suggested_stories;
 </script>
 
 <svelte:head>
