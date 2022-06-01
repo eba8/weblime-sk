@@ -3,20 +3,6 @@
   import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
   export let post;
   export let suggested_stories;
-  export const prerender = true;
-
-  export async function load({ params, fetch }) {
-    //get post according to the slug
-    const response = await fetch(`/stories/${params.slug}.json`);
-    const { post, suggested_stories } = await response.json();
-
-    return {
-      props: {
-        post,
-        suggested_stories,
-      },
-    };
-  }
 </script>
 
 <svelte:head>

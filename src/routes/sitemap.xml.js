@@ -1,8 +1,8 @@
-import { stories } from '$/stories/ghost_stories';
+import { getStories } from '$lib/get_posts';
 import { website } from '$lib/info';
 
 export async function get() {
-  const posts = await stories();
+  const posts = await getStories();
   const pages = [`solutions`, `get-in-touch`];
   const body = sitemap(posts, pages);
 

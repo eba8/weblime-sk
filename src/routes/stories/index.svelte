@@ -15,7 +15,6 @@
 
 <script>
   import { fade } from 'svelte/transition';
-  import { loop_guard } from 'svelte/internal';
 
   let searchTerm = '';
   let tag = '';
