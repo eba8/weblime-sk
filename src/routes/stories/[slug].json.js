@@ -29,6 +29,9 @@ export async function get({ params }) {
       return { body: { post: post } };
     }
   } catch (err) {
-    console.log(err);
+    return {
+      status: 404,
+      // title: 'post not found',
+    };
   }
 }

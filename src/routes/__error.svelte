@@ -9,7 +9,8 @@
 </script>
 
 <script>
-  export let title;
+  // export let title;
 </script>
 
-<h1>{title}</h1>
+<!-- <h1>{title}</h1> -->
+<h1>It looks like you're lost!</h1>
