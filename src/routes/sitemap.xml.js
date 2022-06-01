@@ -1,139 +1,57 @@
-export async function get() {
-  // On the fly
-  // const data = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/v1/posts?published=t');
-  // const posts = await data.json();
-  const body = await render();
+import { stories } from '$/stories/ghost_stories';
+import { website } from '$lib/info';
 
-  // // Pre-created
-  // const data = await fetch(import.meta.env.VITE_SITEMAP_URL);
-  // const body = await data.text();
+export async function get() {
+  const posts = await stories();
+  const pages = [`solutions`, `get-in-touch`];
+  const body = sitemap(posts, pages);
 
   const headers = {
-    'Cache-Control': `max-age=0, s-max-age=${600}`,
+    'Cache-Control': 'max-age=0, s-maxage=3600',
     'Content-Type': 'application/xml',
   };
   return {
-    body,
     headers,
+    body,
   };
 }
 
-const render = () => `<?xml version="1.0" encoding="UTF-8" ?>
+const sitemap = (posts, pages) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-  xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
-  xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
-  xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
-  xmlns:pagemap="http://www.google.com/schemas/sitemap-pagemap/1.0"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
+  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+  xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0"
+  xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
 >
-<url>
-    <loc>https://www.weblime.com</loc>
-  </url>
   <url>
-    <loc>https://www.weblime.com/get-in-touch</loc>
+    <loc>${website}</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
+  ${pages
+    .map(
+      (page) => `
   <url>
-    <loc>https://www.weblime.com/packages</loc>
+    <loc>${website}/${page}</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
+  `,
+    )
+    .join('')}
+  ${posts
+    .map((post) =>
+      post.isPrivate
+        ? null
+        : `
   <url>
-    <loc>https://www.weblime.com/portfolio</loc>
+    <loc>${website}/posts/${post.slug}</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.weblime.com/solutions</loc>
-  </url>
-<url>
-<loc>https://www.weblime.com/stories/2020-year-in-review</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/3-tips-for-starting-an-online-business-in-2021</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/basic-steps-for-a-speedy-website</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/generating-leads-for-a-home-improvement-business</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/construction-marketing</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/how-to-promote-your-business-locally</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/learn-from-your-competition</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/local-seo-must-haves-for-any-website</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/seo-101-the-core-components-you-should-know</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/the-truth-behind-cookies-pixels-and-privacy-policies</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/the-ultimate-wordpress-guide</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/get-more-construction-leads</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/how-fast-should-a-website-load</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/the-best-marketing-strategies-for-small-businesses</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/top-website-builders</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/10-reasons-to-use-a-content-management-system</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/how-to-market-a-home-renovation-business</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/why-shopify-is-the-best-ecommerce-platform</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/contractor-marketing-services</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/2021-year-in-review</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/shopify-marketing-agency</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/how-to-add-reviews-on-shopify</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/ultimate-guide-to-digital-marketing</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/shopify-automation</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/ecommerce-dashboard</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/ecommerce-marketing-automation</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/construction-marketing-ideas</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/photography-blog-platforms</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/shopify-vs-amazon</loc>
-</url>
-<url>
-<loc>https://www.weblime.com/stories/wordpress-marketing-automation</loc>
-</url>
-</urlset>
-`;
+  `,
+    )
+    .join('')}
+</urlset>`;
