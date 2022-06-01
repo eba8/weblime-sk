@@ -6,10 +6,6 @@
     const response = await fetch(`/stories/${params.slug}.json`);
     const { post, suggested_stories } = await response.json();
 
-    //get 3 posts according to the tag from fetched post above
-    // const tagged_response = await fetch('/stories/ghost_tagged_stories');
-    // const { suggested_stories } = await tagged_response.json();
-
     return {
       props: {
         post,

@@ -24,14 +24,17 @@ export async function get({ params }) {
         formats: `plaintext`,
         filter: `tags:[${post.tags.map((tag) => tag.name).join(',')}]`,
       });
+      console.log('RAN 1');
       return { body: { post: post, suggested_stories: jsonPosts } };
     } else {
+      console.log('RAN 2');
       return { body: { post: post } };
     }
   } catch (err) {
+    console.log('RAN 3');
     return {
       status: 404,
-      // title: 'post not found',
+      error: new Error(`The post doesn't exist.`),
     };
   }
 }
