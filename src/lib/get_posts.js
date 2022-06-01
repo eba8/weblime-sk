@@ -12,9 +12,7 @@ export async function getStories() {
   });
   try {
     const jsonPosts = await api.posts.browse({ limit: 'all' });
-    return {
-      stories: jsonPosts,
-    };
+    return jsonPosts;
   } catch (err) {
     console.log(err);
   }
