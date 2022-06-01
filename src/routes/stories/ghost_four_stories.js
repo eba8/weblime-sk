@@ -16,6 +16,9 @@ export async function get() {
       fields: 'id,title,excerpt,custom_excerpt,slug',
       formats: `plaintext`,
     });
+
+    jsonPosts.forEach((jsonPosts) => delete jsonPosts.plaintext);
+
     return {
       status: 200,
       body: {
