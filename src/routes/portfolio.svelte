@@ -141,7 +141,7 @@
               </li>
               <li>
                 <a
-                  href="https://brock4insurance.com/"
+                  href="https://inspired-accounting.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
