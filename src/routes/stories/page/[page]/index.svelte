@@ -86,7 +86,7 @@
     </div>
   </div>
   <div class="relative mx-auto max-w-7xl">
-    <div class="text-center">
+    <!-- <div class="text-center">
       <button
         class="m-3 rounded-md border-gray-200 bg-gray-200 px-5 py-3 focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         on:click={() => ((tag = ''), (searchTerm = ''))}>Most recent</button
@@ -115,9 +115,9 @@
         bind:value={searchTerm}
         placeholder="Search stories"
       />
-    </div>
+    </div> -->
     <div
-      class="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3 transition-opacity"
+      class="mx-auto mt-12 grid max-w-lg gap-12 transition-opacity lg:max-w-none lg:grid-cols-3"
       class:opacity-50={loading}
     >
       <!-- {#each stories.slice(0, 15) as story} -->
@@ -157,18 +157,23 @@
     </div>
   </div>
 
-  <div class="flex gap-4 mx-auto items-center justify-center">
+  <div class="mx-auto mt-8 flex items-center justify-center gap-4">
     {#if prevPage && prevPage > 0}
-      <a href="/stories/page/{prevPage}" class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted">
+      <a
+        href="/stories/page/{prevPage}"
+        class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
+      >
         Previous Page
       </a>
     {/if}
 
     {#if nextPage}
-      <a href="/stories/page/{nextPage}" class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted">
+      <a
+        href="/stories/page/{nextPage}"
+        class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
+      >
         Next Page
       </a>
     {/if}
   </div>
-
 </div>
