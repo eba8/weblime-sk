@@ -3,6 +3,7 @@
 </script>
 
 <script>
+  import { afterNavigate, beforeNavigate } from '$app/navigation';
   import { fade } from 'svelte/transition';
 
   let searchTerm = '';
@@ -12,6 +13,11 @@
   export let stories;
   export let nextPage;
   export let prevPage;
+
+  let loading = false;
+
+  beforeNavigate(() => loading = true);
+  afterNavigate(() => loading = false);
 
   $: {
     if (searchTerm) {
@@ -118,7 +124,8 @@
       />
     </div>
     <div
-      class="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3"
+      class="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3 transition-opacity"
+      class:opacity-50={loading}
     >
       <!-- {#each stories.slice(0, 15) as story} -->
       {#each filteredstories.slice(0, 12) as story}
