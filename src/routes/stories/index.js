@@ -6,7 +6,7 @@ const { GHOST_KEY, API_URL } = process.env;
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ url }) => {
-  const page = url.searchParams.get('page');
+  const page = url.searchParams.get('page') ?? 1;
   
   const api = new GhostContentAPI({
     url: API_URL,
