@@ -5,8 +5,8 @@ dotenv.config();
 const { GHOST_KEY, API_URL } = process.env;
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export const get = async ({ url }) => {
-  const page = url.searchParams.get('page') ?? 1;
+export const get = async ({ params }) => {
+  const page = isNaN(Number(params.page)) ? 1 : Number(params.page);
   
   const api = new GhostContentAPI({
     url: API_URL,
@@ -17,7 +17,7 @@ export const get = async ({ url }) => {
   try {
     const jsonPosts = await api.posts.browse({
       limit: 6,
-      page: isNaN(Number(page)) ? 1 : page,
+      page
     });
 
     return {
