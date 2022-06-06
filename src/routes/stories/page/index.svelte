@@ -1,5 +1,6 @@
 <script context="module">
-    export const prerender = true;
+    // Shouldn't prerender a redirect
+    export const prerender = false;
     
     /** @type {import('@sveltejs/kit').Load} */
     export const load = () => {
