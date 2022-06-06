@@ -1,13 +1,18 @@
 <script context="module">
   export const prerender = true;
 
-  export async function load({ fetch }) {
-    const response = await fetch('/stories/ghost_stories');
+  /** @type {import('@sveltejs/kit').Load} */
+  export const load = async ({ fetch, url })  => {
+    const page = url.searchParams.get('page') ?? 1;
+    const response = await fetch(`/stories/ghost_stories?page=${page}`);
 
-    const { stories } = await response.json();
+    const { stories, nextPage, prevPage } = await response.json();
+
     return {
       props: {
         stories,
+        nextPage,
+        prevPage
       },
     };
   }
@@ -19,7 +24,10 @@
   let searchTerm = '';
   let tag = '';
   let filteredstories = [];
+
   export let stories;
+  export let nextPage;
+  export let prevPage;
 
   $: {
     if (searchTerm) {
@@ -164,4 +172,19 @@
       {/each}
     </div>
   </div>
+
+  <div class="flex gap-4 mx-auto items-center justify-center">
+    {#if prevPage && prevPage > 0}
+      <a href="/stories?page={prevPage}" class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted">
+        Previous Page
+      </a>
+    {/if}
+
+    {#if nextPage}
+      <a href="/stories?page={nextPage}" class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted">
+        Next Page
+      </a>
+    {/if}
+  </div>
+
 </div>
