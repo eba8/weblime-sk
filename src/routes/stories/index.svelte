@@ -1,23 +1,3 @@
-<script context="module">
-  export const prerender = true;
-
-  /** @type {import('@sveltejs/kit').Load} */
-  export const load = async ({ fetch, url })  => {
-    const page = url.searchParams.get('page') ?? 1;
-    const response = await fetch(`/stories/ghost_stories?page=${page}`);
-
-    const { stories, nextPage, prevPage } = await response.json();
-
-    return {
-      props: {
-        stories,
-        nextPage,
-        prevPage
-      },
-    };
-  }
-</script>
-
 <script>
   import { fade } from 'svelte/transition';
 
