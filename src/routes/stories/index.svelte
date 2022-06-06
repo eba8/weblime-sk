@@ -3,8 +3,8 @@
 </script>
 
 <script>
-  import { afterNavigate, beforeNavigate } from '$app/navigation';
   import { fade } from 'svelte/transition';
+  import { navigating } from '$app/stores';
 
   let searchTerm = '';
   let tag = '';
@@ -14,10 +14,7 @@
   export let nextPage;
   export let prevPage;
 
-  let loading = false;
-
-  beforeNavigate(() => loading = true);
-  afterNavigate(() => loading = false);
+  $: loading = $navigating && $navigating.to.pathname.includes('stories');
 
   $: {
     if (searchTerm) {
