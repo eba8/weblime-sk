@@ -16,7 +16,6 @@ export const get = async ({ params }) => {
   
   try {
     const jsonPosts = await api.posts.browse({
-      limit: 6,
       page
     });
 
