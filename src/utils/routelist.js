@@ -11,7 +11,7 @@ async function getPosts() {
     version: 'v4.0',
   });
   try {
-    const jsonPosts = await api.posts.browse({ limit: 'all' });
+    const jsonPosts = await api.posts.browse();
     return jsonPosts;
   } catch (err) {
     console.log(err);
@@ -36,6 +36,14 @@ const build = async () => {
   let result = posts.map((post) => `/stories/${post.slug}`);
 
   pages.push(...result);
+
+  /**
+   * Prerender all the story pages
+   */
+  for (let i = 0; i < posts.meta.pagination.pages; i++)
+    pages.push(`/stories/page/${i + 1}`);
+
+  console.log('prerender', pages, posts.meta.pagination.pages)
 
   return pages;
 };
