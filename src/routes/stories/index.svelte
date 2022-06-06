@@ -2,12 +2,15 @@
   export const prerender = true;
 
   export async function load({ fetch }) {
-    const response = await fetch('/stories/ghost_stories');
+    let fetch_page = 1;
+    const response = await fetch('/stories/ghost_stories', { fetch_page });
 
-    const { stories } = await response.json();
+    const { stories, pagination } = await response.json();
+
     return {
       props: {
         stories,
+        pagination,
       },
     };
   }
@@ -15,11 +18,13 @@
 
 <script>
   import { fade } from 'svelte/transition';
-
+  // import { page } from './ghost_stories';
+  // console.log($page);
   let searchTerm = '';
   let tag = '';
   let filteredstories = [];
   export let stories;
+  export let pagination;
 
   $: {
     if (searchTerm) {
@@ -129,7 +134,7 @@
       class="mx-auto mt-12 grid max-w-lg gap-12 lg:max-w-none lg:grid-cols-3"
     >
       <!-- {#each stories.slice(0, 15) as story} -->
-      {#each filteredstories.slice(0, 12) as story}
+      {#each filteredstories as story}
         <div
           transition:fade|local={{ duration: 300 }}
           class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"
@@ -164,4 +169,17 @@
       {/each}
     </div>
   </div>
+
+  {#if pagination.prev != null}
+    <button
+      type="submit"
+      class="rounded border px-3 py-1 text-sm font-medium shadow-sm transition-all duration-200 ease-out hover:shadow-md disabled:opacity-50"
+      on:click={() => load(pagination.prev)}>Previous</button
+    >{/if}
+  {#if pagination.next != null}
+    <button
+      type="submit"
+      class="rounded border px-3 py-1 text-sm font-medium shadow-sm transition-all duration-200 ease-out hover:shadow-md disabled:opacity-50"
+      on:click={() => load(pagination.next)}>Next</button
+    >{/if}
 </div>
