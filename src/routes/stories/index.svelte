@@ -1,12 +1,7 @@
-<script context="module">
-    // Shouldn't prerender a redirect
-    export const prerender = false;
-    
-    /** @type {import('@sveltejs/kit').Load} */
-    export const load = () => {
-        return {
-            status: 307,
-            redirect: '/stories/page/1'
-        }
-    }
+<script>
+    import PageRoute from './page/[page]/index.svelte';
+
+    export let data;
 </script>
+
+<PageRoute {...data} />
