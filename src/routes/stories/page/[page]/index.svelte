@@ -160,7 +160,7 @@
   <div class="mx-auto mt-8 flex items-center justify-center gap-4">
     {#if prevPage && prevPage > 0}
       <a
-        href="/stories/page/{prevPage}"
+        href={prevPage == 1 ? "/stories" : `/stories/page/${prevPage}`}
         class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
       >
         Previous Page
