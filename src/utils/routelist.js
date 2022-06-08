@@ -43,8 +43,6 @@ const build = async () => {
   for (let i = 0; i < posts.meta.pagination.pages; i++)
     pages.push(`/stories/page/${i + 1}`);
 
-  console.log('prerender', pages, posts.meta.pagination.pages)
-
   return pages;
 };
 
