@@ -40,8 +40,12 @@ const build = async () => {
   /**
    * Prerender all the story pages
    */
-  for (let i = 0; i < posts.meta.pagination.pages; i++)
-    pages.push(`/stories/page/${i + 1}`);
+  for (let i = 1; i <= posts.meta.pagination.pages; i++)
+    pages.push(
+      i == 1 ? `/stories` : `/stories/page/${i}`
+    );
+
+  console.log(pages)
 
   return pages;
 };
