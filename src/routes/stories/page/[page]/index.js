@@ -1,4 +1,4 @@
-import { getStories } from '$lib/get_posts';
+import { getStories } from '$lib/get_stories';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export const get = async ({ params }) => {

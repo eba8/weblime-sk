@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 const { GHOST_KEY, API_URL } = process.env;
 
-export const getStories = (page) => {
+export const getStories = async (page) => {
     const api = new GhostContentAPI({
         url: API_URL,
         key: GHOST_KEY,
@@ -16,6 +16,6 @@ export const getStories = (page) => {
         fields: 'id,title,excerpt,custom_excerpt,slug',
         formats: `plaintext`,
     });
-
+    
     return posts.map(post => ({ ...post, plaintext: null }));
 }
