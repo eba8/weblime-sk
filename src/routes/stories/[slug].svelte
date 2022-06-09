@@ -10,6 +10,7 @@
   <title>{post.title} - WebLime</title>
   <meta name="title" content="{post.title} - WebLime" />
   <meta name="description" content={post.meta_description} />
+  <link rel="canonical" href="https://www.weblime.com/stories/{post.slug}" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
