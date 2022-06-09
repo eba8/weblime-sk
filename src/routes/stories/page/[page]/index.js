@@ -17,10 +17,9 @@ export const get = async ({ params }) => {
   try {
     const jsonPosts = await api.posts.browse({
       page,
-      fields: 'id,title,excerpt,custom_excerpt,slug',
+      fields: 'id,title,excerpt, feature_image,custom_excerpt,slug',
       formats: `plaintext`,
     });
-    console.log(jsonPosts);
     jsonPosts.forEach((jsonPosts) => delete jsonPosts.plaintext);
     return {
       status: 200,
