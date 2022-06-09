@@ -13,7 +13,7 @@ export const getStories = async (page) => {
 
     const posts = await api.posts.browse({
         page,
-        fields: 'id,title,excerpt,custom_excerpt,slug',
+        fields: 'id,title,excerpt,custom_excerpt,slug,feature_image',
         formats: `plaintext`,
     });
 
