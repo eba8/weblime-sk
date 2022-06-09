@@ -16,6 +16,8 @@ export const getStories = async (page) => {
         fields: 'id,title,excerpt,custom_excerpt,slug',
         formats: `plaintext`,
     });
+
+    posts.forEach(p => delete p.plaintext);
     
-    return posts.map(post => ({ ...post, plaintext: null }));
+    return posts
 }
