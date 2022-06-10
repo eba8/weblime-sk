@@ -1,10 +1,15 @@
 <script>
   import { fade } from 'svelte/transition';
   import { navigating, page } from '$app/stores';
+  import { site_name } from '$lib/info';
 
   let searchTerm = '';
   let tag = '';
   let filteredstories = [];
+  let title = `Page ${stories.meta.pagination.page} of ${stories.meta.pagination.pages} - Stories
+    by WebLim`;
+  let description =
+    "Read WebLime's latest stories. All about web development and digital marketing.";
 
   export let stories;
   export let nextPage;
@@ -29,27 +34,18 @@
 
 <svelte:head>
   <!-- Primary Meta Tags -->
-  <!-- <title
-    >Page {stories.meta.pagination.page} of {stories.meta.pagination.pages} - Stories
-    by WebLime</title
-  > -->
-  <meta name="title" content="WebLime | Helping businesses thrive online." />
-  <meta
-    name="description"
-    content="Read WebLime's latest stories. All about web development and digital marketing."
-  />
+  <title>{title}</title>
+  <meta name="title" content={title} />
+  <meta name="description" content={description} />
   <link rel="canonical" href={$page.url.href} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:site_name" content={site_name} />
   <meta property="og:url" content={$page.url.href} />
   <meta property="og:title" content="WebLime | Web Design and Development." />
-  <meta
-    property="og:description"
-    content="Read WebLime's latest stories. All about web development and digital marketing."
-  />
+  <meta property="og:description" content={description} />
   <meta
     property="og:image"
     content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
