@@ -1,18 +1,25 @@
+<script>
+  import { page } from '$app/stores';
+  import { site_name } from '$lib/info';
+  let title = 'WebLime - Nonprofits Solutions';
+</script>
+
 <svelte:head>
   <!-- Primary Meta Tags -->
-  <title>WebLime | Nonprofits</title>
-  <meta name="title" content="WebLime | Solutions" />
+  <title>{title}</title>
+  <meta name="title" content={title} />
   <meta
     name="description"
     content="WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."
   />
+  <link rel="canonical" href={$page.url.href} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="WebLime - Digital Agency" />
-  <meta property="og:url" content="https://www.weblime.com/" />
-  <meta property="og:title" content="WebLime | Solutions" />
+  <meta property="og:site_name" content={site_name} />
+  <meta property="og:url" content={$page.url.href} />
+  <meta property="og:title" content={title} />
   <meta
     property="og:description"
     content="WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."

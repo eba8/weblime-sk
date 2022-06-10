@@ -16,9 +16,9 @@
 
 <script>
   import { page } from '$app/stores';
+  import { site_name } from '$lib/info';
   export let stories;
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';
-  import { site_name } from '$lib/info';
 </script>
 
 <svelte:head>
