@@ -10,7 +10,7 @@
   export let nextPage;
   export let prevPage;
 
-  let title = `Page ${page} of ${stories.meta.pagination.pages} - Stories
+  let title = `Page ${$page} of ${stories.meta.pagination.pages} - Stories
      by WebLim`;
   // let title = 'WebLime Stories';
   let description =
