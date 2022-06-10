@@ -6,15 +6,15 @@
   let searchTerm = '';
   let tag = '';
   let filteredstories = [];
-  // let title = `Page ${stories.meta.pagination.page} of ${stories.meta.pagination.pages} - Stories
-  //   by WebLim`;
-  let title = 'WebLime Stories';
-  let description =
-    "Read WebLime's latest stories. All about web development and digital marketing.";
-
   export let stories;
   export let nextPage;
   export let prevPage;
+
+  let title = `Page ${page} of ${stories.meta.pagination.pages} - Stories
+     by WebLim`;
+  // let title = 'WebLime Stories';
+  let description =
+    "Read WebLime's latest stories. All about web development and digital marketing.";
 
   $: loading = $navigating && $navigating.to.pathname.includes('stories');
 
