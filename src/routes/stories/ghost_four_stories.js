@@ -14,6 +14,7 @@ export async function get() {
     const jsonPosts = await api.posts.browse({
       limit: '4',
       fields: 'id,title,excerpt,custom_excerpt,slug',
+      filter: 'tag:feature',
       formats: `plaintext`,
     });
 

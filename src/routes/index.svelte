@@ -332,7 +332,7 @@
         <h2
           class="mb-1 text-lg font-extrabold tracking-tight text-gray-900 sm:text-4xl"
         >
-          Latest Stories
+          Hot Stories
         </h2>
       </div>
       <div
