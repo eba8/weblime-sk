@@ -29,7 +29,10 @@
 
 <svelte:head>
   <!-- Primary Meta Tags -->
-  <title>WebLime | Helping businesses thrive online.</title>
+  <title
+    >Page {stories.meta.pagination.page} of {stories.meta.pagination.pages} - Stories
+    by WebLime</title
+  >
   <meta name="title" content="WebLime | Helping businesses thrive online." />
   <meta
     name="description"

@@ -5,7 +5,8 @@
 /**
  * Used for the header of the page and in SEO
  */
-export const name = 'WebLime | Web Design and Development'; // replace with your name
+export const name = 'WebLime - Web Development & Marketing';
+export const site_name = 'WebLime';
 
 /**
  * Used for SEO in /posts/[slug]

@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
+  import { site_name } from '$lib/info';
   export let post;
   export let suggested_stories;
 </script>
@@ -15,7 +16,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:site_name" content={site_name} />
   <meta
     property="og:url"
     content="https://www.weblime.com/stories/{post.slug}"

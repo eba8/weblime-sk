@@ -6,7 +6,6 @@ export const get = async ({ params }) => {
 
   try {
     const stories = await getStories(page);
-
     return {
       status: 200,
       body: {

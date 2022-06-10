@@ -18,12 +18,13 @@
   import { page } from '$app/stores';
   export let stories;
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';
+  import { site_name } from '$lib/info';
 </script>
 
 <svelte:head>
   <!-- Primary Meta Tags -->
-  <title>WebLime | Web Design and Development.</title>
-  <meta name="title" content="WebLime | Web Design and Development." />
+  <title>WebLime - Web Development & Marketing</title>
+  <meta name="title" content="WebLime - Web Development & Marketing" />
   <meta
     name="description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
@@ -33,9 +34,9 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:site_name" content={site_name} />
   <meta property="og:url" content={$page.url.href} />
-  <meta property="og:title" content="WebLime | Web Design and Development." />
+  <meta property="og:title" content="WebLime - Web Development & Marketing" />
   <meta
     property="og:description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."

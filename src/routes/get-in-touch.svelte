@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
   import { page } from '$app/stores';
+  import { site_name } from '$lib/info';
 
   let name;
   let email;
@@ -52,7 +53,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="WebLime - Digital Agency" />
+  <meta property="og:site_name" content={site_name} />
   <meta property="og:url" content={$page.url.href} />
   <meta property="og:title" content="WebLime | Get In Touch" />
   <meta
