@@ -1,3 +1,7 @@
+<script>
+  import { page } from '$app/stores';
+</script>
+
 <svelte:head>
   <!-- Primary Meta Tags -->
   <title>WebLime | Solutions</title>
@@ -6,12 +10,13 @@
     name="description"
     content="WebLime is a digital agency focused on increasing the ROI of clients through several online channels. Get your FREE PROPOSAL today."
   />
+  <link rel="canonical" href={$page.url.href} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WebLime - Digital Agency" />
-  <meta property="og:url" content="https://www.weblime.com/solutions" />
+  <meta property="og:url" content={$page.url.href} />
   <meta property="og:title" content="WebLime | Solutions" />
   <meta
     property="og:description"

@@ -42,7 +42,12 @@
     <div
       class="mx-auto flex max-w-6xl flex-col px-4 sm:px-6 lg:flex-row lg:px-8"
     >
-      <img class="mx-auto" width="500" src="/svg/collaborate.svg" alt="" />
+      <img
+        class="mx-auto"
+        width="500"
+        src="/svg/collaborate.svg"
+        alt="illustration of a person using a tablet on a ball and a person on a wheelchair"
+      />
 
       <div
         class="flex flex-col items-center justify-center pt-8 text-center lg:items-start lg:pt-0 lg:pl-16 lg:text-left"
@@ -50,7 +55,7 @@
         <h1
           class="my-6 text-4xl font-extrabold tracking-tight text-gray-800 sm:text-6xl"
         >
-          Get Your NonProfit <span class="text-primary-600">MOVING</span>.
+          Get Your Nonprofit <span class="text-primary-600">Moving</span>.
         </h1>
         <p class="w-4/6 text-lg text-gray-600">
           You're on a mission to make the world a better place, and we'd love to
@@ -149,7 +154,7 @@
               class="mx-auto hidden sm:block"
               width="180"
               src="/svg/search.svg"
-              alt=""
+              alt="search illustration"
             />
             <div class="my-auto sm:pl-4">
               <h3 class="mb-1 font-semibold text-gray-800">Guidestar</h3>
@@ -164,7 +169,7 @@
               class="order-2 mx-auto hidden sm:block"
               width="180"
               src="/svg/payments.svg"
-              alt=""
+              alt="illustration of a woman with credit card next to a plant"
             />
             <div class="my-auto sm:pr-4">
               <h3 class="mb-1 font-semibold text-gray-800">Donations</h3>
@@ -179,7 +184,7 @@
               class="mx-auto hidden sm:block"
               width="280"
               src="/svg/scale.svg"
-              alt=""
+              alt="a man reaching for a milestone on a graph"
             />
             <div class="my-auto sm:pl-8">
               <h3 class="mb-1 font-semibold text-gray-800">Scale</h3>
