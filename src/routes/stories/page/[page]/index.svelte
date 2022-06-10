@@ -121,8 +121,7 @@
       class="mx-auto mt-12 grid max-w-lg gap-12 transition-opacity lg:max-w-none lg:grid-cols-3"
       class:opacity-50={loading}
     >
-      <!-- {#each stories.slice(0, 15) as story} -->
-      {#each filteredstories.slice(0, 12) as story}
+      {#each filteredstories as story}
         <div
           transition:fade|local={{ duration: 300 }}
           class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"

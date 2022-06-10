@@ -1,6 +1,4 @@
-<script context="module">
-  export const prerender = true;
-
+<!-- <script context="module">
   export async function load({ fetch }) {
     const response = await fetch('/stories/ghost_four_stories');
 
@@ -12,8 +10,7 @@
       },
     };
   }
-</script>
-
+</script> -->
 <script>
   import { page } from '$app/stores';
   import { site_name } from '$lib/info';
@@ -328,23 +325,33 @@
     <div
       class="relative mx-auto max-w-lg divide-y-2 divide-gray-200 lg:max-w-7xl"
     >
-      <div>
+      <div class="flex ">
         <h2
           class="mb-1 text-lg font-extrabold tracking-tight text-gray-900 sm:text-4xl"
         >
           Hot Stories
         </h2>
+        <a href="/stories" class="ml-3 self-center">
+          <span
+            class="rounded-full bg-primary-100 px-3 py-1 text-sm font-medium text-primary-900"
+          >
+            More Stories
+          </span>
+        </a>
       </div>
       <div
-        class="mt-6 grid grid-rows-4 gap-5 pt-10 lg:grid-cols-2 lg:grid-rows-2 lg:gap-x-5 lg:gap-y-12"
+        class="mt-6 grid grid-rows-1 gap-5 pt-10 lg:grid-cols-3 lg:grid-rows-1 lg:gap-x-5 lg:gap-y-12"
       >
-        {#each stories as story}
+        {#each stories.slice(0, 3) as story}
           <div
-            class="rounded-lg bg-gray-50 p-5 ring-1 ring-gray-50 hover:border-gray-100 hover:bg-white hover:shadow-lg hover:ring-gray-100"
+            class="rounded-lg bg-gray-50 ring-1 ring-gray-100 hover:border-gray-100 hover:shadow-lg hover:ring-gray-100"
           >
-            <a href="/stories/{story.slug}">
-              <p class="text-xl font-semibold text-gray-900">{story.title}</p>
-              <p class="mt-2 text-base text-gray-800">{story.excerpt}</p>
+            <a sveltekit:prefetch href="/stories/{story.slug}">
+              <img src={story.feature_image} alt="" />
+              <div class="p-5">
+                <p class="text-xl font-semibold text-gray-900">{story.title}</p>
+                <p class="mt-2 text-base text-gray-800">{story.excerpt}</p>
+              </div>
             </a>
           </div>
         {/each}
