@@ -12,7 +12,6 @@
   }
 </script> -->
 <script>
-  import { page } from '$app/stores';
   import { site_name, home_url } from '$lib/info';
   export let stories;
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';

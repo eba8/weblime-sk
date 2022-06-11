@@ -1,7 +1,6 @@
 <script>
   import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
-  import { page } from '$app/stores';
-  import { site_name } from '$lib/info';
+  import { site_name, portfolio_url } from '$lib/info';
 </script>
 
 <svelte:head>
@@ -12,13 +11,13 @@
     name="description"
     content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
   />
-  <link rel="canonical" href={$page.url.href} />
+  <link rel="canonical" href={portfolio_url} />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content={site_name} />
-  <meta property="og:url" content={$page.url.href} />
+  <meta property="og:url" content={portfolio_url} />
   <meta property="og:title" content="WebLime | Portfolio" />
   <meta
     property="og:description"
