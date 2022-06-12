@@ -19,6 +19,11 @@
       "source": "/stories/marketing-for-construction-companies",
       "destination": "/stories/construction-marketing",
       "permanent": true
+    },
+    {
+      "source": "/stories/untitled",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
