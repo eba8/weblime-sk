@@ -79,22 +79,16 @@
             transition:fade|local={{ duration: 300 }}
             class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"
           >
-            {#if story.feature_image}
-              <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
+            <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
+              {#if story.feature_image}
                 <img
                   src={story.feature_image}
                   alt={story.title}
                   class="rounded-md border-2 border-gray-100"
                 />
-              </a>
-            {/if}
-            <div class="flex flex-1 flex-col justify-between p-6 text-center">
-              <div class="flex-1">
-                <a
-                  sveltekit:prefetch
-                  href="/stories/{story.slug}"
-                  class="mt-2 block"
-                >
+              {/if}
+              <div class="flex flex-1 flex-col justify-between p-6 text-center">
+                <div class="flex-1">
                   <h2 class="text-xl font-semibold text-gray-900">
                     {story.title}
                   </h2>
@@ -102,9 +96,9 @@
                   <p class="mt-3 text-xl text-gray-800">
                     {story.custom_excerpt}
                   </p>
-                </a>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         {/each}
       </div>
