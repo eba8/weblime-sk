@@ -10,6 +10,7 @@ export const get = async ({ params }) => {
       status: 200,
       body: {
         stories,
+        storiesMeta: stories.meta,
         nextPage: stories.meta.pagination.next,
         prevPage: stories.meta.pagination.prev,
       },

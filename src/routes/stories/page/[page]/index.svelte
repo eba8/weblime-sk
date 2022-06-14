@@ -10,13 +10,11 @@
   export let nextPage;
   export let prevPage;
 
-  let title = stories.meta
-    ? `Page ${$page.params.page || 1} of ${
-        stories.meta.pagination.pages
-      } - Stories by WebLime`
-    : 'WebLime Stories';
+  // let title = `Page ${$page.params.page || 1} of ${
+  //   stories.meta.pagination.pages
+  // } - Stories by WebLime`;
 
-  // let title = 'WebLime Stories';
+  let title = 'WebLime Stories';
   let description =
     "Read WebLime's latest stories. All about web development and digital marketing.";
 
