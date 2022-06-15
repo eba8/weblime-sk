@@ -13,6 +13,7 @@ export const get = async () => {
           stories,
           nextPage: 2,
           prevPage: 0,
+          pages: stories.meta.pagination.pages
         }
       },
     };
