@@ -6,15 +6,14 @@
   let searchTerm = '';
   let tag = '';
   let filteredstories = [];
+  
+  export let pages;
   export let stories;
   export let nextPage;
   export let prevPage;
 
-  // let title = `Page ${$page.params.page || 1} of ${
-  //   stories.meta.pagination.pages
-  // } - Stories by WebLime`;
+  let title = `Page ${$page.params.page || 1} of ${pages} - Stories by WebLime`;
 
-  let title = 'WebLime Stories';
   let description =
     "Read WebLime's latest stories. All about web development and digital marketing.";
 
