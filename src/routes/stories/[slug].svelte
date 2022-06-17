@@ -30,10 +30,10 @@
   <meta property="twitter:title" content="{post.title} - WebLime" />
   <meta property="twitter:description" content={post.meta_description} />
 
-  {#if post.feature_image}
-    <meta property="og:image" content={post.feature_image} />
-    <meta property="twitter:image" content={post.feature_image} />
-  {:else}
+  <!-- {#if post.feature_image} -->
+  <meta property="og:image" content={post.feature_image} />
+  <meta property="twitter:image" content={post.feature_image} />
+  <!-- {:else}
     <meta
       property="og:image"
       content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
@@ -42,7 +42,7 @@
       property="twitter:image"
       content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
     />
-  {/if}
+  {/if} -->
 </svelte:head>
 
 <main class="mx-auto">
