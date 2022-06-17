@@ -1,5 +1,7 @@
-Sitemap: https://weblime.com/sitemap.xml
+sitemap: https://weblime.com/sitemap.xml
+
 User-agent: *
+
 Allow: /content/images/*.png
 Allow: /content/images/*.img
 Allow: /content/images/*.svg
