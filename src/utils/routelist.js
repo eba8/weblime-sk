@@ -9,6 +9,7 @@ async function getPosts() {
     url: API_URL,
     key: GHOST_KEY,
     version: 'v5.2',
+    version: 'v5.2',
   });
   try {
     const jsonPosts = await api.posts.browse();
