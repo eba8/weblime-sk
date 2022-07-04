@@ -42,10 +42,11 @@
   />
 </svelte:head>
 
-<main class="mx-auto bg-slate-900 pt-16 sm:pt-24 lg:pt-28">
+<main>
   <!-- Hero section -->
-  <div class="sm:pt-16 lg:pt-8 lg:pb-14">
-    <div class="px-5 pb-5 text-center lg:px-5">
+
+  <section class="bg-slate-900 lg:overflow-hidden lg:pb-14">
+    <div class="px-5 py-10 pb-5 text-center lg:px-8 lg:py-24">
       <h1
         class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl"
       >
@@ -58,7 +59,7 @@
         valued partnerships. It's the only way to get to the heart of a brand.
       </p>
     </div>
-  </div>
+  </section>
 
   <div
     class="relative bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28"
@@ -367,7 +368,7 @@
                 <div class="rounded-md">
                   <a
                     href="https://artsyolive.com/"
-                    class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
+                    class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-base font-medium text-white hover:bg-slate-800"
                     aria-describedby="tier-standard"
                   >
                     Visit Site
@@ -487,7 +488,7 @@
                 <div class="rounded-md">
                   <a
                     href="https://thistleandbee.org"
-                    class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
+                    class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-base font-medium text-white hover:bg-slate-800"
                     aria-describedby="tier-standard"
                   >
                     Visit Site
@@ -604,7 +605,7 @@
                 <div class="rounded-md">
                   <a
                     href="https://www.commonroomroasters.com"
-                    class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
+                    class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-3 text-base font-medium text-white hover:bg-slate-800"
                   >
                     Visit Site
                   </a>
