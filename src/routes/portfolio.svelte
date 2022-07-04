@@ -282,10 +282,10 @@
           >
             <div class="flex flex-col overflow-hidden rounded-lg shadow-md">
               <div class="bg-white px-6 py-8 sm:p-10 sm:pb-6">
-                <div class="mt-4 flex items-baseline text-4xl">Ocnean Pets</div>
+                <div class="mt-4 flex items-baseline text-4xl">Artys Olive</div>
                 <p class="mt-5 text-lg text-gray-500">
-                  Ocnean's mission is to source USA made, eco-friendly healthy
-                  products that benefit animals.
+                  Artsy Olive wants you to be able to change your Art Prints
+                  without having to buy a new frame.
                 </p>
               </div>
               <div
@@ -363,32 +363,10 @@
                       E-mail automations
                     </p>
                   </li>
-
-                  <li class="flex items-start">
-                    <div class="flex-shrink-0">
-                      <!-- Heroicon name: outline/check -->
-                      <svg
-                        class="h-6 w-6 text-primary-500"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p class="ml-3 text-base text-gray-700">Recurring orders</p>
-                  </li>
                 </ul>
                 <div class="rounded-md">
                   <a
-                    href="https://ocnean.com"
+                    href="https://artsyolive.com/"
                     class="flex items-center justify-center rounded-md bg-gray-800 px-5 py-3 text-base font-medium text-white hover:bg-gray-900"
                     aria-describedby="tier-standard"
                   >
