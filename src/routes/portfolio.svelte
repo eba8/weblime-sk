@@ -42,9 +42,9 @@
   />
 </svelte:head>
 
-<main class="mx-auto">
+<main class="mx-auto bg-slate-900 pt-16 sm:pt-24 lg:pt-28">
   <!-- Hero section -->
-  <div class="bg-gray-800 sm:pt-16 lg:pt-8 lg:pb-14">
+  <div class="sm:pt-16 lg:pt-8 lg:pb-14">
     <div class="px-5 pb-5 text-center lg:px-5">
       <h1
         class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl"
@@ -69,11 +69,11 @@
     <div class="relative mx-auto max-w-7xl">
       <div class="text-center">
         <h2
-          class="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl"
+          class="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
         >
           WordPress
         </h2>
-        <p class="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
+        <p class="mx-auto mt-3 max-w-2xl text-xl text-slate-500 sm:mt-4">
           43% of the web uses WordPress, from hobby blogs to the biggest news
           sites online.
         </p>
@@ -255,7 +255,7 @@
     </div>
   </div>
 
-  <div class="bg-gray-900">
+  <div class="bg-slate-900">
     <div class="pt-12 sm:pt-16 lg:pt-24">
       <div class="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <div class="mx-auto max-w-3xl space-y-2 lg:max-w-none">

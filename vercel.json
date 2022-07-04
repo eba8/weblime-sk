@@ -29,6 +29,11 @@
       "source": "/stories/generating-leads-for-a-home-improvement-business",
       "destination": "/stories/home-improvement-marketing",
       "permanent": true
+    },
+    {
+      "source": "/stories/10-reasons-to-use-a-content-management-system",
+      "destination": "/stories/content-management-system-benefits",
+      "permanent": true
     }
   ]
 }

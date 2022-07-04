@@ -1,7 +1,7 @@
 <div class="mx-auto max-w-fit px-4 sm:px-6 lg:px-8">
   <div class=" mx-auto ">
     <div
-      class="rounded-lg bg-gray-900 px-6 py-8 sm:p-10 lg:flex lg:items-center"
+      class="rounded-lg bg-gradient-to-r from-slate-900 to-slate-800 px-6 py-8 sm:p-10 lg:flex lg:items-center"
     >
       <div class="flex-1">
         <h2

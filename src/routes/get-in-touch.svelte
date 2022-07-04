@@ -88,15 +88,16 @@
   </script>
 </svelte:head>
 
-<main class="mx-auto">
+<main class="mx-auto pt-16 sm:pt-24 lg:pt-28">
   <!-- Hero section -->
   <div class="sm:pt-16 lg:pt-8 lg:pb-14">
     <div class="pb-5 text-center">
       <h1
-        class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
+        class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl md:text-6xl"
       >
         <span class="xl:inline">Got a project </span>
-        <span class="bg-gray-900 px-3 text-primary-500 xl:inline">in mind?</span
+        <span class="bg-slate-900 px-3 text-primary-500 xl:inline"
+          >in mind?</span
         >
       </h1>
     </div>

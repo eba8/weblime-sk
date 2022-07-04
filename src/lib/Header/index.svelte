@@ -1,14 +1,18 @@
 <script>
   import { page } from '$app/stores';
+  import ClickOutside from 'svelte-click-outside';
   let mobile_menu = false;
+  let services_flyout_menu = false;
 </script>
 
 <header>
   <div
     class:theme-lime={$page.url.pathname === '/solutions'}
     class:theme-black={$page.url.pathname === '/portfolio' ||
-      $page.url.pathname === '/top-maryland-web-design-agency'}
-    class="relative bg-skin-hero pt-6 pb-16 sm:pb-24 lg:pb-32"
+      $page.url.pathname === '/top-maryland-web-design-agency' ||
+      $page.url.pathname === '/wordpress-development' ||
+      $page.url.pathname === '/shopify-development'}
+    class="relative bg-skin-hero py-6"
   >
     <nav
       class="relative mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6"
@@ -18,7 +22,13 @@
         <div
           class="flex w-full items-center justify-between text-skin-base md:w-auto"
         >
-          <a sveltekit:prefetch href="/">
+          <a
+            sveltekit:prefetch
+            href="/"
+            on:click={() => {
+              services_flyout_menu = false;
+            }}
+          >
             <svg
               class="fill-current h-9 w-9 text-skin-logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -64,14 +74,176 @@
             </button>
           </div>
         </div>
+        <!-- This example requires Tailwind CSS v2.0+ -->
+
+        <div class="relative hidden md:ml-10 md:block md:space-x-10">
+          <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+          <button
+            on:mouseenter={() => {
+              services_flyout_menu = true;
+            }}
+            on:click={() => {
+              services_flyout_menu = !services_flyout_menu;
+            }}
+            type="button"
+            class="group inline-flex items-center rounded-md font-medium text-skin-base hover:text-skin-text-base-hover"
+            aria-expanded="false"
+          >
+            <span>Services</span>
+            <!--
+      Heroicon name: solid/chevron-down
+
+      Item active: "text-gray-600", Item inactive: "text-gray-400"
+    -->
+            <svg
+              class="ml-2 h-5 w-5 transform font-medium text-skin-base transition hover:text-skin-text-base-hover"
+              class:rotate-180={services_flyout_menu == true}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+
+          <!--
+    Flyout menu, show/hide based on flyout menu state.
+
+    Entering: "transition ease-out duration-200"
+      From: "opacity-0 translate-y-1"
+      To: "opacity-100 translate-y-0"
+    Leaving: "transition ease-in duration-150"
+      From: "opacity-100 translate-y-0"
+      To: "opacity-0 translate-y-1"
+  -->
+
+          {#if services_flyout_menu}
+            <div
+              on:mouseleave={() => {
+                services_flyout_menu = false;
+              }}
+              class="smd:ml-5 absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 transition duration-150 ease-in"
+            >
+              <div
+                class="ml-10 overflow-hidden rounded-lg shadow-lg ring-1 ring-gray-900 ring-opacity-5 lg:ml-0"
+              >
+                <div
+                  class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8"
+                >
+                  <a
+                    on:click={() => {
+                      services_flyout_menu = false;
+                    }}
+                    sveltekit:prefetch
+                    href="/wordpress-development"
+                    class="-m-3 flex transform items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-primary-100"
+                  >
+                    <!-- Heroicon name: outline/chart-bar -->
+                    <svg
+                      class="h-6 w-6 flex-shrink-0 text-primary-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      />
+                    </svg>
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-slate-900">
+                        WordPress Development
+                      </p>
+                      <p class="mt-1 text-sm text-slate-500">
+                        Beautiful custom built websites built with WordPress.
+                      </p>
+                    </div>
+                  </a>
+
+                  <a
+                    on:click={() => {
+                      services_flyout_menu = false;
+                    }}
+                    sveltekit:prefetch
+                    href="/shopify-development"
+                    class="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-primary-100"
+                  >
+                    <!-- Heroicon name: outline/cursor-click -->
+
+                    <svg
+                      class="h-6 w-6 flex-shrink-0 text-primary-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-slate-900">
+                        Shopify Development
+                      </p>
+                      <p class="mt-1 text-sm text-slate-500">
+                        Speak directly to your customers in a more meaningful
+                        way.
+                      </p>
+                    </div>
+                  </a>
+
+                  <!-- <a
+                    href="/solutions"
+                    class="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-primary-100"
+                  >
+                    
+                    <svg
+                      class="h-6 w-6 flex-shrink-0 text-primary-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      />
+                    </svg>
+                    <div class="ml-4">
+                      <p class="text-base font-medium text-slate-900">SEO</p>
+                      <p class="mt-1 text-sm text-slate-500">
+                        Your customers&#039; data will be safe and secure.
+                      </p>
+                    </div>
+                  </a> -->
+                </div>
+              </div>
+            </div>
+          {/if}
+        </div>
+
         <div class="hidden md:ml-10 md:block md:space-x-10">
           <a
-            sveltekit:prefetch
-            href="/solutions"
-            class="font-medium text-skin-base hover:text-skin-text-base-hover"
-            >Solutions</a
-          >
-          <a
+            on:click={() => {
+              services_flyout_menu = false;
+            }}
             sveltekit:prefetch
             href="/portfolio"
             class="font-medium text-skin-base hover:text-skin-text-base-hover"

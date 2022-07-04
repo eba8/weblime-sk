@@ -6,7 +6,7 @@
   let searchTerm = '';
   let tag = '';
   let filteredstories = [];
-  
+
   export let pages;
   export let stories;
   export let nextPage;
@@ -70,25 +70,26 @@
   />
 </svelte:head>
 
-<div class="relative px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
-  <!-- Hero -->
-  <div class=" sm:pt-16 lg:pt-8 lg:pb-14">
-    <div class="px-5 text-center lg:px-5">
-      <h1
-        class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
-      >
-        <span class="block xl:inline">Stories</span>
-      </h1>
-      <p
-        class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"
-      >
-        We love developing your online presence and equally love to share what
-        we learn along the way.
-      </p>
+<main class="mx-auto pt-16 sm:pt-24 lg:pt-28">
+  <div class="relative px-4 pb-20 sm:px-6 lg:px-8 lg:pb-28">
+    <!-- Hero -->
+    <div class=" sm:pt-16 lg:pt-8 lg:pb-14">
+      <div class="px-5 text-center lg:px-5">
+        <h1
+          class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
+        >
+          <span class="block xl:inline">Stories</span>
+        </h1>
+        <p
+          class="mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl"
+        >
+          We love developing your online presence and equally love to share what
+          we learn along the way.
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="relative mx-auto max-w-7xl">
-    <!-- <div class="text-center">
+    <div class="relative mx-auto max-w-7xl">
+      <!-- <div class="text-center">
       <button
         class="m-3 rounded-md border-gray-200 bg-gray-200 px-5 py-3 focus:border-primary-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         on:click={() => ((tag = ''), (searchTerm = ''))}>Most recent</button
@@ -118,56 +119,57 @@
         placeholder="Search stories"
       />
     </div> -->
-    <div
-      class="mx-auto mt-12 grid max-w-lg gap-12 transition-opacity lg:max-w-none lg:grid-cols-3"
-      class:opacity-50={loading}
-    >
-      {#each filteredstories as story}
-        <div
-          transition:fade|local={{ duration: 300 }}
-          class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"
-        >
-          <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
-            {#if story.feature_image}
-              <img
-                src={story.feature_image}
-                alt={story.title}
-                class="rounded-md border-2 border-gray-100"
-              />
-            {/if}
-            <div class="flex flex-1 flex-col justify-between p-6 text-center">
-              <div class="flex-1">
-                <h2 class="text-xl font-semibold text-gray-900">
-                  {story.title}
-                </h2>
-                <p class="mt-3 text-xl text-gray-800">
-                  {story.custom_excerpt}
-                </p>
+      <div
+        class="mx-auto mt-12 grid max-w-lg gap-12 transition-opacity lg:max-w-none lg:grid-cols-3"
+        class:opacity-50={loading}
+      >
+        {#each filteredstories as story}
+          <div
+            transition:fade|local={{ duration: 300 }}
+            class="flex flex-col overflow-hidden rounded-md bg-gray-100 shadow-sm"
+          >
+            <a sveltekit:prefetch href="/stories/{story.slug}" class="block">
+              {#if story.feature_image}
+                <img
+                  src={story.feature_image}
+                  alt={story.title}
+                  class="rounded-md border-2 border-gray-100"
+                />
+              {/if}
+              <div class="flex flex-1 flex-col justify-between p-6 text-center">
+                <div class="flex-1">
+                  <h2 class="text-xl font-semibold text-gray-900">
+                    {story.title}
+                  </h2>
+                  <p class="mt-3 text-xl text-gray-800">
+                    {story.custom_excerpt}
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-        </div>
-      {/each}
+            </a>
+          </div>
+        {/each}
+      </div>
+    </div>
+
+    <div class="mx-auto mt-8 flex items-center justify-center gap-4">
+      {#if prevPage && prevPage > 0}
+        <a
+          href={prevPage == 1 ? '/stories' : `/stories/page/${prevPage}`}
+          class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
+        >
+          Previous Page
+        </a>
+      {/if}
+
+      {#if nextPage}
+        <a
+          href="/stories/page/{nextPage}"
+          class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
+        >
+          Next Page
+        </a>
+      {/if}
     </div>
   </div>
-
-  <div class="mx-auto mt-8 flex items-center justify-center gap-4">
-    {#if prevPage && prevPage > 0}
-      <a
-        href={prevPage == 1 ? '/stories' : `/stories/page/${prevPage}`}
-        class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
-      >
-        Previous Page
-      </a>
-    {/if}
-
-    {#if nextPage}
-      <a
-        href="/stories/page/{nextPage}"
-        class="inline-flex items-center rounded-md bg-skin-fill px-5 py-2 text-base font-medium text-skin-inverted"
-      >
-        Next Page
-      </a>
-    {/if}
-  </div>
-</div>
+</main>

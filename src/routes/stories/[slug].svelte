@@ -74,7 +74,7 @@
   <!-- End MailerLite Universal -->
 </svelte:head>
 
-<main class="mx-auto">
+<main class="mx-auto pt-16 sm:pt-24 lg:pt-28">
   <!-- Hero section -->
   <div class="sm:pt-16 lg:pt-8 lg:pb-14">
     <div
