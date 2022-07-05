@@ -11,7 +11,8 @@
     class:theme-black={$page.url.pathname === '/portfolio' ||
       $page.url.pathname === '/top-maryland-web-design-agency' ||
       $page.url.pathname === '/wordpress-development' ||
-      $page.url.pathname === '/shopify-development'}
+      $page.url.pathname === '/shopify-development' ||
+      $page.url.pathname === '/maryland-web-design-company'}
     class="relative bg-skin-hero py-6"
   >
     <nav

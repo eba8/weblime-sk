@@ -27,28 +27,29 @@
 
 <main class="mx-auto">
   <!-- Hero section -->
-  <div class="bg-gray-800">
-    <div class="lg:pb-14 max-w-7xl mx-auto">
+  <div class="bg-slate-900">
+    <div class="mx-auto max-w-7xl lg:pb-14">
       <div class="lg:grid lg:grid-cols-12 lg:gap-8">
         <div
-          class="px-4 sm:px-6 sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left lg:flex lg:items-center"
+          class="px-4 sm:px-6 sm:text-center md:mx-auto md:max-w-2xl lg:col-span-6 lg:flex lg:items-center lg:text-left"
         >
           <div>
             <h1
-              class="text-4xl tracking-tight font-extrabold text-white sm:leading-none lg:text-5xl xl:text-6xl"
+              class="text-4xl font-extrabold tracking-tight text-white sm:leading-none lg:text-5xl xl:text-6xl"
             >
-              <span class="md:block">Take your business</span>
-              <span class="text-primary-400 md:block">to the next level.</span>
+              Maryland
+              <span class="text-primary-400"> Web Design Company</span>
+              <!-- <span class=" md:block">Web Design Company</span> -->
             </h1>
             <p
               class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
             >
               Stand out from the competition with an online presence that gets
-              you noticed. We build custom websites that are intuitive to
-              maintain and easy to expand and grow.
+              you noticed. We build websites that are intuitive to maintain and
+              easy to expand and grow.
             </p>
             <p
-              class="mt-8 text-sm text-white uppercase tracking-wide font-semibold sm:mt-10"
+              class="mt-8 text-sm font-semibold uppercase tracking-wide text-white sm:mt-10"
             >
               The best solutions in the game
             </p>
@@ -220,9 +221,9 @@
             </div>
           </div>
         </div>
-        <div class="mt-16 sm:pb-10 sm:mt-24 lg:mt-0 lg:col-span-6">
+        <div class="mt-16 sm:mt-24 sm:pb-10 lg:col-span-6 lg:mt-0">
           <div
-            class="bg-white sm:max-w-md sm:w-full sm:mx-auto sm:rounded-lg sm:overflow-hidden"
+            class="bg-white sm:mx-auto sm:w-full sm:max-w-md sm:overflow-hidden sm:rounded-lg"
           >
             <div class="px-4 py-8 sm:px-10">
               <div class="mt-6">
@@ -237,7 +238,7 @@
                   >
                     <div class="sm:col-span-6">
                       <input
-                        class="w-full px-4 py-2 border border-gray-200 rounded-md border-1 focus:border-primary-500 focus:ring-primary-500"
+                        class="border-1 w-full rounded-md border border-gray-200 px-4 py-2 focus:border-primary-500 focus:ring-primary-500"
                         type="text"
                         name="name"
                         placeholder="Name"
@@ -247,7 +248,7 @@
                     </div>
                     <div class="sm:col-span-3">
                       <input
-                        class="focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="border-1 w-full rounded-md border border-gray-200 px-4 py-2 focus:border-primary-500 focus:ring-primary-500"
                         type="email"
                         name="eml"
                         placeholder="Email"
@@ -257,7 +258,7 @@
                     </div>
                     <div class="sm:col-span-3">
                       <input
-                        class="focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="border-1 w-full rounded-md border border-gray-200 px-4 py-2 focus:border-primary-500 focus:ring-primary-500"
                         type="tel"
                         name="phone"
                         placeholder="Phone"
@@ -267,7 +268,7 @@
                     </div>
                     <div class="sm:col-span-6">
                       <textarea
-                        class="focus:border-primary-500 focus:ring-primary-500 w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                        class="border-1 w-full rounded-md border border-gray-200 px-4 py-2 focus:border-primary-500 focus:ring-primary-500"
                         name="message"
                         cols="30"
                         rows="5"
@@ -277,21 +278,21 @@
                       />
                     </div>
                     <input
-                      class="hidden w-full px-4 py-2 border border-gray-200 rounded-md border-1"
+                      class="border-1 hidden w-full rounded-md border border-gray-200 px-4 py-2"
                       type="tel"
                       name="eml2"
                       placeholder=""
                       bind:value={honeypot}
                     />
                     <button
-                      class="sm:col-span-6 px-6 py-3 text-lg font-medium text-primary-500 rounded-md bg-gray-900 hover:bg-gray-800"
+                      class="rounded-md bg-slate-900 px-6 py-3 text-lg font-medium text-primary-500 hover:bg-slate-800 sm:col-span-6"
                     >
                       Get a Quote
                     </button>
                     {#if display_message === true}
                       <div
                         transition:fade
-                        class="sm:col-span-6 px-6 py-3 bg-primary-500 text-gray-800 text-center rounded-md
+                        class="rounded-md bg-primary-500 px-6 py-3 text-center text-gray-800 sm:col-span-6
                 "
                       >
                         <p>Your message has been sent!</p>
@@ -375,22 +376,22 @@
     </div>
   </div>
   <!-- HERO END -->
-  <div class="py-16 overflow-hidden bg-gray-50 lg:py-24">
-    <div class="relative max-w-xl px-4 mx-auto sm:px-6 lg:px-8 lg:max-w-7xl">
+  <div class="overflow-hidden bg-gray-50 py-16 lg:py-24">
+    <div class="relative mx-auto max-w-xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
       <div class="relative">
         <h2
-          class="text-3xl font-extrabold leading-8 tracking-tight text-center text-gray-900 sm:text-4xl"
+          class="text-center text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl"
         >
           We've got your business covered.
         </h2>
-        <p class="max-w-3xl mx-auto mt-4 text-xl text-center text-gray-500">
+        <p class="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-500">
           Whether it’s migrating from another platform or building an entire
           brand, we’ve got you covered.
         </p>
       </div>
 
       <div
-        class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
+        class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
       >
         <div class="relative">
           <h3
@@ -407,11 +408,11 @@
             <div class="relative">
               <dt>
                 <div
-                  class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                  class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                 >
                   <!-- Heroicon name: outline/globe-alt -->
                   <svg
-                    class="w-6 h-6"
+                    class="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -439,11 +440,11 @@
             <div class="relative">
               <dt>
                 <div
-                  class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                  class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                 >
                   <!-- Heroicon name: outline/lightning-bolt -->
                   <svg
-                    class="w-6 h-6"
+                    class="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -471,11 +472,11 @@
             <div class="relative">
               <dt>
                 <div
-                  class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                  class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                 >
                   <!-- Heroicon name: lock-closed -->
                   <svg
-                    class="w-6 h-6"
+                    class="h-6 w-6"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -501,7 +502,7 @@
           </dl>
         </div>
 
-        <div class="relative mt-10 -mx-4 lg:mt-0" aria-hidden="true">
+        <div class="relative -mx-4 mt-10 lg:mt-0" aria-hidden="true">
           <img
             class="relative mx-auto"
             width="490"
@@ -513,7 +514,7 @@
 
       <div class="relative mt-12 sm:mt-16 lg:mt-24">
         <div
-          class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center"
+          class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:items-center lg:gap-8"
         >
           <div class="lg:col-start-2">
             <h3
@@ -530,11 +531,11 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                   >
                     <!-- Heroicon name: outline/annotation -->
                     <svg
-                      class="w-6 h-6"
+                      class="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -563,11 +564,11 @@
               <div class="relative">
                 <dt>
                   <div
-                    class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+                    class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
                   >
                     <!-- Heroicon name: outline/mail -->
                     <svg
-                      class="w-6 h-6"
+                      class="h-6 w-6"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -595,7 +596,7 @@
             </dl>
           </div>
 
-          <div class="relative mt-10 -mx-4 lg:mt-0 lg:col-start-1">
+          <div class="relative -mx-4 mt-10 lg:col-start-1 lg:mt-0">
             <img
               class="relative mx-auto"
               width="490"
@@ -609,7 +610,7 @@
   </div>
   <Testimonials />
   <div
-    class="relative px-6 mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center max-w-7xl mx-auto pb-20"
+    class="relative mx-auto mt-12 max-w-7xl px-6 pb-20 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
   >
     <div class="relative">
       <h3
@@ -627,11 +628,11 @@
         <div class="relative">
           <dt>
             <div
-              class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+              class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
             >
               <!-- Heroicon name: desktop-computer -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -658,11 +659,11 @@
         <div class="relative">
           <dt>
             <div
-              class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+              class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
             >
               <!-- Heroicon name: shopping-bag -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -689,11 +690,11 @@
         <div class="relative">
           <dt>
             <div
-              class="absolute flex items-center justify-center w-12 h-12 text-white rounded-md bg-primary-500"
+              class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-primary-500 text-white"
             >
               <!-- Heroicon name: outline/lightning-bolt -->
               <svg
-                class="w-6 h-6"
+                class="h-6 w-6"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"

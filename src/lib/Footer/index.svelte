@@ -87,8 +87,8 @@
       link: '/',
     },
     {
-      name: 'BALTIMORE',
-      link: '/',
+      name: 'maryland',
+      link: '/maryland-web-design-company',
     },
     {
       name: 'AUSTIN',
@@ -234,7 +234,7 @@
 <footer class="bg-white" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-    <section class="p-10">
+    <section class="rounded-lg bg-slate-100 p-10">
       <div class="text-center">
         <h2
           class="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl"
@@ -263,22 +263,20 @@
       <div class="mx-auto mt-12 grid gap-1 lg:grid-cols-5">
         {#each cities as city}
           <div class="flex flex-col overflow-hidden">
-            <!-- <a sveltekit:prefetch href={city.link} class="block"> -->
-            <div class="flex flex-1 flex-col justify-between text-center">
-              <div class="flex-1">
-                <p class="text-base capitalize text-gray-500 ">
-                  {city.name.toLocaleLowerCase()}
-                </p>
+            <a sveltekit:prefetch href={city.link} class="block">
+              <div class="flex flex-1 flex-col justify-between text-center">
+                <div class="flex-1">
+                  <p class="text-base capitalize text-gray-500 ">
+                    {city.name.toLocaleLowerCase()}
+                  </p>
+                </div>
               </div>
-            </div>
-            <!-- </a> -->
+            </a>
           </div>
         {/each}
       </div>
     </section>
-    <div
-      class="border-t border-slate-200 py-3 lg:flex lg:items-center lg:justify-between xl:mt-0"
-    >
+    <div class="py-3 lg:flex lg:items-center lg:justify-between xl:mt-0">
       <div>
         <h3
           class="text-sm font-semibold uppercase tracking-wider text-slate-400"
