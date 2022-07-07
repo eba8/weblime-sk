@@ -26,7 +26,7 @@
           <a
             sveltekit:prefetch
             href="/"
-            on:click={() => {
+            on:mouseenter={() => {
               services_flyout_menu = false;
             }}
           >
@@ -242,7 +242,7 @@
 
         <div class="hidden md:ml-10 md:block md:space-x-10">
           <a
-            on:click={() => {
+            on:mouseenter={() => {
               services_flyout_menu = false;
             }}
             sveltekit:prefetch
