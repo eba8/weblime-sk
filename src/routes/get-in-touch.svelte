@@ -9,20 +9,27 @@
   let honeypot = '';
   let phone;
   let display_message = false;
+  let response_message;
 
   async function handleSubmit() {
-    const res = await fetch('https://weblime-email.edan.workers.dev', {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      body: JSON.stringify({
-        name: name,
-        eml: email,
-        message: message,
-        eml2: honeypot,
-        phone: phone,
-      }), // body data type must match "Content-Type" header
-    });
+    response_message = 'Sending..';
+    const res = await fetch(
+      'https://hook.us1.make.com/38umae64e4jyqn5ysvwsctoqeeqgayun',
+      {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        body: JSON.stringify({
+          name: name,
+          eml: email,
+          message: message,
+          eml2: honeypot,
+          phone: phone,
+        }), // body data type must match "Content-Type" header
+      },
+    );
+    response_message = 'Sending....';
     display_message = res.status == 200 ? true : false;
     if (display_message == true) {
+      response_message = 'Your message has been sent!';
       gtag_report_conversion();
       plausible('Get In Touch');
     }
@@ -178,7 +185,7 @@
             class="rounded-md bg-primary-500 px-6 py-3 text-center text-gray-800 sm:col-span-6
       "
           >
-            <p>Your message has been sent!</p>
+            <p>{response_message}</p>
           </div>
         {/if}
       </div>
