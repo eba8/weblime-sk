@@ -313,11 +313,6 @@
       />
     </div>
     <div
-      class="ml-form-embed"
-      data-account="1989748:y8q2s0r8j3"
-      data-form="5710621:z6v0g0"
-    />
-    <div
       class="border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between"
     >
       <div class="flex space-x-6 md:order-2">
