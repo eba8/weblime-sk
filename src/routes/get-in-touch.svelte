@@ -120,7 +120,7 @@
       <div class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
         <div class="sm:col-span-6">
           <input
-            class="border-1 w-full rounded-md border border-gray-200 px-4 py-2"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
             type="text"
             name="name"
             placeholder="Name"
@@ -130,7 +130,7 @@
         </div>
         <div class="sm:col-span-3">
           <input
-            class="border-1 w-full rounded-md border border-gray-200 px-4 py-2"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
             type="email"
             name="eml"
             placeholder="Email"
@@ -140,7 +140,7 @@
         </div>
         <div class="sm:col-span-3">
           <input
-            class="border-1 w-full rounded-md border border-gray-200 px-4 py-2"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
             type="tel"
             name="phone"
             placeholder="Phone"
@@ -150,7 +150,7 @@
         </div>
         <div class="sm:col-span-6">
           <textarea
-            class="border-1 w-full rounded-md border border-gray-200 px-4 py-2"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
             name="message"
             cols="30"
             rows="5"
