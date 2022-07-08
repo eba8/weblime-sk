@@ -13,16 +13,20 @@
   let display_message = false;
 
   async function handleSubmit() {
-    const res = await fetch('https://weblime-email.edan.workers.dev', {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      body: JSON.stringify({
-        name: name,
-        eml: email,
-        message: message,
-        eml2: honeypot,
-        phone: phone,
-      }), // body data type must match "Content-Type" header
-    });
+    const res = await fetch(
+      'https://hook.us1.make.com/38umae64e4jyqn5ysvwsctoqeeqgayun',
+      {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        body: JSON.stringify({
+          name: name,
+          eml: email,
+          message: message,
+          eml2: honeypot,
+          phone: phone,
+          page_source: $page.url.href,
+        }), // body data type must match "Content-Type" header
+      },
+    );
     display_message = res.status == 200 ? true : false;
   }
 </script>
