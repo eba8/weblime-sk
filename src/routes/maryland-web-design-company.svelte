@@ -430,7 +430,7 @@
           </h3>
           <p class="mt-3 text-lg text-gray-500">
             Create a compelling experience online, with mobile and tablet in
-            mind. Websites and custom web applications that scale.
+            mind. Web design solutions that scale.
           </p>
 
           <dl class="mt-10 space-y-10">
