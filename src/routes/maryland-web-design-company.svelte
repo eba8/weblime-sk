@@ -2,6 +2,8 @@
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';
   import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
   import { fade } from 'svelte/transition';
+  import { page } from '$app/stores';
+  import { site_name } from '$lib/info';
 
   let name;
   let email;
@@ -25,6 +27,30 @@
   }
 </script>
 
+<svelte:head>
+  <title>Maryland Web Design Company</title>
+  <meta
+    name="description"
+    content="WebLime is a trusted web design company in Maryland with experience building results-driven web-based solutions."
+  />
+  <link rel="canonical" href={$page.url.href} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site_name} />
+  <meta property="og:url" content={$page.url.href} />
+  <meta property="og:title" content="Maryland Web Design Company" />
+  <meta
+    property="og:description"
+    content="WebLime is a trusted web design company in Maryland with experience building results-driven web-based solutions."
+  />
+  <meta
+    property="og:image"
+    content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
+  />
+</svelte:head>
+
 <main class="mx-auto">
   <!-- Hero section -->
   <div class="bg-slate-900">
@@ -45,8 +71,7 @@
               class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
             >
               Stand out from the competition with an online presence that gets
-              you noticed. We build websites that are intuitive to maintain and
-              easy to expand and grow.
+              your Maryland business noticed.
             </p>
             <p
               class="mt-8 text-sm font-semibold uppercase tracking-wide text-white sm:mt-10"
@@ -382,7 +407,7 @@
         <h2
           class="text-center text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl"
         >
-          We've got your business covered.
+          Our Maryland web design clients get results.
         </h2>
         <p class="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-500">
           Whether it’s migrating from another platform or building an entire
