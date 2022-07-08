@@ -22,7 +22,7 @@
           eml: email,
           message: message,
           eml2: honeypot,
-          phone: phone,
+          phone: phone.replace(/[^+\d]+/g, ''),
           page_source: $page.url.href,
         }), // body data type must match "Content-Type" header
       },
