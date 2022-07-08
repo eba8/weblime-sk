@@ -676,12 +676,12 @@
               </svg>
             </div>
             <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-              Web Development
+              Web Design & Development
             </p>
           </dt>
           <dd class="mt-2 ml-16 text-base text-gray-500">
-            WordPress, Shopify or custom builds. We implement the best practices
-            possible so that your brand reaches both far and wide.
+            WordPress, Shopify, or custom web design. We implement the best
+            solutions so that your Maryland business reaches far and wide.
           </dd>
         </div>
 
@@ -711,8 +711,8 @@
             </p>
           </dt>
           <dd class="mt-2 ml-16 text-base text-gray-500">
-            We will carefully monitor your website’s performance to understand
-            how we can optimize your online presence.
+            We've got your store covered. Creating beautiful, perfectly
+            functioning Shopify stores is our secret sauce.
           </dd>
         </div>
 
@@ -742,8 +742,8 @@
             </p>
           </dt>
           <dd class="mt-2 ml-16 text-base text-gray-500">
-            You keep everything from accounts to creatives. From AdWords to
-            landing pages, they’re always yours.
+            Our Maryland marketing professionals will use the best marketing
+            tools to research and manage your campaign objectives.
           </dd>
         </div>
       </dl>
