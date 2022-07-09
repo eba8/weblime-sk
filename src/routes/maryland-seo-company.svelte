@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-  <title>Maryland Web Design Company</title>
+  <title>Maryland SEO Company</title>
   <meta
     name="description"
     content="WebLime is a trusted web design company in Maryland with experience building results-driven web-based solutions."
@@ -74,8 +74,8 @@
             <p
               class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl"
             >
-              Stand out from the competition with an online presence that gets
-              your Maryland business noticed.
+              Get your Maryland business to stand out from the competition with
+              an online presence that improves your bottom line.
             </p>
             <p
               class="mt-8 text-sm font-semibold uppercase tracking-wide text-white sm:mt-10"
@@ -411,11 +411,14 @@
         <h2
           class="text-center text-3xl font-extrabold leading-8 tracking-tight text-gray-900 sm:text-4xl"
         >
-          Our Maryland web design clients get results.
+          Our Maryland SEO <span class="text-primary-600"
+            >clients get results.</span
+          >
         </h2>
         <p class="mx-auto mt-4 max-w-3xl text-center text-xl text-gray-500">
-          Whether it’s migrating from another platform or building an entire
-          brand, we’ve got you covered.
+          WebLime’s Maryland SEO services include competitor analysis, link
+          development, content marketing, local business listing, and on-page
+          optimization.
         </p>
       </div>
 
@@ -426,11 +429,11 @@
           <h3
             class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"
           >
-            A compelling experience
+            Maryland SEO Services
           </h3>
           <p class="mt-3 text-lg text-gray-500">
-            Create a compelling experience online, with mobile and tablet in
-            mind. Web design solutions that scale.
+            Our SEO services help rank your website and make it an asset for
+            your business.
           </p>
 
           <dl class="mt-10 space-y-10">
@@ -457,7 +460,7 @@
                   </svg>
                 </div>
                 <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-                  Development
+                  Keyword Research & Strategy
                 </p>
               </dt>
               <dd class="mt-2 ml-16 text-base text-gray-500">
@@ -489,7 +492,7 @@
                   </svg>
                 </div>
                 <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-                  Performance
+                  Link Building
                 </p>
               </dt>
               <dd class="mt-2 ml-16 text-base text-gray-500">
@@ -520,7 +523,7 @@
                   </svg>
                 </div>
                 <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-                  Content Writing
+                  Technical SEO
                 </p>
               </dt>
               <dd class="mt-2 ml-16 text-base text-gray-500">
@@ -553,11 +556,11 @@
             <h3
               class="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-3xl"
             >
-              Certified Shopify Partners
+              SEO to rank your site
             </h3>
             <p class="mt-3 text-lg text-gray-500">
-              Over 1,000,000 businesses in 175 countries around the world have
-              made over $200 billion USD in sales using Shopify.
+              We identify current keyword rankings and capture new SEO
+              opportunities for your business.
             </p>
 
             <dl class="mt-10 space-y-10">
@@ -584,7 +587,7 @@
                     </svg>
                   </div>
                   <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-                    Shopify Store Development & Maintenance
+                    Local SEO
                   </p>
                 </dt>
                 <dd class="mt-2 ml-16 text-base text-gray-500">
@@ -617,7 +620,7 @@
                     </svg>
                   </div>
                   <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
-                    Shopify Marketing Services
+                    Ecommerce SEO
                   </p>
                 </dt>
                 <dd class="mt-2 ml-16 text-base text-gray-500">
@@ -642,6 +645,9 @@
     </div>
   </div>
   <Testimonials />
+  <h1 class="mx-auto text-center text-3xl text-primary-500">
+    Get Your FREE Instant SEO Audit Report Now!
+  </h1>
   <div
     class="relative mx-auto mt-12 max-w-7xl px-6 pb-20 lg:mt-24 lg:grid lg:grid-cols-2 lg:items-center lg:gap-8"
   >

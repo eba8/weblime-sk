@@ -12,6 +12,7 @@
       $page.url.pathname === '/top-maryland-web-design-agency' ||
       $page.url.pathname === '/wordpress-development' ||
       $page.url.pathname === '/shopify-development' ||
+      $page.url.pathname === '/maryland-seo-company' ||
       $page.url.pathname === '/maryland-web-design-company'}
     class="relative bg-skin-hero py-6"
   >

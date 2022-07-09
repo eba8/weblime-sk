@@ -7,7 +7,7 @@
       link: '/',
     },
     {
-      name: 'SEATTLE',
+      name: 'New Jersey',
       link: '/',
     },
     {
