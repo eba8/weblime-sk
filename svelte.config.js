@@ -7,13 +7,6 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    // adapter: cloudflare(),
-    // prerender: {
-    //   default: true,
-    // },
-    // vite: {
-    //   plugins: [globals(), builtins()],
-    // },
     adapter: vercel({
       // if true, will deploy the app using edge functions
       // (https://vercel.com/docs/concepts/functions/edge-functions)
