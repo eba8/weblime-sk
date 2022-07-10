@@ -23,7 +23,7 @@ const config = {
     }),
     prerender: {
       default: true,
-      crawl: false,
+      crawl: true,
       enabled: true,
       entries: [...pages, '/sitemap.xml'],
     },
