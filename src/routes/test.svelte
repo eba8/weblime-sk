@@ -1,5 +1,5 @@
 <script>
-    import SeoForm from "$lib/seoChecker/SeoForm.svelte";
+    import SeoForm from "$lib/components/seoChecker/SeoForm.svelte";
 </script>
 
 <SeoForm/>
