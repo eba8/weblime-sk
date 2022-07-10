@@ -1,9 +1,10 @@
 <script>
   import Testimonials from '$lib/components/testimonials/Testimonials.svelte';
+  import SeoForm from '$lib/components/seoChecker/SeoForm.svelte';
   import ProjectInMind from '$lib/Cta/project-In-mind.svelte';
   import { fade } from 'svelte/transition';
-  import { page } from '$app/stores';
   import { site_name } from '$lib/info';
+  import { page } from '$app/stores';
 
   let name;
   let email;
@@ -53,7 +54,6 @@
     property="og:image"
     content="https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
-  <script src="seo-lead.js"></script>
 </svelte:head>
 
 <main class="mx-auto">
@@ -662,70 +662,7 @@
         advancements into your business to propel substantial growth.
       </p>
 
-      <div class="so-container">
-        <div id="so-boxso1657414046">
-          <form
-            class="so-widget-form"
-            id="so1657414046"
-            action="https://analytics.weblime.com/process-embedded.inc"
-            target="so-iframe"
-            data-behaviour="modal"
-            data-title="Website Report for "
-            data-touch="Thank you for requesting a report. We'll be in touch shortly!"
-            onsubmit="return soSubmit(this)"
-          >
-            <input
-              id="so-typeso1657414046"
-              type="hidden"
-              name="type"
-              value="web"
-            />
-            <input type="hidden" name="uid" value="42866" />
-            <input type="hidden" name="behaviour" value="modal" />
-            <input type="hidden" name="template" value="0" />
-
-            <div id="so-fieldswrapso1657414046">
-              <input
-                type="text"
-                name="domain"
-                id="so-domainso1657414046"
-                class="so-fieldso1657414046"
-                placeholder="Website URL"
-                data-validation="Please enter a correct Website URL. Only homepages are accepted."
-              />
-              <input
-                type="text"
-                name="first_name"
-                id="so-first-nameso1657414046"
-                class="so-fieldso1657414046"
-                placeholder="First Name"
-                data-validation="Please enter your First Name"
-              />
-              <input
-                type="text"
-                name="last_name"
-                id="so-last-nameso1657414046"
-                class="so-fieldso1657414046"
-                placeholder="Last Name"
-                data-validation="Please enter your Last Name"
-              />
-              <input
-                type="text"
-                name="email"
-                id="so-emailso1657414046"
-                class="so-fieldso1657414046"
-                placeholder="Email"
-                data-validation="Please enter a valid email address."
-              />
-              <input
-                type="submit"
-                id="so-submitso1657414046"
-                value="Get Free Report Now"
-              />
-            </div>
-          </form>
-        </div>
-      </div>
+      <SeoForm />
     </div>
     <div class="relative mt-10 lg:mt-0" aria-hidden="true">
       <img src="/svg/weblime-laying-down-illustration.svg" alt="" />
@@ -733,125 +670,3 @@
   </div>
   <ProjectInMind />
 </main>
-
-<style type="text/css">
-  /* Please move these styles to your css file or just keep them here */
-  #so-form {
-    margin: 10px !important;
-  }
-  #so-fieldswrapso1657414046 {
-    width: 300px !important;
-  }
-  .so-fieldso1657414046 {
-    background-color: #ffffff !important;
-    border: 1px solid #e3e3e3 !important;
-    border-radius: 4px !important;
-    color: #565656 !important;
-    padding: 7px 12px !important;
-    font-size: 18px !important;
-    box-sizing: border-box !important;
-    height: 45px !important;
-    width: 100% !important;
-    display: block !important;
-    margin-top: 5px !important;
-  }
-  .so-fieldso1657414046::placeholder {
-    color: #777777 !important;
-  }
-
-  @media screen and (max-width: 345px) {
-    .so-fieldso1657414046 {
-      min-width: 100px !important;
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .so-fieldso1657414046 {
-      font-size: 12px !important;
-      height: 30px !important;
-    }
-
-    #so-submitso1657414046 {
-      font-size: 12px !important;
-      height: 30px;
-    }
-
-    #so-fieldswrapso1657414046 {
-      width: 100%;
-    }
-  }
-
-  #so-submitso1657414046 {
-    background-color: #84cc16 !important;
-    border: 1px solid #84cc16 !important;
-    color: #ffffff !important;
-    border-radius: 4px !important;
-    text-decoration: none !important;
-    cursor: pointer !important;
-    box-sizing: border-box !important;
-    height: 45px !important;
-    font-size: 18px !important;
-    display: block !important;
-    padding: 8px 50px !important;
-    margin: 5px auto !important;
-  }
-
-  @media screen and (max-width: 500px) {
-    #so-submitso1657414046 {
-      font-size: 12px !important;
-      height: 30px !important;
-    }
-  }
-
-  .so-container {
-    width: 100%;
-    text-align: center;
-  }
-  .so-widget-form {
-    display: inline-block !important;
-  }
-  #so-boxso1657414046 {
-    display: inline-block;
-  }
-  #so-titleso1657414046 {
-    margin-bottom: 5px;
-    font-size: 26px !important;
-  }
-
-  @media screen and (max-width: 500px) {
-    #so-titleso1657414046 {
-      font-size: 13px !important;
-    }
-
-    #so-paragraphso1657414046 {
-      font-size: 10px !important;
-    }
-
-    #so-consentso1657414046 span {
-      font-size: 10px !important;
-    }
-  }
-
-  #so-paragraphso1657414046 {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  #so-boxso1657414046 {
-    width: 100%;
-    padding: 50px !important;
-    background-color: #fcfcfc !important;
-    border: 1px solid #e3e3e3 !important;
-  }
-  @media screen and (max-width: 1039px) {
-    #so-boxso1657414046 {
-      padding: 50px 10px !important;
-      background-color: #fcfcfc !important;
-      border: 1px solid #e3e3e3 !important;
-    }
-  }
-  @media screen and (max-width: 1039px) {
-    #so-boxso1657414046 {
-      padding: 25px 5px !important;
-    }
-  }
-</style>

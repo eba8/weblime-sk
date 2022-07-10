@@ -78,9 +78,6 @@
 
 <div class="so-container">
   <div id="so-boxso1657414046">
-    <div id="so-titleso1657414046">
-      Get Your FREE Instant SEO Audit Report Now!
-    </div>
     <form
       class="so-widget-form"
       id="so1657414046"
@@ -206,16 +203,6 @@
   }
   #so-boxso1657414046 {
     display: inline-block;
-  }
-  #so-titleso1657414046 {
-    margin-bottom: 5px;
-    font-size: 26px !important;
-  }
-
-  @media screen and (max-width: 500px) {
-    #so-titleso1657414046 {
-      font-size: 13px !important;
-    }
   }
 
   #so-boxso1657414046 {
