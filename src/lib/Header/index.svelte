@@ -3,17 +3,20 @@
   import ClickOutside from 'svelte-click-outside';
   let mobile_menu = false;
   let services_flyout_menu = false;
+  let theme_black_pages = [
+    '/portfolio',
+    '/top-maryland-web-design-agency',
+    '/wordpress-development',
+    '/shopify-development',
+    '/maryland-seo-company',
+    '/maryland-web-design-company',
+  ];
 </script>
 
 <header>
   <div
     class:theme-lime={$page.url.pathname === '/solutions'}
-    class:theme-black={$page.url.pathname === '/portfolio' ||
-      $page.url.pathname === '/top-maryland-web-design-agency' ||
-      $page.url.pathname === '/wordpress-development' ||
-      $page.url.pathname === '/shopify-development' ||
-      $page.url.pathname === '/maryland-seo-company' ||
-      $page.url.pathname === '/maryland-web-design-company'}
+    class:theme-black={theme_black_pages.includes($page.url.pathname)}
     class="relative bg-skin-hero py-6"
   >
     <nav
