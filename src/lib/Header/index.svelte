@@ -212,10 +212,13 @@
                   </a>
 
                   <!-- <a
-                    href="/solutions"
+                    on:click={() => {
+                      services_flyout_menu = false;
+                    }}
+                    sveltekit:prefetch
+                    href="/search-engine-optimization-services"
                     class="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-primary-100"
                   >
-                    
                     <svg
                       class="h-6 w-6 flex-shrink-0 text-primary-600"
                       xmlns="http://www.w3.org/2000/svg"
@@ -232,9 +235,11 @@
                       />
                     </svg>
                     <div class="ml-4">
-                      <p class="text-base font-medium text-slate-900">SEO</p>
+                      <p class="text-base font-medium text-slate-900">
+                        Search Engine Optimization (SEO)
+                      </p>
                       <p class="mt-1 text-sm text-slate-500">
-                        Your customers&#039; data will be safe and secure.
+                        Rank your site and dominate online.
                       </p>
                     </div>
                   </a> -->
