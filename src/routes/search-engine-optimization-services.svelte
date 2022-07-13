@@ -399,7 +399,7 @@
           >
             <div class="flex w-full items-center justify-between rounded-xl">
               <span class="flex font-medium text-slate-900">
-                How much does a website cost?
+                What is SEO?
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -419,8 +419,12 @@
             </div>
             {#if question_1 == true}
               <p class="pt-2 text-slate-600" transition:slide>
-                Each project is priced differently based on the number of pages,
-                integrations and timeline.
+                Search engine optimization is more commonly known as its acronym
+                SEO.
+                <br /><br />Simply put, it means the process of improving your
+                site to increase its visibility when people search for products
+                or services related to your organization on Google, Bing, and
+                other search engines.
               </p>
             {/if}
           </button>
@@ -437,7 +441,7 @@
           >
             <div class="flex w-full items-center justify-between rounded-xl">
               <span class="flex font-medium text-slate-900">
-                What&#039;s so good about WordPress?
+                What is the Difference Between Local SEO and Organic SEO?
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -461,9 +465,13 @@
                 class:duration-500={question_2 == true}
                 transition:slide
               >
-                WordPress is open source and actively maintained by thousands of
-                developers globally. The performance, security, and flexibility
-                offer a robust solution for websites.
+                The main difference between local and organic search is the
+                intent.
+                <br /><br />
+                If a user searches for product + location, the search engines know
+                that the query has local intent. For instance, if you search for
+                "web design company + Maryland," the results will be derived from
+                a local radius.
               </p>
             {/if}
           </button>
@@ -480,7 +488,7 @@
           >
             <div class="flex w-full items-center justify-between rounded-xl">
               <span class="flex font-medium text-slate-900">
-                How long will the website take to complete?
+                What kind of results can I expect?
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -504,10 +512,17 @@
                 class:duration-500={question_3 == true}
                 transition:slide
               >
-                The timelines for our projects vary and are determined by
-                different aspects of your website, including size, functionality
-                and more. However, most websites can be completed and launched
-                in 6-10 weeks.
+                <span class="block font-semibold">
+                  New website with no organic traffic:</span
+                >
+                It can take around 9-12 months to build an organic presence and start
+                seeing traffic and leads.
+                <br /><br />
+                <span class="block font-semibold"
+                  >Existing site with organic traffic:</span
+                >
+                We can usually guarantee an increase of traffic in the first 2-3
+                months.
               </p>
             {/if}
           </button>
