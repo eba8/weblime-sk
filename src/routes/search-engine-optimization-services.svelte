@@ -662,6 +662,15 @@
         </div>
       </div>
     </div>
+    <div class="mx-auto text-center">
+      <h2 class="text-2xl font-semibold text-slate-900">
+        Still have questions?
+      </h2>
+      <a class="text-xl text-primary-600" href="/get-in-touch"
+        >Contact us here.</a
+      >
+      <p />
+    </div>
   </section>
 
   <ProjectInMind />
