@@ -584,7 +584,7 @@
           >
             <div class="flex w-full items-center justify-between rounded-xl">
               <span class="flex font-medium text-slate-900">
-                What if I don't like the website you build?
+                How long do I need to do SEO?
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -608,11 +608,10 @@
                 class:duration-500={question_5 == true}
                 transition:slide
               >
-                Don't worry, we won't deliver a website that you don't
-                absolutely love.
-                <br /><br />
-                We hold several revisions throughout the design and development process
-                to make sure we are right on track with what your business needs.
+                SEO is not a one-time service. It requires monthly input to
+                maintain a solid ranking and high volume of traffic. While the
+                intensity may vary, some SEO work will always be necessary to
+                establish and grow your online presence.
               </p>
             {/if}
           </button>
@@ -629,7 +628,7 @@
           >
             <div class="flex w-full items-center justify-between rounded-xl">
               <span class="flex font-medium text-slate-900">
-                How much does website support cost?
+                How much does it cost to run an SEO campaign?
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -653,10 +652,10 @@
                 class:duration-500={question_6 == true}
                 transition:slide
               >
-                This depends on the size and complexity of the website. For
-                simple maintenance and updates, you can expect to pay a web
-                design agency between $25-$75/month.
-                <br /><br />We offer flexible monthly payment plans.
+                Employing an experienced SEO agency or expert is advisable. The
+                amount you should expect to pay aligns with the work scope
+                needed to ensure success. The average hourly rate of employing
+                an agency or SEO expert is approximately $150 per hour or more.
               </p>
             {/if}
           </button>
