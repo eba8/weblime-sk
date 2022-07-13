@@ -28,10 +28,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content={site_name} />
   <meta property="og:url" content={portfolio_url} />
-  <meta property="og:title" content="WebLime | Portfolio" />
+  <meta
+    property="og:title"
+    content="SEO Company | Search Engine Optimization Services"
+  />
   <meta
     property="og:description"
-    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+    content="WebLime is a search engine optimization company that provides search engine marketing and consulting services."
   />
   <meta
     property="og:image"
@@ -45,10 +48,13 @@
     content="https://www.weblime.com/https://www.weblime.com/images/seo/weblime-digital-agency.jpg"
   />
   <meta name="twitter:site" content="@weblime_agency" />
-  <meta property="twitter:title" content="WebLime | Portfolio" />
+  <meta
+    property="twitter:title"
+    content="SEO Company | Search Engine Optimization Services"
+  />
   <meta
     property="twitter:description"
-    content="A Web Development & Digital Marketing Agency with experience in building results-driven custom web-based solutions."
+    content="WebLime is a search engine optimization company that provides search engine marketing and consulting services."
   />
 </svelte:head>
 
