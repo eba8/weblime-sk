@@ -50,7 +50,8 @@
         return false;
       }
 
-      const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      const regex =
+        /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
       if (!regex.test(email)) {
         alert('Please enter a valid email address.');
@@ -78,6 +79,9 @@
 
 <div class="so-container">
   <div id="so-boxso1657414046">
+    <h3 class="py-5 text-3xl font-semibold text-slate-900">
+      Free Instant SEO Audit Report
+    </h3>
     <form
       class="so-widget-form"
       id="so1657414046"
@@ -90,40 +94,47 @@
       <input type="hidden" name="behaviour" value="modal" />
       <input type="hidden" name="template" value="0" />
 
-      <div id="so-fieldswrapso1657414046">
-        <input
-          type="text"
-          name="domain"
-          id="so-domainso1657414046"
-          class="so-fieldso1657414046"
-          placeholder="Website URL"
-        />
-
-        <input
-          type="text"
-          name="first_name"
-          id="so-first-nameso1657414046"
-          class="so-fieldso1657414046"
-          placeholder="First Name"
-        />
-
-        <input
-          type="text"
-          name="last_name"
-          id="so-last-nameso1657414046"
-          class="so-fieldso1657414046"
-          placeholder="Last Name"
-        />
-
-        <input
-          type="text"
-          name="email"
-          id="so-emailso1657414046"
-          class="so-fieldso1657414046"
-          placeholder="Email"
-        />
-
-        <button type="submit" id="so-submitso1657414046">
+      <div
+        id="so-fieldswrapso1657414046"
+        class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6"
+      >
+        <div class="sm:col-span-6">
+          <input
+            type="text"
+            name="domain"
+            id="so-domainso1657414046"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
+            placeholder="Website URL"
+          />
+        </div>
+        <div class="sm:col-span-3">
+          <input
+            type="text"
+            name="first_name"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
+            placeholder="First Name"
+          />
+        </div>
+        <div class="sm:col-span-3">
+          <input
+            type="text"
+            name="last_name"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
+            placeholder="Last Name"
+          />
+        </div>
+        <div class="sm:col-span-6">
+          <input
+            type="text"
+            name="email"
+            class="w-full rounded-md border-none bg-slate-200 p-4 focus:ring-2 focus:ring-primary-500"
+            placeholder="Email"
+          />
+        </div>
+        <button
+          type="submit"
+          class="rounded-md bg-gray-900 px-6 py-3 text-lg font-medium text-primary-500 hover:bg-gray-800 sm:col-span-6"
+        >
           Get Free Report Now
         </button>
       </div>
@@ -173,8 +184,8 @@
   }
 
   #so-submitso1657414046 {
-    background-color: #84cc16 !important;
-    border: 1px solid #84cc16 !important;
+    background-color: #0f172a !important;
+    border: 1px solid #0f172a !important;
     color: #ffffff !important;
     border-radius: 4px !important;
     text-decoration: none !important;
@@ -185,6 +196,11 @@
     display: block !important;
     padding: 8px 50px !important;
     margin: 5px auto !important;
+  }
+
+  #so-submitso1657414046:hover {
+    background-color: #1e293b !important;
+    border: 1px solid #1e293b !important;
   }
 
   @media screen and (max-width: 500px) {
@@ -207,9 +223,10 @@
 
   #so-boxso1657414046 {
     width: 100%;
-    padding: 50px !important;
-    background-color: #fcfcfc !important;
-    border: 1px solid #e3e3e3 !important;
+    padding: 35px !important;
+    background-color: #84cc16 !important;
+    border: 1px solid #84cc16 !important;
+    border-radius: 5px;
   }
 
   @media screen and (max-width: 1039px) {

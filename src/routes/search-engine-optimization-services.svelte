@@ -146,8 +146,8 @@
                   Keyword Research
                 </h3>
                 <p class="mt-5 text-base text-gray-500">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
+                  WebLime is an SEO company that will research and learn how we
+                  can boost your ranking for specific search terms.
                 </p>
               </div>
             </div>
@@ -161,6 +161,7 @@
                     class="inline-flex items-center justify-center rounded-md bg-primary-500 p-3 shadow-lg"
                   >
                     <!-- Heroicon name: outline/lock-closed -->
+
                     <svg
                       class="h-6 w-6 text-white"
                       xmlns="http://www.w3.org/2000/svg"
@@ -170,22 +171,20 @@
                       stroke="currentColor"
                       aria-hidden="true"
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                      />
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <circle cx="9.5" cy="9.5" r="5.5" />
+                      <circle cx="14.5" cy="14.5" r="5.5" />
                     </svg>
                   </span>
                 </div>
                 <h3
                   class="mt-8 text-lg font-medium tracking-tight text-gray-900"
                 >
-                  On-Page Optimization
+                  Competitor Analysis
                 </h3>
                 <p class="mt-5 text-base text-gray-500">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
+                  We'll flip every rock in your landscape. We want to know what
+                  your competitors are doing good and where they can improve.
                 </p>
               </div>
             </div>
@@ -199,6 +198,7 @@
                     class="inline-flex items-center justify-center rounded-md bg-primary-500 p-3 shadow-lg"
                   >
                     <!-- Heroicon name: outline/refresh -->
+
                     <svg
                       class="h-6 w-6 text-white"
                       xmlns="http://www.w3.org/2000/svg"
@@ -208,10 +208,12 @@
                       stroke="currentColor"
                       aria-hidden="true"
                     >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                        d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"
+                      />
+                      <path
+                        d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"
                       />
                     </svg>
                   </span>
@@ -219,11 +221,11 @@
                 <h3
                   class="mt-8 text-lg font-medium tracking-tight text-gray-900"
                 >
-                  Internal Linking Improvement
+                  Building Links
                 </h3>
                 <p class="mt-5 text-base text-gray-500">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
+                  Link building is one of the biggest ranking factors. We'll
+                  work on both internal and external backlinks.
                 </p>
               </div>
             </div>
@@ -236,7 +238,6 @@
                   <span
                     class="inline-flex items-center justify-center rounded-md bg-primary-500 p-3 shadow-lg"
                   >
-                    <!-- Heroicon name: outline/shield-check -->
                     <svg
                       class="h-6 w-6 text-white"
                       xmlns="http://www.w3.org/2000/svg"
@@ -246,22 +247,23 @@
                       stroke="currentColor"
                       aria-hidden="true"
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M4 4h6v8h-6z" />
+                      <path d="M4 16h6v4h-6z" />
+                      <path d="M14 12h6v8h-6z" />
+                      <path d="M14 4h6v4h-6z" />
                     </svg>
                   </span>
                 </div>
                 <h3
                   class="mt-8 text-lg font-medium tracking-tight text-gray-900"
                 >
-                  Building Links
+                  Dashboards & Reports
                 </h3>
                 <p class="mt-5 text-base text-gray-500">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
+                  Monthly reports and our client environment with nifty
+                  dashboards help keep us in check, and you informed on our
+                  progress.
                 </p>
               </div>
             </div>
@@ -303,8 +305,9 @@
                   Technical SEO
                 </h3>
                 <p class="mt-5 text-base text-gray-500">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
+                  A strong technical foundation is built by having a website
+                  crawlable and indexed effectively, which includes proper site
+                  architecture that loads fast.
                 </p>
               </div>
             </div>
@@ -317,7 +320,6 @@
                   <span
                     class="inline-flex items-center justify-center rounded-md bg-primary-500 p-3 shadow-lg"
                   >
-                    <!-- Heroicon name: outline/server -->
                     <svg
                       class="h-6 w-6 text-white"
                       xmlns="http://www.w3.org/2000/svg"
@@ -327,11 +329,12 @@
                       stroke="currentColor"
                       aria-hidden="true"
                     >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"
+                        d="M20 17v-12c0 -1.121 -.879 -2 -2 -2s-2 .879 -2 2v12l2 2l2 -2z"
                       />
+                      <path d="M16 7h4" />
+                      <path d="M18 19h-13a2 2 0 1 1 0 -4h4a2 2 0 1 0 0 -4h-3" />
                     </svg>
                   </span>
                 </div>
@@ -341,8 +344,8 @@
                   Content Writing
                 </h3>
                 <p class="mt-5 text-base text-gray-500">
-                  Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.
-                  Et magna sit morbi lobortis.
+                  Your website will be constantly updated with new content to
+                  help your audience connect with what you have to share.
                 </p>
               </div>
             </div>
@@ -353,9 +356,7 @@
   </section>
 
   <section class="bg-slate-900 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
-    <h3
-      class="text-center text-2xl font-extrabold tracking-tight text-white sm:text-3xl"
-    >
+    <h3 class="text-center text-5xl font-semibold tracking-tight text-white">
       Get Your FREE Instant <span class="text-primary-500"
         >SEO Audit Report</span
       >
@@ -367,7 +368,7 @@
         <SeoForm />
       </div>
       <div class="relative mt-10 lg:mt-0" aria-hidden="true">
-        <img src="/images/seo/weblime-seo-website-audit.png" alt="" />
+        <img src="/images/seo/web-report.png" alt="" />
       </div>
     </div>
   </section>
