@@ -5,6 +5,9 @@ module.exports = {
   content: ['./src/**/*.{html,js,svelte,ts,svg}'],
   safelist: ['mt-0', 'no-underline', 'ring-gray-100', 'not-prose'],
   theme: {
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+    },
     colors: {
       primary: colors.lime,
       secondary: colors.indigo,

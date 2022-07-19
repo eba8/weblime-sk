@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply font-inter;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter/Inter-VariableFont.ttf') format('truetype');
+  }
   :root {
     --color-text-base: theme('colors.gray.700');
     --color-text-base-hover: theme('colors.slate.900');
